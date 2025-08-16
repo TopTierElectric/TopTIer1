@@ -9,6 +9,11 @@
   --muted: #6b7280;
 }
 
+/* Ensure padding and borders are included in width calculations */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -16,8 +21,6 @@ html, body {
   color: var(--text-dark);
   background: var(--light-bg);
   line-height: 1.6;
-  /* Prevent horizontal scroll on small screens */
-  overflow-x: hidden;
 }
 
 /* Smooth scrolling for anchor links */
