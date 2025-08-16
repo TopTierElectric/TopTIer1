@@ -81,18 +81,9 @@ header nav a:focus {
 
 /* Mobile nav toggle */
 .menu-toggle {
-  background: none;
-  border: none;
-  padding: 0;
   display: none;
   flex-direction: column;
   cursor: pointer;
-}
-
-.menu-toggle:focus,
-.menu-toggle:focus-visible {
-  outline: 2px solid var(--secondary);
-  outline-offset: 2px;
 }
 
 .menu-toggle span {
@@ -681,6 +672,109 @@ footer p {
   color: var(--text-light);
   padding: 3rem 1rem;
   text-align: center;
+}
+
+/* Blog listing styles */
+.blog-list {
+  padding: 3rem 1rem;
+}
+.blog-list h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.blog-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+}
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.blog-card h3 {
+  font-size: 1.25rem;
+  margin: 1rem;
+  color: var(--primary);
+}
+.blog-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.blog-card p {
+  margin: 0 1rem 1rem;
+  color: var(--muted);
+  flex-grow: 1;
+}
+.blog-card .read-more {
+  margin: 0 1rem 1.5rem;
+  display: inline-block;
+  color: var(--secondary);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Individual blog post */
+.blog-post {
+  padding: 3rem 1rem;
+}
+.blog-post h2 {
+  margin-top: 2rem;
+  color: var(--primary);
+}
+.blog-post p {
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+/* Service detail pages */
+.service-detail {
+  padding: 3rem 1rem;
+}
+.service-detail h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+.service-detail h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+.service-detail ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  list-style-type: disc;
+}
+.service-detail li {
+  margin-bottom: 0.5rem;
+}
+.service-detail p {
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+/* Map on contact page */
+.map {
+  margin-top: 2rem;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 .cta-section h2 {
   font-size: 2rem;

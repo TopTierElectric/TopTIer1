@@ -4,14 +4,19 @@ document.addEventListener('DOMContentLoaded', function () {
   const nav = document.querySelector('header nav');
   if (menuToggle && nav) {
     menuToggle.addEventListener('click', function () {
-      const expanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', String(!expanded));
       nav.classList.toggle('active');
     });
   }
 
   // Highlight the current page in the navigation
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  let currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  // Map blog articles and service detail pages to their parent nav items
+  if (currentPath.startsWith('blog-')) {
+    currentPath = 'blog.html';
+  }
+  if (['panel-upgrades.html','ev-chargers.html','lighting.html'].includes(currentPath)) {
+    currentPath = 'services.html';
+  }
   const navLinks = document.querySelectorAll('header nav a');
   navLinks.forEach(function (link) {
     const linkTarget = link.getAttribute('href').split('/').pop();
@@ -24,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
     link.addEventListener('click', function () {
       if (nav.classList.contains('active')) {
         nav.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
       }
     });
   });
