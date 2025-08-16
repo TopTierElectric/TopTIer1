@@ -52,9 +52,10 @@ header {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-header .logo {
-  font-size: 1.4rem;
-  font-weight: bold;
+header .logo img {
+  height: 50px;
+  width: auto;
+  display: block;
 }
 
 header nav ul {
