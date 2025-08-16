@@ -11,7 +11,6 @@ The site is organised into a number of pages to cover all aspects of the busines
 - **`index.html`** – Home page featuring a hero section, value propositions, a brief service overview and a pricing preview.
 - **`about.html`** – Shares the company’s story, mission and a list of certifications and awards.
 - **`services.html`** – Detailed descriptions of our service offerings, including panel upgrades, EV charger installation and lighting solutions.
-- **`pricing.html`** – Pricing packages with details on what’s included in each plan.
 - **`testimonials.html`** – Real customer testimonials and reviews to build trust.
 - **`financing.html`** – Explains the flexible financing options available for larger projects.
 - **`emergency.html`** – Defines what constitutes an electrical emergency and provides a 24/7 hotline.
