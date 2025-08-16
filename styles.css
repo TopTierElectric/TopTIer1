@@ -1,0 +1,580 @@
+/* TopTier Electrical improved site styles */
+/* Define color palette */
+:root {
+  --primary: #04172a;
+  --secondary: #f47037;
+  --light-bg: #f9fafb;
+  --text-dark: #1f2937;
+  --text-light: #f9fafb;
+  --muted: #6b7280;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-dark);
+  background: var(--light-bg);
+  line-height: 1.6;
+  /* Prevent horizontal scroll on small screens */
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Layout helpers */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--primary);
+  color: var(--text-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+/* Active navigation link styling */
+header nav a.active {
+  color: var(--secondary);
+}
+
+header nav a:hover,
+header nav a:focus {
+  color: var(--secondary);
+}
+
+/* Mobile nav toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: var(--text-light);
+  margin-bottom: 4px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--primary);
+    /* increase width to accommodate more menu items */
+    width: 250px;
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  header nav.active {
+    display: flex;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* About section */
+.about {
+  padding: 3rem 0;
+}
+.about h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--primary);
+}
+.about p {
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+.about ul {
+  list-style: disc;
+  margin-left: 2rem;
+  color: var(--muted);
+}
+
+/* Testimonials section */
+.testimonials {
+  padding: 3rem 0;
+  background: var(--light-bg);
+}
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary);
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.testimonial-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.testimonial-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.testimonial-card .author {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Info section (financing, emergency, faq) */
+.info-section {
+  padding: 3rem 0;
+}
+.info-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary);
+}
+.info-section h3 {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+.info-section p,
+.info-section ul {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.info-section ul {
+  list-style: disc;
+  margin-left: 2rem;
+}
+
+/* FAQ styles */
+.faq-list details {
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.faq-list summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--primary);
+}
+.faq-list p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  background: url('assets/images/hero.jpg') center/cover no-repeat;
+  color: var(--text-light);
+  text-align: center;
+  padding: 8rem 1rem 6rem;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 23, 42, 0.65);
+  z-index: 0;
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--secondary);
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #e05b2b;
+  transform: translateY(-2px);
+}
+
+/* Value propositions */
+.values {
+  background: var(--light-bg);
+  padding: 3rem 0;
+}
+
+.values h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.values .value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.values .value-item {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.values .value-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+}
+
+.values .icon {
+  font-size: 2.5rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.values h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.values p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Services section */
+.services {
+  padding: 3rem 0;
+  background: var(--light-bg);
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.services .service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+}
+
+.service-card .icon {
+  font-size: 2.5rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.service-card a {
+  margin-top: 1rem;
+  display: inline-block;
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.service-card a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery section */
+.gallery-page {
+  padding: 3rem 0;
+}
+
+.gallery-page h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Pricing section */
+.pricing {
+  padding: 3rem 0;
+  background: var(--light-bg);
+}
+
+.pricing h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.pricing-card .price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--secondary);
+  margin: 0.5rem 0 1rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-card li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.pricing-card .btn-primary {
+  margin-top: 1.5rem;
+}
+
+.pricing-card.popular {
+  border: 2px solid var(--secondary);
+}
+
+/* Contact page */
+.contact-page {
+  padding: 3rem 0;
+}
+
+.contact-page h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.contact-info {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  color: var(--muted);
+}
+
+.contact-info a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background: var(--secondary);
+  color: var(--text-light);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #e05b2b;
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.875rem;
+}
