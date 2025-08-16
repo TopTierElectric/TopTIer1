@@ -578,3 +578,19 @@ footer p {
   margin: 0;
   font-size: 0.875rem;
 }
+/* Skip link styles */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
