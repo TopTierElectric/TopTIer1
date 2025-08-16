@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const nav = document.querySelector('header nav');
   if (menuToggle && nav) {
     menuToggle.addEventListener('click', function () {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
       nav.classList.toggle('active');
     });
   }
@@ -22,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     link.addEventListener('click', function () {
       if (nav.classList.contains('active')) {
         nav.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
       }
     });
   });
