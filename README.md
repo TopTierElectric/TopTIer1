@@ -9,7 +9,6 @@ All pages include SEO‑friendly meta tags, Open Graph data and structured data 
 The site is organised into a number of pages to cover all aspects of the business:
 
 - **`index.html`** – Home page featuring a hero section, value propositions and a brief service overview with a free estimate callout.
-- **`about.html`** – Shares the company’s story, mission and a list of certifications and awards.
 - **`services.html`** – Detailed descriptions of our service offerings, including panel upgrades, EV charger installation and lighting solutions.
 - **`testimonials.html`** – Real customer testimonials and reviews to build trust.
 - **`financing.html`** – Explains the flexible financing options available for larger projects.
@@ -18,7 +17,7 @@ The site is organised into a number of pages to cover all aspects of the busines
 - **`faq.html`** – Frequently asked questions covering common electrical topics and our service policies.
 - **`contact.html`** – Contact page with phone, email and a Netlify‑ready contact form.
 - **`404.html`** – Custom 404 page to guide visitors back to the main site when a page is not found.
-- **`styles.css`** – Global styles and layout definitions (now includes styles for about, testimonials, info sections and FAQs).
+- **`styles.css`** – Global styles and layout definitions (includes styles for testimonials, info sections and FAQs).
 - **`script.js`** – JavaScript for the mobile navigation toggle and automatically highlighting the current page via `aria-current` attributes.
 - **`assets/images/hero.jpg`** – Background image used for the hero sections.
 
