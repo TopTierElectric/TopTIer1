@@ -1,9 +1,11 @@
 // Basic JavaScript to handle mobile navigation toggle
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('header nav');
+  const nav = document.getElementById('main-nav');
   if (menuToggle && nav) {
     menuToggle.addEventListener('click', function () {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isExpanded));
       nav.classList.toggle('active');
     });
   }
