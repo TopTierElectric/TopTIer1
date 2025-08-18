@@ -512,6 +512,12 @@ footer p {
   font-size: 0.875rem;
 }
 
+.footer-logo img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
 /* Header contact bar and small button */
 .header-contact {
   display: flex;
