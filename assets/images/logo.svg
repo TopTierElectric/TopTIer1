@@ -1,14 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
   <style>
-    .yellow { fill: #eab308; }
-    .stroke { stroke: #eab308; }
+    .accent { fill: #ea8b30; stroke: #ea8b30; }
+    .primary { fill: #051923; }
+    .white { fill: #ffffff; }
   </style>
-  <circle cx="200" cy="200" r="190" fill="none" class="stroke" stroke-width="10"/>
-  <line x1="60" x2="340" y1="150" y2="150" stroke="#eab308" stroke-width="8"/>
-  <line x1="60" x2="340" y1="170" y2="170" stroke="#eab308" stroke-width="8"/>
-  <polygon points="130,40 180,140 150,140 200,240 80,160 110,160" class="yellow"/>
-  <text x="220" y="220" text-anchor="start" fill="#eab308" font-size="48" font-weight="bold" font-family="Arial, sans-serif">TOP TIER</text>
-  <rect x="220" y="240" width="180" height="40" class="yellow"/>
-  <text x="220" y="268" text-anchor="start" fill="#000" font-size="24" font-weight="bold" font-family="Arial, sans-serif">ELECTRICAL</text>
-  <text x="220" y="320" text-anchor="start" fill="#eab308" font-size="16" font-weight="bold" font-family="Arial, sans-serif">WHERE QUALITY MEETS CARE.</text>
+  <circle cx="200" cy="200" r="190" fill="none" class="accent" stroke-width="10"/>
+  <line x1="60" x2="340" y1="150" y2="150" class="accent" stroke-width="8"/>
+  <line x1="60" x2="340" y1="170" y2="170" class="accent" stroke-width="8"/>
+  <polygon points="130,40 180,140 150,140 280,240 80,110 160,60" class="accent"/>
+  <text x="220" y="220" text-anchor="start" class="primary" font-size="48" font-weight="bold" font-family="Arial, sans-serif">TOP TIER</text>
+  <rect x="220" y="240" width="180" height="40" class="accent"/>
+  <text x="220" y="268" text-anchor="start" class="white" font-size="24" font-weight="bold" font-family="Arial, sans-serif">ELECTRICAL</text>
+  <text x="220" y="320" text-anchor="start" class="primary" font-size="16" font-weight="bold" font-family="Arial, sans-serif">WHERE QUALITY MEETS CARE.</text>
 </svg>
