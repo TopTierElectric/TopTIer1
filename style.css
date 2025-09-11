@@ -1,0 +1,256 @@
+/*
+  Top Tier Electrical website stylesheet
+
+  This file defines a modern colour palette, typography, layout and responsive
+  behaviour for the updated Top Tier Electrical website. Colours are based on
+  a deep blue primary accent for trust, a green secondary accent for energy and
+  sustainability, and neutral tones for background and text. Flexbox and
+  media queries are used to ensure the layout adapts gracefully to a wide
+  range of screen sizes, from desktop down to mobile.
+*/
+
+:root {
+  --primary: #1e3a8a;      /* dark blue for branding and headings */
+  --secondary: #10b981;    /* green for buttons and highlights */
+  --accent: #f59e0b;       /* amber accent for icons or minor highlights */
+  --light-bg: #f9fafb;     /* very light grey for backgrounds */
+  --dark-bg: #111827;      /* almost black for footer */
+  --text-color: #111827;   /* dark text for readability */
+  --light-text: #ffffff;   /* light text on dark backgrounds */
+  --font-main: 'Arial', sans-serif;
+}
+
+/* Reset margins and paddings, and set a consistent box model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+/* Header styles */
+header {
+  background-color: var(--primary);
+  color: var(--light-text);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--light-text);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: var(--secondary);
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  background-image: url('images/hero.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--light-text);
+  padding: 6rem 1rem;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.button {
+  background-color: var(--secondary);
+  color: var(--light-text);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #0e9c75;
+}
+
+/* Generic section styling */
+.section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.card p {
+  margin-bottom: 1rem;
+}
+
+/* Testimonial styling */
+.testimonial {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial .author {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Footer styling */
+footer {
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile navigation */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: var(--light-text);
+  margin-bottom: 4px;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--primary);
+    flex-direction: column;
+    gap: 0;
+    width: 200px;
+    display: none;
+  }
+
+  nav a {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}

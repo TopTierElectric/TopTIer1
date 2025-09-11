@@ -1,34 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Top Tier Electrical – Your trusted electrician providing residential and commercial electrical services across West Michigan." />
   <title>Top Tier Electrical | Trusted Electrician in West Michigan</title>
-  <!-- SEO meta tags -->
-  <meta name="description" content="Top Tier Electrical provides reliable residential and commercial electrical services across West Michigan including panel upgrades, EV charger installations, and lighting solutions.">
-  <meta name="keywords" content="electrician, West Michigan, panel upgrades, EV charger installation, lighting, electrical services">
-  <meta name="author" content="Top Tier Electrical">
-  <!-- Open Graph / Social meta -->
-  <meta property="og:title" content="Top Tier Electrical | Trusted Electrician in West Michigan">
-  <meta property="og:description" content="Providing dependable electrical solutions for homes and businesses across West Michigan.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/hero.jpg">
-  <meta property="og:url" content="https://www.toptier-electrical.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://www.toptier-electrical.com/">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
-
-  <!-- Structured data for LocalBusiness -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for simple icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Header and navigation -->
+  <header>
+    <div class="header-container">
+      <div class="logo">Top Tier Electrical</div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services/panel-upgrades.html">Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="button">Request Service</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Hero section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Your Trusted Electrician</h1>
+      <p>Providing reliable electrical solutions for homes and businesses across West Michigan.</p>
+      <a href="contact.html" class="button">Request Service</a>
+    </div>
+  </section>
+  <!-- Why Choose Us section -->
+  <section class="section">
+    <h2 class="section-title">Why Choose Us</h2>
+    <div class="cards">
+      <div class="card">
+        <h3><i class="fas fa-id-card" style="color: var(--secondary);"></i> Licensed & Insured</h3>
+        <p>We carry the proper licensing and insurance so you can feel confident about our work.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-user-tie" style="color: var(--secondary);"></i> Experienced Pros</h3>
+        <p>With decades of combined experience, our electricians handle jobs of all sizes with skill.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-star" style="color: var(--secondary);"></i> 5‑Star Reputation</h3>
+        <p>Hundreds of West Michigan homeowners and businesses trust us and rate us highly.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-clock" style="color: var(--secondary);"></i> On‑Time Arrival</h3>
+        <p>We respect your time and arrive when we say we will.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-money-bill-wave" style="color: var(--secondary);"></i> Upfront Pricing</h3>
+        <p>No surprises—know the cost before work begins.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-shield-alt" style="color: var(--secondary);"></i> 2‑Year Warranty</h3>
+        <p>All our work is backed by a comprehensive warranty.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-bolt" style="color: var(--secondary);"></i> 24/7 Emergency</h3>
+        <p>Emergency electrical services available around the clock.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Services section -->
+  <section class="section" id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3><i class="fas fa-cogs" style="color: var(--secondary);"></i> Panel Upgrades</h3>
+        <p>Modernize your electrical panel to meet today’s power demands.</p>
+        <a href="services/panel-upgrades.html" class="button">Learn More</a>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-charging-station" style="color: var(--secondary);"></i> EV Chargers</h3>
+        <p>Residential and commercial EV charger installations done right.</p>
+        <a href="services/ev-chargers.html" class="button">Learn More</a>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-lightbulb" style="color: var(--secondary);"></i> Lighting & Fixtures</h3>
+        <p>Indoor and outdoor lighting solutions to brighten your space.</p>
+        <a href="services/lighting.html" class="button">Learn More</a>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-generator" style="color: var(--secondary);"></i> Generator Installations</h3>
+        <p>Keep your home or business powered during outages with reliable backup power.</p>
+        <a href="services/generator-installations.html" class="button">Learn More</a>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-solar-panel" style="color: var(--secondary);"></i> Energy Consulting</h3>
+        <p>Expert guidance to integrate renewable energy solutions and save on utility costs.</p>
+        <a href="services/energy-consulting.html" class="button">Learn More</a>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-bolt-lightning" style="color: var(--secondary);"></i> Surge Protection</h3>
+        <p>Whole‑home surge protection to safeguard your appliances and electronics.</p>
+        <a href="services/surge-protection.html" class="button">Learn More</a>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials section -->
+  <section class="section" id="testimonials">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonial">
+      <p>“Top Tier Electrical arrived on time and completed the job efficiently. I’m very happy with their service!”</p>
+      <div class="author">— Sarah H., Holland</div>
+    </div>
+    <div class="testimonial">
+      <p>“Professional, courteous, and transparent about pricing. Highly recommended.”</p>
+      <div class="author">— Jason M., Grand Rapids</div>
+    </div>
+    <div class="testimonial">
+      <p>“I needed an EV charger installed. The team did an excellent job. Now my car charges perfectly at home.”</p>
+      <div class="author">— Amanda R., Kalamazoo</div>
+    </div>
+    <a href="testimonials.html" class="button">Read More Reviews</a>
+  </section>
+  <!-- Contact call to action -->
+  <section class="section" id="call-to-action" style="text-align: center; background-color: var(--secondary); color: var(--light-text);">
+    <h2>Need Electrical Service?</h2>
+    <p>Call us at <a href="tel:16166111111" style="color: #ffffff; text-decoration: underline;">(616) 611‑1111</a> or email <a href="mailto:info@toptier-electrical.com" style="color: #ffffff; text-decoration: underline;">info@toptier-electrical.com</a> for immediate assistance.</p>
+    <a href="contact.html" class="button" style="margin-top: 1rem;">Schedule Service</a>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Top Tier Electrical. All rights reserved.</p>
+    <p>MI License #123456 | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+  <!-- Mobile menu script -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+    });
+  </script>
+  <!-- Structured data for local business with placeholder reviews -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Top Tier Electrical",
+    "image": "images/hero.png",
     "description": "Trusted electrician providing residential and commercial electrical services across West Michigan.",
     "url": "https://www.toptier-electrical.com",
     "telephone": "+16166111111",
+    "email": "info@toptier-electrical.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Holland",
+      "addressRegion": "MI",
+      "postalCode": "49423",
+      "addressCountry": "US"
+    },
     "areaServed": {
       "@type": "GeoCircle",
       "name": "West Michigan",
@@ -37,164 +171,44 @@
         "latitude": 42.7875,
         "longitude": -86.1089
       },
-      "geoRadius": 50
+      "geoRadius": 80
     },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Holland",
-      "addressRegion": "MI",
-      "postalCode": "49423",
-      "addressCountry": "US"
+    "openingHours": [
+      "Mo-Fr 08:00-18:00",
+      "Sa 09:00-13:00"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "27"
     },
-    "openingHours": ["Mo-Fr 08:00-18:00", "Sa 09:00-13:00"]
+    "review": [
+      {
+        "@type": "Review",
+        "author": "Sarah H.",
+        "datePublished": "2025-08-20",
+        "reviewBody": "Top Tier Electrical arrived on time and completed the job efficiently. I’m very happy with their service!",
+        "reviewRating": {
+          "@type": "Rating",
+          "bestRating": "5",
+          "ratingValue": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": "Jason M.",
+        "datePublished": "2025-09-05",
+        "reviewBody": "Professional, courteous, and transparent about pricing. Highly recommended.",
+        "reviewRating": {
+          "@type": "Rating",
+          "bestRating": "5",
+          "ratingValue": "5",
+          "worstRating": "1"
+        }
+      }
+    ]
   }
   </script>
-</head>
-<body>
-  <header>
-    <div class="logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo"></div>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav id="main-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Free Estimate</a></li>
-        <!-- New booking link -->
-        <li><a href="booking.html">Book</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="financing.html">Financing</a></li>
-        <li><a href="emergency.html">Emergency</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="service-areas.html">Service Areas</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Your Trusted Electrician</h1>
-        <p>Providing reliable electrical solutions for homes and businesses across West Michigan.</p>
-        <a href="contact.html" class="btn-primary">Request Service</a>
-      </div>
-    </section>
-    <!-- Trust signals section -->
-    <section class="trust-section">
-      <div class="container">
-        <h2>Our Promise</h2>
-        <div class="trust-grid">
-          <div class="trust-item">
-            <div class="trust-icon">✔️</div>
-            <h3>Licensed &amp; Insured</h3>
-            <p>We carry the proper licensing and insurance, so you can feel safe and confident about our work.</p>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon">🏆</div>
-            <h3>Experienced Pros</h3>
-            <p>With decades of combined experience, our electricians handle jobs of all sizes with skill.</p>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon">⭐</div>
-            <h3>5‑Star Reputation</h3>
-            <p>Hundreds of West Michigan homeowners and businesses trust us and rate us highly.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="values">
-      <div class="container">
-        <h2>Why Choose Us</h2>
-        <div class="value-grid">
-          <div class="value-item">
-            <div class="icon">⏰</div>
-            <h3>On‑Time Arrival</h3>
-            <p>We respect your time and arrive when we say we will.</p>
-          </div>
-          <div class="value-item">
-            <div class="icon">💬</div>
-            <h3>Upfront Pricing</h3>
-            <p>No surprises—know the cost before work begins.</p>
-          </div>
-          <div class="value-item">
-            <div class="icon">🔒</div>
-            <h3>2‑Year Warranty</h3>
-            <p>All our work is backed by a comprehensive warranty.</p>
-          </div>
-          <div class="value-item">
-            <div class="icon">⚡</div>
-            <h3>24/7 Emergency</h3>
-            <p>Emergency electrical services available around the clock.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="services">
-      <div class="container">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-          <div class="service-card">
-            <div class="icon">⚙️</div>
-            <h3>Panel Upgrades</h3>
-            <p>Modernize your electrical panel to meet today’s power demands.</p>
-            <a href="services.html#panel-upgrades">Learn more</a>
-          </div>
-          <div class="service-card">
-            <div class="icon">🔌</div>
-            <h3>EV Chargers</h3>
-            <p>Residential and commercial EV charger installations done right.</p>
-            <a href="services.html#ev-chargers">Learn more</a>
-          </div>
-          <div class="service-card">
-            <div class="icon">💡</div>
-            <h3>Lighting &amp; Fixtures</h3>
-            <p>Indoor and outdoor lighting solutions to brighten your space.</p>
-            <a href="services.html#lighting">Learn more</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="estimate">
-      <div class="container">
-        <h2>Get a Free Estimate</h2>
-        <p>Contact us today for a no-obligation quote on your project.</p>
-        <a href="contact.html" class="btn-primary">Request Estimate</a>
-      </div>
-    </section>
-
-    <!-- Call to action section -->
-    <section class="cta-section">
-      <h2>Need Electrical Service?</h2>
-      <p>Call us at <a href="tel:+16166111111">(616) 611‑1111</a> or email <a href="mailto:info@toptier-electrical.com">info@toptier-electrical.com</a> for immediate assistance.</p>
-      <a href="booking.html" class="btn-primary">Schedule Service</a>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo"></div>
-    <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
-  <!-- Crisp Chat widget (uncomment and set your website ID to enable)
-  <script type="text/javascript">
-  window.$crisp=[];window.CRISP_WEBSITE_ID="YOUR_ID_HERE";
-  (function(){
-    var d=document;var s=d.createElement("script");
-    s.src="https://client.crisp.chat/l.js";
-    s.async=1;
-    d.getElementsByTagName("head")[0].appendChild(s);
-  })();
-  </script>
-  -->
 </body>
 </html>

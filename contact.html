@@ -1,112 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Contact | Top Tier Electrical</title>
-  <!-- SEO meta tags -->
-  <meta name="description" content="Get in touch with Top Tier Electrical in West Michigan. Call, email or use our contact form to request service or schedule an estimate.">
-  <meta name="keywords" content="contact electrician, West Michigan electrical services, electrician phone number, email, emergency electrician">
-  <meta name="author" content="Top Tier Electrical">
-  <!-- Open Graph / Social meta -->
-  <meta property="og:title" content="Contact | Top Tier Electrical">
-  <meta property="og:description" content="We’re here to help with all your electrical needs—reach out by phone, email or contact form for a prompt response.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/hero.jpg">
-  <meta property="og:url" content="https://www.toptier-electrical.com/contact.html">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://www.toptier-electrical.com/contact.html">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with Top Tier Electrical. Contact us for electrical services or request a free estimate." />
+  <title>Contact Us | Top Tier Electrical</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header>
-    <div class="logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo"></div>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav id="main-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Free Estimate</a></li>
-        <!-- New booking link -->
-        <li><a href="booking.html">Book</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="financing.html">Financing</a></li>
-        <li><a href="emergency.html">Emergency</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="service-areas.html">Service Areas</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header-container">
+      <div class="logo">Top Tier Electrical</div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services/panel-upgrades.html">Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="button" style="background-color: var(--secondary);">Contact</a>
+      </nav>
+    </div>
   </header>
-  <main>
-    <section class="hero" style="background-image:url('assets/images/hero.jpg');">
-      <div class="hero-content">
-        <h1>Contact Us</h1>
-        <p>We’re here to help with all your electrical needs—get in touch today.</p>
+  <section class="section">
+    <h1 class="section-title">Contact Us</h1>
+    <p>We look forward to hearing from you! Call us, send an email or use the contact form below to request service or a free estimate.</p>
+    <br />
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+      <div style="flex: 1 1 300px; max-width: 500px;">
+        <h2 style="color: var(--primary);">Contact Details</h2>
+        <p><strong>Phone:</strong> <a href="tel:16166111111">(616) 611‑1111</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@toptier-electrical.com">info@toptier-electrical.com</a></p>
+        <p><strong>Address:</strong> 123 Main Street, Holland, MI 49423</p>
+        <p><strong>Service Area:</strong> West Michigan (Holland, Grand Rapids, Kalamazoo, Muskegon & surrounding communities)</p>
+        <p><strong>Hours:</strong> Monday–Friday 8:00 AM–6:00 PM, Saturday 9:00 AM–1:00 PM, 24/7 emergency service</p>
       </div>
-    </section>
-    <section class="contact-page">
-      <div class="container">
-        <h2>Get in Touch</h2>
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h3>Contact Details</h3>
-            <p><strong>Phone:</strong> <a href="tel:+16166111111">(616) 611‑1111</a></p>
-            <p><strong>Email:</strong> <a href="mailto:info@toptier-electrical.com">info@toptier-electrical.com</a></p>
-            <p><strong>Service Area:</strong> Holland, Grand Rapids, &amp; West Michigan</p>
-            <p><strong>Hours:</strong> Mon–Fri 8am–6pm, Sat 9am–1pm, 24/7 emergency</p>
-          </div>
-          <div class="contact-form">
-            <h3>Send a Message</h3>
-            <p>If you’d like to pick a specific date and time, please use our <a href="booking.html">online booking form</a>.</p>
-            <form name="contact" method="POST" data-netlify="true">
-              <input type="hidden" name="form-name" value="contact">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required></textarea>
-              <button type="submit">Send Message</button>
-            </form>
-        </div>
-        </div>
+      <div style="flex: 1 1 300px; max-width: 500px;">
+        <h2 style="color: var(--primary);">Request Service</h2>
+        <form method="POST" action="mailto:info@toptier-electrical.com" enctype="text/plain" style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <label for="name">Name*</label>
+          <input type="text" id="name" name="Name" required style="padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;" />
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="Email" required style="padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;" />
+          <label for="phone">Phone*</label>
+          <input type="tel" id="phone" name="Phone" required style="padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;" />
+          <label for="service">Service Type*</label>
+          <select id="service" name="Service" required style="padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;">
+            <option value="Panel Upgrades">Panel Upgrades</option>
+            <option value="EV Chargers">EV Chargers</option>
+            <option value="Lighting & Fixtures">Lighting & Fixtures</option>
+            <option value="Generator Installation">Generator Installation</option>
+            <option value="Energy Consulting">Energy Consulting</option>
+            <option value="Surge Protection">Surge Protection</option>
+            <option value="Other">Other</option>
+          </select>
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="Preferred Date" style="padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;" />
+          <label for="time">Preferred Time</label>
+          <input type="time" id="time" name="Preferred Time" style="padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;" />
+          <label for="message">Additional Details</label>
+          <textarea id="message" name="Message" rows="4" style="padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 4px;"></textarea>
+          <button type="submit" class="button" style="max-width: 200px;">Submit Request</button>
+        </form>
       </div>
-      <!-- Embedded map showing our service area -->
-      <div class="map">
-        <iframe title="Service area map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.8522097766887!2d-86.10893358459578!3d42.7875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819d2a2879d1543%3A0x3a5e2b1a811d873d!2sHolland%2C%20MI%2049423%2C%20USA!5e0!3m2!1sen!2sus!4v1692300000000!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
-    <!-- Call to action section -->
-    <section class="cta-section">
-      <h2>Need Immediate Assistance?</h2>
-      <p>Call us at <a href="tel:+16166111111">(616) 611‑1111</a> or email <a href="mailto:info@toptier-electrical.com">info@toptier-electrical.com</a>—we’re here to help.</p>
-      <a href="booking.html" class="btn-primary">Schedule Service</a>
-    </section>
-  </main>
+    </div>
+  </section>
   <footer>
-    <div class="footer-logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo"></div>
-    <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
+    <p>© 2025 Top Tier Electrical. All rights reserved.</p>
+    <p>MI License #123456 | <a href="privacy.html">Privacy Policy</a></p>
   </footer>
-  <script src="script.js"></script>
-  <!-- Crisp Chat widget (uncomment and set your website ID to enable)
-  <script type="text/javascript">
-  window.$crisp=[];window.CRISP_WEBSITE_ID="YOUR_ID_HERE";
-  (function(){
-    var d=document;var s=d.createElement("script");
-    s.src="https://client.crisp.chat/l.js";
-    s.async=1;
-    d.getElementsByTagName("head")[0].appendChild(s);
-  })();
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+    });
   </script>
-  -->
 </body>
 </html>
