@@ -1,48 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Read articles and tips from Top Tier Electrical on electrical safety, efficiency and new technology." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Blog | Top Tier Electrical</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- SEO meta tags -->
+  <meta name="description" content="Read tips and insights from Top Tier Electrical on electrical safety, choosing an electrician, EV chargers and more.">
+  <meta name="keywords" content="electrician blog, electrical safety tips, choose electrician, EV charger install blog, lighting advice, West Michigan">
+  <meta name="author" content="Top Tier Electrical">
+  <!-- Open Graph / Social meta -->
+  <meta property="og:title" content="Blog | Top Tier Electrical">
+  <meta property="og:description" content="Insights, tips and news from your trusted West Michigan electrician.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/projects/led-handrail.jpg">
+  <meta property="og:url" content="https://www.toptier-electrical.com/blog.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.toptier-electrical.com/blog.html">
+  <!-- Preload the hero image to improve perceived performance -->
+  <link rel="preload" as="image" href="assets/images/hero.webp">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Accessible skip link: allows keyboard users to jump directly to the main content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
-    <div class="header-container">
-      <div class="logo">Top Tier Electrical</div>
-      <div class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <nav id="mainNav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services/panel-upgrades.html">Services</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="blog.html" class="button" style="background-color: var(--secondary);">Blog</a>
-        <a href="contact.html" class="button">Request Service</a>
-      </nav>
+    <div class="logo">Top Tier Electrical</div>
+    <div class="menu-toggle" aria-label="Toggle navigation" aria-controls="mainNav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+    <nav id="mainNav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="booking.html">Book</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="financing.html">Financing</a></li>
+        <li><a href="emergency.html">Emergency</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="service-areas.html">Service Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-  <section class="section">
-    <h1 class="section-title">Knowledge Centre</h1>
-    <p>We’re working on insightful articles to help you make informed decisions about your electrical systems.  Check back soon for safety tips, energy‑saving advice and news about emerging technologies.</p>
-    <br />
-    <p>If you have a topic you’d like us to cover, feel free to <a href="contact.html">contact us</a>.</p>
-  </section>
+  <main id="main-content">
+    <section class="hero" style="background-image:url('assets/images/projects/led-handrail.jpg');">
+      <div class="hero-content">
+        <h1>Blog &amp; Resources</h1>
+        <p>Insights, tips and news from your local electrician.</p>
+      </div>
+    </section>
+    <section class="blog-list">
+      <div class="container">
+        <h2>Latest Articles</h2>
+        <div class="blog-grid">
+          <!-- Electrical safety article -->
+          <article class="blog-card">
+            <img src="assets/images/projects/kitchen-led.jpg" alt="Electrical safety tips for your home" loading="lazy">
+            <h3><a href="blog-electrical-safety.html">Electrical Safety Tips for Your Home</a></h3>
+            <p>Simple steps to prevent hazards and keep your family safe.</p>
+            <a href="blog-electrical-safety.html" class="read-more">Read more &rarr;</a>
+          </article>
+          <!-- Choosing the right electrician article -->
+          <article class="blog-card">
+            <img src="assets/images/projects/control-cabinet.jpg" alt="Choosing a residential electrician" loading="lazy">
+            <h3><a href="blog-right-electrician.html">Choosing the Right Electrician</a></h3>
+            <p>What to look for when hiring an electrical professional.</p>
+            <a href="blog-right-electrician.html" class="read-more">Read more &rarr;</a>
+          </article>
+          <!-- EV charging article -->
+        <article class="blog-card">
+            <img src="assets/images/projects/myenergi-4SyUf9MvWjU-unsplash.jpg" alt="EV home charging guide" loading="lazy">
+            <h3><a href="blog-ev-charging.html">EV Charging at Home</a></h3>
+            <p>Your personal guide to powering up at home with Level 1 and Level 2 EV chargers.</p>
+            <a href="blog-ev-charging.html" class="read-more">Read more &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- Call to action section -->
+    <section class="cta-section">
+      <h2>Need Electrical Service?</h2>
+      <p>Call us at <a href="tel:+16166111111">(616) 611‑1111</a> or email <a href="mailto:info@toptier-electrical.com">info@toptier-electrical.com</a> for immediate assistance.</p>
+      <a href="booking.html" class="btn-primary">Schedule Service</a>
+    </section>
+  </main>
+  <!-- Sticky contact bar shown on all pages -->
+  <div class="sticky-bar">
+    <a href="tel:+16166111111">Call</a>
+    <a href="booking.html" class="btn">Schedule Service</a>
+  </div>
   <footer>
-    <p>© 2025 Top Tier Electrical. All rights reserved.</p>
-    <p>MI License #123456 | <a href="privacy.html">Privacy Policy</a></p>
+    <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
   </footer>
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mainNav = document.getElementById('mainNav');
-    menuToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('active');
-    });
+  <script src="script.js"></script>
+  <!-- Crisp Chat widget (uncomment and set your website ID to enable)
+  <script type="text/javascript">
+  window.$crisp=[];window.CRISP_WEBSITE_ID="YOUR_ID_HERE";
+  (function(){
+    var d=document;var s=d.createElement("script");
+    s.src="https://client.crisp.chat/l.js";
+    s.async=1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+  })();
   </script>
+  -->
+  <!-- Google Analytics placeholder (replace G-XXXXXXXXXX with your GA ID) -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
 </body>
 </html>
