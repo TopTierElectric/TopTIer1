@@ -242,6 +242,24 @@ header nav a:focus {
   margin-bottom: 2rem;
 }
 
+.hero-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.hero-form input {
+  flex: 1 1 150px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hero-form button {
+  flex: 0 0 auto;
+}
+
 .btn-primary {
   display: inline-block;
   background: var(--secondary);
