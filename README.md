@@ -36,3 +36,5 @@ When creating a new GitHub repository, extract this ZIP and commit all files.  T
 ## Analytics & Security
 
 The HTML pages include a commented‑out Google Analytics snippet near the bottom. To enable tracking, replace `G-XXXXXXXXXX` with your actual GA ID and uncomment the code.  All pages use relative links and include canonical URLs; be sure to update these URLs to match your production domain.  Hosting on a platform with HTTPS enabled (e.g. Netlify, GitHub Pages) is strongly recommended to ensure visitor security and trust.
+
+All merge conflict markers have been removed and contact details standardized.

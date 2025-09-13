@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow">
   <title>Emergency Electrical Services | Top Tier Electrical</title>
   <!-- SEO meta tags -->
   <meta name="description" content="24/7 emergency electrical services for Holland, Grand Rapids and West Michigan residents and businesses.">
@@ -13,16 +14,42 @@
   <meta property="og:title" content="Emergency Electrical Services | Top Tier Electrical">
   <meta property="og:description" content="Learn what to do in an electrical emergency and call our 24/7 emergency hotline for immediate assistance.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/hero.jpg">
-  <meta property="og:url" content="https://www.toptier-electrical.com/emergency.html">
+  <meta property="og:image" content="https://toptierelectrical.netlify.app/assets/images/hero.jpg">
+  <meta property="og:url" content="https://toptierelectrical.netlify.app/emergency.html">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://www.toptier-electrical.com/emergency.html">
+  <link rel="canonical" href="https://toptierelectrical.netlify.app/emergency.html">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+ "@context":"https://schema.org",
+ "@type":"Electrician",
+ "name":"Top Tier Electrical",
+ "url":"https://toptierelectrical.netlify.app/",
+ "telephone":"+16163347159",
+ "email":"toptierelectric117@gmail.com",
+ "address":{"@type":"PostalAddress","addressLocality":"Allegan","addressRegion":"MI","postalCode":"49010","addressCountry":"US"},
+ "areaServed":{"@type":"GeoCircle","name":"West Michigan",
+   "geoMidpoint":{"@type":"GeoCoordinates","latitude":42.5295,"longitude":-85.8553},
+   "geoRadius":80000},
+ "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],
+ "priceRange":"$$",
+ "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"100"}
+ }
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Do I need a panel upgrade for an EV charger?","acceptedAnswer":{"@type":"Answer","text":"We perform a load calculation; if capacity is tight we recommend a safe alternative or upgrade."}}, 
+  {"@type":"Question","name":"Do you pull permits?","acceptedAnswer":{"@type":"Answer","text":"Yes. We handle permitting, inspections, and labeling to meet code."}},
+  {"@type":"Question","name":"Do you offer emergency help?","acceptedAnswer":{"@type":"Answer","text":"Yes—call (616) 334‑7159 for urgent issues."}}
+  ]}
+  </script>
 </head>
 <body>
   <header>
-    <div class="logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo"></div>
+    <div class="logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
       <span></span>
       <span></span>
@@ -56,7 +83,7 @@
     <!-- Call to action section -->
     <section class="cta-section">
       <h2>Need Help with an Emergency?</h2>
-      <p>Call our 24/7 hotline at <a href="tel:+16166111111">(616) 611‑1111</a> for immediate assistance, or schedule non‑emergency service online.</p>
+      <p>Call our 24/7 hotline at <a href="tel:+16163347159">(616) 334‑7159</a> for immediate assistance, or schedule non‑emergency service online.</p>
       <a href="booking.html" class="btn-primary">Schedule Non‑Emergency</a>
     </section>
     <section class="info-section">
@@ -72,12 +99,17 @@
         </ul>
         <h3>24/7 Response</h3>
         <p>Our licensed electricians are on call around the clock to respond to emergencies. We aim to arrive promptly and resolve issues safely so you can get back to normal. Please do not attempt to troubleshoot dangerous electrical problems yourself.</p>
-        <p><strong>Emergency Hotline:</strong> <a href="tel:+16166111111">(616) 611‑1111</a></p>
+        <p><strong>Emergency Hotline:</strong> <a href="tel:+16163347159">(616) 334‑7159</a></p>
       </div>
     </section>
   </main>
+  <div class="sticky-bar">
+    <a href="tel:+16163347159">Call</a>
+    <a href="booking.html" class="btn">Schedule Service</a>
+  </div>
   <footer>
-    <div class="footer-logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo"></div>
+    <div class="footer-logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
+    <p>MI License #631210 • All work backed by a 2-year warranty.</p>
     <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
   </footer>
   <script src="script.js"></script>

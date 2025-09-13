@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow">
   <title>Top Tier Electrical | Trusted Electrician in West Michigan</title>
   <!-- SEO meta tags -->
   <meta name="description" content="Top Tier Electrical provides reliable residential and commercial electrical services across West Michigan including panel upgrades, EV charger installations, and lighting solutions.">
@@ -13,46 +14,43 @@
   <meta property="og:title" content="Top Tier Electrical | Trusted Electrician in West Michigan">
   <meta property="og:description" content="Providing dependable electrical solutions for homes and businesses across West Michigan.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/hero.jpg">
-  <meta property="og:url" content="https://www.toptier-electrical.com/">
+  <meta property="og:image" content="https://toptierelectrical.netlify.app/assets/images/hero.jpg">
+  <meta property="og:url" content="https://toptierelectrical.netlify.app/">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://www.toptier-electrical.com/">
+  <link rel="canonical" href="https://toptierelectrical.netlify.app/">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 
-  <!-- Structured data for LocalBusiness -->
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Top Tier Electrical",
-    "description": "Trusted electrician providing residential and commercial electrical services across West Michigan.",
-    "url": "https://www.toptier-electrical.com",
-    "telephone": "+16166111111",
-    "areaServed": {
-      "@type": "GeoCircle",
-      "name": "West Michigan",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 42.7875,
-        "longitude": -86.1089
-      },
-      "geoRadius": 50
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Holland",
-      "addressRegion": "MI",
-      "postalCode": "49423",
-      "addressCountry": "US"
-    },
-    "openingHours": ["Mo-Fr 08:00-18:00", "Sa 09:00-13:00"]
-  }
+ "@context":"https://schema.org",
+ "@type":"Electrician",
+ "name":"Top Tier Electrical",
+ "url":"https://toptierelectrical.netlify.app/",
+ "telephone":"+16163347159",
+ "email":"toptierelectric117@gmail.com",
+ "address":{"@type":"PostalAddress","addressLocality":"Allegan","addressRegion":"MI","postalCode":"49010","addressCountry":"US"},
+ "areaServed":{"@type":"GeoCircle","name":"West Michigan",
+   "geoMidpoint":{"@type":"GeoCoordinates","latitude":42.5295,"longitude":-85.8553},
+   "geoRadius":80000},
+ "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],
+ "priceRange":"$$",
+ "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"100"}
+ }
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Do I need a panel upgrade for an EV charger?","acceptedAnswer":{"@type":"Answer","text":"We perform a load calculation; if capacity is tight we recommend a safe alternative or upgrade."}},
+  {"@type":"Question","name":"Do you pull permits?","acceptedAnswer":{"@type":"Answer","text":"Yes. We handle permitting, inspections, and labeling to meet code."}},
+  {"@type":"Question","name":"Do you offer emergency help?","acceptedAnswer":{"@type":"Answer","text":"Yes—call (616) 334‑7159 for urgent issues."}}
+  ]}
   </script>
 </head>
 <body>
   <header>
-    <div class="logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo"></div>
+    <div class="logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
       <span></span>
       <span></span>
@@ -82,7 +80,12 @@
       <div class="hero-content">
         <h1>Your Trusted Electrician</h1>
         <p>Providing reliable electrical solutions for homes and businesses across West Michigan.</p>
-        <a href="contact.html" class="btn-primary">Request Service</a>
+        <form class="hero-form" name="hero-contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="hero-contact">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <button type="submit" class="btn-primary">Request Service</button>
+        </form>
       </div>
     </section>
     <!-- Trust signals section -->
@@ -137,31 +140,74 @@
       </div>
     </section>
 
+
     <section class="services">
       <div class="container">
         <h2>Our Services</h2>
         <div class="service-grid">
-          <div class="service-card">
-            <div class="icon">⚙️</div>
-            <h3>Panel Upgrades</h3>
-            <p>Modernize your electrical panel to meet today’s power demands.</p>
-            <a href="services.html#panel-upgrades">Learn more</a>
-          </div>
-          <div class="service-card">
-            <div class="icon">🔌</div>
-            <h3>EV Chargers</h3>
-            <p>Residential and commercial EV charger installations done right.</p>
-            <a href="services.html#ev-chargers">Learn more</a>
-          </div>
+        <div class="service-card">
+          <div class="icon">⚙️</div>
+          <h3>Panel Upgrades</h3>
+          <p>Modernize your electrical panel to meet today’s power demands.</p>
+          <p>Typical range <strong>$1,295–$3,495</strong></p>
+          <a href="services.html#panel-upgrades">Learn more</a>
+        </div>
+        <div class="service-card">
+          <div class="icon">🔌</div>
+          <h3>EV Chargers</h3>
+          <p>Residential and commercial EV charger installations done right.</p>
+          <p>Typical range <strong>$495–$895</strong></p>
+          <a href="services.html#ev-chargers">Learn more</a>
+        </div>
           <div class="service-card">
             <div class="icon">💡</div>
             <h3>Lighting &amp; Fixtures</h3>
             <p>Indoor and outdoor lighting solutions to brighten your space.</p>
             <a href="services.html#lighting">Learn more</a>
           </div>
+          <div class="service-card">
+            <div class="icon">🌱</div>
+            <h3>Energy Solutions</h3>
+            <p>Efficiency upgrades that cut energy use and lower monthly bills.</p>
+            <a href="services.html#energy-solutions">Learn more</a>
+          </div>
+          <div class="service-card">
+            <div class="icon">📊</div>
+            <h3>Energy Consulting</h3>
+            <p>Professional audits and guidance to make your property energy smart.</p>
+            <a href="services.html#energy-consulting">Learn more</a>
+          </div>
+          <div class="service-card">
+            <div class="icon">🔋</div>
+            <h3>Generator Sales &amp; Installation</h3>
+            <p>Standby generator systems to keep you powered through any outage.</p>
+            <a href="services.html#generators">Learn more</a>
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <p>“Top Tier Electrical did a fantastic job upgrading our panel. Professional, clean, and on time.”</p>
+            <p class="author">– John D.</p>
+          </div>
+          <div class="testimonial-card">
+            <p>“They installed our EV charger quickly and handled all the permits. Highly recommend!”</p>
+            <p class="author">– Sarah K.</p>
+          </div>
+          <div class="testimonial-card">
+            <p>“Honest pricing and excellent service. We'll call them again for future projects.”</p>
+            <p class="author">– Miguel R.</p>
+          </div>
+        </div>
+        <p style="text-align:center;margin-top:1rem;">Read more <a href="testimonials.html">customer reviews</a>.</p>
+      </div>
+    </section>
+
 
     <section class="estimate">
       <div class="container">
@@ -174,13 +220,17 @@
     <!-- Call to action section -->
     <section class="cta-section">
       <h2>Need Electrical Service?</h2>
-      <p>Call us at <a href="tel:+16166111111">(616) 611‑1111</a> or email <a href="mailto:info@toptier-electrical.com">info@toptier-electrical.com</a> for immediate assistance.</p>
+      <p>Call us at <a href="tel:+16163347159">(616) 334‑7159</a> or email <a href="mailto:toptierelectric117@gmail.com">toptierelectric117@gmail.com</a> for immediate assistance.</p>
       <a href="booking.html" class="btn-primary">Schedule Service</a>
     </section>
   </main>
-
+  <div class="sticky-bar">
+    <a href="tel:+16163347159">Call</a>
+    <a href="booking.html" class="btn">Schedule Service</a>
+  </div>
   <footer>
-    <div class="footer-logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo"></div>
+    <div class="footer-logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
+    <p>MI License #631210 • All work backed by a 2-year warranty.</p>
     <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
   </footer>
 
