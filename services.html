@@ -78,6 +78,12 @@
       <div class="hero-content">
         <h1>Our Electrical Services</h1>
         <p>Expert solutions for every electrical need—residential, commercial and industrial.</p>
+        <form class="hero-form" name="hero-service" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="hero-service">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <button type="submit" class="btn-primary">Request Service</button>
+        </form>
       </div>
     </section>
     <section class="services">
