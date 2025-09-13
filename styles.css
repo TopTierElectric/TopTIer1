@@ -762,4 +762,24 @@ footer p {
 .cta-section a.btn-primary:focus {
   background: #e05b2b;
   transform: translateY(-2px);
+}/* Sticky mobile call-to-action bar */
+.sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--secondary);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  z-index: 1000;
+}
+.sticky-bar a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .sticky-bar { display: none; }
 }

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow">
   <title>Blog | Top Tier Electrical</title>
   <!-- SEO meta tags -->
   <meta name="description" content="Read tips and insights from Top Tier Electrical on electrical safety, choosing an electrician, EV chargers and more.">
@@ -14,12 +15,38 @@
   <meta property="og:description" content="Insights, tips and news from your trusted West Michigan electrician.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/projects/led-handrail.jpg">
-  <meta property="og:url" content="https://www.toptier-electrical.com/blog.html">
+  <meta property="og:url" content="https://toptierelectrical.netlify.app/blog.html">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://www.toptier-electrical.com/blog.html">
+  <link rel="canonical" href="https://toptierelectrical.netlify.app/blog.html">
   <!-- Preload the hero image to improve perceived performance -->
   <link rel="preload" as="image" href="assets/images/hero.webp">
   <link rel="stylesheet" href="styles.css">
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+ "@context":"https://schema.org",
+ "@type":"Electrician",
+ "name":"Top Tier Electrical",
+ "url":"https://toptierelectrical.netlify.app/",
+ "telephone":"+16163347159",
+ "email":"toptierelectric117@gmail.com",
+ "address":{"@type":"PostalAddress","addressLocality":"Allegan","addressRegion":"MI","postalCode":"49010","addressCountry":"US"},
+ "areaServed":{"@type":"GeoCircle","name":"West Michigan",
+   "geoMidpoint":{"@type":"GeoCoordinates","latitude":42.5295,"longitude":-85.8553},
+   "geoRadius":80000},
+ "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],
+ "priceRange":"$$",
+ "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"100"}
+ }
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Do I need a panel upgrade for an EV charger?","acceptedAnswer":{"@type":"Answer","text":"We perform a load calculation; if capacity is tight we recommend a safe alternative or upgrade."}}, 
+  {"@type":"Question","name":"Do you pull permits?","acceptedAnswer":{"@type":"Answer","text":"Yes. We handle permitting, inspections, and labeling to meet code."}},
+  {"@type":"Question","name":"Do you offer emergency help?","acceptedAnswer":{"@type":"Answer","text":"Yes—call (616) 334‑7159 for urgent issues."}}
+  ]}
+  </script>
 </head>
 <body>
   <!-- Accessible skip link: allows keyboard users to jump directly to the main content -->
@@ -95,8 +122,13 @@
     <a href="tel:+16163347159">Call</a>
     <a href="booking.html" class="btn">Schedule Service</a>
   </div>
+ <<<<<<< codex/update-contact-information-and-add-json-ld-r3cw3z
+  <footer>
+    <div class="footer-logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
+ =======
       <footer>
     <div class="footer-logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo"></div>
+ >>>>>>> main
     <p>MI License #631210 • All work backed by a 2-year warranty.</p>
     <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
   </footer>
