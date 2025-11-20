@@ -1,15 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-  <style>
-    .accent { fill: #ea8b30; stroke: #ea8b30; }
-    .primary { fill: #051923; }
-    .white { fill: #ffffff; }
-  </style>
-  <circle cx="200" cy="200" r="190" fill="none" class="accent" stroke-width="10"/>
-  <line x1="60" x2="340" y1="150" y2="150" class="accent" stroke-width="8"/>
-  <line x1="60" x2="340" y1="170" y2="170" class="accent" stroke-width="8"/>
-  <polygon points="130,40 180,140 150,140 280,240 80,110 160,60" class="accent"/>
-  <text x="220" y="220" text-anchor="start" class="primary" font-size="48" font-weight="bold" font-family="Arial, sans-serif">TOP TIER</text>
-  <rect x="220" y="240" width="180" height="40" class="accent"/>
-  <text x="220" y="268" text-anchor="start" class="white" font-size="24" font-weight="bold" font-family="Arial, sans-serif">ELECTRICAL</text>
-  <text x="220" y="320" text-anchor="start" class="primary" font-size="16" font-weight="bold" font-family="Arial, sans-serif">WHERE QUALITY MEETS CARE.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Top Tier Electrical logo</title>
+  <desc id="logoDesc">Gold circular badge with lightning bolt, Top Tier Electrical text, and the motto Where quality meets care.</desc>
+  <defs>
+    <style>
+      .gold { fill: #c59b2b; stroke: #c59b2b; }
+      .gold-stroke { stroke: #c59b2b; fill: none; }
+      .gold-text { fill: #c59b2b; font-family: "Montserrat", "Arial Black", sans-serif; }
+    </style>
+  </defs>
+  <circle cx="200" cy="200" r="180" class="gold-stroke" stroke-width="12"/>
+  <circle cx="200" cy="200" r="145" class="gold-stroke" stroke-width="6" stroke-dasharray="12 16"/>
+  <line x1="95" y1="155" x2="305" y2="155" class="gold" stroke-width="8" stroke-linecap="round"/>
+  <line x1="115" y1="175" x2="285" y2="175" class="gold" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="205,42 170,135 205,135 175,225 255,140 225,140" class="gold"/>
+  <text x="200" y="215" text-anchor="middle" class="gold-text" font-size="52" font-weight="800" letter-spacing="2">TOP TIER</text>
+  <rect x="85" y="233" width="230" height="40" rx="6" class="gold" fill-opacity="0.12" stroke-width="3"/>
+  <text x="200" y="262" text-anchor="middle" class="gold-text" font-size="26" font-weight="800" letter-spacing="3">ELECTRICAL</text>
+  <text x="200" y="310" text-anchor="middle" class="gold-text" font-size="16" font-weight="700" letter-spacing="1">WHERE QUALITY MEETS CARE.</text>
+  <path d="M90 270 A110 110 0 0 0 310 270" class="gold-stroke" stroke-width="6" fill="none"/>
+  <g class="gold">
+    <polygon points="60,280 75,320 90,280"/>
+    <polygon points="90,280 105,320 120,280"/>
+    <polygon points="120,280 135,320 150,280"/>
+    <polygon points="150,280 165,320 180,280"/>
+    <polygon points="180,280 195,320 210,280"/>
+    <polygon points="210,280 225,320 240,280"/>
+    <polygon points="240,280 255,320 270,280"/>
+    <polygon points="270,280 285,320 300,280"/>
+    <polygon points="300,280 315,320 330,280"/>
+  </g>
 </svg>
