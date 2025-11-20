@@ -82,8 +82,10 @@
         <p>Providing reliable electrical solutions for homes and businesses across West Michigan.</p>
         <form class="hero-form" name="hero-contact" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="hero-contact">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
+          <label class="sr-only" for="hero-name">Name</label>
+          <input type="text" id="hero-name" name="name" placeholder="Name" required>
+          <label class="sr-only" for="hero-email">Email</label>
+          <input type="email" id="hero-email" name="email" placeholder="Email" required>
           <button type="submit" class="btn-primary">Request Service</button>
         </form>
       </div>
