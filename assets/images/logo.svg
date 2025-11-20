@@ -1,15 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-  <style>
-    .accent { fill: #ea8b30; stroke: #ea8b30; }
-    .primary { fill: #051923; }
-    .white { fill: #ffffff; }
-  </style>
-  <circle cx="200" cy="200" r="190" fill="none" class="accent" stroke-width="10"/>
-  <line x1="60" x2="340" y1="150" y2="150" class="accent" stroke-width="8"/>
-  <line x1="60" x2="340" y1="170" y2="170" class="accent" stroke-width="8"/>
-  <polygon points="130,40 180,140 150,140 280,240 80,110 160,60" class="accent"/>
-  <text x="220" y="220" text-anchor="start" class="primary" font-size="48" font-weight="bold" font-family="Arial, sans-serif">TOP TIER</text>
-  <rect x="220" y="240" width="180" height="40" class="accent"/>
-  <text x="220" y="268" text-anchor="start" class="white" font-size="24" font-weight="bold" font-family="Arial, sans-serif">ELECTRICAL</text>
-  <text x="220" y="320" text-anchor="start" class="primary" font-size="16" font-weight="bold" font-family="Arial, sans-serif">WHERE QUALITY MEETS CARE.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Top Tier Electrical logo</title>
+  <desc id="logoDesc">Gold and black circular badge with a lightning bolt above a banner that reads Top Tier Electrical and a curved motto along the bottom.</desc>
+  <defs>
+    <style>
+      .gold-fill { fill: #D4AF37; }
+      .gold-stroke { stroke: #D4AF37; fill: none; }
+      .gold-text { fill: #D4AF37; font-family: "Montserrat", "Arial Black", sans-serif; font-weight: 800; }
+      .serif-text { fill: #0b0b0b; font-family: "Cinzel", "Times New Roman", serif; font-weight: 900; }
+      .sans-text { fill: #0b0b0b; font-family: "Montserrat", "Arial Black", sans-serif; font-weight: 800; letter-spacing: 2px; }
+    </style>
+  </defs>
+
+  <rect width="600" height="600" fill="#0b0b0b" />
+
+  <circle cx="300" cy="300" r="248" class="gold-stroke" stroke-width="16" />
+  <circle cx="300" cy="300" r="226" class="gold-stroke" stroke-width="8" />
+
+  <g class="gold-stroke" stroke-width="10" stroke-linecap="round">
+    <line x1="120" y1="215" x2="210" y2="215" />
+    <line x1="120" y1="235" x2="210" y2="235" />
+    <line x1="120" y1="255" x2="210" y2="255" />
+    <line x1="390" y1="215" x2="480" y2="215" />
+    <line x1="390" y1="235" x2="480" y2="235" />
+    <line x1="390" y1="255" x2="480" y2="255" />
+  </g>
+
+  <path d="M330 70 L270 210 H335 L280 330 L360 230 H305 Z" class="gold-fill" />
+
+  <rect x="110" y="210" width="380" height="140" rx="6" class="gold-fill" stroke="#D4AF37" stroke-width="8" />
+  <text x="300" y="290" text-anchor="middle" class="serif-text" font-size="86" letter-spacing="3">TOP TIER</text>
+  <text x="300" y="345" text-anchor="middle" class="sans-text" font-size="40">ELECTRICAL</text>
+
+  <path d="M97.97 226.47 L135.79 256.00 L88.27 262.67 L130.65 285.18 L85.00 300.00 L130.65 314.82 L88.27 337.33 L135.79 344.00 L97.97 373.53 L145.93 371.85 L113.80 407.50 L160.74 397.51 L135.30 438.20 L179.79 420.21 L161.80 464.70 L202.49 439.26 L192.50 486.20 L228.15 454.07 L226.47 502.03 L256.00 464.21 L262.67 511.73 L285.18 469.35 L300.00 515.00 L314.82 469.35 L337.33 511.73 L344.00 464.21 L373.53 502.03 L371.85 454.07 L407.50 486.20 L397.51 439.26 L438.20 464.70 L420.21 420.21 L464.70 438.20 L439.26 397.51 L486.20 407.50 L454.07 371.85 L502.03 373.53 L464.21 344.00 L511.73 337.33 L469.35 314.82 L515.00 300.00 L469.35 285.18 L511.73 262.67 L464.21 256.00 L502.03 226.47 Z" class="gold-fill" />
+
+  <path id="mottoPath" d="M120 420 A180 180 0 0 0 480 420" fill="none" />
+  <text class="gold-text" font-size="32" letter-spacing="2">
+    <textPath href="#mottoPath" startOffset="50%" text-anchor="middle">WHERE QUALITY MEETS CARE.</textPath>
+  </text>
 </svg>
