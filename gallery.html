@@ -18,6 +18,9 @@
   <meta property="og:url" content="https://toptierelectrical.netlify.app/gallery.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://toptierelectrical.netlify.app/gallery.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
   <!-- Structured data -->
@@ -48,6 +51,7 @@
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
     <div class="logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
@@ -60,7 +64,6 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Free Estimate</a></li>
-        <!-- New booking link -->
         <li><a href="booking.html">Book</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="financing.html">Financing</a></li>
@@ -73,368 +76,220 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <main id="main-content">
     <section class="hero" style="background-image:url('assets/images/hero.jpg');">
       <div class="hero-content">
         <h1>Our Work Gallery</h1>
         <p>A glimpse into recent projects and installations completed across West Michigan.</p>
+        <a href="booking.html" class="btn-primary">Start Your Project</a>
       </div>
     </section>
-    <!-- Call to action section -->
-    <section class="cta-section">
-      <h2>Inspired by Our Work?</h2>
-      <p>Let us help with your next electrical project. Call <a href="tel:+16163347159">(616) 334‑7159</a> or email <a href="mailto:toptierelectric117@gmail.com">toptierelectric117@gmail.com</a> to get started.</p>
-      <a href="booking.html" class="btn-primary">Schedule Service</a>
-    </section>
+
+    <!-- Trust Strip -->
+    <div class="trust-strip">
+      <div class="container">
+        <div class="trust-badges">
+          <span class="badge">&#10004; Licensed &amp; Insured</span>
+          <span class="badge">&#11088; 5-Star Rated</span>
+          <span class="badge">&#128274; 2-Year Warranty</span>
+          <span class="badge">&#127968; Local Family Business</span>
+        </div>
+      </div>
+    </div>
+
     <section class="gallery-page">
       <div class="container">
-        <h2>Project Showcase</h2>
-        <p class="gallery-intro">Explore our portfolio of professional electrical work, from industrial control systems to custom LED lighting installations. Each project demonstrates our commitment to quality, safety, and craftsmanship.</p>
+        <!-- Featured Projects -->
+        <div class="featured-projects">
+          <h3>Featured Projects</h3>
+          <div class="featured-grid">
+            <figure class="gallery-item" data-category="commercial">
+              <img src="assets/images/projects/IMG_8262.jpg" alt="Commercial bar with colorful pendant lights installation" loading="lazy">
+              <figcaption>Commercial Pendant Install</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="residential">
+              <img src="assets/images/projects/IMG_0567.jpg" alt="Residential space with wood ceiling and chandelier lighting" loading="lazy">
+              <figcaption>Custom Chandelier</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="industrial">
+              <img src="assets/images/projects/control-cabinet.jpg" alt="Control cabinet wiring and components" loading="lazy">
+              <figcaption>Industrial Controls</figcaption>
+            </figure>
+          </div>
+        </div>
 
-        <!-- Filter Buttons -->
+        <h2>Project Showcase</h2>
+
+        <!-- Category Filters -->
         <div class="gallery-filters">
           <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="industrial">Industrial</button>
-          <button class="filter-btn" data-filter="lighting">Lighting</button>
           <button class="filter-btn" data-filter="residential">Residential</button>
           <button class="filter-btn" data-filter="commercial">Commercial</button>
+          <button class="filter-btn" data-filter="industrial">Industrial</button>
+          <button class="filter-btn" data-filter="lighting">Lighting</button>
         </div>
 
         <div class="gallery-grid">
+          <!-- Residential Projects -->
+          <figure class="gallery-item" data-category="residential">
+            <img src="assets/images/projects/service-after.jpg" alt="Service upgrade after completion" loading="lazy">
+            <figcaption>Service Upgrade</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="residential">
+            <img src="assets/images/projects/service-upgrade-before.jpg" alt="Service upgrade before work" loading="lazy">
+            <figcaption>Before: Panel Condition</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="residential">
+            <img src="assets/images/projects/barn photo.jpg" alt="Barn interior under construction with wooden beams and pendant lights" loading="lazy">
+            <figcaption>Barn Renovation</figcaption>
+          </figure>
+
           <!-- Industrial Projects -->
-          <div class="gallery-item featured" data-category="industrial">
-            <img src="assets/images/projects/control-cabinet.jpg" alt="Control cabinet wiring and components" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Control Cabinet</h3>
-              <p>Professional control panel wiring</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
-            <img src="assets/images/projects/3-phase-service.jpg" alt="3‑phase service panel" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>3-Phase Service</h3>
-              <p>High-capacity electrical distribution</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
-            <img src="assets/images/projects/480v-3-phase.jpg" alt="480 V three‑phase breakers" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>480V 3-Phase</h3>
-              <p>Heavy-duty breaker installation</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
+          <figure class="gallery-item" data-category="industrial">
+            <img src="assets/images/projects/3-phase-service.jpg" alt="3-phase service panel" loading="lazy">
+            <figcaption>3-Phase Service</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="industrial">
+            <img src="assets/images/projects/480v-3-phase.jpg" alt="480 V three-phase breakers" loading="lazy">
+            <figcaption>480V Distribution</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="industrial">
             <img src="assets/images/projects/conduit.jpg" alt="Metallic conduits neatly aligned" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Conduit Work</h3>
-              <p>Precision conduit alignment</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
+            <figcaption>Conduit Runs</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="industrial">
             <img src="assets/images/projects/conduit-piping.jpg" alt="Conduit piping along an industrial wall" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Conduit Piping</h3>
-              <p>Industrial wall installations</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
+            <figcaption>Industrial Conduit</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="industrial">
             <img src="assets/images/projects/control-work.jpg" alt="Detailed control wiring work" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Control Wiring</h3>
-              <p>Detailed electrical controls</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
+            <figcaption>Control Wiring</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="industrial">
             <img src="assets/images/projects/dust-collector-motor.jpg" alt="Industrial dust collector motor" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Dust Collector Motor</h3>
-              <p>Industrial motor installation</p>
-            </div>
-          </div>
-
-          <div class="gallery-item featured" data-category="industrial">
+            <figcaption>Dust Collector Motor</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="industrial">
             <img src="assets/images/projects/dust-collector-system.jpg" alt="Large dust collector system installation" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Dust Collector System</h3>
-              <p>Complete system wiring</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
+            <figcaption>Dust Collector System</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="industrial">
             <img src="assets/images/projects/motor.jpg" alt="Industrial motor equipment" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Industrial Motor</h3>
-              <p>Heavy equipment electrical</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
+            <figcaption>Motor Installation</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="industrial">
             <img src="assets/images/projects/pipe-rack.jpg" alt="Pipe rack with tidy conduit runs" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Pipe Rack</h3>
-              <p>Organized conduit runs</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
+            <figcaption>Pipe Rack</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="industrial">
             <img src="assets/images/projects/piping.jpg" alt="Curved conduits arranged through framing" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Curved Conduits</h3>
-              <p>Professional piping layout</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
+            <figcaption>Curved Conduit Work</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="industrial">
             <img src="assets/images/projects/selenoids.jpg" alt="Solenoids and small control components" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Control Components</h3>
-              <p>Solenoid & relay systems</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
+            <figcaption>Solenoid Controls</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="industrial">
             <img src="assets/images/projects/transformer.jpg" alt="Electrical transformer installation" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Transformer</h3>
-              <p>Power distribution equipment</p>
-            </div>
-          </div>
-
-          <div class="gallery-item featured" data-category="industrial">
-            <img src="assets/images/projects/gas-station-service.jpg" alt="Gas station electrical service with contactors and relays" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Gas Station Service</h3>
-              <p>Commercial contactor systems</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
-            <img src="assets/images/projects/motor-control.jpg" alt="Eaton motor control panel with surge protection" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Motor Control Panel</h3>
-              <p>Surge protection installation</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="industrial">
-            <img src="assets/images/projects/panel-work.jpg" alt="Commercial electrical distribution panel installation" loading="lazy">
-            <span class="gallery-badge">Industrial</span>
-            <div class="gallery-overlay">
-              <h3>Distribution Panels</h3>
-              <p>Commercial panel installation</p>
-            </div>
-          </div>
-
-          <!-- Lighting Projects -->
-          <div class="gallery-item featured" data-category="lighting">
-            <img src="assets/images/projects/led-shelves.jpg" alt="Colorful LED shelves" loading="lazy">
-            <span class="gallery-badge">Lighting</span>
-            <div class="gallery-overlay">
-              <h3>LED Shelf Lighting</h3>
-              <p>Custom ambient illumination</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lighting">
-            <img src="assets/images/projects/kitchen-led.jpg" alt="Under‑cabinet LED lighting in a kitchen" loading="lazy">
-            <span class="gallery-badge">Lighting</span>
-            <div class="gallery-overlay">
-              <h3>Kitchen LED</h3>
-              <p>Under-cabinet lighting</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lighting">
-            <img src="assets/images/projects/led-handrail.jpg" alt="LED handrail lighting on a staircase" loading="lazy">
-            <span class="gallery-badge">Lighting</span>
-            <div class="gallery-overlay">
-              <h3>LED Handrail</h3>
-              <p>Staircase accent lighting</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lighting">
-            <img src="assets/images/projects/lighting.jpg" alt="Commercial lighting installation inside a large space" loading="lazy">
-            <span class="gallery-badge">Lighting</span>
-            <div class="gallery-overlay">
-              <h3>Commercial Lighting</h3>
-              <p>Large space illumination</p>
-            </div>
-          </div>
-
-          <div class="gallery-item featured" data-category="lighting">
-            <img src="assets/images/projects/horse-stall-lighting.jpg" alt="Horse stall with ceiling mounted barn lighting" loading="lazy">
-            <span class="gallery-badge">Lighting</span>
-            <div class="gallery-overlay">
-              <h3>Horse Stall Lighting</h3>
-              <p>Barn & stable installations</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lighting">
-            <img src="assets/images/projects/led-handrail-4.jpg" alt="LED handrail lighting from above on modern staircase" loading="lazy">
-            <span class="gallery-badge">Lighting</span>
-            <div class="gallery-overlay">
-              <h3>LED Handrail Design</h3>
-              <p>Multi-level accent lighting</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lighting">
-            <img src="assets/images/projects/led-handrail-5.jpg" alt="LED handrail lighting vertical view on staircase" loading="lazy">
-            <span class="gallery-badge">Lighting</span>
-            <div class="gallery-overlay">
-              <h3>Stairwell LED</h3>
-              <p>Integrated handrail lighting</p>
-            </div>
-          </div>
+            <figcaption>Transformer Install</figcaption>
+          </figure>
 
           <!-- Commercial Projects -->
-          <div class="gallery-item featured" data-category="commercial">
-            <img src="assets/images/projects/IMG_8262.jpg" alt="Commercial bar with colorful pendant lights installation" loading="lazy">
-            <span class="gallery-badge">Commercial</span>
-            <div class="gallery-overlay">
-              <h3>Bar Lighting Design</h3>
-              <p>Custom pendant installation</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="commercial">
+          <figure class="gallery-item" data-category="commercial">
             <img src="assets/images/projects/electrical-project-49-1200.jpg" alt="Commercial project exterior with lighting install" loading="lazy">
-            <span class="gallery-badge">Commercial</span>
-            <div class="gallery-overlay">
-              <h3>Commercial Exterior</h3>
-              <p>Outdoor lighting project</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="commercial">
+            <figcaption>Commercial Exterior</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="commercial">
             <img src="assets/images/projects/IMG_8164.jpg" alt="Commercial renovation with exposed ceiling, ladder and modern linear lighting" loading="lazy">
-            <span class="gallery-badge">Commercial</span>
-            <div class="gallery-overlay">
-              <h3>Modern Renovation</h3>
-              <p>Linear lighting systems</p>
-            </div>
-          </div>
+            <figcaption>Office Renovation</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="commercial">
+            <img src="assets/images/projects/lighting.jpg" alt="Commercial lighting installation inside a large space" loading="lazy">
+            <figcaption>Warehouse Lighting</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="commercial">
+            <img src="assets/images/projects/fire-response.jpg" alt="Electrical panel after fire response" loading="lazy">
+            <figcaption>Fire Response Repair</figcaption>
+          </figure>
 
-          <!-- Residential Projects -->
-          <div class="gallery-item featured" data-category="residential">
-            <img src="assets/images/projects/IMG_0567.jpg" alt="Residential space with wood ceiling and chandelier lighting" loading="lazy">
-            <span class="gallery-badge">Residential</span>
-            <div class="gallery-overlay">
-              <h3>Chandelier Installation</h3>
-              <p>Elegant home lighting</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="residential">
-            <img src="assets/images/projects/barn photo.jpg" alt="Barn interior under construction with wooden beams and pendant lights" loading="lazy">
-            <span class="gallery-badge">Residential</span>
-            <div class="gallery-overlay">
-              <h3>Barn Conversion</h3>
-              <p>Rustic pendant lighting</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="residential">
-            <img src="assets/images/projects/service-after.jpg" alt="Service upgrade after completion" loading="lazy">
-            <span class="gallery-badge">Residential</span>
-            <div class="gallery-overlay">
-              <h3>Service Upgrade</h3>
-              <p>Panel modernization</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="residential">
-            <img src="assets/images/projects/service-upgrade-before.jpg" alt="Service upgrade before work" loading="lazy">
-            <span class="gallery-badge">Residential</span>
-            <div class="gallery-overlay">
-              <h3>Before & After</h3>
-              <p>Panel upgrade project</p>
-            </div>
-          </div>
-
-          <div class="gallery-item featured" data-category="residential">
-            <img src="assets/images/projects/storm-emergency.jpg" alt="Electrician working in snowstorm during emergency call" loading="lazy">
-            <span class="gallery-badge">Residential</span>
-            <div class="gallery-overlay">
-              <h3>Storm Emergency</h3>
-              <p>24/7 emergency service</p>
-            </div>
-          </div>
-
+          <!-- Lighting Projects -->
+          <figure class="gallery-item" data-category="lighting">
+            <img src="assets/images/projects/kitchen-led.jpg" alt="Under-cabinet LED lighting in a kitchen" loading="lazy">
+            <figcaption>Kitchen LED Upgrade</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="lighting">
+            <img src="assets/images/projects/led-handrail.jpg" alt="LED handrail lighting on a staircase" loading="lazy">
+            <figcaption>LED Handrail</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="lighting">
+            <img src="assets/images/projects/led-shelves.jpg" alt="Colorful LED shelves" loading="lazy">
+            <figcaption>RGB LED Shelving</figcaption>
+          </figure>
         </div>
+
+        <p style="text-align:center;margin-top:2rem;">Ready to start your project? <a href="contact.html">Contact us</a> for a free estimate or <a href="services.html">view all services</a>.</p>
       </div>
+    </section>
+
+    <!-- Call to action section -->
+    <section class="cta-section">
+      <h2>Inspired by Our Work?</h2>
+      <p>Let us help with your next electrical project. Call <a href="tel:+16163347159">(616) 334-7159</a> or email <a href="mailto:toptierelectric117@gmail.com">toptierelectric117@gmail.com</a> to get started.</p>
+      <a href="booking.html" class="btn-primary">Schedule Service</a>
     </section>
   </main>
   <div class="sticky-bar">
     <a href="tel:+16163347159">Call</a>
     <a href="booking.html" class="btn">Schedule Service</a>
   </div>
-   <footer>
+  <!-- Pre-footer Section -->
+  <section class="pre-footer">
+    <div class="container">
+      <div class="pre-footer-content">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="financing.html">Financing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p><a href="tel:+16163347159">(616) 334-7159</a></p>
+          <p><a href="mailto:toptierelectric117@gmail.com">toptierelectric117@gmail.com</a></p>
+          <p>Mon–Fri 8am–6pm</p>
+        </div>
+        <div class="footer-col">
+          <h4>Service Areas</h4>
+          <p>Holland &bull; Grand Rapids &bull; Byron Center<br>Zeeland &bull; Saugatuck &bull; Hudsonville</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
     <div class="footer-logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
-
-    <p>MI License #631210 • All work backed by a 2-year warranty.</p>
+    <p>MI License #631210 &bull; All work backed by a 2-year warranty.</p>
     <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
   </footer>
   <script src="script.js"></script>
   <script>
     // Gallery filter functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const galleryItems = document.querySelectorAll('.gallery-item');
-
-      filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          // Update active button
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-
-          const filterValue = this.getAttribute('data-filter');
-
-          galleryItems.forEach(item => {
-            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-              item.style.display = '';
-              item.style.animation = 'fadeIn 0.5s ease forwards';
-            } else {
-              item.style.display = 'none';
-            }
-          });
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.gallery-grid .gallery-item').forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
         });
       });
     });
   </script>
-  <!-- Crisp Chat widget (uncomment and set your website ID to enable)
-  <script type="text/javascript">
-  window.$crisp=[];window.CRISP_WEBSITE_ID="YOUR_ID_HERE";
-  (function(){
-    var d=document;var s=d.createElement("script");
-    s.src="https://client.crisp.chat/l.js";
-    s.async=1;
-    d.getElementsByTagName("head")[0].appendChild(s);
-  })();
-  </script>
-  -->
 </body>
 </html>
