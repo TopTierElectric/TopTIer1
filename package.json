@@ -1,0 +1,33 @@
+{
+  "name": "toptier-electrical",
+  "version": "1.0.0",
+  "description": "Top Tier Electrical - Trusted electrician serving West Michigan",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "dev": "npx live-server --port=8888 --no-browser",
+    "lint:html": "npx html-validate '*.html'",
+    "lint:css": "npx stylelint 'styles.css'",
+    "test:a11y": "npx pa11y-ci",
+    "test:links": "npx linkinator . --recurse --skip 'tel:' --skip 'mailto:'",
+    "validate": "npm run lint:html && npm run lint:css"
+  },
+  "keywords": [
+    "electrician",
+    "west-michigan",
+    "electrical-services"
+  ],
+  "author": "Top Tier Electrical",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "html-validate": "^8.0.0",
+    "linkinator": "^6.0.0",
+    "live-server": "^1.2.2",
+    "pa11y-ci": "^3.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
