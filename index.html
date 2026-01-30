@@ -49,6 +49,7 @@
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
     <div class="logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
@@ -75,17 +76,21 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero">
       <div class="hero-content">
         <h1>Your Trusted Electrician</h1>
         <p>Providing reliable electrical solutions for homes and businesses across West Michigan.</p>
         <form class="hero-form" name="hero-contact" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="hero-contact">
-          <label class="sr-only" for="hero-name">Name</label>
-          <input type="text" id="hero-name" name="name" placeholder="Name" required>
-          <label class="sr-only" for="hero-email">Email</label>
-          <input type="email" id="hero-email" name="email" placeholder="Email" required>
+          <div class="form-group">
+            <label for="hero-name">Name</label>
+            <input type="text" id="hero-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="hero-email">Email</label>
+            <input type="email" id="hero-email" name="email" placeholder="your@email.com" required>
+          </div>
           <button type="submit" class="btn-primary">Request Service</button>
         </form>
       </div>

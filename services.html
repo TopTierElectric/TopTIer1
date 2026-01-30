@@ -48,6 +48,7 @@
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
     <div class="logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
@@ -73,17 +74,21 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <main id="main-content">
     <section class="hero" style="background-image:url('assets/images/hero.jpg');">
       <div class="hero-content">
         <h1>Our Electrical Services</h1>
         <p>Expert solutions for every electrical need—residential, commercial and industrial.</p>
         <form class="hero-form" name="hero-service" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="hero-service">
-          <label class="sr-only" for="hero-service-name">Name</label>
-          <input type="text" id="hero-service-name" name="name" placeholder="Name" required>
-          <label class="sr-only" for="hero-service-email">Email</label>
-          <input type="email" id="hero-service-email" name="email" placeholder="Email" required>
+          <div class="form-group">
+            <label for="hero-service-name">Name</label>
+            <input type="text" id="hero-service-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="hero-service-email">Email</label>
+            <input type="email" id="hero-service-email" name="email" placeholder="your@email.com" required>
+          </div>
           <button type="submit" class="btn-primary">Request Service</button>
         </form>
       </div>
