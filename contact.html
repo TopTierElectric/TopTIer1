@@ -12,12 +12,16 @@
   <meta name="author" content="Top Tier Electrical">
   <!-- Open Graph / Social meta -->
   <meta property="og:title" content="Contact | Top Tier Electrical">
-  <meta property="og:description" content="We’re here to help with all your electrical needs—reach out by phone, email or contact form for a prompt response.">
+  <meta property="og:description" content="We're here to help with all your electrical needs—reach out by phone, email or contact form for a prompt response.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/hero.jpg">
   <meta property="og:url" content="https://toptierelectrical.netlify.app/contact.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://toptierelectrical.netlify.app/contact.html">
+  <!-- Google Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
   <!-- Structured data -->
@@ -41,7 +45,7 @@
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"Do I need a panel upgrade for an EV charger?","acceptedAnswer":{"@type":"Answer","text":"We perform a load calculation; if capacity is tight we recommend a safe alternative or upgrade."}}, 
+  {"@type":"Question","name":"Do I need a panel upgrade for an EV charger?","acceptedAnswer":{"@type":"Answer","text":"We perform a load calculation; if capacity is tight we recommend a safe alternative or upgrade."}},
   {"@type":"Question","name":"Do you pull permits?","acceptedAnswer":{"@type":"Answer","text":"Yes. We handle permitting, inspections, and labeling to meet code."}},
   {"@type":"Question","name":"Do you offer emergency help?","acceptedAnswer":{"@type":"Answer","text":"Yes—call (616) 334‑7159 for urgent issues."}}
   ]}
@@ -77,7 +81,31 @@
     <section class="hero" style="background-image:url('assets/images/hero.jpg');">
       <div class="hero-content">
         <h1>Contact Us</h1>
-        <p>We’re here to help with all your electrical needs—get in touch today.</p>
+        <p>We're here to help with all your electrical needs—get in touch today.</p>
+        <a href="booking.html" class="btn-primary">Schedule Service</a>
+      </div>
+    </section>
+    <!-- Trust strip -->
+    <section class="trust-strip">
+      <div class="container">
+        <div class="trust-items">
+          <div class="trust-item">
+            <span class="trust-icon">&#9733;</span>
+            <span>Licensed &amp; Insured</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">&#10003;</span>
+            <span>2-Year Warranty</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">&#9201;</span>
+            <span>24/7 Emergency Service</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">&#9733;</span>
+            <span>5-Star Rated</span>
+          </div>
+        </div>
       </div>
     </section>
     <section class="contact-page">
@@ -93,7 +121,7 @@
           </div>
           <div class="contact-form">
             <h3>Send a Message</h3>
-            <p>If you’d like to pick a specific date and time, please use our <a href="booking.html">online booking form</a>.</p>
+            <p>If you'd like to pick a specific date and time, please use our <a href="booking.html">online booking form</a>.</p>
             <form name="contact" method="POST" data-netlify="true">
               <input type="hidden" name="form-name" value="contact">
               <label for="name">Name</label>
@@ -102,7 +130,7 @@
               <input type="email" id="email" name="email" required>
               <label for="message">Message</label>
               <textarea id="message" name="message" required></textarea>
-              <button type="submit">Send Message</button>
+              <button type="submit">Request a Quote</button>
             </form>
         </div>
         </div>
@@ -115,7 +143,7 @@
     <!-- Call to action section -->
     <section class="cta-section">
       <h2>Need Immediate Assistance?</h2>
-      <p>Call us at <a href="tel:+16163347159">(616) 334‑7159</a> or email <a href="mailto:toptierelectric117@gmail.com">toptierelectric117@gmail.com</a>—we’re here to help.</p>
+      <p>Call us at <a href="tel:+16163347159">(616) 334‑7159</a> or email <a href="mailto:toptierelectric117@gmail.com">toptierelectric117@gmail.com</a>—we're here to help.</p>
       <a href="booking.html" class="btn-primary">Schedule Service</a>
     </section>
   </main>
@@ -123,9 +151,47 @@
     <a href="tel:+16163347159">Call</a>
     <a href="booking.html" class="btn">Schedule Service</a>
   </div>
+  <!-- Pre-footer section -->
+  <section class="pre-footer">
+    <div class="container">
+      <div class="pre-footer-grid">
+        <div class="pre-footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Book Online</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="financing.html">Financing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="pre-footer-column">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="tel:+16163347159">(616) 334-7159</a></li>
+            <li><a href="mailto:toptierelectric117@gmail.com">toptierelectric117@gmail.com</a></li>
+            <li>Mon-Fri: 8am-6pm</li>
+            <li>Sat: 9am-1pm</li>
+            <li>24/7 Emergency Service</li>
+          </ul>
+        </div>
+        <div class="pre-footer-column">
+          <h3>Service Areas</h3>
+          <ul>
+            <li><a href="service-areas.html">Holland</a></li>
+            <li><a href="service-areas.html">Grand Rapids</a></li>
+            <li><a href="service-areas.html">Allegan</a></li>
+            <li><a href="service-areas.html">Zeeland</a></li>
+            <li><a href="service-areas.html">West Michigan</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
    <footer>
     <div class="footer-logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
- 
+
     <p>MI License #631210 • All work backed by a 2-year warranty.</p>
     <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
   </footer>
