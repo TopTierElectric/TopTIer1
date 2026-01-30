@@ -18,30 +18,33 @@
   <meta property="og:url" content="https://toptierelectrical.netlify.app/faq.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://toptierelectrical.netlify.app/faq.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
   <!-- Structured data -->
   <script type="application/ld+json">
   {
- "@context":"https://schema.org",
- "@type":"Electrician",
- "name":"Top Tier Electrical",
- "url":"https://toptierelectrical.netlify.app/",
- "telephone":"+16163347159",
- "email":"toptierelectric117@gmail.com",
- "address":{"@type":"PostalAddress","addressLocality":"Allegan","addressRegion":"MI","postalCode":"49010","addressCountry":"US"},
- "areaServed":{"@type":"GeoCircle","name":"West Michigan",
-   "geoMidpoint":{"@type":"GeoCoordinates","latitude":42.5295,"longitude":-85.8553},
-   "geoRadius":80000},
- "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],
- "priceRange":"$$",
- "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"100"}
- }
+"@context":"https://schema.org",
+"@type":"Electrician",
+"name":"Top Tier Electrical",
+"url":"https://toptierelectrical.netlify.app/",
+"telephone":"+16163347159",
+"email":"toptierelectric117@gmail.com",
+"address":{"@type":"PostalAddress","addressLocality":"Allegan","addressRegion":"MI","postalCode":"49010","addressCountry":"US"},
+"areaServed":{"@type":"GeoCircle","name":"West Michigan",
+  "geoMidpoint":{"@type":"GeoCoordinates","latitude":42.5295,"longitude":-85.8553},
+  "geoRadius":80000},
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],
+"priceRange":"$$",
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"100"}
+}
   </script>
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"Do I need a panel upgrade for an EV charger?","acceptedAnswer":{"@type":"Answer","text":"We perform a load calculation; if capacity is tight we recommend a safe alternative or upgrade."}}, 
+  {"@type":"Question","name":"Do I need a panel upgrade for an EV charger?","acceptedAnswer":{"@type":"Answer","text":"We perform a load calculation; if capacity is tight we recommend a safe alternative or upgrade."}},
   {"@type":"Question","name":"Do you pull permits?","acceptedAnswer":{"@type":"Answer","text":"Yes. We handle permitting, inspections, and labeling to meet code."}},
   {"@type":"Question","name":"Do you offer emergency help?","acceptedAnswer":{"@type":"Answer","text":"Yes—call (616) 334‑7159 for urgent issues."}}
   ]}
@@ -79,8 +82,22 @@
       <div class="hero-content">
         <h1>Frequently Asked Questions</h1>
         <p>Find answers to common questions about our services and electrical systems.</p>
+        <a href="contact.html" class="btn-primary">Ask a Question</a>
       </div>
     </section>
+
+    <!-- Trust Strip -->
+    <div class="trust-strip">
+      <div class="container">
+        <div class="trust-badges">
+          <span class="badge">&#10004; Licensed &amp; Insured</span>
+          <span class="badge">&#11088; 5-Star Rated</span>
+          <span class="badge">&#128274; 2-Year Warranty</span>
+          <span class="badge">&#127968; Local Family Business</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Call to action section -->
     <section class="cta-section">
       <h2>Have More Questions?</h2>
@@ -92,27 +109,63 @@
         <h2>FAQs</h2>
         <div class="faq-list">
           <details>
-            <summary>When should I upgrade my electrical panel?</summary>
-            <p>If your home still uses a fuse box, experiences frequent breaker trips or hasn’t been updated in over 30 years, it may be time to upgrade. Modern breaker panels handle higher electrical loads safely and reduce the risk of fire.</p>
+            <summary>
+              <span class="faq-icon">&#9889;</span>
+              When should I upgrade my electrical panel?
+            </summary>
+            <p>If your home still uses a fuse box, experiences frequent breaker trips or hasn't been updated in over 30 years, it may be time to upgrade. Modern breaker panels handle higher electrical loads safely and reduce the risk of fire. <a href="panel-upgrades.html">Learn more about panel upgrades</a>.</p>
           </details>
           <details>
-            <summary>Do you install EV chargers?</summary>
-            <p>Yes! We install Level 2 and DC fast chargers for homes and businesses. We also assist with permitting and inspection to ensure everything is up to code.</p>
+            <summary>
+              <span class="faq-icon">&#128276;</span>
+              How much does a panel upgrade cost?
+            </summary>
+            <p>Panel upgrade costs typically range from $1,295 to $3,495 depending on your home's needs, panel size, and any additional work required. We provide free estimates so you know the exact cost before work begins. <a href="contact.html">Request a free estimate</a>.</p>
           </details>
           <details>
-            <summary>What areas do you serve?</summary>
-            <p>We serve Holland, Grand Rapids, Byron Center and the surrounding West Michigan communities. See our <a href="contact.html">contact page</a> for more information.</p>
+            <summary>
+              <span class="faq-icon">&#128663;</span>
+              Do you install EV chargers?
+            </summary>
+            <p>Yes! We install Level 2 and DC fast chargers for homes and businesses. We also assist with permitting and inspection to ensure everything is up to code. <a href="services.html#ev-chargers">Learn more about EV charger installation</a>.</p>
           </details>
           <details>
-            <summary>Are you licensed and insured?</summary>
-            <p>Absolutely. Our company holds a Master Electrician license and carries comprehensive insurance for your protection and peace of mind.</p>
+            <summary>
+              <span class="faq-icon">&#9201;</span>
+              How long does an EV charger installation take?
+            </summary>
+            <p>A typical EV charger installation takes 2-4 hours, depending on your electrical setup and the charger type. If panel upgrades or additional wiring are needed, it may take longer. <a href="services.html#ev-chargers">View our EV charger services</a>.</p>
           </details>
           <details>
-            <summary>Do you offer free estimates?</summary>
-            <p>Yes. We provide free, no‑obligation estimates for all projects. Get in touch via our contact page or call us to schedule an appointment.</p>
+            <summary>
+              <span class="faq-icon">&#127758;</span>
+              What areas do you serve?
+            </summary>
+            <p>We serve Holland, Grand Rapids, Byron Center and the surrounding West Michigan communities. See our <a href="service-areas.html">service areas page</a> for more information.</p>
+          </details>
+          <details>
+            <summary>
+              <span class="faq-icon">&#128203;</span>
+              Are you licensed and insured?
+            </summary>
+            <p>Absolutely. Our company holds a Master Electrician license and carries comprehensive insurance for your protection and peace of mind. <a href="contact.html">Contact us for details</a>.</p>
+          </details>
+          <details>
+            <summary>
+              <span class="faq-icon">&#128176;</span>
+              Do you offer free estimates?
+            </summary>
+            <p>Yes. We provide free, no-obligation estimates for all projects. Get in touch via our <a href="contact.html">contact page</a> or call us to schedule an appointment.</p>
+          </details>
+          <details>
+            <summary>
+              <span class="faq-icon">&#128197;</span>
+              Do you work on weekends?
+            </summary>
+            <p>Yes, we offer Saturday appointments from 9am to 1pm for your convenience. For emergency services, we're available 24/7. <a href="booking.html">Book your appointment</a>.</p>
           </details>
         </div>
-        <p style="text-align:center;margin-top:1rem;">Don’t see your question? <a href="contact.html">Reach out</a> and we’ll be happy to help.</p>
+        <p style="text-align:center;margin-top:1rem;">Don't see your question? <a href="contact.html">Reach out</a> and we'll be happy to help.</p>
       </div>
     </section>
   </main>
@@ -120,9 +173,35 @@
     <a href="tel:+16163347159">Call</a>
     <a href="booking.html" class="btn">Schedule Service</a>
   </div>
-   <footer>
+  <!-- Pre-footer Section -->
+  <section class="pre-footer">
+    <div class="container">
+      <div class="pre-footer-content">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="financing.html">Financing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p><a href="tel:+16163347159">(616) 334-7159</a></p>
+          <p><a href="mailto:toptierelectric117@gmail.com">toptierelectric117@gmail.com</a></p>
+          <p>Mon-Fri 8am-6pm</p>
+        </div>
+        <div class="footer-col">
+          <h4>Service Areas</h4>
+          <p>Holland &bull; Grand Rapids &bull; Byron Center<br>Zeeland &bull; Saugatuck &bull; Hudsonville</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
     <div class="footer-logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
- 
+
     <p>MI License #631210 • All work backed by a 2-year warranty.</p>
     <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
   </footer>
@@ -143,7 +222,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
