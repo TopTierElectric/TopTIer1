@@ -51,7 +51,7 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
-    <div class="logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
+    <div class="logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo" width="150" height="50"></div>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
       <span></span>
       <span></span>
@@ -108,11 +108,11 @@
             <form name="booking" method="POST" data-netlify="true">
               <input type="hidden" name="form-name" value="booking">
               <label for="book-name">Name</label>
-              <input type="text" id="book-name" name="name" required>
+              <input type="text" id="book-name" name="name" required autocomplete="name">
               <label for="book-email">Email</label>
-              <input type="email" id="book-email" name="email" required>
+              <input type="email" id="book-email" name="email" required autocomplete="email">
               <label for="book-phone">Phone</label>
-              <input type="tel" id="book-phone" name="phone" required>
+              <input type="tel" id="book-phone" name="phone" required autocomplete="tel">
               <label for="book-service">Service</label>
               <select id="book-service" name="service" required>
                 <option value="" disabled selected>Select a service</option>
@@ -171,12 +171,12 @@
     </div>
   </section>
    <footer>
-    <div class="footer-logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
+    <div class="footer-logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo" width="150" height="50"></div>
 
     <p>MI License #631210 • All work backed by a 2-year warranty.</p>
     <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
   <!-- Crisp Chat widget (uncomment and set your website ID to enable)
   <script type="text/javascript">
   window.$crisp=[];window.CRISP_WEBSITE_ID="YOUR_ID_HERE";

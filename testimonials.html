@@ -20,7 +20,10 @@
   <link rel="canonical" href="https://toptierelectrical.netlify.app/testimonials.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
   <!-- Structured data -->
@@ -53,7 +56,7 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
-    <div class="logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
+    <div class="logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo" width="150" height="50"></div>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
       <span></span>
       <span></span>
@@ -164,12 +167,12 @@
     </div>
   </section>
    <footer>
-    <div class="footer-logo"><img src="assets/images/logo.svg" loading="lazy" alt="Top Tier Electrical logo"></div>
+    <div class="footer-logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo" width="150" height="50"></div>
 
     <p>MI License #631210 • All work backed by a 2-year warranty.</p>
     <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
   <!-- Crisp Chat widget (uncomment and set your website ID to enable)
   <script type="text/javascript">
   window.$crisp=[];window.CRISP_WEBSITE_ID="YOUR_ID_HERE";
