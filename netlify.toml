@@ -20,6 +20,12 @@
   to = "/services.html"
   status = 301
 
+# Image CDN redirect for cleaner URLs
+[[redirects]]
+  from = "/img/*"
+  to = "/.netlify/images?url=/:splat"
+  status = 200
+
 # Custom 404 page
 [[redirects]]
   from = "/*"
