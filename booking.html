@@ -18,7 +18,7 @@
   <meta property="og:url" content="https://www.toptier-electrical.com/booking.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://www.toptier-electrical.com/booking.html">
-  <link rel="preload" as="image" href="/.netlify/images?url=/assets/images/hero.jpg&w=1600&fm=webp&q=80">
+  <link rel="preload" as="image" href="/assets/images/hero.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
@@ -103,8 +103,7 @@
           </div>
           <div class="contact-form">
             <h3>Service Booking Form</h3>
-            <form name="booking" method="POST" data-netlify="true">
-              <input type="hidden" name="form-name" value="booking">
+            <form name="booking" method="POST" action="https://formsubmit.co/your-email@example.com">
               <label for="book-name">Name</label>
               <input type="text" id="book-name" name="name" required autocomplete="name">
               <label for="book-email">Email</label>

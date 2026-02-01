@@ -15,7 +15,7 @@ The site is organised into a number of pages to cover all aspects of the busines
 - **`emergency.html`** – Defines what constitutes an electrical emergency and provides a 24/7 hotline.
 - **`gallery.html`** – Project gallery referencing images stored in your repository (update the paths as needed to match your repo).
 - **`faq.html`** – Frequently asked questions covering common electrical topics and our service policies.
-- **`contact.html`** – Contact page with phone, email and a Netlify‑ready contact form.
+- **`contact.html`** – Contact page with phone, email and a form ready to connect to a Cloudflare-compatible handler.
 - **`404.html`** – Custom 404 page to guide visitors back to the main site when a page is not found.
 - **`styles.css`** – Global styles and layout definitions (includes styles for testimonials, info sections and FAQs).
 - **`script.js`** – JavaScript for the mobile navigation toggle and automatically highlighting the current page via `aria-current` attributes.
@@ -27,7 +27,11 @@ To view the site locally, simply open `index.html` in your web browser.  All nav
 
 ## Deployment
 
-This site is ready to be deployed to any static hosting platform (e.g. Netlify or GitHub Pages).  If using Netlify, ensure your contact form is enabled by leaving the `data-netlify="true"` attribute intact on the form element.
+This site is ready to be deployed to any static hosting platform (e.g. Cloudflare Pages, Netlify, or GitHub Pages). For Cloudflare Pages, the `_headers` and `_redirects` files in the repository root are picked up automatically.
+
+### Forms
+
+Netlify-specific form attributes have been removed for Cloudflare compatibility. The three on-page forms now submit to a placeholder endpoint at `https://formsubmit.co/your-email@example.com`. Replace that URL with your preferred form handler (Cloudflare Pages Functions or a third-party service such as Formspree/Formsubmit) before going live.
 
 ## Repository Setup
 
@@ -35,6 +39,6 @@ When creating a new GitHub repository, extract this ZIP and commit all files.  T
 
 ## Analytics & Security
 
-The HTML pages include a commented‑out Google Analytics snippet near the bottom. To enable tracking, replace `G-XXXXXXXXXX` with your actual GA ID and uncomment the code.  All pages use relative links and include canonical URLs; be sure to update these URLs to match your production domain.  Hosting on a platform with HTTPS enabled (e.g. Netlify, GitHub Pages) is strongly recommended to ensure visitor security and trust.
+The HTML pages include a commented‑out Google Analytics snippet near the bottom. To enable tracking, replace `G-XXXXXXXXXX` with your actual GA ID and uncomment the code.  All pages use relative links and include canonical URLs; be sure to update these URLs to match your production domain.  Hosting on a platform with HTTPS enabled (e.g. Cloudflare Pages, Netlify, GitHub Pages) is strongly recommended to ensure visitor security and trust.
 
 All merge conflict markers have been removed and contact details standardized.
