@@ -1,15 +1,23 @@
 /* TopTier Electrical improved site styles */
 /* Define color palette */
 :root {
-  --primary: #04172a;
-  --secondary: #f47037;
-  --light-bg: #f9fafb;
-  --text-dark: #1f2937;
-  --text-light: #f9fafb;
+  --tte-navy: #0B1F33;
+  --tte-gold: #C9A24D;
+  --tte-gold-hover: #D6B25B;
+  --tte-gold-active: #B8923F;
+  --tte-bg: #F7F8FA;
+  --tte-text: #1E1E1E;
+  --tte-border: #D6DCE3;
+  --tte-focus: rgba(201, 162, 77, 0.4);
+  --primary: var(--tte-navy);
+  --secondary: var(--tte-gold);
+  --light-bg: var(--tte-bg);
+  --text-dark: var(--tte-text);
+  --text-light: #FFFFFF;
   --muted: #6b7280;
   --success: #16a34a;
   --danger: #dc2626;
-  --warning: #f59e0b;
+  --warning: var(--tte-gold);
   /* Typography */
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-size-h1: 2.5rem;
@@ -85,6 +93,11 @@ h4 { font-size: var(--font-size-h4); line-height: var(--line-height-heading); fo
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid var(--tte-focus);
+  outline-offset: 2px;
 }
 
 /* Layout helpers */
@@ -333,8 +346,8 @@ header nav a:focus {
 
 .btn-primary {
   display: inline-block;
-  background: var(--secondary);
-  color: var(--text-light);
+  background: var(--tte-gold);
+  color: #FFFFFF;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   text-decoration: none;
@@ -344,8 +357,12 @@ header nav a:focus {
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background: #e05b2b;
+  background: var(--tte-gold-hover);
   transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  background: var(--tte-gold-active);
 }
 
 /* Value propositions */
@@ -480,7 +497,7 @@ header nav a:focus {
 /* Gallery section */
 .gallery-page {
   padding: 4rem 0;
-  background: linear-gradient(135deg, var(--light-bg) 0%, #e8ecf0 100%);
+  background: var(--light-bg);
 }
 
 .gallery-page h2 {
@@ -580,7 +597,7 @@ header nav a:focus {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(4, 23, 42, 0.9) 0%, rgba(4, 23, 42, 0.5) 50%, transparent 100%);
+  background: color-mix(in srgb, var(--tte-navy) 85%, transparent);
   padding: 2.5rem 1.25rem 1.25rem;
   transform: translateY(100%);
   transition: transform 0.4s ease;
@@ -644,7 +661,7 @@ header nav a:focus {
   content: '';
   height: 2px;
   width: 60px;
-  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+  background: var(--tte-border);
 }
 
 .gallery-section-title h3 {
@@ -826,8 +843,8 @@ header nav a:focus {
 
 .contact-form button {
   align-self: flex-start;
-  background: var(--secondary);
-  color: var(--text-light);
+  background: var(--tte-gold);
+  color: #FFFFFF;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
@@ -837,7 +854,11 @@ header nav a:focus {
 }
 
 .contact-form button:hover {
-  background: #e05b2b;
+  background: var(--tte-gold-hover);
+}
+
+.contact-form button:active {
+  background: var(--tte-gold-active);
 }
 
 /* Footer */
@@ -882,8 +903,8 @@ footer p {
 /* Small button variant for header call-to-action */
 .btn-small {
   display: inline-block;
-  background: var(--secondary);
-  color: var(--text-light);
+  background: var(--tte-gold);
+  color: #FFFFFF;
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
   text-decoration: none;
@@ -894,7 +915,11 @@ footer p {
 
 .btn-small:hover,
 .btn-small:focus {
-  background: #e05b2b;
+  background: var(--tte-gold-hover);
+}
+
+.btn-small:active {
+  background: var(--tte-gold-active);
 }
 
 /* Trust signals section */
@@ -1054,8 +1079,8 @@ footer p {
   color: var(--text-light);
 }
 .cta-section a.btn-primary {
-  background: var(--secondary);
-  color: var(--text-light);
+  background: var(--tte-gold);
+  color: #FFFFFF;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   text-decoration: none;
@@ -1064,15 +1089,19 @@ footer p {
 }
 .cta-section a.btn-primary:hover,
 .cta-section a.btn-primary:focus {
-  background: #e05b2b;
+  background: var(--tte-gold-hover);
   transform: translateY(-2px);
-}/* Sticky mobile call-to-action bar */
+}
+.cta-section a.btn-primary:active {
+  background: var(--tte-gold-active);
+}
+/* Sticky mobile call-to-action bar */
 .sticky-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: var(--secondary);
+  background: var(--tte-navy);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1212,9 +1241,9 @@ footer p {
 .btn-secondary {
   display: inline-block;
   background: transparent;
-  color: var(--secondary);
+  color: var(--tte-gold);
   padding: 0.75rem 1.5rem;
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--tte-gold);
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
@@ -1222,8 +1251,8 @@ footer p {
 }
 .btn-secondary:hover,
 .btn-secondary:focus {
-  background: var(--secondary);
-  color: var(--text-light);
+  background: rgba(201, 162, 77, 0.12);
+  color: var(--tte-gold);
 }
 
 /* Star Ratings */
@@ -1244,11 +1273,6 @@ footer p {
   font-weight: bold;
   font-size: 0.875rem;
   margin-bottom: 1rem;
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
 }
 .emergency-call-btn {
   display: inline-block;
@@ -1744,11 +1768,11 @@ header nav a:hover {
   margin-right: 0.5rem;
 }
 .hero .btn-secondary {
-  background: rgba(255,255,255,0.1);
-  border-color: white;
-  color: white;
+  background: transparent;
+  border-color: var(--tte-gold);
+  color: var(--tte-gold);
 }
 .hero .btn-secondary:hover {
-  background: white;
-  color: var(--primary);
+  background: rgba(201, 162, 77, 0.12);
+  color: var(--tte-gold);
 }
