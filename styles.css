@@ -267,7 +267,7 @@ header nav a:focus {
 /* Hero section */
 .hero {
   position: relative;
-  background: url('assets/images/hero.jpg') center/cover no-repeat;
+  background: url('/.netlify/images?url=/assets/images/hero.jpg&w=1600&fm=webp&q=80') center/cover no-repeat;
   color: var(--text-light);
   text-align: center;
   padding: 8rem 1rem 6rem;
