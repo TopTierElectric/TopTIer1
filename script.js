@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (currentPath.startsWith('blog-')) {
     currentPath = 'blog.html';
   }
-  if (['panel-upgrades.html','ev-chargers.html','lighting.html'].includes(currentPath)) {
+  if (['panel-upgrades.html','ev-chargers.html','lighting.html','electrical-repairs.html','generators.html','energy-solutions.html','energy-consulting.html'].includes(currentPath)) {
     currentPath = 'services.html';
   }
   const navLinks = document.querySelectorAll('header nav a');
@@ -32,6 +32,30 @@ document.addEventListener('DOMContentLoaded', function () {
       if (nav.classList.contains('active')) {
         nav.classList.remove('active');
       }
+    });
+  });
+
+  function tteTrack(eventName, meta) {
+    window.dispatchEvent(new CustomEvent('tte:track', { detail: { eventName, meta } }));
+  }
+
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('a[href]');
+    if (!link) {
+      return;
+    }
+    const href = link.getAttribute('href') || '';
+    if (href.startsWith('tel:')) {
+      tteTrack('call_click', { href });
+    }
+    if (href.startsWith('sms:')) {
+      tteTrack('text_click', { href });
+    }
+  });
+
+  document.querySelectorAll('form').forEach(function (form) {
+    form.addEventListener('submit', function () {
+      tteTrack('form_submit', { formName: form.getAttribute('name') || 'unnamed' });
     });
   });
 });
