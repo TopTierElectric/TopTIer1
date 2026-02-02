@@ -1,249 +1,183 @@
 # Top Tier Electrical — Audit, Brand System, and Cloudflare Implementation Plan
 
-## 1) Executive summary (prioritized, ≤12 bullets)
-1. Align site colors with the **logo-derived gold** and premium black/white palette; replace the current orange secondary color to restore brand consistency across all pages.
-2. Simplify the CTA hierarchy: **primary = Call/Book**, **secondary = Request Estimate**, and remove redundant CTAs competing above the fold.
-3. Replace placeholder form endpoints on every lead form to prevent silent lead loss; wire to a Cloudflare Worker, CRM, or form provider.
-4. Add **visible trust proof above the fold** (MI License #631210, Licensed & Insured, 2‑Year Warranty) on all hero sections.
-5. Standardize imagery: **16:9 hero** and **4:3 gallery/service** crops; introduce responsive `srcset` and lazy-loading to improve LCP.
-6. Upgrade header/nav conversion behavior: reduce clutter, add a persistent “Call” and “Book” CTA, and surface phone for mobile.
-7. Apply **accessibility-first color and contrast rules** for gold usage; define focus states and tap-target sizing globally.
-8. Add a premium typography pairing for headings + body to elevate perceived quality while maintaining readability.
-9. Implement Cloudflare-ready cache rules, CSP, and security headers with safe allowlists for analytics/maps/forms.
-10. Add structured data upgrades on service detail pages to improve service-level SEO relevance.
+## 1) Executive summary (prioritized)
+1. **Unify brand palette to the logo gold + premium black/white** and replace the current orange secondary color so the UI matches the logo marks across pages and components. (Logo file is `assets/images/TopTierElectrical_logo_gold_qb_transparent.png`; current palette uses `--secondary: #f47037`.)
+2. **Clarify above-the-fold CTA hierarchy**: hero form + booking CTA compete; standardize “Call / Book / Estimate” order and emphasize phone for mobile. (Home hero + quick action bar + sticky bar currently compete.)
+3. **Replace placeholder form endpoints** (`formsubmit.co/your-email@example.com`) with a real submission target (Cloudflare Workers, Forms, or CRM) to avoid lead-loss risk on all lead-capture pages.
+4. **Strengthen trust proof placement**: surface MI license + warranty near the hero and repeat once in the CTA block (not only in trust strips) to reinforce credibility before the user scrolls.
+5. **Create a premium photo direction** and gallery curation rules (consistent 16:9 heroes, 4:3 gallery) to match high-end residential expectations; current gallery mix is inconsistent.
+6. **Improve accessibility contrast for gold-on-white and gold-on-light backgrounds** via a defined gold scale and alternative text colors; define focus states globally (currently absent).
+7. **Update header/nav behavior for conversion**: add a sticky CTA button in header on desktop and simplify nav choices to reduce cognitive load. (Current nav has 12+ items.)
+8. **Optimize Cloudflare cache and asset strategy**: keep HTML short-ttl, immutable assets long-ttl (already set), add rules for fonts and images, and ensure CSP covers analytics + form endpoints.
+9. **Map page-specific CTAs to user intent** (Emergency/Booking/Service detail) with consistent copy and benefit cues, not only “Schedule Service.”
+10. **Add structured data upgrades** for services + FAQs on service detail pages and local business contact enhancements to improve SERP trust elements and service relevance.
 
 ---
 
 ## 2) Audit findings by page (Issues → Fix → Copy/paste spec)
 
-### Top 10 conversion changes (minimal dev time, highest lift)
-1. Replace **all placeholder form endpoints** with a real destination (Worker or CRM). 
-2. Add **hero CTA row**: Call + Book above the fold on every primary page.
-3. Add **MI License #631210 + warranty** line directly under hero headline.
-4. Standardize **CTA copy**: “Book Walkthrough” (primary), “Request Estimate” (secondary), “Call Now” for emergency.
-5. Add **phone tap-to-call** button in header for mobile and sticky bar on every page.
-6. Reduce nav links on desktop to top 5–7 items and move secondary links to footer.
-7. Replace emoji icons with **consistent outline icons**; premium perception boost.
-8. Implement **responsive images** on hero + gallery and lazy-load below the fold.
-9. Add a **“What happens next”** panel after every form to reduce abandonment.
-10. Add **real testimonials or verified review embed**; currently no proof content on testimonials page.
-
----
-
 ### Home (index.html)
 **Issues**
-- Competing CTA paths: hero form + quick action bar + sticky bar offer multiple actions at once.
-- Trust proof is below the fold; emoji-based badges feel less premium.
-- Placeholder form endpoint risks lost leads.
+- Hero form and quick action bar compete; the hero CTA is form-only while the quick actions and sticky bar offer call/book/emergency options, creating multiple competing paths.
+- No visible license number or warranty above the fold; trust badges are lower and use emoji-only icons (less premium).
+- Form action uses placeholder endpoint, risking lost leads.
 
 **Fix**
-- Keep hero CTAs to **Call / Book**; move the short form below with “Request Estimate.”
-- Add hero trust line with license + warranty.
-- Replace emoji icons with outline icon set.
+- Make primary CTA “Call or Book” with a secondary “Request Estimate” form below the hero. Make the form optional and reduce fields to name + phone/email.
+- Add a compact trust bar under the hero headline with “MI License #631210 • Licensed & Insured • 2-Year Warranty.”
+- Replace emoji-based icons with a consistent stroke icon set.
 
 **Copy/paste spec (layout + tokens)**
-- Add hero CTA row:
-  - Primary: `Book Walkthrough` (`btn-primary`, Gold 600 background, Ink 900 text)
-  - Secondary: `Call Now` (`btn-secondary`, Gold 600 border, Ink 900 text)
-- Add trust line:
-  - `<div class="hero-trust">MI License #631210 • Licensed & Insured • 2-Year Warranty • West Michigan</div>`
-- Form note:
-  - `<p class="form-reassurance">We reply within 1 business day.</p>`
+- Hero CTA layout:
+  - `.hero-cta-primary` = Primary button (Gold 600 bg, Ink text)
+  - `.hero-cta-secondary` = Outline button (Gold 600 border, Ink text)
+  - `.hero-form` = vertical stack with 16px gap, label text 12px uppercase
+- Trust bar (new):
+  - `<div class="hero-trust">MI License #631210 • Licensed & Insured • 2-Year Warranty • Local West Michigan</div>`
+  - Background: `--neutral-50`, text: `--ink-900`
 
 **Why it matters**
-- Removing CTA competition and placing trust proof above the fold reduces friction and increases lead completion.
+- Reducing competing CTA paths increases conversion by reducing decision friction and clarifying the next action.
 
-**Effort**: S | **Impact**: High
+**Effort**: S
+**Impact**: High
 
 ---
 
 ### Services (services.html)
 **Issues**
-- No CTA above the fold; booking is only after the service list.
-- Service list lacks visual hierarchy for a premium presentation.
+- Primary CTA is “Book service” at the end; hero lacks immediate action. Users must scroll for a booking path.
+- Service list uses plain text without visual hierarchy (no cards or icons) for premium positioning.
 
 **Fix**
-- Add hero CTA row (Book Walkthrough / Request Estimate).
-- Convert service list to card-based layout with icon + scope bullets.
+- Add CTA buttons in hero (“Book Walkthrough”, “Request Estimate”).
+- Convert service list to card-based layout with icon + spec callouts.
 
 **Copy/paste spec**
-- Add `.hero-cta-row` with primary/secondary CTAs.
-- Service card tokens: `background: --neutral-0`, `border: 1px solid --neutral-200`, `box-shadow: 0 12px 30px rgba(4,23,42,0.08)`.
+- Add `.hero-cta-row` in hero:
+  - Primary: `Book Walkthrough`
+  - Secondary: `Request Estimate`
+- Service card tokens:
+  - Background: `--neutral-0`
+  - Border: `1px solid --neutral-200`
+  - Shadow: `0 12px 30px rgba(4,23,42,0.08)`
 
-**Effort**: M | **Impact**: High
+**Why it matters**
+- Service overview pages convert better when scannable and clearly mapped to action.
 
----
-
-### Service detail pages (panel-upgrades.html, ev-chargers.html, lighting.html, generators.html, energy-solutions.html, energy-consulting.html, electrical-repairs.html)
-**Issues**
-- CTAs are inconsistent across pages; some rely on generic “Schedule Service.”
-- Limited service-specific proof (scope guarantees, safety checks, permit handling).
-
-**Fix**
-- Standardize CTA hierarchy: **Book Walkthrough** (primary), **Request Estimate** (secondary), **Call Now** (tertiary).
-- Add 3 proof bullets (permit handling, clean jobsite, code-aware).
-
-**Copy/paste spec**
-- Add a `.service-proof` list:
-  - “Permits + inspection coordination”
-  - “Clean, organized jobsite”
-  - “Code-aware workmanship”
-
-**Effort**: S | **Impact**: High
+**Effort**: M
+**Impact**: High
 
 ---
 
 ### Service Areas (service-areas.html)
 **Issues**
-- CTA “Check My Area” is generic and not tied to travel/coverage rules.
-- Map embed is not paired with scheduling expectations.
+- Map is embedded but not paired with a trust/coverage checklist; CTA “Check My Area” is generic and not anchored to scope clarifications.
 
 **Fix**
-- Add coverage rules section and CTA copy that clarifies scope.
+- Add “Coverage rules” section (radius, response times, trip fee info) and CTA copy “Confirm Availability” with phone + form options.
 
 **Copy/paste spec**
 - CTA row:
   - `<a class="btn-primary" href="tel:+16163347159">Call to Confirm Availability</a>`
   - `<a class="btn-secondary" href="contact.html">Request Scope Review</a>`
-- Coverage note:
-  - “Typical response window: 1–3 business days. Travel fees may apply outside listed areas.”
 
-**Effort**: S | **Impact**: Medium
+**Effort**: S
+**Impact**: Medium
 
 ---
 
 ### Contact (contact.html)
 **Issues**
-- Placeholder form endpoint; lead loss risk.
-- No reassurance about response time.
+- Form action placeholder is not a real endpoint; conversion risk.
+- Form button text is generic (“Request a Quote”) without any reassurance line about response time.
 
 **Fix**
-- Wire to Worker/CRM and add reassurance line.
+- Implement real endpoint (Cloudflare Worker or CRM) and add reassurance line (“We reply within 1 business day”).
 
 **Copy/paste spec**
-- `<p class="form-reassurance">We reply within 1 business day.</p>`
+- Add `<p class="form-reassurance">We reply within 1 business day.</p>` above the submit button.
 
-**Effort**: S | **Impact**: High
+**Effort**: S
+**Impact**: High
 
 ---
 
 ### Booking (booking.html)
 **Issues**
-- Long form with no visible “what happens next” confirmation.
+- Booking form is long without any explanation of next steps; users may abandon after inputting date/time without confirmation on what happens next.
 
 **Fix**
-- Add confirmation panel and short scope note.
+- Add a “What happens next” panel and a confirmation message after submit.
 
 **Copy/paste spec**
-- “After you submit, we’ll confirm a time window within 1 business day and clarify scope by phone or email.”
+- `"After you submit, we’ll confirm a time window within 1 business day and clarify scope by phone or email."`
 
-**Effort**: S | **Impact**: Medium
+**Effort**: S
+**Impact**: Medium
 
 ---
 
 ### Testimonials (testimonials.html)
 **Issues**
-- Page is a guideline list without actual reviews.
+- The page is a guidelines page without actual testimonials; it doesn’t deliver proof or social validation.
 
 **Fix**
-- Add 3–5 testimonials or embed verified review feed.
+- Add at least 3 real testimonials, or embed a Google review summary widget. If unavailable, move this page to a hidden “feedback guidelines” page.
 
 **Copy/paste spec**
-- Add `.testimonial-card` with name, location, service type, star rating, 2–3 sentence quote.
+- Add `.testimonial-card` with photo, name, location, service type, and star rating.
 
-**Effort**: M | **Impact**: High
-
----
-
-### Financing (financing.html)
-**Issues**
-- CTA is not tied to qualifying steps or rate transparency (trust gap).
-
-**Fix**
-- Add “Check eligibility” CTA and clarify “soft pull / no impact” if applicable.
-
-**Copy/paste spec**
-- `<a class="btn-primary" href="contact.html">Request Financing Options</a>`
-
-**Effort**: S | **Impact**: Medium
+**Effort**: M
+**Impact**: High
 
 ---
 
 ### Emergency (emergency.html)
 **Issues**
-- No availability statement or response-time expectation.
+- Emergency page uses “Call now” but lacks the expected “availability” statement or disclaimer about hours and response timeline.
 
 **Fix**
-- Add availability note and fallback response commitment.
+- Add a short availability line and a fallback plan: “If unavailable, we will return your call within X minutes.”
 
-**Copy/paste spec**
-- “If lines are busy, leave a voicemail—we return urgent calls within 30 minutes.”
-
-**Effort**: S | **Impact**: Medium
+**Effort**: S
+**Impact**: Medium
 
 ---
 
 ### Gallery (gallery.html)
 **Issues**
-- Mixed aspect ratios and no `srcset` for images; slow and inconsistent.
+- Gallery is image-heavy with inconsistent aspect ratios and missing srcset; impacts premium feel and performance.
 
 **Fix**
-- Enforce 4:3 crops and add responsive `srcset` + `loading="lazy"`.
+- Enforce 4:3 crop, add `srcset`, and implement lazy-loading below the fold.
 
-**Copy/paste spec**
-- `<img src="...-800.webp" srcset="...-600.webp 600w, ...-800.webp 800w, ...-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" decoding="async">`
-
-**Effort**: M | **Impact**: Medium
+**Effort**: M
+**Impact**: Medium
 
 ---
 
 ### FAQ (faq.html)
 **Issues**
-- FAQ content lacks strong routing to services or next steps.
+- FAQ answers are general; no service detail links or CTA follow-through. (CTA needed at the end of FAQ.)
 
 **Fix**
-- Add service links and CTA “Request Scope Review.”
+- Add CTA links and anchor to “Request Scope Review.”
 
-**Copy/paste spec**
-- `<a class="btn-secondary" href="contact.html">Request Scope Review</a>`
-
-**Effort**: S | **Impact**: Medium
+**Effort**: S
+**Impact**: Medium
 
 ---
 
-### Blog (blog.html + blog-*.html)
+### Blog (blog.html + blog detail pages)
 **Issues**
-- Blog cards lack category and reading time; hero images vary in aspect ratio.
+- Blog cards lack category and reading time; hero imagery is inconsistent across posts (per audit).
 
 **Fix**
-- Add category labels + reading time; standardize hero image to 16:9.
+- Add consistent category labels, reading time, and upgrade imagery standards.
 
-**Copy/paste spec**
-- `<span class="blog-meta">Safety • 6 min read</span>`
-
-**Effort**: M | **Impact**: Low/Medium
-
----
-
-### 404 (404.html)
-**Issues**
-- No CTA beyond navigation; missed recovery opportunity.
-
-**Fix**
-- Add “Call Now” + “Book Service” CTA.
-
-**Effort**: S | **Impact**: Medium
-
----
-
-### About page (missing)
-**Issues**
-- No About page exists, which is a high-trust expectation for premium residential clients.
-
-**Fix**
-- Create `about.html` with company story, licensing, and process.
-
-**Effort**: M | **Impact**: High
+**Effort**: M
+**Impact**: Low/Medium
 
 ---
 
@@ -251,7 +185,7 @@
 
 ### A) Color system (derived from logo)
 **Primary gold extraction**
-- Logo gold sampled from `TopTierElectrical_logo_gold_qb_transparent.png`: **Gold 600 = #D2AF37** (RGB 210,175,55).
+- Sampled from `TopTierElectrical_logo_gold_qb_transparent.png`: **Gold 600 = #D2AF37** (RGB 210,175,55).
 
 **Gold scale (50–900)**
 - 50: #FBF6E5
@@ -259,7 +193,7 @@
 - 200: #F0DA8E
 - 300: #E7C85F
 - 400: #DAB544
-- 500: #D2AF37
+- 500: #D2AF37 (primary)
 - 600: #B08D2A
 - 700: #8C6E20
 - 800: #685016
@@ -291,13 +225,13 @@
 - Info: #2B5F8A
 
 **Contrast-safe guidance (WCAG)**
-- Approved text on white: Ink 900, Ink 800, Neutral 800.
-- Approved text on dark: White or Gold 100.
-- Button text rules: **Use Ink 900 on Gold 500/600** (avoid white text on gold).
+- Approved text on white: Ink 900 (#0E1A24), Ink 800, Neutral 800.
+- Approved text on dark: White (#FFFFFF) or Gold 100.
+- Avoid white text on Gold 500+ for body copy; use Ink 900 for button text on Gold 500/600.
 
 **Do / Don’t examples**
-- ✅ Do: Gold 600 button with Ink 900 text.
-- ❌ Don’t: Gold 500 button with white body-size text.
+- ✅ Do: `Gold 600` button with `Ink 900` text.
+- ❌ Don’t: `Gold 500` button with white text for body-size labels (contrast risk).
 
 ---
 
@@ -332,47 +266,37 @@
 ---
 
 ### C) Graphic language
-**Logo usage rules (attached marks only)**
-- Use **only** provided marks: gold, black, white.
-- Do not redraw, rotate, or alter proportions.
-- Clear space: 1× the height of the “T” around the mark.
-- Minimum sizes: 120px wide (desktop), 96px wide (mobile).
-- Backgrounds:
-  - Gold mark on white or dark ink backgrounds only.
-  - Black mark on white/neutral only.
-  - White mark on dark ink only.
-
 **Icon style**
 - Outline icons, 1.75px stroke, rounded caps, 2px radius.
 - Use Ink 800 for default and Gold 600 for emphasis.
 
 **Shapes**
-- Badge motifs: 8px radius for cards, 999px for pills.
+- Badge motifs referencing logo circle: 8px corner radius for cards, 999px for badges.
 
 **Patterns**
-- Subtle dot grid using Gold 100 at 6–8% opacity.
+- Subtle dot grid using Gold 100 at 6–8% opacity; avoid loud gradients.
 
 **Photo direction (20-shot list)**
 1. Master electrician reviewing panel with homeowner (horizontal, shallow depth).
-2. Clean breaker labeling detail (gold-accented label tape).
+2. Detail of clean breaker labeling with gold-accented label tape.
 3. EV charger install in finished garage with warm ambient light.
 4. Under-cabinet lighting close-up with warm color temp.
-5. Exterior soffit lighting at dusk.
-6. Whole-home panel upgrade before/after (neutral background).
-7. Crew in clean uniforms, boots, safety glasses on site.
-8. Custom home mechanical room overview.
-9. Conduit runs in commercial kitchen.
+5. Exterior soffit lighting at dusk (soft glow).
+6. Whole-home panel upgrade before/after with neutral background.
+7. Crew in clean uniforms, boots, and safety glasses on site.
+8. Custom home mechanical room overview (high-end finishes).
+9. Detail of conduit runs in a commercial kitchen.
 10. Generator pad with clean conduit sweep.
-11. Electrician inspecting GFCI with homeowner visible.
+11. Electrician inspecting GFCI outlet with homeowner visible.
 12. Lighting layout meeting at kitchen island (plans visible).
 13. Smart switch installation close-up.
 14. Exterior service entrance mast with clean alignment.
 15. EV charger load calculation sheet on clipboard.
 16. Electrical walk-through at custom build (hard hats, clean site).
-17. Finished panel with clear labeling + torque verification tag.
+17. Finished panel with clear labeling and torque verification tag.
 18. Outdoor patio lighting at night (warm temperature).
-19. Dedicated circuit for workshop tools.
-20. “Before/after” with clean drywall patching around fixtures.
+19. Dedicated circuit for workshop tools (clean wiring).
+20. “Before/after” with clean drywall patching around new fixtures.
 
 **Component styling rules**
 - Border radius: 12px for cards, 20px for hero CTAs.
@@ -382,67 +306,122 @@
 
 ---
 
-## 4) Cloudflare implementation pack
+## 4) Cloudflare implementation pack (drop-in spec)
 
-### Cache/header matrix by file type
-| File type | Cache-Control | TTL | Notes |
-| --- | --- | --- | --- |
-| HTML | `max-age=0, must-revalidate` | 0 | Always revalidate | 
-| CSS/JS | `max-age=31536000, immutable` | 1 year | Use versioned file names | 
-| Images | `max-age=31536000, immutable` | 1 year | AVIF/WebP | 
-| Fonts | `max-age=31536000, immutable` | 1 year | Self-hosted WOFF2 | 
+### 4.1 Asset strategy
+**Images**
+- Use AVIF primary + WebP fallback; JPEG only for legacy.
+- Hero: 1920/1280/768 widths; gallery: 1200/800/600.
+- `loading="lazy"` below-the-fold and `fetchpriority="high"` for hero.
 
-### Redirect rules outline
-- Force **apex or www** (choose one):
-  - `www.toptier-electrical.com/* → toptier-electrical.com/$1` (301)
-- Enforce **HTTPS** at edge.
-- Normalize **trailing slashes** (choose one standard).
-- Keep existing `/home → /` and legacy redirects in `_redirects`.
+**Fonts**
+- Prefer self-hosted WOFF2 (Cloudflare cacheable). Preload only the heading + body families.
 
-### Recommended Cloudflare toggles (use/avoid)
-- **Enable**: Brotli, HTTP/3, Early Hints.
-- **Enable (if available)**: Polish (quality 75–85), Mirage for image-heavy pages.
-- **Avoid**: Rocket Loader unless JS is tested and minimal.
-
-### Asset strategy (Cloudflare-aware)
-- Images: AVIF primary with WebP fallback.
-- Fonts: self-host WOFF2; preload only heading + body fonts.
-- CSS/JS: inline critical hero CSS; defer non-critical JS.
-
-### Security & trust headers
-```
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self' https://formsubmit.co
-Permissions-Policy: geolocation=(), camera=(), microphone=()
-Referrer-Policy: strict-origin-when-cross-origin
-X-Content-Type-Options: nosniff
-X-Frame-Options: DENY
-Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-```
-
-### SEO + deliverability
-- Maintain canonical tags site-wide.
-- Add `Service` schema per service page; FAQ schema for FAQ sections.
-- Ensure HTML is revalidated so meta updates are not cached incorrectly.
-
-### Observability
-- Lighthouse plan: desktop + mobile runs after image + CSS updates.
-- Cloudflare Web Analytics: enable privacy-friendly beacons.
-- Optional RUM: `web-vitals` to a Worker endpoint.
+**CSS/JS**
+- Critical CSS inline for hero layout; load `styles.css` as non-blocking.
 
 ---
 
-## 5) Final checklists
+### 4.2 Cloudflare configuration
+**Cache policy matrix**
+| Asset | Cache-Control | TTL | Notes |
+| --- | --- | --- | --- |
+| HTML | `max-age=0, must-revalidate` | 0 | Always revalidate | 
+| CSS/JS | `max-age=31536000, immutable` | 1 year | versioned file names | 
+| Images | `max-age=31536000, immutable` | 1 year | AVIF/WebP | 
+| Fonts | `max-age=31536000, immutable` | 1 year | self-hosted WOFF2 | 
 
-### 90-minute quick win checklist
-- Replace placeholder form endpoints with real destinations.
-- Add hero CTA row on all primary pages.
-- Add license + warranty line above the fold.
-- Add form reassurance line (response time).
-- Replace emoji icons with outline icon set.
+**Cloudflare toggles**
+- **Brotli**: enable.
+- **HTTP/3**: enable.
+- **Early Hints**: enable (preload hero + fonts).
+- **Rocket Loader**: avoid unless JS is minimal and validated.
+- **Polish/Mirage** (if available): enable with lossless/lossy tuning (quality 75–85).
 
-### 2-week upgrade checklist
-- Implement full brand palette + typography updates in CSS.
-- Re-export all hero and gallery images to standard aspect ratios.
-- Add responsive `srcset` images and lazy loading.
-- Add Service + FAQ schema on detail pages.
-- Create About page + add real testimonials.
+---
+
+### 4.3 Security & trust headers
+**Baseline CSP (compatible with current assets)**
+```
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self' https://formsubmit.co
+```
+(Ensure `form-action` matches the final form endpoint.)
+
+**Additional headers**
+- `Permissions-Policy: geolocation=(), camera=(), microphone=()`
+- `Referrer-Policy: strict-origin-when-cross-origin`
+- `X-Content-Type-Options: nosniff`
+- `X-Frame-Options: DENY` (or CSP `frame-ancestors` if needed)
+- `Strict-Transport-Security: max-age=31536000; includeSubDomains; preload` (only after HTTPS is stable)
+
+---
+
+### 4.4 SEO + deliverability
+- Canonicals already present; ensure they remain consistent after any path changes.
+- Update structured data for service pages with `Service` type per service detail page.
+- Use Cloudflare redirects for `www ↔ apex` and legacy paths (keep in `_redirects`).
+- Ensure HTML cache TTL remains 0 so meta updates propagate quickly.
+
+---
+
+### 4.5 Observability
+- Lighthouse plan: run desktop + mobile after image + CSS updates; track LCP, CLS, TBT.
+- Cloudflare Web Analytics: enable privacy-first metrics; use `beacon.min.js` with real token (currently placeholder).
+- Optional RUM: integrate `web-vitals` with a Cloudflare Worker endpoint.
+
+---
+
+## 5) Page-by-page change list (Issues → Fix → Copy/paste spec)
+
+### Home
+- **Issue:** CTA competition between hero form, quick actions, sticky bar.
+- **Fix:** Restrict to 2 primary CTAs in hero and make sticky bar the only persistent CTA after scroll.
+- **Spec:** `.hero-cta-row` with `btn-primary` (Gold 600) and `btn-secondary` (outline) + `.hero-trust` badge row.
+- **Impact:** High | **Effort:** S
+
+### Services
+- **Issue:** No CTA above the fold.
+- **Fix:** Add `Book Walkthrough` and `Request Estimate` buttons under hero summary.
+- **Spec:** add `.hero-cta-row` and `btn-primary` + `btn-secondary`.
+- **Impact:** High | **Effort:** S
+
+### Service Areas
+- **Issue:** CTA copy doesn’t reinforce scope/travel rules.
+- **Fix:** Replace with “Confirm Availability” and add radius/travel notes.
+- **Impact:** Medium | **Effort:** S
+
+### Contact
+- **Issue:** Placeholder form endpoint.
+- **Fix:** Wire to Cloudflare Worker or CRM + add response time reassurance.
+- **Impact:** High | **Effort:** S
+
+### Booking
+- **Issue:** No visible confirmation of next steps.
+- **Fix:** Add “What happens next” section.
+- **Impact:** Medium | **Effort:** S
+
+### Testimonials
+- **Issue:** No proof content; only guidelines.
+- **Fix:** Add real testimonials or embed reviews.
+- **Impact:** High | **Effort:** M
+
+### Emergency
+- **Issue:** No response-time language.
+- **Fix:** Add availability note + reassurance.
+- **Impact:** Medium | **Effort:** S
+
+---
+
+## 6) 90-minute quick win checklist
+- Replace form endpoints with real submission target (Worker or CRM).
+- Add hero CTA row on Services and Service Areas.
+- Insert “MI License #631210” in hero trust line on Home and Services.
+- Add reassurance line to Contact and Booking forms.
+- Replace emoji trust icons with a consistent outline icon set.
+
+## 7) 2-week upgrade checklist
+- Implement full brand palette + typography update across CSS.
+- Re-export gallery images to 4:3 and add responsive `srcset`.
+- Add Service schema and FAQs on service detail pages.
+- Implement Cloudflare Image Optimization and confirm caching headers in production.
+- Add real testimonials + photos and update testimonials page structure.
