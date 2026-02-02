@@ -1,6 +1,6 @@
 {
   "baseUrl": "http://localhost:8888/",
-  "generatedAt": "2026-02-02T06:51:29.717Z",
+  "generatedAt": "2026-02-02T06:39:07.040Z",
   "pages": [
     {
       "url": "http://localhost:8888/",
@@ -14,7 +14,7 @@
       "primaryCtaType": "form",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -38,6 +38,41 @@
       "pageType": "home"
     },
     {
+      "url": "http://localhost:8888/index.html",
+      "status": 200,
+      "location": null,
+      "title": "Electrician in West Michigan | Top Tier Electrical",
+      "metaDescription": "Licensed &amp; insured electrician serving West Michigan. Panel upgrades, EV chargers, lighting, and reliable troubleshooting. Get a clear estimate—call (616) 334-7159.",
+      "metaRobots": "index, follow",
+      "canonical": "https://toptier-electrical.com/",
+      "h1Present": true,
+      "primaryCtaType": "form",
+      "lastUpdatedSignal": "",
+      "links": [
+        "http://localhost:8888/index.html",
+        "http://localhost:8888/services.html",
+        "http://localhost:8888/contact.html",
+        "http://localhost:8888/booking.html",
+        "http://localhost:8888/testimonials.html",
+        "http://localhost:8888/financing.html",
+        "http://localhost:8888/emergency.html",
+        "http://localhost:8888/gallery.html",
+        "http://localhost:8888/faq.html",
+        "http://localhost:8888/blog.html",
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/panel-upgrades.html",
+        "http://localhost:8888/ev-chargers.html",
+        "http://localhost:8888/lighting.html",
+        "http://localhost:8888/electrical-repairs.html",
+        "http://localhost:8888/generators.html",
+        "http://localhost:8888/energy-solutions.html",
+        "http://localhost:8888/energy-consulting.html"
+      ],
+      "statusSource": "filesystem",
+      "path": "/index.html",
+      "pageType": "home"
+    },
+    {
       "url": "http://localhost:8888/services.html",
       "status": 200,
       "location": null,
@@ -49,7 +84,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -83,7 +118,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -111,7 +146,7 @@
       "primaryCtaType": "call",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -139,7 +174,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -167,7 +202,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -181,7 +216,7 @@
       ],
       "statusSource": "filesystem",
       "path": "/financing.html",
-      "pageType": "other"
+      "pageType": "service-detail"
     },
     {
       "url": "http://localhost:8888/emergency.html",
@@ -195,7 +230,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -223,7 +258,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -251,7 +286,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -281,7 +316,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -316,7 +351,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -344,7 +379,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -372,7 +407,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -400,7 +435,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -428,7 +463,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -456,7 +491,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -484,7 +519,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -512,7 +547,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -540,7 +575,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -570,7 +605,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -599,7 +634,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -629,7 +664,7 @@
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
-        "http://localhost:8888/",
+        "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
         "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
@@ -651,7 +686,27 @@
   "orphans": [],
   "linkGraph": {
     "http://localhost:8888/": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
+      "http://localhost:8888/services.html",
+      "http://localhost:8888/contact.html",
+      "http://localhost:8888/booking.html",
+      "http://localhost:8888/testimonials.html",
+      "http://localhost:8888/financing.html",
+      "http://localhost:8888/emergency.html",
+      "http://localhost:8888/gallery.html",
+      "http://localhost:8888/faq.html",
+      "http://localhost:8888/blog.html",
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/panel-upgrades.html",
+      "http://localhost:8888/ev-chargers.html",
+      "http://localhost:8888/lighting.html",
+      "http://localhost:8888/electrical-repairs.html",
+      "http://localhost:8888/generators.html",
+      "http://localhost:8888/energy-solutions.html",
+      "http://localhost:8888/energy-consulting.html"
+    ],
+    "http://localhost:8888/index.html": [
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -671,7 +726,7 @@
       "http://localhost:8888/energy-consulting.html"
     ],
     "http://localhost:8888/services.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -690,7 +745,7 @@
       "http://localhost:8888/generators.html"
     ],
     "http://localhost:8888/contact.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -703,7 +758,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/booking.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -716,7 +771,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/testimonials.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -729,7 +784,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/financing.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -742,7 +797,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/emergency.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -755,7 +810,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/gallery.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -768,7 +823,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/faq.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -783,7 +838,7 @@
       "http://localhost:8888/ev-chargers.html"
     ],
     "http://localhost:8888/blog.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -803,7 +858,7 @@
       "http://localhost:8888/blog-surge-protection.html"
     ],
     "http://localhost:8888/service-areas.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -816,7 +871,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/panel-upgrades.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -829,7 +884,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/ev-chargers.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -842,7 +897,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/lighting.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -855,7 +910,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/electrical-repairs.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -868,7 +923,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/generators.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -881,7 +936,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/energy-solutions.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -894,7 +949,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/energy-consulting.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -907,7 +962,7 @@
       "http://localhost:8888/service-areas.html"
     ],
     "http://localhost:8888/blog-electrical-safety.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -922,7 +977,7 @@
       "http://localhost:8888/panel-upgrades.html"
     ],
     "http://localhost:8888/blog-right-electrician.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -936,7 +991,7 @@
       "http://localhost:8888/panel-upgrades.html"
     ],
     "http://localhost:8888/blog-ev-charging.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
@@ -951,7 +1006,7 @@
       "http://localhost:8888/ev-chargers.html"
     ],
     "http://localhost:8888/blog-surge-protection.html": [
-      "http://localhost:8888/",
+      "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
       "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",

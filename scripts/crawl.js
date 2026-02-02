@@ -8,11 +8,7 @@ const outputDir = process.argv[3] || 'reports';
 
 const normalizeUrl = (input) => {
   try {
-    const url = new URL(input, baseUrl);
-    if (url.pathname.endsWith('/index.html')) {
-      url.pathname = url.pathname.replace(/\/index\.html$/, '/');
-    }
-    return url.toString();
+    return new URL(input, baseUrl).toString();
   } catch (error) {
     return null;
   }
@@ -97,16 +93,6 @@ const detectPrimaryCta = (html) => {
   return 'book';
 };
 
-const servicePages = new Set([
-  '/panel-upgrades.html',
-  '/ev-chargers.html',
-  '/lighting.html',
-  '/electrical-repairs.html',
-  '/generators.html',
-  '/energy-solutions.html',
-  '/energy-consulting.html'
-]);
-
 const detectPageType = (pathname) => {
   const page = pathname.replace(/\/$/, '');
   if (page === '' || page.endsWith('index.html')) return 'home';
@@ -120,33 +106,8 @@ const detectPageType = (pathname) => {
   if (page.endsWith('blog.html')) return 'blog';
   if (page.includes('/blog-')) return 'post';
   if (page.endsWith('service-areas.html')) return 'service-areas';
-  if (servicePages.has(page)) return 'service-detail';
-  if (page.endsWith('.html')) return 'other';
+  if (page.endsWith('.html')) return 'service-detail';
   return 'other';
-};
-
-const readRobotsPolicy = () => {
-  const robotsPath = path.join(process.cwd(), 'robots.txt');
-  if (!fs.existsSync(robotsPath)) return 'index,follow';
-  const contents = fs.readFileSync(robotsPath, 'utf8');
-  const lines = contents.split(/\r?\n/);
-  let appliesToAll = false;
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith('#')) continue;
-    if (/^User-agent:\s*\*/i.test(trimmed)) {
-      appliesToAll = true;
-      continue;
-    }
-    if (/^User-agent:/i.test(trimmed)) {
-      appliesToAll = false;
-      continue;
-    }
-    if (appliesToAll && /^Disallow:\s*\/\s*$/i.test(trimmed)) {
-      return 'noindex,nofollow';
-    }
-  }
-  return 'index,follow';
 };
 
 const readLocalPage = (url) => {
@@ -182,7 +143,6 @@ const crawl = async () => {
   const visited = new Map();
   const linkGraph = new Map();
   const queue = [baseUrl];
-  const robotsPolicy = readRobotsPolicy();
 
   while (queue.length) {
     const current = queue.shift();
@@ -206,9 +166,8 @@ const crawl = async () => {
     const timeMatch = body ? body.match(/<time[^>]*>([^<]+)<\/time>/i) : null;
     const lastUpdatedSignal = timeMatch ? timeMatch[1].trim() : '';
 
-    const normalizedUrl = normalizeUrl(current) || current;
-    visited.set(normalizedUrl, {
-      url: normalizedUrl,
+    visited.set(current, {
+      url: current,
       status,
       location,
       title,
@@ -222,12 +181,11 @@ const crawl = async () => {
       statusSource: source
     });
 
-    linkGraph.set(normalizedUrl, links);
+    linkGraph.set(current, links);
 
     links.forEach((link) => {
-      const normalizedLink = normalizeUrl(link) || link;
-      if (!visited.has(normalizedLink)) {
-        queue.push(normalizedLink);
+      if (!visited.has(link)) {
+        queue.push(link);
       }
     });
   }
@@ -292,7 +250,7 @@ const crawl = async () => {
   const rows = [csvHeaders.join(',')];
   pages.forEach((page) => {
     const canonicalPresent = page.canonical ? 'Y' : 'N';
-    const indexability = page.metaRobots ? page.metaRobots : robotsPolicy;
+    const indexability = page.metaRobots ? page.metaRobots : 'index,follow';
     rows.push([
       page.url,
       page.pageType,
