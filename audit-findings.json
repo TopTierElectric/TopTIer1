@@ -1,23 +1,22 @@
 {
   "errors": [
-    {"severity": "critical", "issue": "git_conflict_markers", "files": ["index.html", "services.html", "gallery.html", "contact.html", "blog.html", "404.html", "booking.html", "lighting.html", "service-areas.html", "faq.html", "emergency.html", "panel-upgrades.html", "blog-right-electrician.html", "testimonials.html", "blog-surge-protection.html", "ev-chargers.html", "financing.html", "blog-ev-charging.html"]},
-    {"severity": "critical", "issue": "invalid_json_ld", "file": "index.html", "lines": [24,45]},
-    {"severity": "critical", "issue": "headers_commented", "file": "_headers", "lines": [1,9]},
-    {"severity": "warning", "issue": "missing_preload_asset", "file": "blog.html", "lines": [21,22]},
-    {"severity": "warning", "issue": "nav_script_mismatch_and_dead_links", "file": "blog.html", "lines": [55,77]},
-    {"severity": "warning", "issue": "forms_missing_labels", "files": ["index.html", "services.html"], "lines": [87,91]},
-    {"severity": "info", "issue": "images_lack_srcset", "file": "gallery.html", "lines": [94,119]}
+    {
+      "severity": "info",
+      "issue": "images_lack_srcset",
+      "file": "gallery.html",
+      "notes": "Gallery images serve single-size sources without srcset/sizes."
+    }
   ],
   "performance": {
-    "render_blocking": ["styles.css", "script.js"],
-    "media": "Large JPEG gallery without responsive variants",
-    "caching": "_headers commented; no immutable caching",
-    "interaction": "Blog nav JS not bound due to ID mismatch"
+    "render_blocking": ["styles.css"],
+    "media": "Gallery uses single-size JPEGs without responsive variants",
+    "caching": "_headers defines cache controls for HTML and assets",
+    "interaction": "script.js is deferred"
   },
   "seo": {
-    "broken_links": ["about.html", "pricing.html"],
-    "schema_status": "Invalid on homepage due to conflicts",
-    "missing_files": ["sitemap.xml", "robots.txt"]
+    "broken_links": [],
+    "schema_status": "LocalBusiness/Service/FAQPage present",
+    "missing_files": []
   },
-  "actions": ["resolve_conflicts", "enable_headers", "fix_blog_nav", "add_form_labels", "optimize_media", "publish_sitemap"]
+  "actions": ["optional_add_srcset", "optional_optimize_media"]
 }
