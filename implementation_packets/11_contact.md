@@ -7,7 +7,7 @@ Contact page contained unverifiable claims and inconsistent service area list.
 Contact page is a conversion point and must be accurate.
 
 ## Exact Fix
-Updated metadata, service areas list, hours, removed 24/7 and warranty claims, and refreshed trust strip.
+Updated metadata, service areas list (including Douglas and Jamestown), hours, removed 24/7 and warranty claims, and refreshed trust strip.
 
 ## Where to apply
 contact.html

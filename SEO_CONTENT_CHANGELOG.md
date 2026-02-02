@@ -218,3 +218,8 @@ HTTP/1.1 503 Service Unavailable
 
 ##### implementation_packets/23_facebook-alignment.md
 - Added page-specific implementation packet.
+
+### Post-review fixes (follow-up)
+- Updated blog-ev-charging metadata to match revised content.
+- Aligned contact service areas with service-areas list (added Douglas and Jamestown).
+- Updated tracker row for blog-ev-charging.

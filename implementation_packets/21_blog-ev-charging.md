@@ -7,7 +7,7 @@ Blog post included unverifiable claims and missing H1.
 EV charging content drives service page relevance.
 
 ## Exact Fix
-Rewrote post, added H1, CTA block, and limited service links to EV chargers + panel upgrades.
+Rewrote post, updated metadata to match content, added H1, CTA block, and limited service links to EV chargers + panel upgrades.
 
 ## Where to apply
 blog-ev-charging.html
