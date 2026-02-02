@@ -1,0 +1,31 @@
+HTTP/1.1 200 OK
+date: Mon, 02 Feb 2026 13:53:12 GMT
+server: envoy
+
+HTTP/1.1 403 Forbidden
+date: Mon, 02 Feb 2026 13:53:12 GMT
+content-type: text/html; charset=UTF-8
+accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cf-mitigated: challenge
+critical-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+origin-agent-cluster: ?1
+permissions-policy: accelerometer=(),browsing-topics=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),interest-cohort=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=()
+referrer-policy: same-origin
+server-timing: chlray;desc="9c7a2c66d99b316e"
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+cache-control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+expires: Thu, 01 Jan 1970 00:00:01 GMT
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=5gr0dOFNEcZkzEPdJHHT%2B8ShQt3TRxxg%2F4Zj2CQ3ES1e%2F%2BVbWxFYTQBEZa6ZwzJan%2F0J8a38fqHVZyeLPzBk14RIaDEjcHUDiJiIbk1rB2QQF3DAkCoqJkEWKtZjnJtlVsva5Ywy%2Fe7OZNTIcQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+speculation-rules: "/cdn-cgi/speculation"
+server: envoy
+cf-ray: 9c7a2c66d99b316e-DFW
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=15059&min_rtt=14836&rtt_var=4284&sent=6&recv=8&lost=0&retrans=0&sent_bytes=3374&recv_bytes=878&delivery_rate=282310&cwnd=255&unsent_bytes=0&cid=8d649e397d90cd8d&ts=36&x=0"
+x-envoy-upstream-service-time: 67
+transfer-encoding: chunked
+
