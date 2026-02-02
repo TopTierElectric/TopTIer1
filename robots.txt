@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://toptier-electrical.com/sitemap.xml
+Sitemap: https://www.toptier-electrical.com/sitemap.xml
