@@ -1,0 +1,36 @@
+name: format-with-prettier
+on:
+  workflow_dispatch:   # lets you run this manually from Actions
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      # Format only the primary file types in this repo (HTML/CSS/JS/Python/Markdown)
+      - name: Run Prettier (formats files)
+        run: npx --yes prettier@2.8.8 --write "**/*.{html,css,js,py,md}"
+
+      - name: Commit formatted files
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions[bot]
+          author_email: github-actions[bot]@users.noreply.github.com
+          message: chore: format code with Prettier
+          add: '.'
