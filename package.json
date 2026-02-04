@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "echo 'Static site - no build required'",
-    "dev": "npx live-server --port=8888 --no-browser",
+    "dev": "npx http-server -p 8888",
     "format": "npx prettier --write \"**/*.{html,css,js,json,md}\"",
     "format:check": "npx prettier --check \"**/*.{html,css,js,json,md}\"",
     "lint:html": "npx html-validate '*.html'",
@@ -27,8 +27,7 @@
   "devDependencies": {
     "html-validate": "^8.0.0",
     "linkinator": "^6.0.0",
-    "live-server": "^1.2.2",
-    "pa11y-ci": "^3.0.0",
+    "pa11y-ci": "^4.0.1",
     "prettier": "^3.2.5",
     "sharp": "^0.33.2",
     "stylelint": "^16.0.0",

@@ -20,5 +20,5 @@
 - If non-Pages, recommend a Worker or third-party form service, documented in Cloudflare dashboard rules.
 
 ## Local run commands
-- `npm run dev` (uses `npx live-server --port=8888 --no-browser`)
+- `npm run dev` (uses `npx http-server -p 8888`)
 - `npm run build` (no-op; static)
