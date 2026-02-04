@@ -128,6 +128,8 @@ say
 have_docker=0
 if command -v docker >/dev/null 2>&1; then have_docker=1; fi
 
+ci_mode="${SAVAGE_CI:-0}"
+
 run_gitleaks() {
   say "${BLU}== Secrets Scan (gitleaks) ==${NC}"
   if command -v gitleaks >/dev/null 2>&1; then
@@ -141,8 +143,23 @@ run_gitleaks() {
   fi
   # Fail hard if leaks are found (SARIF presence is not enough; gitleaks exits non-zero when leaks found,
   # but we used '|| true' to always finish. So we parse for results count best-effort.)
-  if [[ -f "$REPORT_DIR/gitleaks.sarif" ]] && grep -q '"level": "error"' "$REPORT_DIR/gitleaks.sarif"; then
-    die "Secrets scan shows errors. Fix leaks BEFORE proceeding."
+  if [[ -f "$REPORT_DIR/gitleaks.sarif" ]]; then
+    need_cmd python3
+    set +e
+    python3 - <<'PY' "$REPORT_DIR/gitleaks.sarif"
+import json, sys
+path = sys.argv[1]
+data = json.loads(open(path, "r", encoding="utf-8").read())
+results = data.get("runs", [{}])[0].get("results", [])
+if results:
+    print(f"gitleaks findings: {len(results)}")
+    sys.exit(1)
+PY
+    status=$?
+    set -e
+    if [[ $status -ne 0 ]]; then
+      die "Secrets scan shows findings. Fix leaks BEFORE proceeding."
+    fi
   fi
   say
 }
@@ -208,21 +225,29 @@ run_node_pipeline() {
 
   # Install deps if requested or if node_modules missing
   if [[ ! -d node_modules ]]; then
-    if [[ "${SAVAGE_INSTALL:-0}" == "1" ]]; then
-      say "Installing dependencies (SAVAGE_INSTALL=1)…"
+    if [[ "${SAVAGE_INSTALL:-0}" == "1" || "$ci_mode" == "1" ]]; then
+      say "Installing dependencies (SAVAGE_INSTALL=1 or SAVAGE_CI=1)…"
       if [[ "$pm" == "npm" ]]; then npm ci; else "$pm" install; fi
       ok "Dependencies installed."
     else
-      die "node_modules missing. Run install first (or rerun with SAVAGE_INSTALL=1)."
+      die "node_modules missing. Run install first (or rerun with SAVAGE_INSTALL=1 or SAVAGE_CI=1)."
     fi
   fi
   say
 
   say "${BLU}== Dependency Vulnerability Scan ==${NC}"
   if [[ "$pm" == "npm" ]]; then
-    npm audit --audit-level=high || die "npm audit failed at high/critical level. Fix vulnerabilities."
+    if [[ ! -f package-lock.json ]]; then
+      warn "package-lock.json missing. Run npm install --package-lock-only to enable npm audit gating."
+    else
+      npm audit --audit-level=high || die "npm audit failed at high/critical level. Fix vulnerabilities."
+    fi
   elif [[ "$pm" == "pnpm" ]]; then
-    pnpm audit --audit-level high || die "pnpm audit failed at high/critical level. Fix vulnerabilities."
+    if [[ ! -f pnpm-lock.yaml ]]; then
+      warn "pnpm-lock.yaml missing. Run pnpm install to enable pnpm audit gating."
+    else
+      pnpm audit --audit-level high || die "pnpm audit failed at high/critical level. Fix vulnerabilities."
+    fi
   else
     # yarn classic has limited audit; yarn berry uses npm registry plugin.
     yarn npm audit --severity high >/dev/null 2>&1 && ok "yarn npm audit passed." || warn "yarn audit unavailable or failed. Consider trivy/semgrep as source of truth."
@@ -283,7 +308,16 @@ run_node_pipeline() {
     set -e
 
     # Wait briefly for server (best-effort)
-    sleep 3
+    for i in {1..20}; do
+      if command -v curl >/dev/null 2>&1; then
+        if curl -fsS "$SAVAGE_PREVIEW_URL" >/dev/null 2>&1; then
+          break
+        fi
+      else
+        sleep 1
+      fi
+      sleep 1
+    done
 
     # Run Lighthouse (headless)
     npx -y lighthouse "$SAVAGE_PREVIEW_URL" \
