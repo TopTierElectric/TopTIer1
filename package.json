@@ -6,10 +6,12 @@
   "scripts": {
     "build": "echo 'Static site - no build required'",
     "dev": "npx http-server -p 8888",
+    "lint": "npm run lint:html && npm run lint:css",
     "format": "npx prettier --write \"**/*.{html,css,js,json,md}\"",
     "format:check": "npx prettier --check \"**/*.{html,css,js,json,md}\"",
     "lint:html": "npx html-validate '*.html'",
     "lint:css": "npx stylelint 'styles.css'",
+    "audit:deps": "npm audit --audit-level=high",
     "validate:html": "npx html-validate '*.html'",
     "audit:links": "npx linkinator . --recurse --skip 'tel:' --skip 'mailto:'",
     "audit:a11y": "npx pa11y-ci",
