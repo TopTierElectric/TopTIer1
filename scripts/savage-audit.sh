@@ -67,7 +67,7 @@ say
 say "${BLU}== Repo Inventory & Bloat ==${NC}"
 need_cmd python3
 
-python3 - <<'PY' > "$REPORT_DIR/repo-inventory.txt"
+python3 - <<'PY' > "reports/repo-inventory.txt"
 import os, pathlib, mimetypes, sys
 root = pathlib.Path(".").resolve()
 paths = []
@@ -93,10 +93,10 @@ for size, rel, mt in paths[:80]:
     print(f"{size:>12}  {rel}  {mt}")
 PY
 
-ok "Wrote $REPORT_DIR/repo-inventory.txt (largest files list)."
+ok "Wrote reports/repo-inventory.txt (largest files list)."
 
 # Image bloat snapshot
-python3 - <<'PY' > "$REPORT_DIR/image-bloat.txt"
+python3 - <<'PY' > "reports/image-bloat.txt"
 import os, pathlib
 root = pathlib.Path(".").resolve()
 exts = {".png", ".jpg", ".jpeg", ".webp", ".avif", ".gif", ".svg"}
@@ -120,7 +120,7 @@ print("\nTop 60 largest images:")
 for s, rel in imgs[:60]:
     print(f"{s:>12}  {rel}")
 PY
-ok "Wrote $REPORT_DIR/image-bloat.txt."
+ok "Wrote reports/image-bloat.txt."
 say
 
 # --- Tooling: optional but savage
@@ -220,16 +220,7 @@ run_node_pipeline() {
 
   say "${BLU}== Dependency Vulnerability Scan ==${NC}"
   if [[ "$pm" == "npm" ]]; then
-    if [[ -f package-lock.json ]]; then
-      npm audit --audit-level=high || die "npm audit failed at high/critical level. Fix vulnerabilities."
-    else
-      warn "package-lock.json missing. Running npm audit in a temporary prefix to avoid modifying the repo."
-      tmpdir="$(mktemp -d)"
-      cp package.json "$tmpdir"/
-      npm --prefix "$tmpdir" install --package-lock-only --ignore-scripts --no-fund --no-audit
-      npm --prefix "$tmpdir" audit --audit-level=high || die "npm audit failed at high/critical level. Fix vulnerabilities."
-      rm -rf "$tmpdir"
-    fi
+    npm audit --audit-level=high || die "npm audit failed at high/critical level. Fix vulnerabilities."
   elif [[ "$pm" == "pnpm" ]]; then
     pnpm audit --audit-level high || die "pnpm audit failed at high/critical level. Fix vulnerabilities."
   else
