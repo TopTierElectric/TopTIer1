@@ -24,3 +24,8 @@
 ## Reports + outputs
 - Lighthouse output is generated to `reports/lighthouse.html` when `npm run qa` completes.
 - QA workflow uploads the `reports/` directory as an artifact.
+
+## Savage audit automation
+- Single worktree audit: `./scripts/savage-audit.sh` (writes `reports/meta.json` plus security scan logs).
+- All branches audit: `SAVAGE_JOBS=6 SAVAGE_MODE=full SAVAGE_STRICT=1 ./scripts/savage-audit-all-branches.sh` (writes `reports/branches/summary.md` and per-branch `meta.json`).
+- Fast mode (skip Node gates): `SAVAGE_MODE=fast ./scripts/savage-audit-all-branches.sh`.
