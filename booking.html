@@ -136,6 +136,9 @@
           <div class="contact-form">
             <h3>Service Booking Form</h3>
             <form name="booking" method="POST" action="https://formsubmit.co/toptierelectric117@gmail.com">
+              <input type="hidden" name="_subject" value="New booking request from Top Tier Electrical">
+              <input type="hidden" name="_next" value="https://toptier-electrical.com/thank-you.html">
+              <input type="hidden" name="form_name" value="Booking form">
               <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
               <label for="book-name">Name</label>
               <input type="text" id="book-name" name="name" required autocomplete="name">
@@ -161,7 +164,7 @@
               <input type="time" id="book-time" name="time" required autocomplete="off">
               <label for="book-notes">Additional Notes</label>
               <textarea id="book-notes" name="notes" placeholder="Describe your project or any special requirements"></textarea>
-              <button type="submit">Schedule Service</button>
+              <button type="submit" data-cta="booking-schedule-service">Schedule Service</button>
               <p class="form-confirmation">After submitting, we’ll confirm details and send next steps by phone or email.</p>
             </form>
           </div>
