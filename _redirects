@@ -1,4 +1,7 @@
-https://toptier-electrical.com/* https://www.toptier-electrical.com/:splat 301!
+http://toptier-electrical.com/* https://toptier-electrical.com/:splat 301!
+http://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301!
+https://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301!
+
 /home / 301
 /about /services.html 301
 /pricing /services.html 301

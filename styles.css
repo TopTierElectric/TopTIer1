@@ -1,26 +1,4 @@
 /* TopTier Electrical improved site styles */
-/* Define color palette */
-:root {
-  --primary: #04172a;
-  --secondary: #f47037;
-  --light-bg: #f9fafb;
-  --text-dark: #1f2937;
-  --text-light: #f9fafb;
-  --muted: #6b7280;
-  --success: #16a34a;
-  --danger: #dc2626;
-  --warning: #f59e0b;
-  /* Typography */
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-size-h1: 2.5rem;
-  --font-size-h2: 2rem;
-  --font-size-h3: 1.5rem;
-  --font-size-h4: 1.25rem;
-  --font-size-body: 1rem;
-  --line-height-body: 1.7;
-  --line-height-heading: 1.2;
-}
-
 /* Accessible skip link for keyboard navigation */
 .skip-link {
   position: absolute;
@@ -97,16 +75,9 @@ html {
 
 /* Header */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   background: var(--primary);
   color: var(--text-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -123,6 +94,12 @@ header nav ul {
   padding: 0;
   display: flex;
   gap: 1.5rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 header nav a {

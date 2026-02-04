@@ -1,0 +1,129 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--brand-black);
+  border-bottom: 2px solid var(--brand-gold);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.logo picture,
+.footer-logo picture {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo img,
+.footer-logo img {
+  display: block;
+  height: auto;
+}
+
+.nav-cta {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--brand-gold);
+  color: var(--brand-black);
+  border-color: var(--brand-gold-dark);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: translateY(-1px);
+  box-shadow: var(--brand-shadow);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--brand-gold);
+  border-color: var(--brand-gold);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.hero-picture {
+  margin-top: 1.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--brand-shadow);
+}
+
+.hero-picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.site-footer {
+  background: var(--brand-charcoal);
+  color: #c7c7c7;
+  border-top: 2px solid var(--brand-gold);
+  padding: 2.5rem 0;
+}
+
+.site-footer a {
+  color: #f0f0f0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-grid h3 {
+  color: #fff;
+  font-family: var(--font-display);
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .nav-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
