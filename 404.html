@@ -14,18 +14,22 @@
   <meta property="og:title" content="404 - Page Not Found | Top Tier Electrical">
   <meta property="og:description" content="The page you requested cannot be found. Browse our services or get in touch for assistance.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://www.toptier-electrical.com/assets/images/hero.jpg">
-  <meta property="og:url" content="https://www.toptier-electrical.com/404.html">
+  <meta property="og:image" content="https://toptier-electrical.com/assets/images/hero.jpg">
+  <meta property="og:url" content="https://toptier-electrical.com/404.html">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://www.toptier-electrical.com/404.html">
+  <link rel="canonical" href="https://toptier-electrical.com/404.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="css/design-tokens.css" as="style">
   <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="css/components.css" as="style">
   <link rel="preload" as="image" href="/assets/images/hero.jpg">
+  <link rel="stylesheet" href="css/design-tokens.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/components.css">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -33,7 +37,7 @@
     "@context": "https://schema.org",
     "@type": "Electrician",
     "name": "Top Tier Electrical",
-    "url": "https://www.toptier-electrical.com/",
+    "url": "https://toptier-electrical.com/",
     "telephone": "+1-616-334-7159",
     "email": "toptierelectric117@gmail.com",
     "areaServed": [
@@ -55,33 +59,43 @@
     ]
   }
   </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"f3a4c2b1d9e54a6b8c1f7e2d3a4b5c6d"}'></script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header>
-    <div class="logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo" width="150" height="50" decoding="async"></div>
-    <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav id="main-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Free Estimate</a></li>
-        <!-- New booking link -->
-        <li><a href="booking.html">Book</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="financing.html">Financing</a></li>
-        <li><a href="emergency.html">Emergency</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="service-areas.html">Service Areas</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Top Tier Electrical home">
+        <picture>
+          <source srcset="images/logos/TopTierElectrical_Primary_FlatGold_512.webp" type="image/webp">
+          <img src="images/logos/TopTierElectrical_Primary_FlatGold_512.png" alt="Top Tier Electrical logo" width="200" height="64" decoding="async">
+        </picture>
+      </a>
+      <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="booking.html">Book Online</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="financing.html">Financing</a></li>
+          <li><a href="emergency.html">Emergency</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="service-areas.html">Service Areas</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="tel:+16163347159" class="btn btn-ghost">Call (616) 334-7159</a>
+          <a href="booking.html" class="btn btn-primary">Book Online</a>
+        </div>
+      </nav>
+    </div>
   </header>
   <main id="main-content">
     <section class="hero" style="background-image:url('/assets/images/hero.jpg');">
@@ -112,23 +126,43 @@
     <a href="tel:+16163347159">Call</a>
     <a href="booking.html" class="btn">Schedule Service</a>
   </div>
-   <footer>
-    <div class="footer-logo"><img src="assets/images/logo.svg" alt="Top Tier Electrical logo" width="150" height="50" decoding="async"></div>
+     <section class="pre-footer">
+    <div class="container">
+      <div class="pre-footer-content">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Book Online</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="financing.html">Financing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p><a href="tel:+16163347159">(616) 334-7159</a></p>
+          <p><a href="mailto:toptierelectric117@gmail.com">toptierelectric117@gmail.com</a></p>
+          <p>Mon–Fri 8am–6pm · Sat 9am–1pm</p>
+        </div>
+        <div class="footer-col">
+          <h4>Service Areas</h4>
+          <p>Holland • Grand Rapids • Byron Center<br>Zeeland • Saugatuck • Hudsonville • Allegan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="footer-logo">
+      <picture>
+        <source srcset="images/logos/TopTierElectrical_Primary_FlatGold_512.webp" type="image/webp">
+        <img src="images/logos/TopTierElectrical_Primary_FlatGold_512.png" alt="Top Tier Electrical logo" width="200" height="64" decoding="async">
+      </picture>
+    </div>
     <p>MI License #631210</p>
     <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
   </footer>
   <script src="script.js" defer></script>
-  <!-- Crisp Chat widget (uncomment and set your website ID to enable)
-  <script type="text/javascript">
-  window.$crisp=[];window.CRISP_WEBSITE_ID="YOUR_ID_HERE";
-  (function(){
-    var d=document;var s=d.createElement("script");
-    s.src="https://client.crisp.chat/l.js";
-    s.async=1;
-    d.getElementsByTagName("head")[0].appendChild(s);
-  })();
-  </script>
-  -->
   <!-- Google Analytics placeholder (replace G-XXXXXXXXXX with your GA ID) -->
   <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -139,6 +173,5 @@
     gtag('config', 'G-XXXXXXXXXX');
   </script>
   -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"YOUR_CLOUDFLARE_ANALYTICS_TOKEN"}'></script>
 </body>
 </html>
