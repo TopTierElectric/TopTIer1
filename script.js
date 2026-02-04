@@ -39,8 +39,20 @@ document.addEventListener('DOMContentLoaded', function () {
     window.dispatchEvent(new CustomEvent('tte:track', { detail: { eventName, meta } }));
   }
 
+  function trackCta(target) {
+    if (!target) {
+      return;
+    }
+    const ctaLabel = target.getAttribute('data-cta');
+    if (ctaLabel) {
+      tteTrack('cta_click', { ctaLabel });
+    }
+  }
+
   document.addEventListener('click', function (event) {
     const link = event.target.closest('a[href]');
+    const button = event.target.closest('button[data-cta]');
+    trackCta(button || link);
     if (!link) {
       return;
     }
@@ -50,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (href.startsWith('sms:')) {
       tteTrack('text_click', { href });
+    }
+    if (href.startsWith('mailto:')) {
+      tteTrack('email_click', { href });
     }
   });
 
