@@ -1,8 +1,42 @@
+# Canonical host + HTTPS enforcement (apex)
 http://toptier-electrical.com/* https://toptier-electrical.com/:splat 301!
 http://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301!
 https://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301!
 
+# Clean URL aliases -> .html
+/index / 301
+/index.html / 301
+/404 /404.html 301
+/blog /blog.html 301
+/booking /booking.html 301
+/contact /contact.html 301
+/electrical-repairs /electrical-repairs.html 301
+/emergency /emergency.html 301
+/energy-consulting /energy-consulting.html 301
+/energy-solutions /energy-solutions.html 301
+/ev-chargers /ev-chargers.html 301
+/faq /faq.html 301
+/financing /financing.html 301
+/gallery /gallery.html 301
+/generators /generators.html 301
+/lighting /lighting.html 301
+/panel-upgrades /panel-upgrades.html 301
+/service-areas /service-areas.html 301
+/services /services.html 301
+/styleguide-top-tier-electrical /styleguide-top-tier-electrical.html 301
+/testimonials /testimonials.html 301
+/thank-you /thank-you.html 301
+/blog-electrical-safety /blog-electrical-safety.html 301
+/blog-ev-charging /blog-ev-charging.html 301
+/blog-generator-readiness /blog-generator-readiness.html 301
+/blog-panel-upgrade-signs /blog-panel-upgrade-signs.html 301
+/blog-right-electrician /blog-right-electrician.html 301
+/blog-surge-protection /blog-surge-protection.html 301
+
+# Legacy aliases
 /home / 301
 /about /services.html 301
 /pricing /services.html 301
+
+# Fallback 404
 /* /404.html 404
