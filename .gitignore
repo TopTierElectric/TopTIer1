@@ -14,7 +14,6 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
-!evidence/**/*.log
 
 # Build output
 dist/
