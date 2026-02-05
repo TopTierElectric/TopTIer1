@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> toptier-electrical@1.0.0 lint:js
+> npx eslint --max-warnings=0 .
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
