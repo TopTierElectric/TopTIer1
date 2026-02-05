@@ -14,9 +14,9 @@
     "lint:js": "npx eslint --max-warnings=0 .",
     "audit:deps": "npm audit --audit-level=high",
     "validate:html": "npx html-validate '*.html'",
-    "audit:links": "npx linkinator . --recurse --skip 'tel:' --skip 'mailto:'",
+    "audit:links": "npx linkinator . --recurse --skip 'tel:' --skip 'mailto:' --skip 'node_modules' --skip 'reports' --skip 'bundle export'",
     "audit:a11y": "npx pa11y-ci",
-    "audit:lighthouse": "npx lighthouse http://127.0.0.1:8888 --output=html --output-path=reports/lighthouse.html --chrome-flags='--headless=new --no-sandbox'",
+    "audit:lighthouse": "mkdir -p reports && npx lighthouse http://127.0.0.1:8888 --output=html --output-path=reports/lighthouse.html --chrome-flags='--headless=new --no-sandbox'",
     "check:placeholders": "node scripts/check-placeholders.js",
     "qa": "npm run format:check && npm run validate:html && npm run lint && npm run audit:links && npm run audit:a11y && npm run audit:lighthouse && npm run check:placeholders"
   },
@@ -31,11 +31,13 @@
     "html-validate": "^8.0.0",
     "eslint": "^8.57.0",
     "linkinator": "^6.0.0",
+    "http-server": "^14.1.1",
     "pa11y-ci": "^4.0.1",
     "prettier": "^3.2.5",
     "sharp": "^0.33.2",
     "stylelint": "^16.0.0",
-    "stylelint-config-standard": "^36.0.0"
+    "stylelint-config-standard": "^36.0.0",
+    "wait-on": "^7.2.0"
   },
   "engines": {
     "node": ">=18.0.0"
