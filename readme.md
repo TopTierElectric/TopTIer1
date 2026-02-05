@@ -1,8 +1,8 @@
 # Top Tier Electrical Website
 
-This is a static website for **Top Tier Electrical**, a fictional electrician service in West Michigan.  The site is built using plain HTML, CSS and JavaScript—there are no build tools or dependencies required.
+This is a static website for **Top Tier Electrical**, a fictional electrician service in West Michigan. The site is built using plain HTML, CSS and JavaScript—there are no build tools or dependencies required.
 
-All pages include SEO‑friendly meta tags, Open Graph data and structured data for a local business.  Canonical URLs are set to `https://www.toptier-electrical.com/…` as a placeholder—update these values to match your final domain before deploying.
+All pages include SEO‑friendly meta tags, Open Graph data and structured data for a local business. Canonical URLs are set to `https://www.toptier-electrical.com/…` as a placeholder—update these values to match your final domain before deploying.
 
 ## Structure
 
@@ -23,7 +23,7 @@ The site is organised into a number of pages to cover all aspects of the busines
 
 ## Viewing Locally
 
-To view the site locally, simply open `index.html` in your web browser.  All navigation links will work automatically as long as the files remain in the same directory structure.
+To view the site locally, simply open `index.html` in your web browser. All navigation links will work automatically as long as the files remain in the same directory structure.
 
 ## Deployment
 
@@ -35,10 +35,10 @@ Netlify-specific form attributes have been removed for Cloudflare compatibility.
 
 ## Repository Setup
 
-When creating a new GitHub repository, extract this ZIP and commit all files.  The gallery page references image files that are **not** included in this package (they should already exist in your repository).  Make sure your repository contains the images referenced in `gallery.html` (for example, at `/images/gallery/3-phase-service.jpg`, `/images/gallery/conduit-piping.jpg`, etc.).
+When creating a new GitHub repository, extract this ZIP and commit all files. The gallery page references image files that are **not** included in this package (they should already exist in your repository). Make sure your repository contains the images referenced in `gallery.html` (for example, at `/images/gallery/3-phase-service.jpg`, `/images/gallery/conduit-piping.jpg`, etc.).
 
 ## Analytics & Security
 
-The HTML pages include a commented‑out Google Analytics snippet near the bottom. To enable tracking, replace `G-XXXXXXXXXX` with your actual GA ID and uncomment the code.  All pages use relative links and include canonical URLs; be sure to update these URLs to match your production domain.  Hosting on a platform with HTTPS enabled (e.g. Cloudflare Pages, Netlify, GitHub Pages) is strongly recommended to ensure visitor security and trust.
+The HTML pages include a commented‑out Google Analytics snippet near the bottom. To enable tracking, replace `G-XXXXXXXXXX` with your actual GA ID and uncomment the code. All pages use relative links and include canonical URLs; be sure to update these URLs to match your production domain. Hosting on a platform with HTTPS enabled (e.g. Cloudflare Pages, Netlify, GitHub Pages) is strongly recommended to ensure visitor security and trust.
 
 All merge conflict markers have been removed and contact details standardized.

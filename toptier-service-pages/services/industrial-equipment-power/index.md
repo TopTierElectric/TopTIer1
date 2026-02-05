@@ -14,6 +14,7 @@ Industrial work is about reliability, safety, and doing things in a way that won
 ---
 
 ## Typical Industrial Scope
+
 - New circuits/feeds for equipment (welders, presses, compressors, etc.)
 - Distribution improvements and labeling cleanup
 - Troubleshooting nuisance trips and failures
@@ -22,6 +23,7 @@ Industrial work is about reliability, safety, and doing things in a way that won
 ---
 
 ## What You Get
+
 - Clear load planning and circuit strategy
 - Clean, serviceable installation practices
 - A “don’t create future problems” mindset

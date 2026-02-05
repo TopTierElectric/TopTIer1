@@ -14,6 +14,7 @@ If you’re building or remodeling, now is the time to plan low-voltage—networ
 ---
 
 ## What We Do
+
 - Structured cabling pathways and organization
 - Practical drop placement planning
 - Labeling and clean termination strategy (project-dependent)

@@ -3,24 +3,27 @@
 ## 0) EXEC SUMMARY (≤1 page)
 
 ### Top 10 highest-ROI changes (ranked)
-1) Pick ONE canonical hostname + enforce global 301 + consistent canonicals (www vs non-www currently both serve content).
-2) Homepage above-fold “Trust Bar” rebuilt: MI license #, “Licensed & Insured”, review rating/count, “Code-aware workmanship”, response time + service area (West Michigan) beside primary CTA.
-3) Testimonials page is placeholder-level → replace with real review engine (Google + selected longform quotes + photos).
-4) Booking flow conversion uplift: shorten, clarify “what happens next”, add confirmation, reduce friction, add “call/text instead” micro-CTA.
-5) Local SEO foundation: LocalBusiness/Electrician schema + Service schema on each service page + FAQ schema where appropriate.
-6) Image optimization (biggest CWV lever): AVIF/WebP + srcset + lazy loading; fix MIME mismatches (.jpg served as image/png).
-7) Service-page “Proof Stack” module: Recent work + review snippets + “What’s included” + “Permits/inspection readiness” above FAQ.
-8) CTR rewrite for titles/meta (local intent + benefit + proof), ensure uniqueness.
-9) Financing page credibility: name provider(s), link to terms, add disclosures + example ranges.
-10) Cloudflare-only analytics + conversion events plan (Web Analytics beacon everywhere + CF-native conversions).
+
+1. Pick ONE canonical hostname + enforce global 301 + consistent canonicals (www vs non-www currently both serve content).
+2. Homepage above-fold “Trust Bar” rebuilt: MI license #, “Licensed & Insured”, review rating/count, “Code-aware workmanship”, response time + service area (West Michigan) beside primary CTA.
+3. Testimonials page is placeholder-level → replace with real review engine (Google + selected longform quotes + photos).
+4. Booking flow conversion uplift: shorten, clarify “what happens next”, add confirmation, reduce friction, add “call/text instead” micro-CTA.
+5. Local SEO foundation: LocalBusiness/Electrician schema + Service schema on each service page + FAQ schema where appropriate.
+6. Image optimization (biggest CWV lever): AVIF/WebP + srcset + lazy loading; fix MIME mismatches (.jpg served as image/png).
+7. Service-page “Proof Stack” module: Recent work + review snippets + “What’s included” + “Permits/inspection readiness” above FAQ.
+8. CTR rewrite for titles/meta (local intent + benefit + proof), ensure uniqueness.
+9. Financing page credibility: name provider(s), link to terms, add disclosures + example ranges.
+10. Cloudflare-only analytics + conversion events plan (Web Analytics beacon everywhere + CF-native conversions).
 
 ### Expected impact (if implemented cleanly)
+
 - Leads: +20–60%
 - Conversion rate: +15–40%
 - Local SEO/CTR: +10–25% CTR uplift
 - Perceived trust: major lift (real reviews, license clarity, proof photos standards)
 
 ### Risks + what NOT to do
+
 - Don’t add heavy sliders/video backgrounds (CWV killers).
 - Don’t use gold text on white for body text (contrast fail; gold is accent only).
 - Don’t stuff city pages with near-duplicate content (thin/duplicate risk).
@@ -31,6 +34,7 @@
 ## 1) LIVE SITE CRAWL + INVENTORY (VERIFY FIRST)
 
 ### Verified findings (crawl notes)
+
 - Mandatory pages found and serving content (see inventory).
 - Many .html endpoints appear to redirect to clean paths (observed via “Redirected to URL”).
 - Service Areas page exists, but cities appear not linked to individual pages (bullets only).
@@ -43,6 +47,7 @@
 
 NOT VERIFIED fields (canonical, robots/indexing, meta descriptions, schema): tool view doesn’t expose <head> reliably.
 Verification procedure:
+
 - curl -sL URL | sed -n '1,120p' (title/meta desc/canonical)
 - curl -sL URL | rg -n "application/ld\+json|schema\.org"
 - curl -sI URL (status + cache headers)
@@ -75,6 +80,7 @@ https://www.toptier-electrical.com/service-areas,Service areas,200 content serve
 ```
 
 ### 1.2 Image/graphic inventory (ALL images found via crawl) — CSV-ready
+
 Dims/bytes: NOT VERIFIED.
 Verification procedure:
 
@@ -114,6 +120,7 @@ PageURL,Section/Component,SrcPath,Format (observed),Dims/EstSize,Alt?,TrustScore
 ```
 
 ### 1.3 Mobile vs desktop differences (NOT VERIFIED)
+
 Why: environment can’t reliably render responsive UI deltas.
 
 Verification procedure:
@@ -127,6 +134,7 @@ Record: LCP element, CLS shifts, sticky elements covering content.
 Run Lighthouse Mobile on /, /services, /booking, /contact, /gallery.
 
 ## 2) COMPETITOR + BEST-IN-CLASS BENCHMARKING (MUST BROWSE)
+
 10 best-in-class (national) — what to borrow
 
 Lenhart Electric (FL) — strong proof + team + service categorization.
@@ -186,6 +194,7 @@ Contact UX: 2-step form + “what happens next” + appointment windows; always 
 Avoid: coupon dump, stock overload, popups, heavy JS widgets.
 
 ## 3) BRAND SYSTEM REBUILD (LOGO-CENTERED)
+
 Logo integrity lock (VERIFIED constraint)
 
 Use ONLY provided logo files as-is. No redraw. No proportion changes. Clean crop only.
@@ -199,6 +208,7 @@ NOT VERIFIED: logo files accessible in this runtime; verify repo paths:
 /mnt/data/TopTierElectrical_Primary_White_2048.png
 
 ### 3.1 Color system (tokens + usage rules + WCAG)
+
 Verified brand colors:
 
 Gold #D4AF37
@@ -229,6 +239,7 @@ Surface #F7F5EF
 Hairline #E7E1CF
 
 ### 3.2 Typography system (NOT VERIFIED current fonts)
+
 Recommendation (premium + performant):
 
 Headings: Manrope 600–800
@@ -249,6 +260,7 @@ Body 16/24
 Small 14/20
 
 ### 3.3 UI components
+
 Buttons: Primary (Ink bg + white text), Accent (Gold bg + ink text), Ghost (transparent + ink border)
 
 Forms: 44px min height, real labels, inline validation, success state
@@ -260,60 +272,62 @@ Nav: sticky, 1 primary CTA, persistent phone
 Footer: NAP + license + service areas + review link
 
 ### 3.4 Design tokens
+
 A) CSS variables
 
 :root {
-  --brand-gold: #D4AF37;
-  --brand-ink: #0B0B0C;
-  --brand-black: #000000;
-  --brand-white: #FFFFFF;
+--brand-gold: #D4AF37;
+--brand-ink: #0B0B0C;
+--brand-black: #000000;
+--brand-white: #FFFFFF;
 
-  --surface: #F7F5EF;
-  --surface-2: #FFFFFF;
-  --border: #E7E1CF;
-  --text: #0B0B0C;
-  --text-muted: #2A2E34;
-  --text-subtle: #6B7280;
+--surface: #F7F5EF;
+--surface-2: #FFFFFF;
+--border: #E7E1CF;
+--text: #0B0B0C;
+--text-muted: #2A2E34;
+--text-subtle: #6B7280;
 
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 22px;
+--radius-sm: 10px;
+--radius-md: 16px;
+--radius-lg: 22px;
 
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
-  --shadow-md: 0 8px 24px rgba(0,0,0,.10);
+--shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+--shadow-md: 0 8px 24px rgba(0,0,0,.10);
 
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --space-7: 48px;
-  --space-8: 64px;
+--space-1: 4px;
+--space-2: 8px;
+--space-3: 12px;
+--space-4: 16px;
+--space-5: 24px;
+--space-6: 32px;
+--space-7: 48px;
+--space-8: 64px;
 }
 B) Tailwind mapping (ONLY if Tailwind exists; NOT VERIFIED)
 
 export default {
-  theme: {
-    extend: {
-      colors: {
-        gold: "#D4AF37",
-        ink: "#0B0B0C",
-        surface: "#F7F5EF",
-        border: "#E7E1CF",
-        muted: "#2A2E34",
-        subtle: "#6B7280",
-      },
-      borderRadius: { sm: "10px", md: "16px", lg: "22px" },
-      boxShadow: {
-        sm: "0 1px 2px rgba(0,0,0,.06)",
-        md: "0 8px 24px rgba(0,0,0,.10)",
-      },
-    },
-  },
+theme: {
+extend: {
+colors: {
+gold: "#D4AF37",
+ink: "#0B0B0C",
+surface: "#F7F5EF",
+border: "#E7E1CF",
+muted: "#2A2E34",
+subtle: "#6B7280",
+},
+borderRadius: { sm: "10px", md: "16px", lg: "22px" },
+boxShadow: {
+sm: "0 1px 2px rgba(0,0,0,.06)",
+md: "0 8px 24px rgba(0,0,0,.10)",
+},
+},
+},
 };
 
 ## 4) TRUST ARCHITECTURE (THE TRUST STACK)
+
 Trust objects
 
 Identity: Licensed & Insured + MI License # + local team
@@ -377,7 +391,9 @@ Emergency:
 triage checklist + when to call 911 vs electrician
 
 ## 5) VISUAL ASSET UPGRADE PLAN (HERO + BACKGROUNDS + PHOTOS)
+
 ### 5.1 Homepage hero concepts
+
 A) Trusted Local Pro:
 
 Electrician in clean uniform + branded vehicle; subject right, copy left; subtle ink gradient overlay.
@@ -391,11 +407,13 @@ C) Home Upgrade:
 Real EV/lighting upgrade photo; avoid stock if possible.
 
 ### 5.2 Background imagery system
+
 Use surface/white backgrounds + hairline borders; gold as thin accents only.
 
 No noisy textures; minimal geometric line pattern at 2–4% opacity if used.
 
 ### 5.3 Service imagery system (shot list)
+
 Panel: before/after + labeling + meter/service change
 
 EV: installed unit + conduit + breaker + finished wall plate
@@ -407,6 +425,7 @@ Repairs: diagnostic (non-scary), thermal scan if used
 Generators: transfer switch + pad + conduit + inspection-ready
 
 ### 5.4 Image optimization rules
+
 Generate AVIF + WebP + fallback
 
 srcset widths: 480, 768, 1024, 1280, 1600
@@ -418,9 +437,10 @@ Naming: service-panel-upgrade-after-01_1280w.avif
 Alt: describe outcome/object; no keyword spam
 
 ## 6) PAGE-BY-PAGE IMPROVEMENT BLUEPRINT (DETERMINISTIC)
+
 Implementation convention (static HTML observed):
 
-Clean routes likely map to *.html (e.g., /faq ← faq.html) with redirects.
+Clean routes likely map to \*.html (e.g., /faq ← faq.html) with redirects.
 
 When selectors unknown (NOT VERIFIED), use repo search-string method:
 
@@ -434,7 +454,7 @@ Add stable hooks like data-ui="hero", data-ui="trustbar".
 Global (all pages)
 Canonical host enforcement
 
-Fix: Cloudflare Pages _redirects + <link rel="canonical"> per page.
+Fix: Cloudflare Pages \_redirects + <link rel="canonical"> per page.
 
 Acceptance: non-canonical 301s; canonical tags correct.
 
@@ -530,6 +550,7 @@ Each post: related service CTA mid + bottom; add 3–5 internal links per post.
 Add “local angle” paragraph without stuffing.
 
 ## 7) LOCAL SEO + TECHNICAL SEO + CTR
+
 NAP + GBP alignment checklist
 
 Keep NAP consistent sitewide and in GBP.
@@ -598,6 +619,7 @@ Lighting: lighting → gallery filtered lighting
 Backup power: generators → financing → booking
 
 ## 8) CONVERSION + ANALYTICS (CLOUDFLARE-ONLY)
+
 Primary conversions
 
 tel: click
@@ -645,6 +667,7 @@ Keep canonical phone visible everywhere.
 If tracking numbers, use dynamic insertion for paid channels only; keep GBP consistent.
 
 ## 9) PERFORMANCE + ACCESSIBILITY + “PREMIUM FEEL” ENGINEERING
+
 CWV checklist
 
 LCP: optimized hero + correct loading priority
@@ -673,9 +696,9 @@ Cloudflare caching & compression
 
 Enable Brotli
 
-Cache assets long, HTML short via _headers + Cache Rules.
+Cache assets long, HTML short via \_headers + Cache Rules.
 
-_headers example
+\_headers example
 
 ```
 /
@@ -687,8 +710,9 @@ _headers example
 ```
 
 ## 10) IMPLEMENTATION BACKLOG (≥30 items, CSV)
+
 Priority,Impact(1-10),Confidence(1-10),URLs,Section/Component,WorkType,Steps,AcceptanceCriteria,VerificationChecklist
-P0,10,9,ALL,Hostname canonicalization,SEO/Infra,"Force www or non-www via _redirects; set canonicals","Single canonical; 301 from other host","curl -I both hosts; check canonical tag"
+P0,10,9,ALL,Hostname canonicalization,SEO/Infra,"Force www or non-www via \_redirects; set canonicals","Single canonical; 301 from other host","curl -I both hosts; check canonical tag"
 P0,10,8,/testimonials,Testimonials rebuild,CRO/Content,"Add rating strip + 12+ reviews + Google link","Real proof visible","Manual review; link works"
 P0,9,8,/,Above-fold trust bar,CRO/UI,"Add license+insured+rating+local next to CTA","Trust visible without scroll","Mobile+desktop check"
 P0,9,7,/booking,Booking UX,CRO/UI,"Add what-next, reduce friction, add confirmation","Form completion rate up","Test submit; confirm success UI"
@@ -717,10 +741,11 @@ P2,5,5,ALL,Accessibility pass,A11y,"Focus states, labels, contrast","WCAG improv
 P2,5,5,ALL,Sitemap.xml,SEO,"Generate and publish sitemap","Indexed coverage","Search Console"
 P2,5,5,ALL,Robots.txt,SEO,"Publish robots w/ sitemap","Crawler clarity","Fetch robots"
 P2,5,4,ALL,Pages Functions form handling,Infra,"Add /api/contact & /api/booking","Reliable delivery","Submit test + logs"
-P2,4,6,ALL,Cache policy hardening,Perf,"_headers + CF cache rules","Faster repeat loads","Header verification"
+P2,4,6,ALL,Cache policy hardening,Perf,"\_headers + CF cache rules","Faster repeat loads","Header verification"
 P2,4,5,ALL,MIME correctness for assets,Perf,"Fix content-type for images","No mismatches","curl -I assets"
 
 ## 11) DEPLOYMENT PROCESS — CLOUDFLARE PAGES/WORKERS ONLY
+
 Cloudflare Pages setup
 
 Connect GitHub repo → Cloudflare Pages project.
@@ -737,13 +762,13 @@ Add toptier-electrical.com + www.toptier-electrical.com in Cloudflare DNS
 
 Enforce HTTPS
 
-Canonical redirect using _redirects
+Canonical redirect using \_redirects
 Choose one. Example: force www:
 
 https://toptier-electrical.com/* https://www.toptier-electrical.com/:splat 301!
 Caching
 
-Use _headers (Section 9) + Cloudflare Cache Rules.
+Use \_headers (Section 9) + Cloudflare Cache Rules.
 
 Purge on release (Pages deploy) + manual purge if needed.
 
@@ -758,4 +783,3 @@ Workers/Pages Functions (optional forms)
 Implement /api/contact + /api/booking for POST, validation, rate limiting, forward to email/CRM.
 
 Validate end-to-end with submit tests + logs.
-
