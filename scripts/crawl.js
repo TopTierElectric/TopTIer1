@@ -8,7 +8,10 @@ const outputDir = process.argv[3] || 'reports';
 
 const normalizeUrl = (input) => {
   try {
-    return new URL(input, baseUrl).toString();
+    const resolved = new URL(input, baseUrl);
+    // Normalize hash-only differences so we don't crawl duplicate URLs.
+    resolved.hash = '';
+    return resolved.toString();
   } catch (error) {
     return null;
   }
@@ -16,7 +19,7 @@ const normalizeUrl = (input) => {
 
 const extractLinks = (html, currentUrl) => {
   const links = new Set();
-  const regex = /href\s*=\s*"([^"]+)"/gi;
+  const regex = /href\s*=\s*(?:"([^"]+)"|'([^']+)'|([^\s>]+))/gi;
   let match;
   const skipExtensions = [
     '.css',
@@ -31,17 +34,19 @@ const extractLinks = (html, currentUrl) => {
     '.json'
   ];
   while ((match = regex.exec(html)) !== null) {
-    const href = match[1].trim();
+    const href = (match[1] || match[2] || match[3] || '').trim();
     if (!href || href.startsWith('#')) {
       continue;
     }
     if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) {
       continue;
     }
-    if (skipExtensions.some((ext) => href.toLowerCase().includes(ext))) {
+    const parsedHref = new URL(href, currentUrl);
+    const normalizedPath = parsedHref.pathname.toLowerCase();
+    if (skipExtensions.some((ext) => normalizedPath.endsWith(ext))) {
       continue;
     }
-    const resolved = normalizeUrl(new URL(href, currentUrl).toString());
+    const resolved = normalizeUrl(parsedHref.toString());
     if (!resolved) {
       continue;
     }
@@ -143,9 +148,11 @@ const crawl = async () => {
   const visited = new Map();
   const linkGraph = new Map();
   const queue = [baseUrl];
+  let queueIndex = 0;
 
-  while (queue.length) {
-    const current = queue.shift();
+  while (queueIndex < queue.length) {
+    const current = queue[queueIndex];
+    queueIndex += 1;
     if (visited.has(current)) continue;
     let pageData;
     try {
