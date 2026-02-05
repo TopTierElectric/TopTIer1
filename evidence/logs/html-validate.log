@@ -1,0 +1,330 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> toptier-electrical@1.0.0 lint:html
+> npx html-validate '*.html'
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+/workspace/TopTIer1/404.html
+   94:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  101:27  error  Inline style is not allowed                                                      no-inline-style
+  144:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  144:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/blog-electrical-safety.html
+   94:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  101:27  error  Inline style is not allowed                                                      no-inline-style
+  155:34  error  Inline style is not allowed                                                      no-inline-style
+  157:51  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  165:53  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  188:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  188:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/blog-ev-charging.html
+   93:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   93:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   93:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  100:25  error  Inline style is not allowed                                                      no-inline-style
+  177:32  error  Inline style is not allowed                                                      no-inline-style
+  179:49  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  187:51  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  209:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  209:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/blog-generator-readiness.html
+   94:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  101:27  error  Inline style is not allowed                                                      no-inline-style
+  151:34  error  Inline style is not allowed                                                      no-inline-style
+  153:51  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  160:53  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  183:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  183:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/blog-panel-upgrade-signs.html
+   94:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  101:27  error  Inline style is not allowed                                                      no-inline-style
+  151:34  error  Inline style is not allowed                                                      no-inline-style
+  153:51  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  160:53  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  183:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  183:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/blog-right-electrician.html
+   93:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   93:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   93:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  100:23  error  Inline style is not allowed                                                      no-inline-style
+  180:26  error  Inline style is not allowed                                                      no-inline-style
+  182:43  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  190:47  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  213:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  213:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/blog-surge-protection.html
+   93:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   93:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   93:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  101:25  error  Inline style is not allowed                                                      no-inline-style
+  151:34  error  Inline style is not allowed                                                      no-inline-style
+  153:51  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  171:1   error  Trailing whitespace                                                              no-trailing-whitespace
+  188:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  188:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/blog.html
+   96:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   96:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   96:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  103:27  error  Inline style is not allowed                                                      no-inline-style
+  211:53  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  235:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  235:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/booking.html
+   94:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  105:60  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  105:65  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  132:72  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  176:77  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  177:58  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  200:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  200:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/contact.html
+   96:64   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   96:70   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   96:74   error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  103:27   error  Inline style is not allowed                                                      no-inline-style
+  139:72   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  170:351  error  Inline style is not allowed                                                      no-inline-style
+  176:53   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  200:46   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  200:50   error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/electrical-repairs.html
+  121:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  121:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  121:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  135:27  error  Inline style is not allowed                                                      no-inline-style
+  258:47  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  258:51  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  281:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  281:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/emergency.html
+   94:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  101:27  error  Inline style is not allowed                                                      no-inline-style
+  106:67  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  106:72  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  106:78  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  106:82  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  132:72  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  132:76  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  173:80  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  173:84  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  174:12  error  Inline style is not allowed                                                      no-inline-style
+  181:47  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  181:51  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  205:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  205:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/energy-consulting.html
+   84:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   84:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   84:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+   98:27  error  Inline style is not allowed                                                      no-inline-style
+  170:53  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  194:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  194:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/energy-solutions.html
+   84:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   84:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   84:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+   98:27  error  Inline style is not allowed                                                      no-inline-style
+  177:53  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  201:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  201:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/ev-chargers.html
+  172:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  172:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  172:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  186:27  error  Inline style is not allowed                                                      no-inline-style
+  276:53  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  300:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  300:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/faq.html
+  107:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  107:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  107:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  114:27  error  Inline style is not allowed                                                      no-inline-style
+  137:74  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  201:12  error  Inline style is not allowed                                                      no-inline-style
+  225:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  225:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/financing.html
+   94:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  101:27  error  Inline style is not allowed                                                      no-inline-style
+  124:84  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  204:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  204:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/gallery.html
+   94:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  101:27  error  Inline style is not allowed                                                      no-inline-style
+  251:12  error  Inline style is not allowed                                                      no-inline-style
+  258:94  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  258:98  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  282:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  282:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/generators.html
+   84:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   84:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   84:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+   98:27  error  Inline style is not allowed                                                      no-inline-style
+  178:53  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  202:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  202:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/index.html
+  135:64   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  135:70   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  135:74   error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  148:87   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  148:93   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  148:97   error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  192:44   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  417:127  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  441:46   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  441:50   error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/lighting.html
+  164:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  164:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  164:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  178:27  error  Inline style is not allowed                                                      no-inline-style
+  262:53  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  286:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  286:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/panel-upgrades.html
+    8:91  error  title text cannot be longer than 70 characters                                   long-title
+  172:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  172:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  172:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  179:27  error  Inline style is not allowed                                                      no-inline-style
+  269:47  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  269:51  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  293:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  293:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/service-areas.html
+   94:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  101:27  error  Inline style is not allowed                                                      no-inline-style
+  134:80  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  134:84  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  142:13  error  Inline style is not allowed                                                      no-inline-style
+  153:53  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  177:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  177:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/services.html
+  134:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  134:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  134:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  141:27  error  Inline style is not allowed                                                      no-inline-style
+  330:36  error  Inline style is not allowed                                                      no-inline-style
+  358:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  358:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/styleguide-top-tier-electrical.html
+    1:1    error  DOCTYPE should be uppercase                                                      doctype-style
+    4:25   error  Expected omitted end tag <meta> instead of self-closing element <meta/>          void-style
+    5:71   error  Expected omitted end tag <meta> instead of self-closing element <meta/>          void-style
+    9:146  error  Expected omitted end tag <link> instead of self-closing element <link/>          void-style
+  131:128  error  Expected omitted end tag <img> instead of self-closing element <img/>            void-style
+  152:27   error  Inline style is not allowed                                                      no-inline-style
+  154:31   error  Inline style is not allowed                                                      no-inline-style
+  158:31   error  Inline style is not allowed                                                      no-inline-style
+  162:31   error  Inline style is not allowed                                                      no-inline-style
+  166:31   error  Inline style is not allowed                                                      no-inline-style
+  170:31   error  Inline style is not allowed                                                      no-inline-style
+  174:31   error  Inline style is not allowed                                                      no-inline-style
+  194:27   error  Inline style is not allowed                                                      no-inline-style
+  195:16   error  Inline style is not allowed                                                      no-inline-style
+  196:121  error  Expected omitted end tag <img> instead of self-closing element <img/>            void-style
+  198:16   error  Inline style is not allowed                                                      no-inline-style
+  199:120  error  Expected omitted end tag <img> instead of self-closing element <img/>            void-style
+  207:19   error  Raw "&" must be encoded as "&amp;"                                               no-raw-characters
+  209:12   error  Inline style is not allowed                                                      no-inline-style
+  218:16   error  Raw "&" must be encoded as "&amp;"                                               no-raw-characters
+  220:27   error  Inline style is not allowed                                                      no-inline-style
+  226:27   error  Inline style is not allowed                                                      no-inline-style
+  232:27   error  Inline style is not allowed                                                      no-inline-style
+  245:21   error  <th> element must have a valid scope attribute: row, col, rowgroup or colgroup   wcag/h63
+  245:34   error  <th> element must have a valid scope attribute: row, col, rowgroup or colgroup   wcag/h63
+  245:51   error  <th> element must have a valid scope attribute: row, col, rowgroup or colgroup   wcag/h63
+  245:71   error  <th> element must have a valid scope attribute: row, col, rowgroup or colgroup   wcag/h63
+  245:90   error  <th> element must have a valid scope attribute: row, col, rowgroup or colgroup   wcag/h63
+  276:46   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  276:50   error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/testimonials.html
+   94:64  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:70  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   94:74  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+  101:27  error  Inline style is not allowed                                                      no-inline-style
+  130:33  error  "aria-label" cannot be used on this element                                      aria-label-misuse
+  210:53  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  234:46  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  234:50  error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+
+/workspace/TopTIer1/thank-you.html
+    3:2    error  <head> element must have <title> as content                                      element-required-content
+   56:64   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   56:70   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   56:74   error  "-" should be replaced with "&#8209;" (non-breaking hyphen) in telephone number  tel-non-breaking
+   64:27   error  Inline style is not allowed                                                      no-inline-style
+   69:92   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   69:96   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   69:100  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   69:107  error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+   82:61   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+  118:70   error  " " should be replaced with "&nbsp;" (non-breaking space) in telephone number    tel-non-breaking
+
+✖ 255 problems (255 errors, 0 warnings)
+
+More information:
+  https://html-validate.org/rules/tel-non-breaking.html
+  https://html-validate.org/rules/no-inline-style.html
+  https://html-validate.org/rules/no-trailing-whitespace.html
+  https://html-validate.org/rules/long-title.html
+  https://html-validate.org/rules/doctype-style.html
+  https://html-validate.org/rules/void-style.html
+  https://html-validate.org/rules/no-raw-characters.html
+  https://html-validate.org/rules/wcag/h63.html
+  https://html-validate.org/rules/aria-label-misuse.html
+  https://html-validate.org/rules/element-required-content.html
+
