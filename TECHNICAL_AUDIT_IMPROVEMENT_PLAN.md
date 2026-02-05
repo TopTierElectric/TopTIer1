@@ -43,7 +43,7 @@ Each blocker above is paired with a precise fix. We will implement and test thes
 
 Below is a prioritized action plan with exact fix steps for each item and a rollback strategy. We assume implementation on the Netlify platform (as indicated by the current setup):
 
-**[P0] Enforce Single Domain and URL Format – Goal: Eliminate host and URL duplicates immediately (major SEO blocker).** Fix: In Netlify, add a `_redirects` rule to 301 redirect `www.toptier-electrical.com/*` to `https://toptier-electrical.com/:splat`. Add another rule to redirect any “*.html” page request to its extensionless URL (e.g. `/*/page.html -> /:splat/page`). Update all internal links in the HTML files to omit “.html” extensions and use the canonical domain. Update `<link rel="canonical">` in every page to the new URL format (no “www”, no “.html”). **Testing:** After deployment, manually request a few old URLs (e.g. http://www. domain, a “.html” URL) – confirm they 301 to the new format. **Rollback Plan:** If any critical redirect misbehaves (e.g. a URL isn’t reachable), we will disable that specific rule in `_redirects` and re-deploy. This rollback simply reverts to the previous state (duplicates) so it’s safe, but given the plan is straightforward, we expect no rollback needed after careful testing.
+**[P0] Enforce Single Domain and URL Format – Goal: Eliminate host and URL duplicates immediately (major SEO blocker).** Fix: In Netlify, add a `_redirects` rule to 301 redirect `www.toptier-electrical.com/*` to `https://toptier-electrical.com/:splat`. Add another rule to redirect any “_.html” page request to its extensionless URL (e.g. `/_/page.html -> /:splat/page`). Update all internal links in the HTML files to omit “.html” extensions and use the canonical domain. Update `<link rel="canonical">`in every page to the new URL format (no “www”, no “.html”). **Testing:** After deployment, manually request a few old URLs (e.g. http://www. domain, a “.html” URL) – confirm they 301 to the new format. **Rollback Plan:** If any critical redirect misbehaves (e.g. a URL isn’t reachable), we will disable that specific rule in`\_redirects` and re-deploy. This rollback simply reverts to the previous state (duplicates) so it’s safe, but given the plan is straightforward, we expect no rollback needed after careful testing.
 
 **[P1] Optimize and Lazy-Load Images – Goal: Improve LCP and overall load.** Fix: For each large image (hero banner, etc.), export a high-quality WebP (and JPEG fallback for older browsers) at an appropriate resolution. Implement `<picture>` tags in the HTML:
 
@@ -59,7 +59,7 @@ This serves an optimized image based on device width. Add `loading="lazy"` to an
 
 **[P1] Implement Far-Future Caching & Compression – Goal: Cut repeat load times and improve TBT.** Fix: Create a `netlify.toml` (or `_headers` file) with rules to add caching and compression headers:
 
-For all static assets (*.css, *.js, *.woff2, *.png, *.jpg, *.webp etc.), add `Cache-Control: public, max-age=31536000, immutable`. Netlify’s CDN will then serve these with a year-long cache.
+For all static assets (_.css, _.js, _.woff2, _.png, _.jpg, _.webp etc.), add `Cache-Control: public, max-age=31536000, immutable`. Netlify’s CDN will then serve these with a year-long cache.
 
 Enable Brotli/Gzip compression (Netlify does this automatically for text assets, but ensure it’s not disabled).
 

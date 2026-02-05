@@ -14,6 +14,7 @@ Great lighting is design + execution. We install lighting with symmetry, clean l
 ---
 
 ## Lighting Services
+
 - Recessed lighting (new layouts, upgrades, trims)
 - LED tape/under-cabinet lighting (clean power + switching strategy)
 - Vanity and decorative lighting installs
@@ -23,6 +24,7 @@ Great lighting is design + execution. We install lighting with symmetry, clean l
 ---
 
 ## What Makes Our Lighting Different
+
 - Layout planning (not just “wherever the joists allow”)
 - Switch logic that matches real use
 - Clean wiring that keeps future service simple

@@ -18,6 +18,24 @@ jobs:
         with:
           node-version: 18
 
+      - name: Set up Chrome
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Install browser runtime dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libatk1.0-0 \
+            libnss3 \
+            libx11-xcb1 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libgbm1 \
+            libgtk-3-0 \
+            libasound2
+
       - name: Install dependencies
         run: npm ci
 
@@ -28,6 +46,8 @@ jobs:
         run: npx wait-on http://127.0.0.1:8888
 
       - name: Run QA
+        env:
+          CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
         run: npm run qa
 
       - name: Upload reports

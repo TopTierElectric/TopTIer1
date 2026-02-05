@@ -14,6 +14,7 @@ Some work doesn’t fit a neat category—walk-in coolers, rooftop units, oddbal
 ---
 
 ## What We Commonly Support
+
 - Walk-in cooler power and electrical troubleshooting
 - RTU-related electrical issues and supply feeds
 - Facility electrical cleanup (mislabels, abandoned circuits, “mystery” junctions)
@@ -22,4 +23,5 @@ Some work doesn’t fit a neat category—walk-in coolers, rooftop units, oddbal
 ---
 
 ## Why This Page Exists
+
 Specialty work goes wrong when someone guesses. We verify, test, and correct.

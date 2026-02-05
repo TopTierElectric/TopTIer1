@@ -14,6 +14,7 @@ A generator isn’t “installed” when it starts—it’s installed when it **
 ---
 
 ## What We Handle
+
 - Load planning (what you want powered vs what’s realistic)
 - Transfer switching integration
 - Critical-load vs whole-home strategies

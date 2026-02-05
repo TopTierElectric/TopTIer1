@@ -1,17 +1,19 @@
 # Top Tier Electrical — Codex Drag-and-Drop Pack
 
 ## What this contains
-- PROMPT_BLOG_SITE_IMPLEMENTATION.md  -> paste into Codex with your repo loaded
-- seo/SEO_Pack_and_Checklist.md       -> keyword pack + implementation checklist
-- blog/ (6 files)                    -> blog source content (meta + article + FAQs + CTA)
-- facebook/ (6 files)                -> ready-to-post Facebook micro-articles
-- PROMPT_FACEBOOK_POSTS.md           -> optional prompt if you want Codex to adapt/format posts
+
+- PROMPT_BLOG_SITE_IMPLEMENTATION.md -> paste into Codex with your repo loaded
+- seo/SEO_Pack_and_Checklist.md -> keyword pack + implementation checklist
+- blog/ (6 files) -> blog source content (meta + article + FAQs + CTA)
+- facebook/ (6 files) -> ready-to-post Facebook micro-articles
+- PROMPT_FACEBOOK_POSTS.md -> optional prompt if you want Codex to adapt/format posts
 
 ## How to use with Codex
-1) Drag-and-drop this ZIP into Codex.
-2) Open PROMPT_BLOG_SITE_IMPLEMENTATION.md and paste it as your instruction.
-3) Tell Codex: "Use the blog content files in /blog/ as source-of-truth and implement them in the repo. Use /seo/ checklist."
-4) After implementation, make Codex output:
+
+1. Drag-and-drop this ZIP into Codex.
+2. Open PROMPT_BLOG_SITE_IMPLEMENTATION.md and paste it as your instruction.
+3. Tell Codex: "Use the blog content files in /blog/ as source-of-truth and implement them in the repo. Use /seo/ checklist."
+4. After implementation, make Codex output:
    - file-by-file change list
    - new blog URLs
    - exact verification steps (local build + link checks)

@@ -14,6 +14,7 @@ Panels and services aren’t a place for “good enough.” If you’re adding l
 ---
 
 ## When an Upgrade Makes Sense
+
 - Frequent breaker trips or overloaded circuits
 - Remodel adding kitchen/bath/garage load
 - Adding EV charging, hot tub, sauna, shop equipment
@@ -23,6 +24,7 @@ Panels and services aren’t a place for “good enough.” If you’re adding l
 ---
 
 ## What We Do (The Right Way)
+
 - Load assessment and capacity planning
 - Correct grounding/bonding verification
 - Clean rework inside the panel (routing, torque, terminations)

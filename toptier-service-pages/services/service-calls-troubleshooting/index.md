@@ -14,6 +14,7 @@ Intermittent issues, tripping breakers, dead outlets, flickering lightsâ€”most â
 ---
 
 ## What We Troubleshoot
+
 - Breakers tripping / nuisance trips
 - Flickering lights / dimming issues
 - Dead outlets / partial power
@@ -24,6 +25,7 @@ Intermittent issues, tripping breakers, dead outlets, flickering lightsâ€”most â
 ---
 
 ## What You Can Expect
+
 - A clear explanation of **root cause**
 - Options when thereâ€™s more than one right solution
 - Repairs that prioritize safety and code compliance
@@ -32,4 +34,5 @@ Intermittent issues, tripping breakers, dead outlets, flickering lightsâ€”most â
 ---
 
 ## Safety Note
+
 If you have **smoke, arcing, burning odor, or hot equipment**, shut off power if safe and contact us immediately.

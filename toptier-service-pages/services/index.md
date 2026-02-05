@@ -16,6 +16,7 @@ Top Tier Electrical delivers clean, code-correct electrical work for homeowners,
 ## What We Do
 
 ### Residential
+
 - Custom home new construction (planning → rough-in → trim → final)
 - Remodels and additions (kitchens, basements, garages, outbuildings)
 - Panel and service upgrades
@@ -25,6 +26,7 @@ Top Tier Electrical delivers clean, code-correct electrical work for homeowners,
 - Troubleshooting and repairs
 
 ### Commercial
+
 - Tenant build-outs and renovations
 - Service work and electrical maintenance
 - Lighting retrofits and exterior/site lighting
@@ -32,6 +34,7 @@ Top Tier Electrical delivers clean, code-correct electrical work for homeowners,
 - Service and distribution upgrades
 
 ### Industrial / Specialty
+
 - Equipment feeds (welders, presses, compressors)
 - Power distribution and troubleshooting
 - Specialty systems support (walk-in coolers, RTUs, make-up air, etc.)
@@ -39,6 +42,7 @@ Top Tier Electrical delivers clean, code-correct electrical work for homeowners,
 ---
 
 ## How Projects Work With Top Tier
+
 1. **Scope + site conditions** (load, layout, existing constraints)
 2. **Plan + quote** (clear inclusions, options where it matters)
 3. **Schedule + coordinate** (builders, trades, inspections)
@@ -48,6 +52,7 @@ Top Tier Electrical delivers clean, code-correct electrical work for homeowners,
 ---
 
 ## Why Clients Choose Top Tier
+
 - **Clean, organized job sites** (respect for finished spaces and other trades)
 - **Code-first decisions** (no “it’ll probably pass” shortcuts)
 - **Communication that reduces stress** (builders + homeowners stay informed)
@@ -56,11 +61,13 @@ Top Tier Electrical delivers clean, code-correct electrical work for homeowners,
 ---
 
 ## Service Area
+
 Proudly serving **[SERVICE AREA]** (ex: Allegan, Grand Rapids, Byron Center, Hopkins, and surrounding West Michigan communities).
 
 ---
 
 ## Explore Services
+
 - Custom Home New Construction
 - Residential Remodels & Additions
 - Service Calls & Troubleshooting

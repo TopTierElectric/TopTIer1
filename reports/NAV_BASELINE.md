@@ -1,6 +1,7 @@
 # Navigation Baseline
 
 ## Header navigation (index.html)
+
 - Home
 - Services
 - Free Estimate (contact.html)
@@ -15,10 +16,12 @@
 - Contact
 
 ## Observations
+
 - Header includes 12 links plus two similar conversion entries (Free Estimate + Book), creating competing primary CTAs.
 - Conversion-focused pages also repeat CTAs in sticky bar and hero forms.
 
 ## Primary conversion flows observed
+
 - Home → Booking (hero form + quick actions)
 - Home → Contact/Estimate
 - Emergency → Call

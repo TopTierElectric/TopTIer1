@@ -1,11 +1,11 @@
 :root {
-  --brand-gold: #D4AF37;
-  --brand-gold-dark: #BF9F3F;
-  --brand-gold-light: #E6CC72;
+  --brand-gold: #d4af37;
+  --brand-gold-dark: #bf9f3f;
+  --brand-gold-light: #e6cc72;
   --brand-black: #111111;
   --brand-charcoal: #181818;
-  --brand-ivory: #FAFAFA;
-  --brand-slate: #6B7280;
+  --brand-ivory: #fafafa;
+  --brand-slate: #6b7280;
   --brand-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -21,8 +21,8 @@
   --danger: #dc2626;
   --warning: #f59e0b;
 
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-size-h1: 2.5rem;
   --font-size-h2: 2rem;
   --font-size-h3: 1.5rem;

@@ -14,6 +14,7 @@ A Level 2 charger is a serious load. We install EV charging with proper load pla
 ---
 
 ## What We Include
+
 - Load assessment (panel capacity and available headroom)
 - Dedicated circuit planning and correct breaker protection
 - Clean routing (garage, exterior wall, or preferred location)

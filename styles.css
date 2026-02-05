@@ -42,11 +42,14 @@
 }
 
 /* Ensure padding and borders are included in width calculations */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: var(--font-body);
@@ -55,10 +58,26 @@ html, body {
   line-height: var(--line-height-body);
 }
 
-h1 { font-size: var(--font-size-h1); line-height: var(--line-height-heading); font-weight: 700; }
-h2 { font-size: var(--font-size-h2); line-height: var(--line-height-heading); font-weight: 600; }
-h3 { font-size: var(--font-size-h3); line-height: var(--line-height-heading); font-weight: 600; }
-h4 { font-size: var(--font-size-h4); line-height: var(--line-height-heading); font-weight: 500; }
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
+}
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-heading);
+  font-weight: 600;
+}
+h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-heading);
+  font-weight: 600;
+}
+h4 {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-heading);
+  font-weight: 500;
+}
 
 /* Smooth scrolling for anchor links */
 html {
@@ -79,7 +98,7 @@ header {
   background: var(--primary);
   color: var(--text-light);
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header .logo img {
@@ -164,7 +183,6 @@ header nav a:focus {
   }
 }
 
-
 /* Testimonials section */
 .testimonials {
   padding: 3rem 0;
@@ -185,7 +203,7 @@ header nav a:focus {
   background: white;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 .testimonial-quote {
@@ -209,7 +227,7 @@ header nav a:focus {
   background: var(--light-bg);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 .reviews-score {
   text-align: center;
@@ -293,7 +311,7 @@ header nav a:focus {
   background: #fff;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   margin-bottom: 2rem;
 }
 
@@ -313,7 +331,7 @@ header nav a:focus {
   background: white;
   border-radius: 8px;
   padding: 1rem 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .faq-list summary {
   font-weight: bold;
@@ -328,7 +346,7 @@ header nav a:focus {
 /* Hero section */
 .hero {
   position: relative;
-  background: url('/assets/images/hero.jpg') center/cover no-repeat;
+  background: url("/assets/images/hero.jpg") center/cover no-repeat;
   color: var(--text-light);
   text-align: center;
   padding: 8rem 1rem 6rem;
@@ -461,7 +479,7 @@ header nav a:focus {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .proof-card img {
@@ -479,18 +497,20 @@ header nav a:focus {
 
 .btn-primary {
   display: inline-block;
-  background: var(--secondary);
-  color: var(--text-light);
+  background: #ffffff;
+  color: var(--primary);
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background: #e05b2b;
+  background: #e2e8f0;
   transform: translateY(-2px);
 }
 
@@ -518,18 +538,20 @@ header nav a:focus {
   border-radius: 8px;
   padding: 1.5rem;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .values .value-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
 }
 
 .values .icon {
   font-size: 2.5rem;
-  color: var(--secondary);
+  color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
@@ -564,7 +586,7 @@ header nav a:focus {
   background: var(--light-bg);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .service-proof {
@@ -611,7 +633,7 @@ header nav a:focus {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .recent-work-grid img {
@@ -637,7 +659,7 @@ header nav a:focus {
   background: white;
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   color: var(--muted);
 }
 
@@ -652,7 +674,7 @@ header nav a:focus {
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .included-list ul {
@@ -688,7 +710,7 @@ header nav a:focus {
   background: white;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 @media (max-width: 900px) {
@@ -707,19 +729,21 @@ header nav a:focus {
   background: white;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .service-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
 }
 
 .service-card .icon {
   font-size: 2.5rem;
-  color: var(--secondary);
+  color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
@@ -736,7 +760,7 @@ header nav a:focus {
 .service-card a {
   margin-top: 1rem;
   display: inline-block;
-  color: var(--secondary);
+  color: var(--primary);
   text-decoration: none;
   font-weight: 600;
 }
@@ -848,7 +872,12 @@ header nav a:focus {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(4, 23, 42, 0.9) 0%, rgba(4, 23, 42, 0.5) 50%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(4, 23, 42, 0.9) 0%,
+    rgba(4, 23, 42, 0.5) 50%,
+    transparent 100%
+  );
   padding: 2.5rem 1.25rem 1.25rem;
   transform: translateY(100%);
   transition: transform 0.4s ease;
@@ -909,10 +938,15 @@ header nav a:focus {
 
 .gallery-section-title::before,
 .gallery-section-title::after {
-  content: '';
+  content: "";
   height: 2px;
   width: 60px;
-  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--secondary),
+    transparent
+  );
 }
 
 .gallery-section-title h3 {
@@ -968,7 +1002,7 @@ header nav a:focus {
 
 /* Lightbox placeholder - uses native hover effects */
 .gallery-item::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -986,7 +1020,7 @@ header nav a:focus {
 }
 
 .gallery-item::before {
-  content: '+';
+  content: "+";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1004,13 +1038,15 @@ header nav a:focus {
 }
 
 /* Estimate callout */
-.estimate, .quote-preview {
+.estimate,
+.quote-preview {
   padding: 3rem 0;
   text-align: center;
   background: var(--light-bg);
 }
 
-.estimate h2, .quote-preview h2 {
+.estimate h2,
+.quote-preview h2 {
   color: var(--primary);
   margin-bottom: 1rem;
 }
@@ -1037,7 +1073,7 @@ header nav a:focus {
   background: white;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .contact-info h3 {
@@ -1065,7 +1101,7 @@ header nav a:focus {
   background: white;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .contact-form form {
@@ -1110,8 +1146,8 @@ header nav a:focus {
 
 .contact-form button {
   align-self: flex-start;
-  background: var(--secondary);
-  color: var(--text-light);
+  background: #ffffff;
+  color: var(--primary);
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
@@ -1121,7 +1157,7 @@ header nav a:focus {
 }
 
 .contact-form button:hover {
-  background: #e05b2b;
+  background: #e2e8f0;
 }
 
 /* Footer */
@@ -1153,7 +1189,7 @@ footer p {
 }
 
 .header-contact a.phone {
-  color: var(--secondary);
+  color: var(--primary);
   text-decoration: none;
   font-weight: 600;
 }
@@ -1166,8 +1202,8 @@ footer p {
 /* Small button variant for header call-to-action */
 .btn-small {
   display: inline-block;
-  background: var(--secondary);
-  color: var(--text-light);
+  background: #ffffff;
+  color: var(--primary);
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
   text-decoration: none;
@@ -1178,7 +1214,7 @@ footer p {
 
 .btn-small:hover,
 .btn-small:focus {
-  background: #e05b2b;
+  background: #e2e8f0;
 }
 
 /* Trust signals section */
@@ -1201,12 +1237,12 @@ footer p {
   background: white;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 .trust-icon {
   font-size: 2rem;
-  color: var(--secondary);
+  color: var(--primary);
   margin-bottom: 0.5rem;
 }
 .trust-item h3 {
@@ -1244,7 +1280,7 @@ footer p {
   background: white;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1344,7 +1380,7 @@ footer p {
   height: auto;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .cta-section h2 {
   font-size: 2rem;
@@ -1355,20 +1391,27 @@ footer p {
   margin-bottom: 2rem;
   color: var(--text-light);
 }
-.cta-section a.btn-primary {
-  background: var(--secondary);
+
+.cta-section p a {
   color: var(--text-light);
+  text-decoration: underline;
+}
+.cta-section a.btn-primary {
+  background: #ffffff;
+  color: var(--primary);
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 .cta-section a.btn-primary:hover,
 .cta-section a.btn-primary:focus {
-  background: #e05b2b;
+  background: #e2e8f0;
   transform: translateY(-2px);
-}/* Sticky mobile call-to-action bar */
+} /* Sticky mobile call-to-action bar */
 .sticky-bar {
   position: fixed;
   bottom: 0;
@@ -1387,7 +1430,9 @@ footer p {
   font-weight: bold;
 }
 @media (min-width: 768px) {
-  .sticky-bar { display: none; }
+  .sticky-bar {
+    display: none;
+  }
 }
 
 /* ===== UX/UI IMPROVEMENTS ===== */
@@ -1419,12 +1464,14 @@ footer p {
   border-radius: 8px;
   text-decoration: none;
   color: var(--text-dark);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .action-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .action-icon {
   font-size: 1.5rem;
@@ -1499,7 +1546,7 @@ footer p {
 .about-image img {
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 768px) {
   .about-grid {
@@ -1514,17 +1561,19 @@ footer p {
 .btn-secondary {
   display: inline-block;
   background: transparent;
-  color: var(--secondary);
+  color: var(--primary);
   padding: 0.75rem 1.5rem;
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--primary);
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 .btn-secondary:hover,
 .btn-secondary:focus {
-  background: var(--secondary);
+  background: var(--primary);
   color: var(--text-light);
 }
 
@@ -1549,8 +1598,13 @@ footer p {
   animation: pulse 2s infinite;
 }
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 .emergency-call-btn {
   display: inline-block;
@@ -1651,7 +1705,7 @@ footer p {
   left: 0;
   right: 0;
   padding: 0.5rem;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   font-size: 0.875rem;
   color: var(--text-dark);
   text-align: center;
@@ -1686,7 +1740,7 @@ footer p {
   position: relative;
 }
 .financing-timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 24px;
   left: 60px;
@@ -1796,7 +1850,7 @@ footer p {
   margin-bottom: 0.5rem;
 }
 .footer-col a {
-  color: var(--muted);
+  color: var(--text-dark);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -1804,7 +1858,7 @@ footer p {
   color: var(--secondary);
 }
 .footer-col p {
-  color: var(--muted);
+  color: var(--text-dark);
   margin: 0;
   font-size: 0.875rem;
   line-height: 1.6;
@@ -1878,7 +1932,7 @@ footer p {
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .sidebar-widget h4 {
   margin-top: 0;
@@ -1933,7 +1987,7 @@ footer p {
 .service-map iframe {
   border: 0;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Locations Section */
@@ -1968,11 +2022,13 @@ footer p {
 
 /* Hover States */
 .gallery-grid img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .gallery-grid img:hover {
   transform: scale(1.02);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 header nav a:hover {
   text-decoration: underline;
@@ -2046,7 +2102,7 @@ header nav a:hover {
   margin-right: 0.5rem;
 }
 .hero .btn-secondary {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-color: white;
   color: white;
 }

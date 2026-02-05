@@ -14,6 +14,7 @@ Remodel work is where shortcuts show up forever. Top Tier Electrical approaches 
 ---
 
 ## Remodel Projects We Do Often
+
 - Kitchen electrical (islands, under-cabinet lighting, appliance circuits, layout updates)
 - Basement finishing (lighting, bedrooms, offices, mechanical areas)
 - Additions (family rooms, garages, sunrooms)
@@ -23,6 +24,7 @@ Remodel work is where shortcuts show up forever. Top Tier Electrical approaches 
 ---
 
 ## The Top Tier Remodel Process
+
 1. **Walkthrough + goals** (what you want to add, move, or clean up)
 2. **Assess existing electrical** (panel capacity, grounding/bonding, circuit condition)
 3. **Plan the cleanest path** (minimize drywall damage; coordinate with other trades)
@@ -32,6 +34,7 @@ Remodel work is where shortcuts show up forever. Top Tier Electrical approaches 
 ---
 
 ## What “Clean Work” Means Here
+
 - Protective prep (drop cloths, dust control approach)
 - Thoughtful routing (so future access isn’t a nightmare)
 - Code-correct protection (GFCI/AFCI where required)

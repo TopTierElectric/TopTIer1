@@ -14,6 +14,7 @@ Commercial electrical needs to be coordinated, predictable, and clean—especial
 ---
 
 ## Commercial Services
+
 - Tenant build-outs and renovations (retail, office, light commercial)
 - Dedicated circuits for equipment and specialty loads
 - Troubleshooting and repairs
@@ -23,6 +24,7 @@ Commercial electrical needs to be coordinated, predictable, and clean—especial
 ---
 
 ## How We Work in Operating Businesses
+
 - Plan around hours and critical operations where possible
 - Keep work areas clean and controlled
 - Communicate progress clearly (owners, managers, GCs)
