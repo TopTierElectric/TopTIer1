@@ -1,3 +1,12 @@
+# Canonical host + protocol enforcement
+http://toptier-electrical.com/* https://toptier-electrical.com/:splat 301!
+http://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301!
+https://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301!
+
+# Legacy asset aliases to prevent logo/image 404s
+/images/logos/TopTierElectrical_Primary_FlatGold_512.png /TopTierElectrical_Primary_FlatGold_512.png 301
+/images/logos/TopTierElectrical_Primary_FlatGold_512.webp /TopTierElectrical_Primary_FlatGold_512.png 301
+
 # Clean URL aliases -> .html
 /index / 301
 /index.html / 301
