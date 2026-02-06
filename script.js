@@ -41,6 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", function () {
       if (nav.classList.contains("active")) {
         nav.classList.remove("active");
+        if (menuToggle) {
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
       }
     });
   });
