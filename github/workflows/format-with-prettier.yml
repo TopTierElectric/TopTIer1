@@ -25,12 +25,12 @@ jobs:
 
       # Format only the primary file types in this repo (HTML/CSS/JS/Python/Markdown)
       - name: Run Prettier (formats files)
-        run: npx --yes prettier@2.8.8 --write "**/*.{html,css,js,py,md}"
+        run: npx --yes prettier@3.2.5 --write "**/*.{html,css,js,json,md}"
 
       - name: Commit formatted files
         uses: EndBug/add-and-commit@v9
         with:
           author_name: github-actions[bot]
           author_email: github-actions[bot]@users.noreply.github.com
-          message: chore: format code with Prettier
+          message: "chore: format code with Prettier"
           add: '.'

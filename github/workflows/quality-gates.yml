@@ -1,0 +1,42 @@
+name: quality-gates
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Validate HTML and lint
+        run: |
+          npm run validate:html
+          npm run lint
+
+      - name: Run static content checks
+        run: |
+          npm run check:placeholders
+          npm run check:origin-redirects
+
+      - name: Start local server
+        run: npx http-server -p 8888 >/tmp/http.log 2>&1 &
+
+      - name: Verify internal links
+        run: npm run audit:links
