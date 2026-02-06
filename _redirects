@@ -40,5 +40,5 @@
 /about /services.html 301
 /pricing /services.html 301
 
-# Fallback 404
-/* /404.html 404
+# Cloudflare Pages serves /404.html automatically for unmatched routes.
+# Keep this file to valid redirect/proxy status codes only.
