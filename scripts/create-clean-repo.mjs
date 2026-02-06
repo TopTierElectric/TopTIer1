@@ -17,7 +17,6 @@ const INCLUDE_DOCS = args.includes('--include-docs');
 const DRY_RUN = args.includes('--dry-run');
 const ENABLE_DEDUPE = args.includes('--dedupe');
 const INIT_GIT = args.includes('--init-git');
-const PUSH_REMOTE = getArgValue('--remote', '');
 
 const ROOT_FILES_TO_KEEP = [
   '_headers',
@@ -183,23 +182,20 @@ const main = async () => {
     .sort();
 
   const duplicates = [];
-  let finalFiles = keptRel;
-
-  if (ENABLE_DEDUPE) {
-    const hashMap = new Map();
-    for (const rel of keptRel) {
-      const full = path.join(ROOT, rel);
-      const digest = await hashFile(full);
-      if (!hashMap.has(digest)) {
-        hashMap.set(digest, rel);
-      } else {
-        duplicates.push({ duplicate: rel, original: hashMap.get(digest) });
-      }
+  const hashMap = new Map();
+  for (const rel of keptRel) {
+    const full = path.join(ROOT, rel);
+    const digest = await hashFile(full);
+    if (!hashMap.has(digest)) {
+      hashMap.set(digest, rel);
+    } else {
+      duplicates.push({ duplicate: rel, original: hashMap.get(digest) });
     }
-
-    const duplicateSet = new Set(duplicates.map((entry) => entry.duplicate));
-    finalFiles = keptRel.filter((rel) => !duplicateSet.has(rel));
   }
+
+  const keptAfterDedupe = keptRel.filter((rel) => !duplicates.some((d) => d.duplicate === rel));
+
+  const finalFiles = ENABLE_DEDUPE ? keptAfterDedupe : keptRel;
 
   const manifest = {
     generated_at: new Date().toISOString(),
@@ -227,37 +223,19 @@ const main = async () => {
 
     if (INIT_GIT) {
       const { execFile } = await import('node:child_process');
-      const run = (cmd, argv, options = {}) =>
+      const run = (cmd, argv) =>
         new Promise((resolve, reject) => {
-          execFile(cmd, argv, { cwd: OUT_DIR, ...options }, (error, stdout, stderr) => {
-            if (error) {
-              const details = (stderr || stdout || error.message || '').toString().trim();
-              reject(new Error(`${cmd} ${argv.join(' ')} failed${details ? `: ${details}` : ''}`));
-            } else {
-              resolve({ stdout, stderr });
-            }
+          execFile(cmd, argv, { cwd: OUT_DIR }, (error) => {
+            if (error) reject(error);
+            else resolve();
           });
         });
 
       await run('git', ['init']);
-      await run('git', ['branch', '-M', 'main']);
+      await run('git', ['config', 'user.name', 'clean-repo-export']);
+      await run('git', ['config', 'user.email', 'clean-repo-export@example.local']);
       await run('git', ['add', '.']);
-      await run('git', ['commit', '-m', 'Initial clean export'], {
-        env: {
-          ...process.env,
-          GIT_AUTHOR_NAME: process.env.GIT_AUTHOR_NAME || 'clean-repo-export',
-          GIT_AUTHOR_EMAIL: process.env.GIT_AUTHOR_EMAIL || 'clean-repo-export@example.local',
-          GIT_COMMITTER_NAME: process.env.GIT_COMMITTER_NAME || 'clean-repo-export',
-          GIT_COMMITTER_EMAIL: process.env.GIT_COMMITTER_EMAIL || 'clean-repo-export@example.local'
-        }
-      });
-
-      if (PUSH_REMOTE) {
-        const remoteCheck = await run('git', ['remote']);
-        const remotes = (remoteCheck.stdout || '').toString().split(/\s+/).filter(Boolean);
-        if (remotes.includes('origin')) await run('git', ['remote', 'set-url', 'origin', PUSH_REMOTE]);
-        else await run('git', ['remote', 'add', 'origin', PUSH_REMOTE]);
-      }
+      await run('git', ['commit', '-m', 'Initial clean export']);
     }
   }
 
@@ -277,10 +255,7 @@ const main = async () => {
   if (DRY_RUN) console.log('\nDry run complete. No files copied.');
   else {
     console.log(`\nClean repo exported to: ${OUT_DIR}`);
-    if (INIT_GIT) {
-      console.log('Initialized git repo and created initial commit.');
-      if (PUSH_REMOTE) console.log(`Configured origin remote: ${PUSH_REMOTE}`);
-    }
+    if (INIT_GIT) console.log('Initialized git repo and created initial commit.');
   }
 };
 

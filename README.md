@@ -23,7 +23,7 @@
 If you want to spin up a new lean repository with only actively used site files and assets:
 
 ```bash
-npm run repo:clean-export -- --out dist/clean-repo --init-git --remote <YOUR_NEW_REPO_URL>
+npm run repo:clean-export -- --out dist/clean-repo --init-git
 ```
 
 Full guide: `docs/CLEAN_REPO_EXPORT.md`

@@ -25,14 +25,13 @@ Optional flags:
 - `--include-docs` → include `docs/` content in the export.
 - `--dedupe` → remove byte-identical duplicates in export output.
 - `--init-git` → initialize git in the output folder and create an initial commit.
-- `--remote <url>` → when used with `--init-git`, configure `origin` to your new repo URL.
 
 ## Export into a new GitHub repo
 
 1. Generate the clean export:
 
 ```bash
-npm run repo:clean-export -- --out dist/clean-repo --init-git --remote <YOUR_NEW_REPO_URL>
+npm run repo:clean-export -- --out dist/clean-repo --init-git
 ```
 
 2. Create an empty repo on GitHub (no README/license).
@@ -41,6 +40,8 @@ npm run repo:clean-export -- --out dist/clean-repo --init-git --remote <YOUR_NEW
 
 ```bash
 cd dist/clean-repo
+git branch -M main
+git remote add origin <YOUR_NEW_REPO_URL>
 git push -u origin main
 ```
 
