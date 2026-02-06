@@ -232,7 +232,6 @@ const crawl = async () => {
 
   const report = {
     baseUrl,
-    generatedAt: new Date().toISOString(),
     pages,
     orphans,
     linkGraph: Object.fromEntries(linkGraph),
