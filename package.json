@@ -17,6 +17,7 @@
     "audit:a11y": "scripts/with-chrome-path.sh npx pa11y-ci",
     "audit:lighthouse": "scripts/with-chrome-path.sh bash -lc \"mkdir -p reports && npx lighthouse http://127.0.0.1:8888 --output=html --output-path=reports/lighthouse.html --chrome-flags='--headless=new --no-sandbox'\"",
     "check:placeholders": "node scripts/check-placeholders.js",
+    "check:no-binaries": "bash scripts/check-no-binary-files.sh",
     "qa": "npm run format:check && npm run validate:html && npm run lint && npm run audit:links && npm run audit:a11y && npm run audit:lighthouse && npm run check:placeholders",
     "check:origin-redirects": "node scripts/check-origin-redirects.js",
     "repo:clean-export": "node scripts/create-clean-repo.mjs"
