@@ -28,9 +28,11 @@ Scope: Page links, status codes, placeholder text, and automated QA workflow exe
 ## Errors Found
 
 ### Functional site errors
+
 - **None detected** in link integrity, page status codes, HTML validity, or placeholder text checks.
 
 ### Workflow/tooling errors
+
 1. Accessibility audit blocked by missing browser runtime dependencies (`libatk-1.0.so.0`).
 2. Lighthouse performance audit blocked by missing Chrome/Chromium path (`CHROME_PATH`).
 3. Repeated npm warning: unknown env config `http-proxy` (non-blocking but noisy in CI logs).

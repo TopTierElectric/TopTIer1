@@ -35,8 +35,13 @@ fi
 
 if [[ -z "${CHROME_PATH:-}" ]]; then
   echo "CHROME_PATH is not set and no usable Chrome/Chromium executable was found." >&2
-  echo "Install Chrome/Chromium or set CHROME_PATH explicitly." >&2
-  exit 1
+  if [[ "${CI:-}" == "true" ]]; then
+    echo "Install Chrome/Chromium or set CHROME_PATH explicitly." >&2
+    exit 1
+  fi
+
+  echo "Skipping browser-dependent check outside CI." >&2
+  exit 0
 fi
 
 export CHROME_PATH

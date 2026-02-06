@@ -60,6 +60,7 @@ curl -I https://toptier-electrical.com/this-page-does-not-exist
 ```
 
 Expected outcomes:
+
 - Host/protocol variants should 301 to `https://toptier-electrical.com/...`.
 - Legacy logo path should 301 to `/TopTierElectrical_Primary_FlatGold_512.png`.
 - Unknown pages should return `404` with `404.html` content.

@@ -139,7 +139,7 @@ Code improvement block:
   height="600"
   loading="lazy"
   decoding="async"
->
+/>
 ```
 
 ### Phase 4 — Complete performance/accessibility tooling

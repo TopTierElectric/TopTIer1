@@ -1,22 +1,21 @@
 {
   "baseUrl": "http://localhost:8888/",
-  "generatedAt": "2026-02-02T06:39:07.040Z",
+  "generatedAt": "2026-02-06T19:34:21.653Z",
   "pages": [
     {
       "url": "http://localhost:8888/",
       "status": 200,
       "location": null,
       "title": "Electrician in West Michigan | Top Tier Electrical",
-      "metaDescription": "Licensed &amp; insured electrician serving West Michigan. Panel upgrades, EV chargers, lighting, and reliable troubleshooting. Get a clear estimate—call (616) 334-7159.",
+      "metaDescription": "Licensed &amp; insured electrician serving West Michigan. Panel upgrades, EV chargers, lighting, and reliable troubleshooting. Get a clear estimate—call (616)&nbsp;334&#8209;7159.",
       "metaRobots": "index, follow",
       "canonical": "https://toptier-electrical.com/",
       "h1Present": true,
-      "primaryCtaType": "form",
+      "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -25,6 +24,7 @@
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
         "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html",
         "http://localhost:8888/panel-upgrades.html",
         "http://localhost:8888/ev-chargers.html",
         "http://localhost:8888/lighting.html",
@@ -42,16 +42,15 @@
       "status": 200,
       "location": null,
       "title": "Electrician in West Michigan | Top Tier Electrical",
-      "metaDescription": "Licensed &amp; insured electrician serving West Michigan. Panel upgrades, EV chargers, lighting, and reliable troubleshooting. Get a clear estimate—call (616) 334-7159.",
+      "metaDescription": "Licensed &amp; insured electrician serving West Michigan. Panel upgrades, EV chargers, lighting, and reliable troubleshooting. Get a clear estimate—call (616)&nbsp;334&#8209;7159.",
       "metaRobots": "index, follow",
       "canonical": "https://toptier-electrical.com/",
       "h1Present": true,
-      "primaryCtaType": "form",
+      "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -60,6 +59,7 @@
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
         "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html",
         "http://localhost:8888/panel-upgrades.html",
         "http://localhost:8888/ev-chargers.html",
         "http://localhost:8888/lighting.html",
@@ -86,7 +86,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -95,6 +94,7 @@
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
         "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html",
         "http://localhost:8888/panel-upgrades.html",
         "http://localhost:8888/ev-chargers.html",
         "http://localhost:8888/lighting.html",
@@ -107,34 +107,6 @@
       "pageType": "service-hub"
     },
     {
-      "url": "http://localhost:8888/contact.html",
-      "status": 200,
-      "location": null,
-      "title": "Contact Top Tier Electrical | West Michigan Electrician",
-      "metaDescription": "Call or email Top Tier Electrical for service in West Michigan. Share project details or book online to confirm next steps.",
-      "metaRobots": "index, follow",
-      "canonical": "https://toptier-electrical.com/contact.html",
-      "h1Present": true,
-      "primaryCtaType": "book",
-      "lastUpdatedSignal": "",
-      "links": [
-        "http://localhost:8888/index.html",
-        "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
-        "http://localhost:8888/booking.html",
-        "http://localhost:8888/testimonials.html",
-        "http://localhost:8888/financing.html",
-        "http://localhost:8888/emergency.html",
-        "http://localhost:8888/gallery.html",
-        "http://localhost:8888/faq.html",
-        "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
-      ],
-      "statusSource": "filesystem",
-      "path": "/contact.html",
-      "pageType": "contact"
-    },
-    {
       "url": "http://localhost:8888/booking.html",
       "status": 200,
       "location": null,
@@ -143,12 +115,11 @@
       "metaRobots": "index, follow",
       "canonical": "https://toptier-electrical.com/booking.html",
       "h1Present": true,
-      "primaryCtaType": "call",
+      "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -156,7 +127,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/booking.html",
@@ -176,7 +148,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -184,7 +155,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/testimonials.html",
@@ -204,7 +176,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -212,7 +183,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/financing.html",
@@ -232,7 +204,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -240,7 +211,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/emergency.html",
@@ -260,7 +232,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -268,7 +239,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/gallery.html",
@@ -288,7 +260,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -297,6 +268,7 @@
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
         "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html",
         "http://localhost:8888/panel-upgrades.html",
         "http://localhost:8888/ev-chargers.html"
       ],
@@ -318,7 +290,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -327,12 +298,16 @@
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
         "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html",
         "http://localhost:8888/blog-electrical-safety.html",
         "http://localhost:8888/electrical-repairs.html",
-        "http://localhost:8888/blog-right-electrician.html",
+        "http://localhost:8888/blog-panel-upgrade-signs.html",
         "http://localhost:8888/panel-upgrades.html",
+        "http://localhost:8888/blog-right-electrician.html",
         "http://localhost:8888/blog-ev-charging.html",
         "http://localhost:8888/ev-chargers.html",
+        "http://localhost:8888/blog-generator-readiness.html",
+        "http://localhost:8888/generators.html",
         "http://localhost:8888/blog-surge-protection.html"
       ],
       "statusSource": "filesystem",
@@ -344,7 +319,7 @@
       "status": 200,
       "location": null,
       "title": "Service Areas | West Michigan Electrician",
-      "metaDescription": "See where we work across West Michigan and what to expect when scheduling. If you’re nearby but not listed, call (616) 334-7159 to confirm availability.",
+      "metaDescription": "See where we work across West Michigan and what to expect when scheduling. If you’re nearby but not listed, call (616)&nbsp;334&#8209;7159 to confirm availability.",
       "metaRobots": "index, follow",
       "canonical": "https://toptier-electrical.com/service-areas.html",
       "h1Present": true,
@@ -353,7 +328,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -361,11 +335,40 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/service-areas.html",
       "pageType": "service-areas"
+    },
+    {
+      "url": "http://localhost:8888/contact.html",
+      "status": 200,
+      "location": null,
+      "title": "Contact Top Tier Electrical | West Michigan Electrician",
+      "metaDescription": "Call or email Top Tier Electrical for service in West Michigan. Share project details or book online to confirm next steps.",
+      "metaRobots": "index, follow",
+      "canonical": "https://toptier-electrical.com/contact.html",
+      "h1Present": true,
+      "primaryCtaType": "book",
+      "lastUpdatedSignal": "",
+      "links": [
+        "http://localhost:8888/index.html",
+        "http://localhost:8888/services.html",
+        "http://localhost:8888/booking.html",
+        "http://localhost:8888/testimonials.html",
+        "http://localhost:8888/financing.html",
+        "http://localhost:8888/emergency.html",
+        "http://localhost:8888/gallery.html",
+        "http://localhost:8888/faq.html",
+        "http://localhost:8888/blog.html",
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
+      ],
+      "statusSource": "filesystem",
+      "path": "/contact.html",
+      "pageType": "contact"
     },
     {
       "url": "http://localhost:8888/panel-upgrades.html",
@@ -381,7 +384,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -389,7 +391,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/panel-upgrades.html",
@@ -409,7 +412,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -417,7 +419,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/ev-chargers.html",
@@ -437,7 +440,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -445,7 +447,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/lighting.html",
@@ -465,7 +468,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -473,7 +475,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/electrical-repairs.html",
@@ -486,14 +489,13 @@
       "title": "Generator Installation | West Michigan Electrician",
       "metaDescription": "Backup power systems sized and installed safely with clear scope, clean workmanship, and verified operation.",
       "metaRobots": "index, follow",
-      "canonical": "https://www.toptier-electrical.com/generators.html",
+      "canonical": "https://toptier-electrical.com/generators.html",
       "h1Present": true,
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -501,7 +503,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/generators.html",
@@ -514,14 +517,13 @@
       "title": "Energy Solutions | West Michigan Electrician",
       "metaDescription": "Practical energy upgrades—LED, controls, and load planning—to improve comfort and reduce waste without overcomplicating your home.",
       "metaRobots": "index, follow",
-      "canonical": "https://www.toptier-electrical.com/energy-solutions.html",
+      "canonical": "https://toptier-electrical.com/energy-solutions.html",
       "h1Present": true,
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -529,7 +531,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/energy-solutions.html",
@@ -542,14 +545,13 @@
       "title": "Energy Consulting | West Michigan Electrician",
       "metaDescription": "Calm, professional energy consulting to prioritize upgrades, clarify scope, and help you make confident decisions without pressure.",
       "metaRobots": "index, follow",
-      "canonical": "https://www.toptier-electrical.com/energy-consulting.html",
+      "canonical": "https://toptier-electrical.com/energy-consulting.html",
       "h1Present": true,
       "primaryCtaType": "book",
       "lastUpdatedSignal": "",
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -557,7 +559,8 @@
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
-        "http://localhost:8888/service-areas.html"
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html"
       ],
       "statusSource": "filesystem",
       "path": "/energy-consulting.html",
@@ -577,7 +580,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -586,11 +588,44 @@
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
         "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html",
         "http://localhost:8888/electrical-repairs.html",
         "http://localhost:8888/panel-upgrades.html"
       ],
       "statusSource": "filesystem",
       "path": "/blog-electrical-safety.html",
+      "pageType": "post"
+    },
+    {
+      "url": "http://localhost:8888/blog-panel-upgrade-signs.html",
+      "status": 200,
+      "location": null,
+      "title": "Signs You Need an Electrical Panel Upgrade | Top Tier Electrical Blog",
+      "metaDescription": "Learn the warning signs that your electrical panel needs an upgrade and how a service upgrade improves safety and capacity.",
+      "metaRobots": "index, follow",
+      "canonical": "https://toptier-electrical.com/blog-panel-upgrade-signs.html",
+      "h1Present": true,
+      "primaryCtaType": "book",
+      "lastUpdatedSignal": "",
+      "links": [
+        "http://localhost:8888/index.html",
+        "http://localhost:8888/services.html",
+        "http://localhost:8888/booking.html",
+        "http://localhost:8888/testimonials.html",
+        "http://localhost:8888/financing.html",
+        "http://localhost:8888/emergency.html",
+        "http://localhost:8888/gallery.html",
+        "http://localhost:8888/faq.html",
+        "http://localhost:8888/blog.html",
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html",
+        "http://localhost:8888/panel-upgrades.html",
+        "http://localhost:8888/blog-surge-protection.html",
+        "http://localhost:8888/blog-right-electrician.html",
+        "http://localhost:8888/electrical-repairs.html"
+      ],
+      "statusSource": "filesystem",
+      "path": "/blog-panel-upgrade-signs.html",
       "pageType": "post"
     },
     {
@@ -607,14 +642,15 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
+        "http://localhost:8888/emergency.html",
         "http://localhost:8888/gallery.html",
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
         "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html",
         "http://localhost:8888/electrical-repairs.html",
         "http://localhost:8888/panel-upgrades.html"
       ],
@@ -636,7 +672,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -645,11 +680,44 @@
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
         "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html",
         "http://localhost:8888/panel-upgrades.html",
         "http://localhost:8888/ev-chargers.html"
       ],
       "statusSource": "filesystem",
       "path": "/blog-ev-charging.html",
+      "pageType": "post"
+    },
+    {
+      "url": "http://localhost:8888/blog-generator-readiness.html",
+      "status": 200,
+      "location": null,
+      "title": "Backup Generator Readiness Checklist | Top Tier Electrical Blog",
+      "metaDescription": "Get your home ready for outages with a practical generator readiness checklist, including testing, fuel, and transfer switch tips.",
+      "metaRobots": "index, follow",
+      "canonical": "https://toptier-electrical.com/blog-generator-readiness.html",
+      "h1Present": true,
+      "primaryCtaType": "book",
+      "lastUpdatedSignal": "",
+      "links": [
+        "http://localhost:8888/index.html",
+        "http://localhost:8888/services.html",
+        "http://localhost:8888/booking.html",
+        "http://localhost:8888/testimonials.html",
+        "http://localhost:8888/financing.html",
+        "http://localhost:8888/emergency.html",
+        "http://localhost:8888/gallery.html",
+        "http://localhost:8888/faq.html",
+        "http://localhost:8888/blog.html",
+        "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html",
+        "http://localhost:8888/generators.html",
+        "http://localhost:8888/blog-electrical-safety.html",
+        "http://localhost:8888/blog-ev-charging.html",
+        "http://localhost:8888/electrical-repairs.html"
+      ],
+      "statusSource": "filesystem",
+      "path": "/blog-generator-readiness.html",
       "pageType": "post"
     },
     {
@@ -666,7 +734,6 @@
       "links": [
         "http://localhost:8888/index.html",
         "http://localhost:8888/services.html",
-        "http://localhost:8888/contact.html",
         "http://localhost:8888/booking.html",
         "http://localhost:8888/testimonials.html",
         "http://localhost:8888/financing.html",
@@ -675,6 +742,7 @@
         "http://localhost:8888/faq.html",
         "http://localhost:8888/blog.html",
         "http://localhost:8888/service-areas.html",
+        "http://localhost:8888/contact.html",
         "http://localhost:8888/panel-upgrades.html",
         "http://localhost:8888/electrical-repairs.html"
       ],
@@ -688,7 +756,6 @@
     "http://localhost:8888/": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -697,6 +764,7 @@
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
       "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html",
       "http://localhost:8888/panel-upgrades.html",
       "http://localhost:8888/ev-chargers.html",
       "http://localhost:8888/lighting.html",
@@ -708,7 +776,6 @@
     "http://localhost:8888/index.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -717,6 +784,7 @@
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
       "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html",
       "http://localhost:8888/panel-upgrades.html",
       "http://localhost:8888/ev-chargers.html",
       "http://localhost:8888/lighting.html",
@@ -728,7 +796,6 @@
     "http://localhost:8888/services.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -737,6 +804,7 @@
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
       "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html",
       "http://localhost:8888/panel-upgrades.html",
       "http://localhost:8888/ev-chargers.html",
       "http://localhost:8888/lighting.html",
@@ -744,88 +812,9 @@
       "http://localhost:8888/energy-consulting.html",
       "http://localhost:8888/generators.html"
     ],
-    "http://localhost:8888/contact.html": [
-      "http://localhost:8888/index.html",
-      "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
-      "http://localhost:8888/booking.html",
-      "http://localhost:8888/testimonials.html",
-      "http://localhost:8888/financing.html",
-      "http://localhost:8888/emergency.html",
-      "http://localhost:8888/gallery.html",
-      "http://localhost:8888/faq.html",
-      "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
-    ],
     "http://localhost:8888/booking.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
-      "http://localhost:8888/booking.html",
-      "http://localhost:8888/testimonials.html",
-      "http://localhost:8888/financing.html",
-      "http://localhost:8888/emergency.html",
-      "http://localhost:8888/gallery.html",
-      "http://localhost:8888/faq.html",
-      "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
-    ],
-    "http://localhost:8888/testimonials.html": [
-      "http://localhost:8888/index.html",
-      "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
-      "http://localhost:8888/booking.html",
-      "http://localhost:8888/testimonials.html",
-      "http://localhost:8888/financing.html",
-      "http://localhost:8888/emergency.html",
-      "http://localhost:8888/gallery.html",
-      "http://localhost:8888/faq.html",
-      "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
-    ],
-    "http://localhost:8888/financing.html": [
-      "http://localhost:8888/index.html",
-      "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
-      "http://localhost:8888/booking.html",
-      "http://localhost:8888/testimonials.html",
-      "http://localhost:8888/financing.html",
-      "http://localhost:8888/emergency.html",
-      "http://localhost:8888/gallery.html",
-      "http://localhost:8888/faq.html",
-      "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
-    ],
-    "http://localhost:8888/emergency.html": [
-      "http://localhost:8888/index.html",
-      "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
-      "http://localhost:8888/booking.html",
-      "http://localhost:8888/testimonials.html",
-      "http://localhost:8888/financing.html",
-      "http://localhost:8888/emergency.html",
-      "http://localhost:8888/gallery.html",
-      "http://localhost:8888/faq.html",
-      "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
-    ],
-    "http://localhost:8888/gallery.html": [
-      "http://localhost:8888/index.html",
-      "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
-      "http://localhost:8888/booking.html",
-      "http://localhost:8888/testimonials.html",
-      "http://localhost:8888/financing.html",
-      "http://localhost:8888/emergency.html",
-      "http://localhost:8888/gallery.html",
-      "http://localhost:8888/faq.html",
-      "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
-    ],
-    "http://localhost:8888/faq.html": [
-      "http://localhost:8888/index.html",
-      "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -834,13 +823,78 @@
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
       "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
+    ],
+    "http://localhost:8888/testimonials.html": [
+      "http://localhost:8888/index.html",
+      "http://localhost:8888/services.html",
+      "http://localhost:8888/booking.html",
+      "http://localhost:8888/testimonials.html",
+      "http://localhost:8888/financing.html",
+      "http://localhost:8888/emergency.html",
+      "http://localhost:8888/gallery.html",
+      "http://localhost:8888/faq.html",
+      "http://localhost:8888/blog.html",
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
+    ],
+    "http://localhost:8888/financing.html": [
+      "http://localhost:8888/index.html",
+      "http://localhost:8888/services.html",
+      "http://localhost:8888/booking.html",
+      "http://localhost:8888/testimonials.html",
+      "http://localhost:8888/financing.html",
+      "http://localhost:8888/emergency.html",
+      "http://localhost:8888/gallery.html",
+      "http://localhost:8888/faq.html",
+      "http://localhost:8888/blog.html",
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
+    ],
+    "http://localhost:8888/emergency.html": [
+      "http://localhost:8888/index.html",
+      "http://localhost:8888/services.html",
+      "http://localhost:8888/booking.html",
+      "http://localhost:8888/testimonials.html",
+      "http://localhost:8888/financing.html",
+      "http://localhost:8888/emergency.html",
+      "http://localhost:8888/gallery.html",
+      "http://localhost:8888/faq.html",
+      "http://localhost:8888/blog.html",
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
+    ],
+    "http://localhost:8888/gallery.html": [
+      "http://localhost:8888/index.html",
+      "http://localhost:8888/services.html",
+      "http://localhost:8888/booking.html",
+      "http://localhost:8888/testimonials.html",
+      "http://localhost:8888/financing.html",
+      "http://localhost:8888/emergency.html",
+      "http://localhost:8888/gallery.html",
+      "http://localhost:8888/faq.html",
+      "http://localhost:8888/blog.html",
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
+    ],
+    "http://localhost:8888/faq.html": [
+      "http://localhost:8888/index.html",
+      "http://localhost:8888/services.html",
+      "http://localhost:8888/booking.html",
+      "http://localhost:8888/testimonials.html",
+      "http://localhost:8888/financing.html",
+      "http://localhost:8888/emergency.html",
+      "http://localhost:8888/gallery.html",
+      "http://localhost:8888/faq.html",
+      "http://localhost:8888/blog.html",
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html",
       "http://localhost:8888/panel-upgrades.html",
       "http://localhost:8888/ev-chargers.html"
     ],
     "http://localhost:8888/blog.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -849,18 +903,21 @@
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
       "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html",
       "http://localhost:8888/blog-electrical-safety.html",
       "http://localhost:8888/electrical-repairs.html",
-      "http://localhost:8888/blog-right-electrician.html",
+      "http://localhost:8888/blog-panel-upgrade-signs.html",
       "http://localhost:8888/panel-upgrades.html",
+      "http://localhost:8888/blog-right-electrician.html",
       "http://localhost:8888/blog-ev-charging.html",
       "http://localhost:8888/ev-chargers.html",
+      "http://localhost:8888/blog-generator-readiness.html",
+      "http://localhost:8888/generators.html",
       "http://localhost:8888/blog-surge-protection.html"
     ],
     "http://localhost:8888/service-areas.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -868,12 +925,25 @@
       "http://localhost:8888/gallery.html",
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
+    ],
+    "http://localhost:8888/contact.html": [
+      "http://localhost:8888/index.html",
+      "http://localhost:8888/services.html",
+      "http://localhost:8888/booking.html",
+      "http://localhost:8888/testimonials.html",
+      "http://localhost:8888/financing.html",
+      "http://localhost:8888/emergency.html",
+      "http://localhost:8888/gallery.html",
+      "http://localhost:8888/faq.html",
+      "http://localhost:8888/blog.html",
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
     ],
     "http://localhost:8888/panel-upgrades.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -881,12 +951,12 @@
       "http://localhost:8888/gallery.html",
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
     ],
     "http://localhost:8888/ev-chargers.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -894,12 +964,12 @@
       "http://localhost:8888/gallery.html",
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
     ],
     "http://localhost:8888/lighting.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -907,12 +977,12 @@
       "http://localhost:8888/gallery.html",
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
     ],
     "http://localhost:8888/electrical-repairs.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -920,12 +990,12 @@
       "http://localhost:8888/gallery.html",
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
     ],
     "http://localhost:8888/generators.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -933,12 +1003,12 @@
       "http://localhost:8888/gallery.html",
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
     ],
     "http://localhost:8888/energy-solutions.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -946,12 +1016,12 @@
       "http://localhost:8888/gallery.html",
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
     ],
     "http://localhost:8888/energy-consulting.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -959,12 +1029,12 @@
       "http://localhost:8888/gallery.html",
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
-      "http://localhost:8888/service-areas.html"
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html"
     ],
     "http://localhost:8888/blog-electrical-safety.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -973,27 +1043,45 @@
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
       "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html",
       "http://localhost:8888/electrical-repairs.html",
       "http://localhost:8888/panel-upgrades.html"
     ],
-    "http://localhost:8888/blog-right-electrician.html": [
+    "http://localhost:8888/blog-panel-upgrade-signs.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
+      "http://localhost:8888/emergency.html",
       "http://localhost:8888/gallery.html",
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
       "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html",
+      "http://localhost:8888/panel-upgrades.html",
+      "http://localhost:8888/blog-surge-protection.html",
+      "http://localhost:8888/blog-right-electrician.html",
+      "http://localhost:8888/electrical-repairs.html"
+    ],
+    "http://localhost:8888/blog-right-electrician.html": [
+      "http://localhost:8888/index.html",
+      "http://localhost:8888/services.html",
+      "http://localhost:8888/booking.html",
+      "http://localhost:8888/testimonials.html",
+      "http://localhost:8888/financing.html",
+      "http://localhost:8888/emergency.html",
+      "http://localhost:8888/gallery.html",
+      "http://localhost:8888/faq.html",
+      "http://localhost:8888/blog.html",
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html",
       "http://localhost:8888/electrical-repairs.html",
       "http://localhost:8888/panel-upgrades.html"
     ],
     "http://localhost:8888/blog-ev-charging.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -1002,13 +1090,30 @@
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
       "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html",
       "http://localhost:8888/panel-upgrades.html",
       "http://localhost:8888/ev-chargers.html"
+    ],
+    "http://localhost:8888/blog-generator-readiness.html": [
+      "http://localhost:8888/index.html",
+      "http://localhost:8888/services.html",
+      "http://localhost:8888/booking.html",
+      "http://localhost:8888/testimonials.html",
+      "http://localhost:8888/financing.html",
+      "http://localhost:8888/emergency.html",
+      "http://localhost:8888/gallery.html",
+      "http://localhost:8888/faq.html",
+      "http://localhost:8888/blog.html",
+      "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html",
+      "http://localhost:8888/generators.html",
+      "http://localhost:8888/blog-electrical-safety.html",
+      "http://localhost:8888/blog-ev-charging.html",
+      "http://localhost:8888/electrical-repairs.html"
     ],
     "http://localhost:8888/blog-surge-protection.html": [
       "http://localhost:8888/index.html",
       "http://localhost:8888/services.html",
-      "http://localhost:8888/contact.html",
       "http://localhost:8888/booking.html",
       "http://localhost:8888/testimonials.html",
       "http://localhost:8888/financing.html",
@@ -1017,6 +1122,7 @@
       "http://localhost:8888/faq.html",
       "http://localhost:8888/blog.html",
       "http://localhost:8888/service-areas.html",
+      "http://localhost:8888/contact.html",
       "http://localhost:8888/panel-upgrades.html",
       "http://localhost:8888/electrical-repairs.html"
     ]
