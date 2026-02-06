@@ -1,0 +1,177 @@
+#!/usr/bin/env node
+
+const fs = require("fs");
+const path = require("path");
+
+const ROOT = process.cwd();
+const HTML_EXT = ".html";
+const CSS_EXT = ".css";
+
+const isSkippableRef = (value) => {
+  if (!value) return true;
+  const v = value.trim();
+  return (
+    v === "" ||
+    v.startsWith("http://") ||
+    v.startsWith("https://") ||
+    v.startsWith("//") ||
+    v.startsWith("data:") ||
+    v.startsWith("blob:") ||
+    v.startsWith("#")
+  );
+};
+
+const cleanRef = (value) => value.split("#")[0].split("?")[0].trim();
+
+const resolveRef = (fromFile, ref) => {
+  const cleaned = cleanRef(ref);
+  if (isSkippableRef(cleaned)) return null;
+  if (cleaned.startsWith("/")) {
+    return path.join(ROOT, cleaned.replace(/^\//, ""));
+  }
+  return path.resolve(path.dirname(fromFile), cleaned);
+};
+
+const parseAttributes = (tag) => {
+  const attrs = {};
+  const attrRe =
+    /([a-zA-Z_:][-a-zA-Z0-9_:.]*)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))/g;
+  let m;
+  while ((m = attrRe.exec(tag)) !== null) {
+    attrs[m[1].toLowerCase()] = m[2] ?? m[3] ?? m[4] ?? "";
+  }
+  return attrs;
+};
+
+const listFiles = (ext) =>
+  fs
+    .readdirSync(ROOT, { withFileTypes: true })
+    .filter((d) => d.isFile() && d.name.endsWith(ext))
+    .map((d) => path.join(ROOT, d.name));
+
+const htmlFiles = listFiles(HTML_EXT);
+const cssFiles = listFiles(CSS_EXT).concat(
+  fs.existsSync(path.join(ROOT, "css"))
+    ? fs
+        .readdirSync(path.join(ROOT, "css"), { withFileTypes: true })
+        .filter((d) => d.isFile() && d.name.endsWith(CSS_EXT))
+        .map((d) => path.join(ROOT, "css", d.name))
+    : [],
+);
+
+const missingReferences = [];
+const missingAlt = [];
+const emptyAlt = [];
+
+const addMissingReference = (filePath, reference, type) => {
+  missingReferences.push({
+    file: path.relative(ROOT, filePath),
+    reference,
+    type,
+  });
+};
+
+for (const filePath of htmlFiles) {
+  const content = fs.readFileSync(filePath, "utf8");
+
+  const imgTagRe = /<img\b[^>]*>/gi;
+  let imgMatch;
+  while ((imgMatch = imgTagRe.exec(content)) !== null) {
+    const tag = imgMatch[0];
+    const attrs = parseAttributes(tag);
+    const src = attrs.src;
+    if (src) {
+      const resolved = resolveRef(filePath, src);
+      if (resolved && !fs.existsSync(resolved)) {
+        addMissingReference(filePath, src, "img[src]");
+      }
+    }
+
+    const alt = attrs.alt;
+    const role = (attrs.role || "").toLowerCase();
+    const ariaHidden = (attrs["aria-hidden"] || "").toLowerCase();
+    const decorative = role === "presentation" || ariaHidden === "true";
+    if (alt === undefined) {
+      missingAlt.push({ file: path.relative(ROOT, filePath), src: src || "" });
+    } else if (alt.trim() === "" && !decorative) {
+      emptyAlt.push({ file: path.relative(ROOT, filePath), src: src || "" });
+    }
+  }
+
+  const sourceTagRe = /<source\b[^>]*>/gi;
+  let sourceMatch;
+  while ((sourceMatch = sourceTagRe.exec(content)) !== null) {
+    const attrs = parseAttributes(sourceMatch[0]);
+    const srcset = attrs.srcset;
+    if (!srcset) continue;
+    for (const candidate of srcset.split(",")) {
+      const ref = candidate.trim().split(/\s+/)[0];
+      const resolved = resolveRef(filePath, ref);
+      if (resolved && !fs.existsSync(resolved)) {
+        addMissingReference(filePath, ref, "source[srcset]");
+      }
+    }
+  }
+}
+
+for (const filePath of cssFiles) {
+  const content = fs.readFileSync(filePath, "utf8");
+  const urlRe = /url\(([^)]+)\)/gi;
+  let m;
+  while ((m = urlRe.exec(content)) !== null) {
+    const raw = m[1].trim().replace(/^['"]|['"]$/g, "");
+    const resolved = resolveRef(filePath, raw);
+    if (resolved && !fs.existsSync(resolved)) {
+      addMissingReference(filePath, raw, "css[url()]");
+    }
+  }
+}
+
+const reportLines = [];
+reportLines.push("# Image/Text Reference Audit");
+reportLines.push("");
+reportLines.push(`- HTML files scanned: ${htmlFiles.length}`);
+reportLines.push(`- CSS files scanned: ${cssFiles.length}`);
+reportLines.push(
+  `- Missing image/file references: ${missingReferences.length}`,
+);
+reportLines.push(`- Image tags missing alt attribute: ${missingAlt.length}`);
+reportLines.push(
+  `- Image tags with empty alt (non-decorative): ${emptyAlt.length}`,
+);
+reportLines.push("");
+
+if (missingReferences.length > 0) {
+  reportLines.push("## Missing references");
+  missingReferences.forEach((r) =>
+    reportLines.push(`- ${r.file} (${r.type}): ${r.reference}`),
+  );
+  reportLines.push("");
+}
+
+if (missingAlt.length > 0) {
+  reportLines.push("## Missing alt attributes");
+  missingAlt.forEach((r) => reportLines.push(`- ${r.file}: ${r.src}`));
+  reportLines.push("");
+}
+
+if (emptyAlt.length > 0) {
+  reportLines.push("## Empty alt attributes (non-decorative)");
+  emptyAlt.forEach((r) => reportLines.push(`- ${r.file}: ${r.src}`));
+  reportLines.push("");
+}
+
+const reportPath = path.join(ROOT, "reports", "IMAGE_TEXT_REFERENCE_AUDIT.md");
+fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+fs.writeFileSync(reportPath, `${reportLines.join("\n")}\n`);
+
+if (missingReferences.length || missingAlt.length || emptyAlt.length) {
+  console.error(
+    `Image/text audit failed. See ${path.relative(ROOT, reportPath)}.`,
+  );
+  process.exit(1);
+}
+
+console.log(
+  `Image/text audit passed. Report: ${path.relative(ROOT, reportPath)}`,
+);
