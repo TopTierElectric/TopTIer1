@@ -3,8 +3,24 @@
 const fs = require("fs");
 const path = require("path");
 
-const baseUrl = process.argv[2] || "http://localhost:8888/";
+const requestedBaseUrl = process.argv[2] || "http://localhost:8888/";
 const outputDir = process.argv[3] || "reports";
+const baseOrigin = new URL(baseUrl).origin;
+
+const toBaseUrl = (input) => {
+  try {
+    const parsed = new URL(input);
+    if (!parsed.pathname || parsed.pathname === "") {
+      parsed.pathname = "/";
+    }
+    return parsed.toString();
+  } catch (error) {
+    console.error(`Invalid base URL: ${input}`);
+    process.exit(64);
+  }
+};
+
+const baseUrl = toBaseUrl(requestedBaseUrl);
 const baseOrigin = new URL(baseUrl).origin;
 
 const normalizeUrl = (input) => {
@@ -145,8 +161,6 @@ const fetchPage = async (url) => {
     const location = response.headers.get("location");
     let body = "";
     if (contentType.includes("text/html")) {
-      body = await response.text();
-    } else if (status >= 200 && status < 300) {
       body = await response.text();
     }
     return { status, body, location, source: "http" };

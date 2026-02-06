@@ -1,6 +1,5 @@
 {
   "baseUrl": "http://localhost:8888/",
-  "generatedAt": "2026-02-06T19:34:21.653Z",
   "pages": [
     {
       "url": "http://localhost:8888/",
@@ -33,7 +32,7 @@
         "http://localhost:8888/energy-solutions.html",
         "http://localhost:8888/energy-consulting.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/",
       "pageType": "home"
     },
@@ -68,7 +67,7 @@
         "http://localhost:8888/energy-solutions.html",
         "http://localhost:8888/energy-consulting.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/index.html",
       "pageType": "home"
     },
@@ -102,7 +101,7 @@
         "http://localhost:8888/energy-consulting.html",
         "http://localhost:8888/generators.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/services.html",
       "pageType": "service-hub"
     },
@@ -130,7 +129,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/booking.html",
       "pageType": "booking"
     },
@@ -158,7 +157,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/testimonials.html",
       "pageType": "reviews"
     },
@@ -186,7 +185,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/financing.html",
       "pageType": "service-detail"
     },
@@ -214,7 +213,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/emergency.html",
       "pageType": "emergency"
     },
@@ -242,7 +241,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/gallery.html",
       "pageType": "gallery"
     },
@@ -272,7 +271,7 @@
         "http://localhost:8888/panel-upgrades.html",
         "http://localhost:8888/ev-chargers.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/faq.html",
       "pageType": "faq"
     },
@@ -310,7 +309,7 @@
         "http://localhost:8888/generators.html",
         "http://localhost:8888/blog-surge-protection.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/blog.html",
       "pageType": "blog"
     },
@@ -338,7 +337,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/service-areas.html",
       "pageType": "service-areas"
     },
@@ -366,7 +365,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/contact.html",
       "pageType": "contact"
     },
@@ -394,7 +393,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/panel-upgrades.html",
       "pageType": "service-detail"
     },
@@ -422,7 +421,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/ev-chargers.html",
       "pageType": "service-detail"
     },
@@ -450,7 +449,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/lighting.html",
       "pageType": "service-detail"
     },
@@ -478,7 +477,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/electrical-repairs.html",
       "pageType": "service-detail"
     },
@@ -506,7 +505,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/generators.html",
       "pageType": "service-detail"
     },
@@ -534,7 +533,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/energy-solutions.html",
       "pageType": "service-detail"
     },
@@ -562,7 +561,7 @@
         "http://localhost:8888/service-areas.html",
         "http://localhost:8888/contact.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/energy-consulting.html",
       "pageType": "service-detail"
     },
@@ -592,7 +591,7 @@
         "http://localhost:8888/electrical-repairs.html",
         "http://localhost:8888/panel-upgrades.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/blog-electrical-safety.html",
       "pageType": "post"
     },
@@ -624,7 +623,7 @@
         "http://localhost:8888/blog-right-electrician.html",
         "http://localhost:8888/electrical-repairs.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/blog-panel-upgrade-signs.html",
       "pageType": "post"
     },
@@ -654,7 +653,7 @@
         "http://localhost:8888/electrical-repairs.html",
         "http://localhost:8888/panel-upgrades.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/blog-right-electrician.html",
       "pageType": "post"
     },
@@ -684,7 +683,7 @@
         "http://localhost:8888/panel-upgrades.html",
         "http://localhost:8888/ev-chargers.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/blog-ev-charging.html",
       "pageType": "post"
     },
@@ -716,7 +715,7 @@
         "http://localhost:8888/blog-ev-charging.html",
         "http://localhost:8888/electrical-repairs.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/blog-generator-readiness.html",
       "pageType": "post"
     },
@@ -746,7 +745,7 @@
         "http://localhost:8888/panel-upgrades.html",
         "http://localhost:8888/electrical-repairs.html"
       ],
-      "statusSource": "filesystem",
+      "statusSource": "http",
       "path": "/blog-surge-protection.html",
       "pageType": "post"
     }
