@@ -34,12 +34,12 @@ jobs:
         run: |
           npm run check:placeholders
           npm run check:origin-redirects
-
-      - name: Start local server
-        run: npx http-server -p 8888 >/tmp/http.log 2>&1 &
-
-      - name: Audit image/text references
-        run: npm run audit:images
+          npm run audit:images
 
       - name: Verify internal links
-        run: npm run audit:links
+        run: |
+          npx http-server -p 8888 >/tmp/http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID"' EXIT
+          npx wait-on http://127.0.0.1:8888
+          npm run audit:links

@@ -4,8 +4,34 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = process.cwd();
+const SKIP_DIRS = new Set([".git", "node_modules", "reports", "dist"]);
 const HTML_EXT = ".html";
 const CSS_EXT = ".css";
+const MD_EXT = ".md";
+
+const walkFiles = (startDir, extension) => {
+  const out = [];
+  const stack = [startDir];
+
+  while (stack.length > 0) {
+    const current = stack.pop();
+    const entries = fs.readdirSync(current, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(current, entry.name);
+      if (entry.isDirectory()) {
+        if (!SKIP_DIRS.has(entry.name)) {
+          stack.push(fullPath);
+        }
+        continue;
+      }
+      if (entry.isFile() && entry.name.endsWith(extension)) {
+        out.push(fullPath);
+      }
+    }
+  }
+
+  return out;
+};
 
 const isSkippableRef = (value) => {
   if (!value) return true;
@@ -43,21 +69,9 @@ const parseAttributes = (tag) => {
   return attrs;
 };
 
-const listFiles = (ext) =>
-  fs
-    .readdirSync(ROOT, { withFileTypes: true })
-    .filter((d) => d.isFile() && d.name.endsWith(ext))
-    .map((d) => path.join(ROOT, d.name));
-
-const htmlFiles = listFiles(HTML_EXT);
-const cssFiles = listFiles(CSS_EXT).concat(
-  fs.existsSync(path.join(ROOT, "css"))
-    ? fs
-        .readdirSync(path.join(ROOT, "css"), { withFileTypes: true })
-        .filter((d) => d.isFile() && d.name.endsWith(CSS_EXT))
-        .map((d) => path.join(ROOT, "css", d.name))
-    : [],
-);
+const htmlFiles = walkFiles(ROOT, HTML_EXT);
+const cssFiles = walkFiles(ROOT, CSS_EXT);
+const mdFiles = walkFiles(ROOT, MD_EXT);
 
 const missingReferences = [];
 const missingAlt = [];
@@ -77,8 +91,7 @@ for (const filePath of htmlFiles) {
   const imgTagRe = /<img\b[^>]*>/gi;
   let imgMatch;
   while ((imgMatch = imgTagRe.exec(content)) !== null) {
-    const tag = imgMatch[0];
-    const attrs = parseAttributes(tag);
+    const attrs = parseAttributes(imgMatch[0]);
     const src = attrs.src;
     if (src) {
       const resolved = resolveRef(filePath, src);
@@ -127,11 +140,25 @@ for (const filePath of cssFiles) {
   }
 }
 
+for (const filePath of mdFiles) {
+  const content = fs.readFileSync(filePath, "utf8");
+  const markdownImageRe = /!\[[^\]]*\]\(([^)]+)\)/g;
+  let m;
+  while ((m = markdownImageRe.exec(content)) !== null) {
+    const ref = m[1].trim();
+    const resolved = resolveRef(filePath, ref);
+    if (resolved && !fs.existsSync(resolved)) {
+      addMissingReference(filePath, ref, "markdown image");
+    }
+  }
+}
+
 const reportLines = [];
 reportLines.push("# Image/Text Reference Audit");
 reportLines.push("");
 reportLines.push(`- HTML files scanned: ${htmlFiles.length}`);
 reportLines.push(`- CSS files scanned: ${cssFiles.length}`);
+reportLines.push(`- Markdown files scanned: ${mdFiles.length}`);
 reportLines.push(
   `- Missing image/file references: ${missingReferences.length}`,
 );
