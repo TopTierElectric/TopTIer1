@@ -10,10 +10,10 @@
 - Remove or reword unverifiable trust claims; ensure proof objects are on-page.
 - Simplify CTA hierarchy to one primary + one secondary per money page.
 - Simplify header nav to five items + primary CTA button.
-- Implement Cloudflare-compatible form handling + Turnstile validation.
+- Implement form handling + spam validation.
 - Add reviews engine scaffold with data-driven rendering only.
 - Instrument GA4 events: call_click, text_click, book_submit, estimate_submit, email_click.
-- Implement Cloudflare headers/redirects in-repo (Pages) or dashboard doc fallback.
+- Document response headers and caching strategy.
 
 **Gate (must pass before Sprint 2):**
 
@@ -70,7 +70,7 @@
 - Optimize images, add dimensions, lazy-load below fold assets.
 - Reduce CLS; minimize CSS/JS payloads.
 - Add accessibility improvements (labels, focus, keyboard, skip link).
-- Apply security headers + caching strategy (Cloudflare-aware).
+- Apply security headers + caching strategy.
 - Run final Lighthouse + linkcheck + URL inventory.
 
 **Gate:**

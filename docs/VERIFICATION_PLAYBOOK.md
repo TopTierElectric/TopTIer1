@@ -80,14 +80,3 @@ npx lighthouse http://localhost:8888/ --output json --output-path reports/lighth
 ## 7) Reviews engine validation
 
 - With `/data/reviews.json` aggregate count/rating set to null, confirm that no numeric review claims are rendered.
-
-## 8) Cloudflare headers/redirects
-
-- **Pages**: ensure `_headers` and `_redirects` exist in output root.
-- **Non-Pages**: verify Cloudflare dashboard rules as documented.
-
-Use curl in production to validate headers:
-
-```bash
-curl -I https://www.toptier-electrical.com/
-```
