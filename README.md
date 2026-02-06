@@ -29,3 +29,8 @@ npm run repo:clean-export -- --out dist/clean-repo --init-git
 Full guide: `docs/CLEAN_REPO_EXPORT.md`
 
 Then push `dist/clean-repo` to a new GitHub repo (see `docs/CLEAN_REPO_EXPORT.md`).
+
+## Repository hygiene
+
+Legacy planning documents that are no longer used have been removed to keep the root and docs folders focused on active implementation and verification artifacts.
+
