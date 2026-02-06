@@ -5,6 +5,7 @@ const path = require("path");
 
 const baseUrl = process.argv[2] || "http://localhost:8888/";
 const outputDir = process.argv[3] || "reports";
+const baseOrigin = new URL(baseUrl).origin;
 
 const normalizeUrl = (input) => {
   try {
@@ -45,7 +46,12 @@ const extractLinks = (html, currentUrl) => {
     ) {
       continue;
     }
-    const parsedHref = new URL(href, currentUrl);
+    let parsedHref;
+    try {
+      parsedHref = new URL(href, currentUrl);
+    } catch (error) {
+      continue;
+    }
     const normalizedPath = parsedHref.pathname.toLowerCase();
     if (skipExtensions.some((ext) => normalizedPath.endsWith(ext))) {
       continue;
@@ -55,8 +61,7 @@ const extractLinks = (html, currentUrl) => {
       continue;
     }
     const resolvedUrl = new URL(resolved);
-    const base = new URL(baseUrl);
-    if (resolvedUrl.origin !== base.origin) {
+    if (resolvedUrl.origin !== baseOrigin) {
       continue;
     }
     links.add(resolvedUrl.toString());
@@ -124,7 +129,7 @@ const detectPageType = (pathname) => {
 const readLocalPage = (url) => {
   const urlObj = new URL(url);
   const pathname = urlObj.pathname === "/" ? "/index.html" : urlObj.pathname;
-  const filePath = path.join(process.cwd(), pathname);
+  const filePath = path.join(process.cwd(), pathname.replace(/^\//, ""));
   if (!fs.existsSync(filePath)) {
     return { status: 404, body: "", location: null, source: "filesystem" };
   }
@@ -154,6 +159,7 @@ const crawl = async () => {
   const visited = new Map();
   const linkGraph = new Map();
   const queue = [baseUrl];
+  const enqueued = new Set([baseUrl]);
   let queueIndex = 0;
 
   while (queueIndex < queue.length) {
@@ -201,8 +207,9 @@ const crawl = async () => {
     linkGraph.set(current, links);
 
     links.forEach((link) => {
-      if (!visited.has(link)) {
+      if (!visited.has(link) && !enqueued.has(link)) {
         queue.push(link);
+        enqueued.add(link);
       }
     });
   }
