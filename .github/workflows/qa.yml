@@ -53,6 +53,15 @@ jobs:
       - name: Wait for server
         run: npx wait-on http://127.0.0.1:8888
 
+      - name: Enforce no binary image files in changes
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            RANGE="${{ github.event.pull_request.base.sha }}..${{ github.sha }}"
+          else
+            RANGE="${{ github.event.before }}..${{ github.sha }}"
+          fi
+          npm run check:no-binaries -- "$RANGE"
+
       - name: Run QA
         env:
           CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
