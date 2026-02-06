@@ -17,3 +17,16 @@
    - file-by-file change list
    - new blog URLs
    - exact verification steps (local build + link checks)
+
+## Clean repository export
+
+If you want to spin up a new lean repository with only actively used site files and assets:
+
+```bash
+npm run repo:clean-export -- --out dist/clean-repo --init-git --remote <YOUR_NEW_REPO_URL>
+```
+
+Full guide: `docs/CLEAN_REPO_EXPORT.md`
+
+
+Then push `dist/clean-repo` to a new GitHub repo (see `docs/CLEAN_REPO_EXPORT.md`).
