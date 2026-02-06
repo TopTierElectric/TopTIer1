@@ -28,5 +28,4 @@ npm run repo:clean-export -- --out dist/clean-repo --init-git
 
 Full guide: `docs/CLEAN_REPO_EXPORT.md`
 
-
 Then push `dist/clean-repo` to a new GitHub repo (see `docs/CLEAN_REPO_EXPORT.md`).

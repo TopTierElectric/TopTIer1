@@ -10,7 +10,7 @@ const normalizeUrl = (input) => {
   try {
     const resolved = new URL(input, baseUrl);
     // Normalize hash-only differences so we don't crawl duplicate URLs.
-    resolved.hash = '';
+    resolved.hash = "";
     return resolved.toString();
   } catch (error) {
     return null;
@@ -34,8 +34,8 @@ const extractLinks = (html, currentUrl) => {
     ".json",
   ];
   while ((match = regex.exec(html)) !== null) {
-    const href = (match[1] || match[2] || match[3] || '').trim();
-    if (!href || href.startsWith('#')) {
+    const href = (match[1] || match[2] || match[3] || "").trim();
+    if (!href || href.startsWith("#")) {
       continue;
     }
     if (
