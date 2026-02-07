@@ -1,0 +1,11 @@
+# Default owners for the entire repository
+*       @your-github-handle
+
+# Require review of all Terraform changes
+/terraform/  @your-github-handle
+
+# Require review of workflows
+/.github/workflows/  @your-github-handle
+
+# Require review of script changes
+/scripts/  @your-github-handle
