@@ -1,35 +1,44 @@
-# Top Tier Electrical — Codex Drag-and-Drop Pack
+# Top Tier Electrical Website
 
-## What this contains
+This is a static website for **Top Tier Electrical**, a fictional electrician service in West Michigan. The site is built using plain HTML, CSS and JavaScript—there are no build tools or dependencies required.
 
-- PROMPT_BLOG_SITE_IMPLEMENTATION.md -> paste into Codex with your repo loaded
-- seo/SEO_Pack_and_Checklist.md -> keyword pack + implementation checklist
-- blog/ (6 files) -> blog source content (meta + article + FAQs + CTA)
-- facebook/ (6 files) -> ready-to-post Facebook micro-articles
-- PROMPT_FACEBOOK_POSTS.md -> optional prompt if you want Codex to adapt/format posts
+All pages include SEO‑friendly meta tags, Open Graph data and structured data for a local business. Canonical URLs are set to `https://www.toptier-electrical.com/…` as a placeholder—update these values to match your final domain before deploying.
 
-## How to use with Codex
+## Structure
 
-1. Drag-and-drop this ZIP into Codex.
-2. Open PROMPT_BLOG_SITE_IMPLEMENTATION.md and paste it as your instruction.
-3. Tell Codex: "Use the blog content files in /blog/ as source-of-truth and implement them in the repo. Use /seo/ checklist."
-4. After implementation, make Codex output:
-   - file-by-file change list
-   - new blog URLs
-   - exact verification steps (local build + link checks)
+The site is organised into a number of pages to cover all aspects of the business:
 
-## Clean repository export
+- **`index.html`** – Home page featuring a hero section, value propositions and a brief service overview with a free estimate callout.
+- **`services.html`** – Detailed descriptions of our service offerings, including panel upgrades, EV charger installation and lighting solutions.
+- **`testimonials.html`** – Real customer testimonials and reviews to build trust.
+- **`financing.html`** – Explains the flexible financing options available for larger projects.
+- **`emergency.html`** – Defines what constitutes an electrical emergency and provides a 24/7 hotline.
+- **`gallery.html`** – Project gallery referencing images stored in your repository (update the paths as needed to match your repo).
+- **`faq.html`** – Frequently asked questions covering common electrical topics and our service policies.
+- **`contact.html`** – Contact page with phone, email and a form ready to connect to a Cloudflare-compatible handler.
+- **`404.html`** – Custom 404 page to guide visitors back to the main site when a page is not found.
+- **`styles.css`** – Global styles and layout definitions (includes styles for testimonials, info sections and FAQs).
+- **`script.js`** – JavaScript for the mobile navigation toggle and automatically highlighting the current page via `aria-current` attributes.
+- **`assets/images/hero.jpg`** – Background image used for the hero sections.
 
-If you want to spin up a new lean repository with only actively used site files and assets:
+## Viewing Locally
 
-```bash
-npm run repo:clean-export -- --out dist/clean-repo --init-git
-```
+To view the site locally, simply open `index.html` in your web browser. All navigation links will work automatically as long as the files remain in the same directory structure.
 
-Full guide: `docs/CLEAN_REPO_EXPORT.md`
+## Deployment
 
-Then push `dist/clean-repo` to a new GitHub repo (see `docs/CLEAN_REPO_EXPORT.md`).
+This site is ready to be deployed to any static hosting platform (e.g. Cloudflare Pages, Netlify, or GitHub Pages). For Cloudflare Pages, the `_headers` and `_redirects` files in the repository root are picked up automatically.
 
-## Repository hygiene
+### Forms
 
-Legacy planning documents that are no longer used have been removed to keep the root and docs folders focused on active implementation and verification artifacts.
+Netlify-specific form attributes have been removed for Cloudflare compatibility. The three on-page forms now submit to a placeholder endpoint at `https://formsubmit.co/your-email@example.com`. Replace that URL with your preferred form handler (Cloudflare Pages Functions or a third-party service such as Formspree/Formsubmit) before going live.
+
+## Repository Setup
+
+When creating a new GitHub repository, extract this ZIP and commit all files. The gallery page references image files that are **not** included in this package (they should already exist in your repository). Make sure your repository contains the images referenced in `gallery.html` (for example, at `/images/gallery/3-phase-service.jpg`, `/images/gallery/conduit-piping.jpg`, etc.).
+
+## Analytics & Security
+
+The HTML pages include a commented‑out Google Analytics snippet near the bottom. To enable tracking, replace `G-XXXXXXXXXX` with your actual GA ID and uncomment the code. All pages use relative links and include canonical URLs; be sure to update these URLs to match your production domain. Hosting on a platform with HTTPS enabled (e.g. Cloudflare Pages, Netlify, GitHub Pages) is strongly recommended to ensure visitor security and trust.
+
+All merge conflict markers have been removed and contact details standardized.
