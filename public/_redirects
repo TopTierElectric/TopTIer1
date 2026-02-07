@@ -1,0 +1,20 @@
+# Cloudflare Pages redirects file
+#
+# Only include legacy aliases and asset redirects. Do not attempt to force
+# extensionless HTML canonicalisation; Cloudflare automatically serves
+# `.html` files at extensionless routes and will redirect `/page.html` to `/page`.
+#
+# Syntax: [source] [destination] [code] (code optional, default 302).
+
+## Legacy asset aliases
+/images/logos/TopTierElectrical_Primary_FlatGold_512.png /TopTierElectrical_Primary_FlatGold_512.png 301
+/images/logos/TopTierElectrical_Primary_FlatGold_512.webp /TopTierElectrical_Primary_FlatGold_512.png 301
+
+## Legacy page aliases
+# Map old URLs to their modern equivalents. Keep only rules that have a
+# demonstrable purpose (for example, bookmarks or SEO history).
+/home / 301
+/about /services.html 301
+/pricing /services.html 301
+
+# Cloudflare Pages will serve /404.html for unmatched routes automatically.
