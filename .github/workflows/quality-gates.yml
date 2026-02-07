@@ -34,6 +34,7 @@ jobs:
 
       - name: Run static content checks
         run: |
+          npm run check:workflow-location
           npm run check:placeholders
           npm run check:origin-redirects
           npm run audit:images
