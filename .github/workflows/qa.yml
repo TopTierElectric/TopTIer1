@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: "npm"
 
       - name: Set up Chrome
         id: setup-chrome
@@ -46,12 +47,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Start dev server
-        run: npm run dev &
-
-      - name: Wait for server
-        run: npx wait-on http://127.0.0.1:8888
 
       - name: Enforce no binary image files in changes
         run: |
