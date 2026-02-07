@@ -1,304 +1,547 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="robots" content="index, follow">
-  <title>Electrical Repairs &amp; Troubleshooting | West Michigan Electrician</title>
-  <!-- SEO meta tags -->
-  <meta name="description" content="Dead outlets, tripping breakers, partial power loss, or flickering lights? We troubleshoot and repair electrical issues safely in West Michigan. Book service today.">
-  <meta name="keywords" content="electrical repairs, troubleshooting, tripping breakers, flickering lights, West Michigan electrician">
-  <meta name="author" content="Top Tier Electrical">
-  <!-- Open Graph / Social meta -->
-  <meta property="og:title" content="Electrical Repairs &amp; Troubleshooting | West Michigan Electrician">
-  <meta property="og:description" content="Safe electrical troubleshooting for outlets, breakers, and power loss in West Michigan.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://toptier-electrical.com/assets/images/hero.jpg">
-  <meta property="og:url" content="https://toptier-electrical.com/electrical-repairs.html">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://toptier-electrical.com/electrical-repairs.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-  <link rel="preload" href="css/design-tokens.css" as="style">
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="preload" href="css/components.css" as="style">
-  <link rel="stylesheet" href="css/design-tokens.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Electrician",
-    "name": "Top Tier Electrical",
-    "url": "https://toptier-electrical.com/",
-    "telephone": "+1-616-334-7159",
-    "email": "toptierelectric117@gmail.com",
-    "areaServed": [
-      "West Michigan",
-      "Holland, MI",
-      "Grand Rapids, MI",
-      "Byron Center, MI",
-      "Zeeland, MI",
-      "Saugatuck, MI",
-      "Hudsonville, MI",
-      "Allegan, MI"
-    ],
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61573826170938"
-    ],
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "13:00" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Electrical Repairs & Troubleshooting",
-    "provider": {"@type": "Electrician", "name": "Top Tier Electrical", "url": "https://toptier-electrical.com/"},
-    "areaServed": "West Michigan",
-    "serviceType": "Electrical troubleshooting and repair"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question","name": "What should I do if I smell something burning?","acceptedAnswer": {"@type": "Answer","text": "Turn off the affected circuit if it’s safe to do so and call for service. We’ll help you determine the next steps."}},
-      {"@type": "Question","name": "Can you troubleshoot intermittent power loss?","acceptedAnswer": {"@type": "Answer","text": "Yes. We trace the circuit, check connections, and isolate the failing component."}},
-      {"@type": "Question","name": "Do you repair aluminum wiring?","acceptedAnswer": {"@type": "Answer","text": "We can evaluate aluminum wiring and recommend safe correction options based on what we find."}},
-      {"@type": "Question","name": "Is a tripping breaker always a panel issue?","acceptedAnswer": {"@type": "Answer","text": "Not always. It can be caused by a faulty device, wiring issue, or an overloaded circuit."}},
-      {"@type": "Question","name": "Can you fix outdoor outlets that stop working?","acceptedAnswer": {"@type": "Answer","text": "Yes. We test GFCI protection and repair or replace faulty outlets and covers."}},
-      {"@type": "Question","name": "Will you provide repair options before work starts?","acceptedAnswer": {"@type": "Answer","text": "Yes. We explain findings and outline the repair scope before proceeding."}},
-      {"@type": "Question","name": "Do you handle commercial troubleshooting?","acceptedAnswer": {"@type": "Answer","text": "We handle light commercial troubleshooting; call to confirm the scope."}},
-      {"@type": "Question","name": "Can you fix flickering lights?","acceptedAnswer": {"@type": "Answer","text": "Yes. We check fixtures, switches, neutrals, and panel connections to find the cause."}},
-      {"@type": "Question","name": "Do I need to replace an outlet that is warm to the touch?","acceptedAnswer": {"@type": "Answer","text": "A warm outlet can signal a loose connection. We recommend shutting off the circuit and scheduling service."}},
-      {"@type": "Question","name": "Can you help if multiple rooms are out?","acceptedAnswer": {"@type": "Answer","text": "Yes. We investigate shared circuits, breakers, and connection points to restore power safely."}}
-    ]
-  }
-  </script>
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"f3a4c2b1d9e54a6b8c1f7e2d3a4b5c6d"}'></script>
-</head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="index, follow" />
+    <title>
+      Electrical Repairs &amp; Troubleshooting | West Michigan Electrician
+    </title>
+    <!-- SEO meta tags -->
+    <meta
+      name="description"
+      content="Dead outlets, tripping breakers, partial power loss, or flickering lights? We troubleshoot and repair electrical issues safely in West Michigan. Book service today."
+    />
+    <meta
+      name="keywords"
+      content="electrical repairs, troubleshooting, tripping breakers, flickering lights, West Michigan electrician"
+    />
+    <meta name="author" content="Top Tier Electrical" />
+    <!-- Open Graph / Social meta -->
+    <meta
+      property="og:title"
+      content="Electrical Repairs &amp; Troubleshooting | West Michigan Electrician"
+    />
+    <meta
+      property="og:description"
+      content="Safe electrical troubleshooting for outlets, breakers, and power loss in West Michigan."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://toptier-electrical.com/assets/images/hero.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://toptier-electrical.com/electrical-repairs.html"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="canonical"
+      href="https://toptier-electrical.com/electrical-repairs.html"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript
+      ><link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    /></noscript>
+    <link rel="preload" href="css/design-tokens.css" as="style" />
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="css/components.css" as="style" />
+    <link rel="stylesheet" href="css/design-tokens.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Electrician",
+        "name": "Top Tier Electrical",
+        "url": "https://toptier-electrical.com/",
+        "telephone": "+1-616-334-7159",
+        "email": "toptierelectric117@gmail.com",
+        "areaServed": [
+          "West Michigan",
+          "Holland, MI",
+          "Grand Rapids, MI",
+          "Byron Center, MI",
+          "Zeeland, MI",
+          "Saugatuck, MI",
+          "Hudsonville, MI",
+          "Allegan, MI"
+        ],
+        "sameAs": ["https://www.facebook.com/profile.php?id=61573826170938"],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday"],
+            "opens": "09:00",
+            "closes": "13:00"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Electrical Repairs & Troubleshooting",
+        "provider": {
+          "@type": "Electrician",
+          "name": "Top Tier Electrical",
+          "url": "https://toptier-electrical.com/"
+        },
+        "areaServed": "West Michigan",
+        "serviceType": "Electrical troubleshooting and repair"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What should I do if I smell something burning?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Turn off the affected circuit if it’s safe to do so and call for service. We’ll help you determine the next steps."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you troubleshoot intermittent power loss?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We trace the circuit, check connections, and isolate the failing component."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you repair aluminum wiring?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We can evaluate aluminum wiring and recommend safe correction options based on what we find."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is a tripping breaker always a panel issue?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not always. It can be caused by a faulty device, wiring issue, or an overloaded circuit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you fix outdoor outlets that stop working?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We test GFCI protection and repair or replace faulty outlets and covers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will you provide repair options before work starts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We explain findings and outline the repair scope before proceeding."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you handle commercial troubleshooting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We handle light commercial troubleshooting; call to confirm the scope."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you fix flickering lights?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We check fixtures, switches, neutrals, and panel connections to find the cause."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to replace an outlet that is warm to the touch?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A warm outlet can signal a loose connection. We recommend shutting off the circuit and scheduling service."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you help if multiple rooms are out?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We investigate shared circuits, breakers, and connection points to restore power safely."
+            }
+          }
+        ]
+      }
+    </script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token":"f3a4c2b1d9e54a6b8c1f7e2d3a4b5c6d"}'
+    ></script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html" aria-label="Top Tier Electrical home">
-        <picture>
-          <source srcset="TopTierElectrical_Primary_FlatGold_512.png" type="image/png">
-          <img src="TopTierElectrical_Primary_FlatGold_512.png" alt="Top Tier Electrical logo" width="200" height="64" decoding="async">
-        </picture>
-      </a>
-      <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav id="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="booking.html">Book Online</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="financing.html">Financing</a></li>
-          <li><a href="emergency.html">Emergency</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="service-areas.html">Service Areas</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="nav-cta">
-          <a href="tel:+16163347159" class="btn btn-ghost">Call (616)&nbsp;334&#8209;7159</a>
-          <a href="booking.html" class="btn btn-primary">Book Online</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <ol>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li aria-current="page">Electrical Repairs</li>
-    </ol>
-  </nav>
-  <main id="main-content">
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Electrical Repairs &amp; Troubleshooting</h1>
-        <p>Find the source of electrical problems and restore safe, reliable power.</p>
-        <a href="booking.html" class="btn-primary">Schedule Service</a>
-      </div>
-    </section>
-    <div class="trust-strip">
-      <div class="container">
-        <div class="trust-badges">
-          <span class="badge">&#10004; Licensed &amp; Insured</span>
-          <span class="badge">&#128295; Code-aware workmanship</span>
-          <span class="badge">&#128274; Clean, careful installations</span>
-          <span class="badge">&#127968; Local West Michigan team</span>
-        </div>
-      </div>
-    </div>
-    <section class="service-detail">
-      <div class="container">
-        <h2>Symptoms We Troubleshoot</h2>
-        <ul>
-          <li>Dead outlets or switches that suddenly stop working.</li>
-          <li>Breakers that trip repeatedly or won’t reset.</li>
-          <li>Partial power loss in one room or across multiple circuits.</li>
-          <li>Lights that flicker, dim, or buzz.</li>
-          <li>Warm outlets, hot breaker panels, or burning odors.</li>
-        </ul>
-        <div class="proof-chips">
-          <span>Safety-first troubleshooting</span>
-          <span>Clear repair options</span>
-          <span>Code-aware fixes</span>
-        </div>
-        <h2>Recent Work</h2>
-        <div class="recent-work-grid">
-          <figure>
-            <img src="assets/images/projects/control-work.jpg" alt="Detailed control wiring repairs and organization" loading="lazy" decoding="async" width="1600" height="2133">
-            <figcaption>Detailed troubleshooting and clean wiring corrections.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/images/projects/control-cabinet.jpg" alt="Control cabinet wiring repair" loading="lazy" decoding="async" width="1600" height="2133">
-            <figcaption>Safe corrections inside control cabinets.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/images/projects/conduit-piping.jpg" alt="Neat conduit routing after repair" loading="lazy" decoding="async" width="1600" height="2133">
-            <figcaption>Clean repairs with tidy conduit routing.</figcaption>
-          </figure>
-        </div>
-        <h2>Pricing Factors</h2>
-        <ul>
-          <li>Complexity of the fault and access required</li>
-          <li>Number of circuits or devices affected</li>
-          <li>Replacement parts needed to resolve the issue</li>
-          <li>Time required for testing and verification</li>
-        </ul>
-        <h2>What to Do Now</h2>
-        <p>If you notice heat, burning smells, or sparking, turn off the affected circuit if it’s safe to do so and contact us right away. Avoid repeated breaker resets until the cause is diagnosed.</p>
-        <h2>Our Diagnostic Process</h2>
-        <ol>
-          <li><strong>Listen:</strong> We start with the symptoms and any recent changes (new appliances, remodels, storms).</li>
-          <li><strong>Inspect:</strong> We check the panel, devices, and visible wiring for wear or loose connections.</li>
-          <li><strong>Test:</strong> We verify circuits, loads, and devices to isolate the issue.</li>
-          <li><strong>Explain:</strong> We walk through the findings and outline repair options before work begins.</li>
-        </ol>
-        <h2>What’s Included</h2>
-        <ul>
-          <li>On-site troubleshooting and circuit testing.</li>
-          <li>Repair or replacement of damaged outlets, switches, or breakers.</li>
-          <li>Corrections for loose or unsafe connections.</li>
-        </ul>
-        <h3>What’s Not Included (Unless Scoped)</h3>
-        <ul>
-          <li>Large remodel rewiring or whole-home rewires.</li>
-          <li>Cosmetic repairs (drywall, paint, trim).</li>
-          <li>Equipment replacement outside the affected circuit.</li>
-        </ul>
-        <h2>Electrical Repair FAQs</h2>
-        <div class="faq-grid">
-          <div class="faq-item">
-            <h3>What should I do if I smell something burning?</h3>
-            <p>Turn off the affected circuit if it’s safe to do so and call for service. We’ll help you determine the next steps.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Can you troubleshoot intermittent power loss?</h3>
-            <p>Yes. We trace the circuit, check connections, and isolate the failing component.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Do you repair aluminum wiring?</h3>
-            <p>We can evaluate aluminum wiring and recommend safe correction options based on what we find.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Is a tripping breaker always a panel issue?</h3>
-            <p>Not always. It can be caused by a faulty device, wiring issue, or an overloaded circuit.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Can you fix outdoor outlets that stop working?</h3>
-            <p>Yes. We test GFCI protection and repair or replace faulty outlets and covers.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Will you provide repair options before work starts?</h3>
-            <p>Yes. We explain findings and outline the repair scope before proceeding.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Do you handle commercial troubleshooting?</h3>
-            <p>We handle light commercial troubleshooting; call to confirm the scope.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Can you fix flickering lights?</h3>
-            <p>Yes. We check fixtures, switches, neutrals, and panel connections to find the cause.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Do I need to replace an outlet that is warm to the touch?</h3>
-            <p>A warm outlet can signal a loose connection. We recommend shutting off the circuit and scheduling service.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Can you help if multiple rooms are out?</h3>
-            <p>Yes. We investigate shared circuits, breakers, and connection points to restore power safely.</p>
-          </div>
-        </div>
-        <p><a href="booking.html" class="btn-primary">Book electrical repairs</a> or <a href="contact.html">ask a question</a>.</p>
-      </div>
-    </section>
-    <section class="cta-section">
-      <h2>Need Electrical Repairs?</h2>
-      <p>Call <a href="tel:+16163347159">(616)&nbsp;334&#8209;7159</a> or send details through our booking form.</p>
-      <a href="booking.html" class="btn-primary">Schedule Service</a>
-    </section>
-  </main>
-  <div class="sticky-bar">
-    <a href="tel:+16163347159">Call</a>
-    <a href="booking.html" class="btn">Schedule Service</a>
-  </div>
-    <section class="pre-footer">
-    <div class="container">
-      <div class="pre-footer-content">
-        <div class="footer-col">
-          <h4>Quick Links</h4>
+      <div class="container header-inner">
+        <a class="logo" href="index.html" aria-label="Top Tier Electrical home">
+          <picture>
+            <source
+              srcset="TopTierElectrical_Primary_FlatGold_512.png"
+              type="image/png"
+            />
+            <img
+              src="TopTierElectrical_Primary_FlatGold_512.png"
+              alt="Top Tier Electrical logo"
+              width="200"
+              height="64"
+              decoding="async"
+            />
+          </picture>
+        </a>
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="main-nav" aria-label="Main navigation">
           <ul>
+            <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="booking.html">Book Online</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="financing.html">Financing</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="service-areas.html">Service Areas</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
+          <div class="nav-cta">
+            <a href="tel:+16163347159" class="btn btn-ghost"
+              >Call (616)&nbsp;334&#8209;7159</a
+            >
+            <a href="booking.html" class="btn btn-primary">Book Online</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li aria-current="page">Electrical Repairs</li>
+      </ol>
+    </nav>
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Electrical Repairs &amp; Troubleshooting</h1>
+          <p>
+            Find the source of electrical problems and restore safe, reliable
+            power.
+          </p>
+          <a href="booking.html" class="btn-primary">Schedule Service</a>
         </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <p><a href="tel:+16163347159">(616)&nbsp;334&#8209;7159</a></p>
-          <p><a href="mailto:toptierelectric117@gmail.com">toptierelectric117@gmail.com</a></p>
-          <p>Mon–Fri 8am–6pm · Sat 9am–1pm</p>
-        </div>
-        <div class="footer-col">
-          <h4>Service Areas</h4>
-          <p>Holland • Grand Rapids • Byron Center<br>Zeeland • Saugatuck • Hudsonville • Allegan</p>
+      </section>
+      <div class="trust-strip">
+        <div class="container">
+          <div class="trust-badges">
+            <span class="badge">&#10004; Licensed &amp; Insured</span>
+            <span class="badge">&#128295; Code-aware workmanship</span>
+            <span class="badge">&#128274; Clean, careful installations</span>
+            <span class="badge">&#127968; Local West Michigan team</span>
+          </div>
         </div>
       </div>
+      <section class="service-detail">
+        <div class="container">
+          <h2>Symptoms We Troubleshoot</h2>
+          <ul>
+            <li>Dead outlets or switches that suddenly stop working.</li>
+            <li>Breakers that trip repeatedly or won’t reset.</li>
+            <li>Partial power loss in one room or across multiple circuits.</li>
+            <li>Lights that flicker, dim, or buzz.</li>
+            <li>Warm outlets, hot breaker panels, or burning odors.</li>
+          </ul>
+          <div class="proof-chips">
+            <span>Safety-first troubleshooting</span>
+            <span>Clear repair options</span>
+            <span>Code-aware fixes</span>
+          </div>
+          <h2>Recent Work</h2>
+          <div class="recent-work-grid">
+            <figure>
+              <img
+                src="assets/images/projects/control-work.jpg"
+                alt="Detailed control wiring repairs and organization"
+                loading="lazy"
+                decoding="async"
+                width="1600"
+                height="2133"
+              />
+              <figcaption>
+                Detailed troubleshooting and clean wiring corrections.
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/images/projects/control-cabinet.jpg"
+                alt="Control cabinet wiring repair"
+                loading="lazy"
+                decoding="async"
+                width="1600"
+                height="2133"
+              />
+              <figcaption>Safe corrections inside control cabinets.</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/images/projects/conduit-piping.jpg"
+                alt="Neat conduit routing after repair"
+                loading="lazy"
+                decoding="async"
+                width="1600"
+                height="2133"
+              />
+              <figcaption>Clean repairs with tidy conduit routing.</figcaption>
+            </figure>
+          </div>
+          <h2>Pricing Factors</h2>
+          <ul>
+            <li>Complexity of the fault and access required</li>
+            <li>Number of circuits or devices affected</li>
+            <li>Replacement parts needed to resolve the issue</li>
+            <li>Time required for testing and verification</li>
+          </ul>
+          <h2>What to Do Now</h2>
+          <p>
+            If you notice heat, burning smells, or sparking, turn off the
+            affected circuit if it’s safe to do so and contact us right away.
+            Avoid repeated breaker resets until the cause is diagnosed.
+          </p>
+          <h2>Our Diagnostic Process</h2>
+          <ol>
+            <li>
+              <strong>Listen:</strong> We start with the symptoms and any recent
+              changes (new appliances, remodels, storms).
+            </li>
+            <li>
+              <strong>Inspect:</strong> We check the panel, devices, and visible
+              wiring for wear or loose connections.
+            </li>
+            <li>
+              <strong>Test:</strong> We verify circuits, loads, and devices to
+              isolate the issue.
+            </li>
+            <li>
+              <strong>Explain:</strong> We walk through the findings and outline
+              repair options before work begins.
+            </li>
+          </ol>
+          <h2>What’s Included</h2>
+          <ul>
+            <li>On-site troubleshooting and circuit testing.</li>
+            <li>
+              Repair or replacement of damaged outlets, switches, or breakers.
+            </li>
+            <li>Corrections for loose or unsafe connections.</li>
+          </ul>
+          <h3>What’s Not Included (Unless Scoped)</h3>
+          <ul>
+            <li>Large remodel rewiring or whole-home rewires.</li>
+            <li>Cosmetic repairs (drywall, paint, trim).</li>
+            <li>Equipment replacement outside the affected circuit.</li>
+          </ul>
+          <h2>Electrical Repair FAQs</h2>
+          <div class="faq-grid">
+            <div class="faq-item">
+              <h3>What should I do if I smell something burning?</h3>
+              <p>
+                Turn off the affected circuit if it’s safe to do so and call for
+                service. We’ll help you determine the next steps.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Can you troubleshoot intermittent power loss?</h3>
+              <p>
+                Yes. We trace the circuit, check connections, and isolate the
+                failing component.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Do you repair aluminum wiring?</h3>
+              <p>
+                We can evaluate aluminum wiring and recommend safe correction
+                options based on what we find.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Is a tripping breaker always a panel issue?</h3>
+              <p>
+                Not always. It can be caused by a faulty device, wiring issue,
+                or an overloaded circuit.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Can you fix outdoor outlets that stop working?</h3>
+              <p>
+                Yes. We test GFCI protection and repair or replace faulty
+                outlets and covers.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Will you provide repair options before work starts?</h3>
+              <p>
+                Yes. We explain findings and outline the repair scope before
+                proceeding.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Do you handle commercial troubleshooting?</h3>
+              <p>
+                We handle light commercial troubleshooting; call to confirm the
+                scope.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Can you fix flickering lights?</h3>
+              <p>
+                Yes. We check fixtures, switches, neutrals, and panel
+                connections to find the cause.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Do I need to replace an outlet that is warm to the touch?</h3>
+              <p>
+                A warm outlet can signal a loose connection. We recommend
+                shutting off the circuit and scheduling service.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Can you help if multiple rooms are out?</h3>
+              <p>
+                Yes. We investigate shared circuits, breakers, and connection
+                points to restore power safely.
+              </p>
+            </div>
+          </div>
+          <p>
+            <a href="booking.html" class="btn-primary"
+              >Book electrical repairs</a
+            >
+            or <a href="contact.html">ask a question</a>.
+          </p>
+        </div>
+      </section>
+      <section class="cta-section">
+        <h2>Need Electrical Repairs?</h2>
+        <p>
+          Call <a href="tel:+16163347159">(616)&nbsp;334&#8209;7159</a> or send
+          details through our booking form.
+        </p>
+        <a href="booking.html" class="btn-primary">Schedule Service</a>
+      </section>
+    </main>
+    <div class="sticky-bar">
+      <a href="tel:+16163347159">Call</a>
+      <a href="booking.html" class="btn">Schedule Service</a>
     </div>
-  </section>
-  <footer class="site-footer">
-    <div class="footer-logo">
-      <picture>
-        <source srcset="TopTierElectrical_Primary_FlatGold_512.png" type="image/png">
-        <img src="TopTierElectrical_Primary_FlatGold_512.png" alt="Top Tier Electrical logo" width="200" height="64" decoding="async">
-      </picture>
-    </div>
-    <p>MI License #631210</p>
-    <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
-  </footer>
-  <script src="script.js" defer></script>
-</body>
+    <section class="pre-footer">
+      <div class="container">
+        <div class="pre-footer-content">
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="booking.html">Book Online</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="financing.html">Financing</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <p><a href="tel:+16163347159">(616)&nbsp;334&#8209;7159</a></p>
+            <p>
+              <a href="mailto:toptierelectric117@gmail.com"
+                >toptierelectric117@gmail.com</a
+              >
+            </p>
+            <p>Mon–Fri 8am–6pm · Sat 9am–1pm</p>
+          </div>
+          <div class="footer-col">
+            <h4>Service Areas</h4>
+            <p>
+              Holland • Grand Rapids • Byron Center<br />Zeeland • Saugatuck •
+              Hudsonville • Allegan
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer">
+      <div class="footer-logo">
+        <picture>
+          <source
+            srcset="TopTierElectrical_Primary_FlatGold_512.png"
+            type="image/png"
+          />
+          <img
+            src="TopTierElectrical_Primary_FlatGold_512.png"
+            alt="Top Tier Electrical logo"
+            width="200"
+            height="64"
+            decoding="async"
+          />
+        </picture>
+      </div>
+      <p>MI License #631210</p>
+      <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
 </html>
