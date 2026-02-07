@@ -29,10 +29,8 @@ jobs:
       - name: Check formatting
         run: npm run format:check
 
-      - name: Validate HTML and lint
-        run: |
-          npm run validate:html
-          npm run lint
+      - name: Lint and validate HTML
+        run: npm run lint
 
       - name: Run static content checks
         run: |

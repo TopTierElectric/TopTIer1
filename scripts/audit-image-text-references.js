@@ -114,6 +114,17 @@ for (const filePath of htmlFiles) {
       }
     }
 
+    const srcset = attrs.srcset;
+    if (srcset) {
+      for (const candidate of srcset.split(",")) {
+        const ref = candidate.trim().split(/\s+/)[0];
+        const resolvedSrcset = resolveRef(filePath, ref);
+        if (resolvedSrcset && !fs.existsSync(resolvedSrcset)) {
+          addMissingReference(filePath, ref, "img[srcset]");
+        }
+      }
+    }
+
     const alt = attrs.alt;
     const role = (attrs.role || "").toLowerCase();
     const ariaHidden = (attrs["aria-hidden"] || "").toLowerCase();
@@ -172,6 +183,13 @@ missingReferences.sort(
     a.file.localeCompare(b.file) ||
     a.type.localeCompare(b.type) ||
     a.reference.localeCompare(b.reference),
+);
+
+missingAlt.sort(
+  (a, b) => a.file.localeCompare(b.file) || a.src.localeCompare(b.src),
+);
+emptyAlt.sort(
+  (a, b) => a.file.localeCompare(b.file) || a.src.localeCompare(b.src),
 );
 
 const reportLines = [];
