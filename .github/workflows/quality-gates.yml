@@ -13,6 +13,9 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+jobs:
+  quality:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -46,3 +49,20 @@ jobs:
           trap 'kill "$SERVER_PID"' EXIT
           npx wait-on http://127.0.0.1:8888
           npm run audit:links
+
+      - name: Validate HTML and lint
+        run: |
+          npm run validate:html
+          npm run lint
+
+      - name: Run static content checks
+        run: |
+          npm run check:placeholders
+          npm run check:origin-redirects
+
+      - name: Start local server
+        run: npx http-server -p 8888 >/tmp/http.log 2>&1 &
+
+      - name: Verify internal links
+        run: npm run audit:links
+main:github/workflows/quality-gates.yml
