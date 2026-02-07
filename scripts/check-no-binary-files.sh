@@ -3,17 +3,48 @@ set -euo pipefail
 
 RANGE="${1:-}"
 
-if [[ -z "$RANGE" ]]; then
+fallback_range() {
   if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
-    RANGE="HEAD~1..HEAD"
+    echo "HEAD~1..HEAD"
   else
-    RANGE="HEAD"
+    echo "HEAD"
   fi
+}
+
+is_valid_range() {
+  local candidate="$1"
+
+  if [[ -z "$candidate" ]]; then
+    return 1
+  fi
+
+  if [[ "$candidate" == *".."* ]]; then
+    local left="${candidate%%..*}"
+    local right="${candidate##*..}"
+
+    if [[ -z "$left" || -z "$right" ]]; then
+      return 1
+    fi
+
+    git rev-parse --verify "$left" >/dev/null 2>&1 &&
+      git rev-parse --verify "$right" >/dev/null 2>&1
+    return $?
+  fi
+
+  git rev-parse --verify "$candidate" >/dev/null 2>&1
+}
+
+if ! is_valid_range "$RANGE"; then
+  RANGE="$(fallback_range)"
 fi
 
 BINARY_PATTERN='\.(avif|webp|png|jpe?g|gif|bmp|tiff?|ico)$'
 
-changed_files="$(git diff --name-only --diff-filter=AM "$RANGE")"
+if ! changed_files="$(git diff --name-only --diff-filter=AM "$RANGE")"; then
+  RANGE="$(fallback_range)"
+  changed_files="$(git diff --name-only --diff-filter=AM "$RANGE")"
+fi
+
 if [[ -z "$changed_files" ]]; then
   echo "No added/modified files detected for range: $RANGE"
   exit 0
