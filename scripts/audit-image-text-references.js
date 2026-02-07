@@ -30,7 +30,7 @@ const walkFiles = (startDir, extension) => {
     }
   }
 
-  return out;
+  return out.sort((a, b) => a.localeCompare(b));
 };
 
 const isSkippableRef = (value) => {
@@ -48,6 +48,15 @@ const isSkippableRef = (value) => {
 };
 
 const cleanRef = (value) => value.split("#")[0].split("?")[0].trim();
+
+const normalizeMarkdownRef = (value) => {
+  const trimmed = value.trim();
+  const angleMatch = trimmed.match(/^<([^>]+)>/);
+  if (angleMatch) {
+    return angleMatch[1].trim();
+  }
+  return trimmed.split(/\s+"[^"]*"\s*$/)[0].trim();
+};
 
 const resolveRef = (fromFile, ref) => {
   const cleaned = cleanRef(ref);
@@ -74,12 +83,17 @@ const cssFiles = walkFiles(ROOT, CSS_EXT);
 const mdFiles = walkFiles(ROOT, MD_EXT);
 
 const missingReferences = [];
+const missingReferenceKeys = new Set();
 const missingAlt = [];
 const emptyAlt = [];
 
 const addMissingReference = (filePath, reference, type) => {
+  const rel = path.relative(ROOT, filePath);
+  const key = `${rel}|${type}|${reference}`;
+  if (missingReferenceKeys.has(key)) return;
+  missingReferenceKeys.add(key);
   missingReferences.push({
-    file: path.relative(ROOT, filePath),
+    file: rel,
     reference,
     type,
   });
@@ -145,13 +159,20 @@ for (const filePath of mdFiles) {
   const markdownImageRe = /!\[[^\]]*\]\(([^)]+)\)/g;
   let m;
   while ((m = markdownImageRe.exec(content)) !== null) {
-    const ref = m[1].trim();
+    const ref = normalizeMarkdownRef(m[1]);
     const resolved = resolveRef(filePath, ref);
     if (resolved && !fs.existsSync(resolved)) {
       addMissingReference(filePath, ref, "markdown image");
     }
   }
 }
+
+missingReferences.sort(
+  (a, b) =>
+    a.file.localeCompare(b.file) ||
+    a.type.localeCompare(b.type) ||
+    a.reference.localeCompare(b.reference),
+);
 
 const reportLines = [];
 reportLines.push("# Image/Text Reference Audit");
