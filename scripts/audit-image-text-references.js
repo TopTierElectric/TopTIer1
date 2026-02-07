@@ -229,7 +229,8 @@ if (emptyAlt.length > 0) {
 
 const reportPath = path.join(ROOT, "reports", "IMAGE_TEXT_REFERENCE_AUDIT.md");
 fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-fs.writeFileSync(reportPath, `${reportLines.join("\n")}\n`);
+const reportMarkdown = reportLines.join("\n").replace(/\n+$/u, "\n");
+fs.writeFileSync(reportPath, reportMarkdown);
 
 if (missingReferences.length || missingAlt.length || emptyAlt.length) {
   console.error(

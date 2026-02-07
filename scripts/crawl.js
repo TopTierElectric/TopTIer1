@@ -260,7 +260,8 @@ const crawl = async () => {
   fs.mkdirSync(outputDir, { recursive: true });
   fs.writeFileSync(
     path.join(outputDir, "crawl_raw.json"),
-    JSON.stringify(report, null, 2),
+    `${JSON.stringify(report, null, 2)}
+`,
   );
 
   const csvHeaders = [
