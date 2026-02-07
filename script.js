@@ -2,11 +2,25 @@
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.getElementById("main-nav");
+  function setMobileNavOpen(open) {
+    if (!menuToggle || !nav) {
+      return;
+    }
+    nav.classList.toggle("active", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("nav-open", open);
+  }
+
   if (menuToggle && nav) {
     menuToggle.addEventListener("click", function () {
       const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", String(!isExpanded));
-      nav.classList.toggle("active");
+      setMobileNavOpen(!isExpanded);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && nav.classList.contains("active")) {
+        setMobileNavOpen(false);
+      }
     });
   }
 
@@ -40,10 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Close the mobile nav when a link is clicked
     link.addEventListener("click", function () {
       if (nav.classList.contains("active")) {
-        nav.classList.remove("active");
-        if (menuToggle) {
-          menuToggle.setAttribute("aria-expanded", "false");
-        }
+        setMobileNavOpen(false);
       }
     });
   });
