@@ -1,35 +1,108 @@
-# Top Tier Electrical — Codex Drag-and-Drop Pack
+# Top Tier Electrical Cloudflare Pages Site
 
-## What this contains
+This repository contains the source and infrastructure configuration for the
+Top Tier Electrical static site, hosted on **Cloudflare Pages**.  It includes
+Terraform configurations, CI/CD workflows, Cloudflare routing files, and
+supporting scripts.  The goal is to provide a portfolio‑grade example of a
+modern, secure static website with infrastructure‑as‑code and automated
+deployment.
 
-- PROMPT_BLOG_SITE_IMPLEMENTATION.md -> paste into Codex with your repo loaded
-- seo/SEO_Pack_and_Checklist.md -> keyword pack + implementation checklist
-- blog/ (6 files) -> blog source content (meta + article + FAQs + CTA)
-- facebook/ (6 files) -> ready-to-post Facebook micro-articles
-- PROMPT_FACEBOOK_POSTS.md -> optional prompt if you want Codex to adapt/format posts
+## Contents
 
-## How to use with Codex
+- **public/** – static assets and Cloudflare control files (`_redirects`, `_headers`).
+- **scripts/** – Node utilities for verifying redirects and simulating navigation.
+- **terraform/** – Infrastructure‑as‑Code modules and environment configuration.
+- **.github/** – GitHub Actions workflows, code owners and templates.
+- **docs/** – (optional) design documents and playbooks.
 
-1. Drag-and-drop this ZIP into Codex.
-2. Open PROMPT_BLOG_SITE_IMPLEMENTATION.md and paste it as your instruction.
-3. Tell Codex: "Use the blog content files in /blog/ as source-of-truth and implement them in the repo. Use /seo/ checklist."
-4. After implementation, make Codex output:
-   - file-by-file change list
-   - new blog URLs
-   - exact verification steps (local build + link checks)
+## Getting started
 
-## Clean repository export
+### Prerequisites
 
-If you want to spin up a new lean repository with only actively used site files and assets:
+- Node.js 20
+- npm (v7+)
+- Terraform 1.8+
+- Cloudflare Wrangler CLI (`npm install -g wrangler`)
+
+### Local development
+
+1. Install dependencies:
+
+   ```bash
+   npm ci
+   ```
+
+2. Build the site to the `dist/` directory:
+
+   ```bash
+   npm run build
+   ```
+
+3. Run a local Cloudflare Pages preview:
+
+   ```bash
+   npx wrangler pages dev dist
+   ```
+
+   This will serve the built site on <http://localhost:8788> with the same routing
+   semantics (including `_redirects` and `_headers`) that Cloudflare provides.
+
+4. Optional: run the navigation simulator to crawl the site and detect broken links:
+
+   ```bash
+   node scripts/check-navigation-sim.mjs
+   ```
+
+### Infrastructure
+
+Terraform code resides under `terraform/`.  To initialise and plan the
+production environment:
 
 ```bash
-npm run repo:clean-export -- --out dist/clean-repo --init-git
+cd terraform/envs/prod
+terraform init
+terraform plan
 ```
 
-Full guide: `docs/CLEAN_REPO_EXPORT.md`
+State is stored remotely in an S3 bucket with DynamoDB for locking (see
+`backend.tf`).  In CI/CD, authentication to AWS uses GitHub’s OIDC
+integration to avoid long‑lived credentials.
 
-Then push `dist/clean-repo` to a new GitHub repo (see `docs/CLEAN_REPO_EXPORT.md`).
+### Continuous integration
 
-## Repository hygiene
+Pull requests trigger the **CI** workflow defined in
+`.github/workflows/ci.yml`.  It performs:
 
-Legacy planning documents that are no longer used have been removed to keep the root and docs folders focused on active implementation and verification artifacts.
+- Terraform formatting, validation and planning
+- IaC scanning (via Trivy)
+- Site build and redirect syntax checks
+- Optional navigation simulation via Wrangler
+
+### Deployment
+
+Pushes to the `main` branch (or manual triggers) run
+`.github/workflows/deploy-prod.yml`, which builds the site and deploys it to
+Cloudflare Pages using the Wrangler action.  The job is attached to the
+`production` environment, allowing you to require manual approvals via GitHub
+Environments.
+
+## Architecture
+
+The following Mermaid diagram illustrates the high‑level workflow:
+
+```mermaid
+flowchart LR
+  Dev[Developer] --> GH[GitHub Repository]
+  GH --> GA[GitHub Actions]
+  GA -->|Build & Test| Build[Build Output (dist/)]
+  GA -->|Deploy (Wrangler)| CF[Cloudflare Pages]
+  User[Browser] --> CF
+  GA -->|OIDC AssumeRole| AWS[AWS (remote tfstate)]
+  AWS --> State[S3 + DynamoDB (Terraform state/locking)]
+```
+
+## Contributing
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to
+contribute to this project and [SECURITY.md](SECURITY.md) for reporting
+vulnerabilities.
