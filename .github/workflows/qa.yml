@@ -35,8 +35,9 @@ jobs:
 
       - name: Install browser runtime dependencies
         run: |
+          set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y \
+          sudo apt-get install -y --no-install-recommends \
             libatk1.0-0 \
             libnss3 \
             libx11-xcb1 \
@@ -44,8 +45,14 @@ jobs:
             libxdamage1 \
             libxrandr2 \
             libgbm1 \
-            libgtk-3-0 \
-            libasound2
+            libgtk-3-0
+
+          # Ubuntu package naming differs across runner images.
+          if apt-cache show libasound2 >/dev/null 2>&1; then
+            sudo apt-get install -y --no-install-recommends libasound2
+          else
+            sudo apt-get install -y --no-install-recommends libasound2t64
+          fi
 
       - name: Verify npm lockfile exists
         run: |
