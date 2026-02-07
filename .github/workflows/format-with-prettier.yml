@@ -1,6 +1,6 @@
 name: format-with-prettier
 on:
-  workflow_dispatch:   # lets you run this manually from Actions
+  workflow_dispatch:
   pull_request:
   push:
     branches:
@@ -27,14 +27,19 @@ jobs:
         with:
           node-version: "18"
 
-      # Format only the primary file types in this repo (HTML/CSS/JS/Python/Markdown)
+      - name: Check formatting on pull requests
+        if: github.event_name == 'pull_request'
+        run: npx --yes prettier@3.2.5 --check "**/*.{html,css,js,json,md}"
+
       - name: Run Prettier (formats files)
+        if: github.event_name != 'pull_request'
         run: npx --yes prettier@3.2.5 --write "**/*.{html,css,js,json,md}"
 
       - name: Commit formatted files
+        if: github.event_name != 'pull_request'
         uses: EndBug/add-and-commit@v9
         with:
           author_name: github-actions[bot]
           author_email: github-actions[bot]@users.noreply.github.com
           message: "chore: format code with Prettier"
-          add: '.'
+          add: "."

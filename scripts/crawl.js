@@ -9,6 +9,9 @@ const outputDir = process.argv[3] || "reports";
 const toBaseUrl = (input) => {
   try {
     const parsed = new URL(input);
+    if (!["http:", "https:"].includes(parsed.protocol)) {
+      throw new Error("Unsupported protocol");
+    }
     if (!parsed.pathname || parsed.pathname === "") {
       parsed.pathname = "/";
     }
@@ -144,7 +147,13 @@ const detectPageType = (pathname) => {
 const readLocalPage = (url) => {
   const urlObj = new URL(url);
   const pathname = urlObj.pathname === "/" ? "/index.html" : urlObj.pathname;
-  const filePath = path.join(process.cwd(), pathname.replace(/^\//, ""));
+  const normalizedPath = path.posix.normalize(pathname).replace(/^\//, "");
+
+  if (normalizedPath.startsWith("..")) {
+    return { status: 400, body: "", location: null, source: "filesystem" };
+  }
+
+  const filePath = path.join(process.cwd(), normalizedPath);
   if (!fs.existsSync(filePath)) {
     return { status: 404, body: "", location: null, source: "filesystem" };
   }
@@ -227,7 +236,6 @@ const crawl = async () => {
     });
   }
 
-  const base = new URL(baseUrl);
   const pages = Array.from(visited.values()).map((page) => {
     const urlObj = new URL(page.url);
     return {
