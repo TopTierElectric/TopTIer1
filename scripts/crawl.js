@@ -5,7 +5,6 @@ const path = require("path");
 
 const requestedBaseUrl = process.argv[2] || "http://localhost:8888/";
 const outputDir = process.argv[3] || "reports";
-const baseOrigin = new URL(baseUrl).origin;
 
 const toBaseUrl = (input) => {
   try {
@@ -261,7 +260,7 @@ const crawl = async () => {
   fs.mkdirSync(outputDir, { recursive: true });
   fs.writeFileSync(
     path.join(outputDir, "crawl_raw.json"),
-    JSON.stringify(report, null, 2),
+    `${JSON.stringify(report, null, 2)}\n`,
   );
 
   const csvHeaders = [
