@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     nav.classList.toggle("active", open);
     menuToggle.setAttribute("aria-expanded", String(open));
-    document.body.classList.toggle("nav-open", open);
   }
 
   if (menuToggle && nav) {
@@ -19,6 +18,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && nav.classList.contains("active")) {
+        setMobileNavOpen(false);
+      }
+    });
+
+    document.addEventListener("click", function (event) {
+      const clickedInsideNav = nav.contains(event.target);
+      const clickedToggle = menuToggle.contains(event.target);
+      if (
+        !clickedInsideNav &&
+        !clickedToggle &&
+        nav.classList.contains("active")
+      ) {
+        setMobileNavOpen(false);
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1200 && nav.classList.contains("active")) {
         setMobileNavOpen(false);
       }
     });
