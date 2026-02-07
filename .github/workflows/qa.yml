@@ -29,6 +29,8 @@ jobs:
           node-version: 18
           cache: "npm"
 
+
+        jobs:
       - name: Set up Chrome
         id: setup-chrome
         uses: browser-actions/setup-chrome@v1
