@@ -1089,7 +1089,7 @@ header nav a:focus {
 }
 
 .contact-info a {
-  color: var(--secondary);
+  color: var(--primary);
   text-decoration: none;
 }
 
