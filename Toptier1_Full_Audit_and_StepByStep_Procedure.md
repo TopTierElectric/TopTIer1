@@ -25,6 +25,7 @@ This section records a direct verification pass against the current repository s
 - Production deployment uses `cloudflare/wrangler-action@v3` and checks required Cloudflare secrets.
 - `check:redirects-cloudflare` currently passes.
 - `check:navigation-sim` currently passes under `wrangler pages dev`, including extensionless redirect + destination checks.
+- Repository `qa` workflow now explicitly runs `check:redirects-cloudflare` and `check:navigation-sim` before server-side audits, preserving the step-by-step routing verification sequence documented here.
 
 ### C) Accuracy corrections to the procedural text
 
