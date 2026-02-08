@@ -1457,7 +1457,7 @@ footer p {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
   z-index: 1000;
 }
 .sticky-bar a {
@@ -1472,6 +1472,14 @@ footer p {
 }
 
 /* ===== UX/UI IMPROVEMENTS ===== */
+:root {
+  --sticky-bar-height: 64px;
+}
+
+body {
+  padding-bottom: 0;
+}
+
 
 /* Quick Actions Bar (Home Page) */
 .quick-actions {
@@ -1533,7 +1541,7 @@ footer p {
 /* Trust Strip (Compact badge bar) */
 .trust-strip {
   background: #f1f5f9;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
   border-top: 1px solid #e2e8f0;
 }
 .trust-badges {
@@ -1923,7 +1931,7 @@ footer p {
 
 /* Breadcrumb Navigation */
 .breadcrumb {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
   background: #f1f5f9;
   font-size: 0.875rem;
 }
@@ -2129,7 +2137,11 @@ header nav a:hover {
 /* Utility: padding for mobile sticky bar */
 @media (max-width: 767px) {
   main {
-    padding-bottom: 60px;
+    padding-bottom: var(--sticky-bar-height);
+  }
+
+  body {
+    padding-bottom: var(--sticky-bar-height);
   }
 }
 
