@@ -25,7 +25,7 @@ All images here are stock assets. Do not imply depicted individuals are employee
 - Direct download: https://images.pexels.com/photos/7359566/pexels-photo-7359566.jpeg?cs=srgb&dl=pexels-onbab-7359566.jpg&fm=jpg
 - Author: Onbab
 - License: https://www.pexels.com/license/
-- Download date: Unknown (legacy asset; original download date not recorded)
+- Download date: 2025-09-12 (first repository appearance; original download date not recorded)
 - Notes: Cropped/resized from source for site hero usage (homepage and multiple service pages).
 
 - Local file: assets/images/projects/myenergi-4SyUf9MvWjU-unsplash.jpg
@@ -33,5 +33,5 @@ All images here are stock assets. Do not imply depicted individuals are employee
 - Direct download: Not preserved in repository (Unsplash CDN URL unknown).
 - Author: myenergi
 - License: https://unsplash.com/license
-- Download date: Unknown (legacy asset; original download date not recorded)
+- Download date: 2025-09-12 (first repository appearance; original download date not recorded)
 - Notes: Used as blog hero/social image in EV charging content (`blog-ev-charging.html`, `blog.html`).
