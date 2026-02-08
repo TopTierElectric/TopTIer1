@@ -42,27 +42,42 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Highlight the current page in the navigation
-  let currentPath = window.location.pathname.split("/").pop() || "index.html";
+  let currentPath = window.location.pathname.split("/").pop() || "";
+  if (!currentPath || currentPath === "index") {
+    currentPath = "";
+  }
+
+  // Normalize legacy .html URLs to extensionless values.
+  if (currentPath.endsWith(".html")) {
+    currentPath = currentPath.slice(0, -5);
+  }
   // Map blog articles and service detail pages to their parent nav items
   if (currentPath.startsWith("blog-")) {
-    currentPath = "blog.html";
+    currentPath = "blog";
   }
   if (
     [
-      "panel-upgrades.html",
-      "ev-chargers.html",
-      "lighting.html",
-      "electrical-repairs.html",
-      "generators.html",
-      "energy-solutions.html",
-      "energy-consulting.html",
+      "panel-upgrades",
+      "ev-chargers",
+      "lighting",
+      "electrical-repairs",
+      "generators",
+      "energy-solutions",
+      "energy-consulting",
     ].includes(currentPath)
   ) {
-    currentPath = "services.html";
+    currentPath = "services";
   }
   const navLinks = document.querySelectorAll("header nav a");
   navLinks.forEach(function (link) {
-    const linkTarget = link.getAttribute("href").split("/").pop();
+    const href = link.getAttribute("href") || "";
+    let linkTarget = href.split("/").pop();
+    if (linkTarget === "index") {
+      linkTarget = "";
+    }
+    if (linkTarget.endsWith(".html")) {
+      linkTarget = linkTarget.slice(0, -5);
+    }
     if (linkTarget === currentPath) {
       link.classList.add("active");
       // Mark the current page for accessibility
