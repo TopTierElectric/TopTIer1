@@ -5,38 +5,13 @@
 /images/logos/TopTierElectrical_Primary_FlatGold_512.png /TopTierElectrical_Primary_FlatGold_512.png 301
 /images/logos/TopTierElectrical_Primary_FlatGold_512.webp /TopTierElectrical_Primary_FlatGold_512.png 301
 
-# Legacy .html URLs -> canonical extensionless URLs
+# Legacy explicit redirect
 /index.html / 301
-/blog.html /blog 301
-/booking.html /booking 301
-/contact.html /contact 301
-/electrical-repairs.html /electrical-repairs 301
-/emergency.html /emergency 301
-/energy-consulting.html /energy-consulting 301
-/energy-solutions.html /energy-solutions 301
-/ev-chargers.html /ev-chargers 301
-/faq.html /faq 301
-/financing.html /financing 301
-/gallery.html /gallery 301
-/generators.html /generators 301
-/lighting.html /lighting 301
-/panel-upgrades.html /panel-upgrades 301
-/service-areas.html /service-areas 301
-/services.html /services 301
-/styleguide-top-tier-electrical.html /styleguide-top-tier-electrical 301
-/testimonials.html /testimonials 301
-/thank-you.html /thank-you 301
-/blog-electrical-safety.html /blog-electrical-safety 301
-/blog-ev-charging.html /blog-ev-charging 301
-/blog-generator-readiness.html /blog-generator-readiness 301
-/blog-panel-upgrade-signs.html /blog-panel-upgrade-signs 301
-/blog-right-electrician.html /blog-right-electrician 301
-/blog-surge-protection.html /blog-surge-protection 301
 
 # Legacy aliases
 /home / 301
 /about /services 301
 /pricing /services 301
 
-# Cloudflare Pages serves /404.html automatically for unmatched routes.
+# Cloudflare Pages canonicalizes .html URLs to extensionless URLs by default.
 # Keep this file to valid redirect/proxy status codes only.
