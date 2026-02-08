@@ -1,5 +1,7 @@
-# NOTE: Protocol/host canonicalization is handled at Cloudflare, not at origin,
-# to avoid redirect loops when edge SSL/redirect settings are enabled.
+# Canonical protocol/host redirects
+http://toptier-electrical.com/* https://toptier-electrical.com/:splat 301
+http://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301
+https://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301
 
 # Legacy asset aliases to prevent logo/image 404s
 /images/logos/TopTierElectrical_Primary_FlatGold_512.png /TopTierElectrical_Primary_FlatGold_512.png 301
