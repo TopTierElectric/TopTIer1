@@ -14,6 +14,14 @@ All images here are stock assets. Do not imply depicted individuals are employee
 
 ## Entries
 
+- Local file: assets/images/hero.jpg
+- Source page: https://www.pexels.com/photo/an-electrician-inspecting-a-fuse-box-7359566/
+- Direct download: https://images.pexels.com/photos/7359566/pexels-photo-7359566.jpeg?cs=srgb&dl=pexels-onbab-7359566.jpg&fm=jpg
+- Author: Onbab
+- License: https://www.pexels.com/license/
+- Download date: Unknown (legacy asset; source reconstructed from project audit notes)
+- Notes: Cropped/resized for site hero usage (homepage and multiple service pages).
+
 - Local file: assets/images/projects/myenergi-4SyUf9MvWjU-unsplash.jpg
 - Source page: https://unsplash.com/photos/4SyUf9MvWjU
 - Direct download: Not preserved in repository (Unsplash CDN URL unknown).
