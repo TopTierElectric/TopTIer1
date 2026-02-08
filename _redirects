@@ -1,46 +1,13 @@
-# Canonical protocol/host redirects
+# Canonical host + protocol enforcement (Cloudflare Pages)
 http://toptier-electrical.com/* https://toptier-electrical.com/:splat 301
 http://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301
 https://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301
 
-# Legacy asset aliases to prevent logo/image 404s
-/images/logos/TopTierElectrical_Primary_FlatGold_512.png /TopTierElectrical_Primary_FlatGold_512.png 301
-/images/logos/TopTierElectrical_Primary_FlatGold_512.webp /TopTierElectrical_Primary_FlatGold_512.png 301
-
-# Canonical URL policy: extensionless paths (Cloudflare Pages style)
+# Legacy entry aliases (keep minimal)
 /index / 301
 /index.html / 301
-/404.html /404 301
-/blog.html /blog 301
-/booking.html /booking 301
-/contact.html /contact 301
-/electrical-repairs.html /electrical-repairs 301
-/emergency.html /emergency 301
-/energy-consulting.html /energy-consulting 301
-/energy-solutions.html /energy-solutions 301
-/ev-chargers.html /ev-chargers 301
-/faq.html /faq 301
-/financing.html /financing 301
-/gallery.html /gallery 301
-/generators.html /generators 301
-/lighting.html /lighting 301
-/panel-upgrades.html /panel-upgrades 301
-/service-areas.html /service-areas 301
-/services.html /services 301
-/styleguide-top-tier-electrical.html /styleguide-top-tier-electrical 301
-/testimonials.html /testimonials 301
-/thank-you.html /thank-you 301
-/blog-electrical-safety.html /blog-electrical-safety 301
-/blog-ev-charging.html /blog-ev-charging 301
-/blog-generator-readiness.html /blog-generator-readiness 301
-/blog-panel-upgrade-signs.html /blog-panel-upgrade-signs 301
-/blog-right-electrician.html /blog-right-electrician 301
-/blog-surge-protection.html /blog-surge-protection 301
-
-# Legacy aliases
 /home / 301
+
+# Optional: true legacy semantic redirects (only if these URLs were used historically)
 /about /services 301
 /pricing /services 301
-
-# Cloudflare Pages serves /404.html automatically for unmatched routes.
-# Keep this file to valid redirect/proxy status codes only.

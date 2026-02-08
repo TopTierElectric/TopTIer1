@@ -69,7 +69,7 @@ jobs:
         run: npm run build
 
       - name: Validate Cloudflare redirects output
-        run: npm run check:redirects:cloudflare
+        run: npm run check:redirects-cloudflare
 
       - name: Enforce no binary image files in changes
         run: |

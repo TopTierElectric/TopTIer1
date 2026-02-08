@@ -22,9 +22,18 @@ if (invalidBangTokens?.length) {
 
 let failed = false;
 const lines = content.split(/\r?\n/);
+const extensionlessToHtml = /^\/(?!$)([^\s./][^\s]*)\s+\/\1\.html(?:\s+(?:301|302|303|307|308))?$/;
 for (let index = 0; index < lines.length; index += 1) {
   const line = lines[index].trim();
   if (!line || line.startsWith('#')) continue;
+
+  if (extensionlessToHtml.test(line)) {
+    console.error(
+      `[redirects] line ${index + 1} must not redirect extensionless paths to .html: "${lines[index]}"`,
+    );
+    failed = true;
+    continue;
+  }
 
   const parts = line.split(/\s+/);
   if (parts.length < 2 || parts.length > 3) {
