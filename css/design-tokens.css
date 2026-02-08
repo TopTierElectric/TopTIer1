@@ -32,3 +32,10 @@
   --line-height-body: 1.7;
   --line-height-heading: 1.2;
 }
+
+:root {
+  --component-trust-bg: #101010;
+  --component-trust-text: #f3f4f6;
+  --component-card-border: rgba(255, 255, 255, 0.08);
+  --component-section-gap: 1rem;
+}
