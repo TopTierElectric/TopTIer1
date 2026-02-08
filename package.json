@@ -18,13 +18,13 @@
     "audit:lighthouse": "scripts/with-chrome-path.sh bash -lc \"mkdir -p reports && npx lighthouse http://127.0.0.1:8888 --output=html --output-path=reports/lighthouse.html --chrome-flags='--headless=new --no-sandbox'\"",
     "check:placeholders": "node scripts/check-placeholders.js",
     "check:no-binaries": "bash scripts/check-no-binary-files.sh",
-    "qa": "npm run format:check && npm run lint && npm run check:placeholders && npm run check:origin-redirects && npm run audit:images && npm run check:image-sources && npm run qa:server-checks",
+    "qa": "npm run format:check && npm run lint && npm run check:placeholders && npm run check:origin-redirects && npm run check:redirects:cloudflare && npm run audit:images && npm run qa:server-checks",
     "check:origin-redirects": "node scripts/check-origin-redirects.js",
+    "check:redirects:cloudflare": "node scripts/check-redirects-cloudflare.mjs",
     "repo:clean-export": "node scripts/create-clean-repo.mjs",
     "audit:images": "node scripts/audit-image-text-references.js",
     "qa:server-checks": "bash -lc 'set -euo pipefail; npx http-server -p 8888 >/tmp/http.log 2>&1 & SERVER_PID=$!; trap \"kill $SERVER_PID\" EXIT; npx wait-on http://127.0.0.1:8888; npm run audit:links && npm run audit:a11y && npm run audit:lighthouse'",
-    "check:navigation-sim": "node scripts/check-navigation-simulation.js",
-    "check:extensionless-links": "node scripts/check-extensionless-links.mjs"
+    "check:navigation-sim": "node scripts/check-navigation-simulation.js"
   },
   "keywords": [
     "electrician",
