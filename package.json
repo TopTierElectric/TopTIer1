@@ -25,7 +25,8 @@
     "qa:server-checks": "bash -lc 'set -euo pipefail; npx http-server -p 8888 >/tmp/http.log 2>&1 & SERVER_PID=$!; trap \"kill $SERVER_PID\" EXIT; npx wait-on http://127.0.0.1:8888; npm run audit:links && npm run audit:a11y && npm run audit:lighthouse'",
     "check:navigation-sim": "node scripts/check-navigation-sim.mjs",
     "check:extensionless-links": "node scripts/check-extensionless-links.mjs",
-    "check:redirects-cloudflare": "node scripts/check-redirects-cloudflare.mjs"
+    "check:redirects-cloudflare": "node scripts/check-redirects-cloudflare.mjs",
+    "check:extensionless-collisions": "node scripts/check-extensionless-collisions.mjs"
   },
   "keywords": [
     "electrician",

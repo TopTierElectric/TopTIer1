@@ -41,6 +41,7 @@ jobs:
           npm run check:placeholders
           npm run check:origin-redirects
           npm run audit:images
+          npm run check:extensionless-collisions
 
       - name: Verify internal links (Cloudflare Pages simulation)
         run: npm run audit:links

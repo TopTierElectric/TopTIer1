@@ -29,7 +29,9 @@ jobs:
         run: npm run check:redirects-cloudflare
 
       - name: Check extensionless link policy
-        run: npm run check:extensionless-links
+        run: |
+          npm run check:extensionless-links
+          npm run check:extensionless-collisions
 
       - name: Navigation simulation (Cloudflare Pages)
         run: npm run check:navigation-sim
