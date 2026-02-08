@@ -3,6 +3,8 @@
   "rules": {
     "tel-non-breaking": "off",
     "no-inline-style": "off",
-    "long-title": "off"
+    "long-title": "off",
+    "doctype-style": "off",
+    "void-style": "off"
   }
 }
