@@ -30,9 +30,10 @@ function run(command, args) {
 }
 
 async function main() {
-  const server = spawn('npx', ['wrangler', 'pages', 'dev', '.', '--port', '8788'], {
-    stdio: 'inherit',
-  });
+  const shouldStartServer = process.env.SKIP_WRANGLER_PAGES_DEV !== '1';
+  const server = shouldStartServer
+    ? spawn('npx', ['wrangler', 'pages', 'dev', '.', '--port', '8788'], { stdio: 'inherit' })
+    : null;
 
   try {
     await waitForServer();
@@ -53,7 +54,7 @@ async function main() {
 
     console.log(`Internal crawl passed: ${crawl.pages.length} pages`);
   } finally {
-    server.kill('SIGTERM');
+    if (server) server.kill('SIGTERM');
   }
 }
 
