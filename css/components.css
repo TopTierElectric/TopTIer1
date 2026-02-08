@@ -130,3 +130,17 @@
     align-items: flex-start;
   }
 }
+
+.hub-shell .card {
+  border: 1px solid var(--component-card-border);
+}
+
+.hub-shell .trust-strip {
+  background: var(--component-trust-bg);
+  color: var(--component-trust-text);
+}
+
+.hub-shell .service-summary {
+  display: grid;
+  gap: var(--component-section-gap);
+}
