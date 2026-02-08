@@ -26,7 +26,8 @@
     "check:navigation-sim": "node scripts/check-navigation-sim.mjs",
     "check:extensionless-links": "node scripts/check-extensionless-links.mjs",
     "check:redirects-cloudflare": "node scripts/check-redirects-cloudflare.mjs",
-    "check:extensionless-collisions": "node scripts/check-extensionless-collisions.mjs"
+    "check:extensionless-collisions": "node scripts/check-extensionless-collisions.mjs",
+    "audit:lighthouse:pages": "scripts/with-chrome-path.sh bash -lc \"mkdir -p reports && npx lighthouse http://127.0.0.1:8788 --only-categories=performance,seo,accessibility,best-practices --output=json --output-path=reports/lh-pages.json --chrome-flags='--headless=new --no-sandbox'\""
   },
   "keywords": [
     "electrician",
