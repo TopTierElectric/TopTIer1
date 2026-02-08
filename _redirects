@@ -10,9 +10,3 @@
 # Optional: true legacy semantic redirects (only if these URLs were used historically)
 /about /services 301
 /pricing /services 301
-
-/residential-electrician-allegan-mi  /residential-electrician-allegan-mi.html  200
-/commercial-electrician-allegan-mi   /commercial-electrician-allegan-mi.html   200
-/commercial-led-lighting-retrofit    /commercial-led-lighting-retrofit.html    200
-/commercial-electrical-maintenance   /commercial-electrical-maintenance.html   200
-/electrical-design-consultation      /electrical-design-consultation.html      200
