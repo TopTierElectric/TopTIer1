@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Residential Electrician Allegan MI | Top Tier Electrical</title>
+    <meta name="description" content="Residential electrician in Allegan, MI for panel upgrades, EV chargers, repairs, and lighting. Serving West Michigan within about 60 minutes of 49010." />
+    <link rel="canonical" href="https://toptier-electrical.com/residential-electrician-allegan-mi" />
+    <link rel="stylesheet" href="css/design-tokens.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <p class="muted">Homeowners • Allegan, MI • West Michigan</p>
+          <h1>Residential Electrician in Allegan, MI</h1>
+          <p class="muted">Fast, code-compliant residential service for panel upgrades, EV charging, lighting, troubleshooting, and safety-first repairs.</p>
+          <p>
+            <a class="btn btn-primary" href="tel:+16163347159" data-ga-event="phone_click" data-ga-label="res-hub-top-call">Call (616) 334-7159</a>
+            <a class="btn btn-ghost" href="/booking" data-ga-event="cta_click" data-ga-label="res-hub-top-book" data-ga-destination="/booking">Book Online</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="grid grid-3">
+          <div class="card"><h2 style="margin-top:0">Common residential projects</h2><ul class="muted"><li><a href="/panel-upgrades">Panel upgrades</a></li><li><a href="/ev-chargers">EV charger installation</a></li><li><a href="/lighting">Lighting and fixtures</a></li><li><a href="/electrical-repairs">Troubleshooting and repairs</a></li></ul></div>
+          <div class="card"><h2 style="margin-top:0">Quick answer</h2><p class="muted">We serve Allegan (49010) and nearby communities, typically within about 60 minutes. Call/text to confirm schedule windows.</p></div>
+          <div class="card"><h2 style="margin-top:0">High-end home experience</h2><p class="muted">We support custom homes, remodels, and finish-sensitive electrical work with clean routing and clear communication.</p></div>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h3 style="margin-top:0;">Ready to schedule?</h3>
+          <p class="muted">Call/text for service in Allegan and surrounding West Michigan communities.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="tel:+16163347159" data-ga-event="phone_click" data-ga-label="res-hub-bottom-call">Call (616) 334-7159</a>
+            <a class="btn btn-ghost" href="/booking" data-ga-event="cta_click" data-ga-label="res-hub-bottom-book" data-ga-destination="/booking">Book Online</a>
+            <a class="btn btn-ghost" href="/contact" data-ga-event="cta_click" data-ga-label="res-hub-bottom-contact" data-ga-destination="/contact">Contact</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container" style="padding:22px 16px;"><p class="muted" style="margin:0;">© <span id="y"></span> Top Tier Electrical • Allegan, MI • <a href="tel:+16163347159">(616) 334-7159</a></p></div></footer>
+    <script src="script.js" defer></script>
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      document.addEventListener('click', function(e) {
+        const el = e.target.closest('[data-ga-event]');
+        if (!el || typeof gtag !== 'function') return;
+        gtag('event', el.dataset.gaEvent, { event_label: el.dataset.gaLabel || '', event_destination: el.dataset.gaDestination || '' });
+      });
+    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toptier-electrical.com/"},{"@type":"ListItem","position":2,"name":"Residential Electrician Allegan MI","item":"https://toptier-electrical.com/residential-electrician-allegan-mi"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you offer emergency residential electrical service?","acceptedAnswer":{"@type":"Answer","text":"Yes. For outages, hazards, burning smells, sparking, or active electrical failures, contact us to triage and schedule service."}},{"@type":"Question","name":"Do I need a panel upgrade to install an EV charger?","acceptedAnswer":{"@type":"Answer","text":"Not always. We check your existing capacity and recommend the safest option based on your home's load and the charger requirements."}},{"@type":"Question","name":"What areas do you serve from Allegan, MI?","acceptedAnswer":{"@type":"Answer","text":"We serve Allegan (49010) and typically cover about 60 minutes around West Michigan. If you're outside the radius, call to confirm scheduling."}},{"@type":"Question","name":"Can you install hot tub electrical hookups?","acceptedAnswer":{"@type":"Answer","text":"Yes. Hot tubs require dedicated circuits, correct protection, and safe routing. We plan the disconnect location and installation approach based on your setup."}}]}]}</script>
+  </body>
+</html>
