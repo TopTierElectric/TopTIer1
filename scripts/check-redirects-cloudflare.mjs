@@ -4,10 +4,25 @@ import fs from "node:fs";
 import path from "node:path";
 
 const repoRoot = process.cwd();
-const configuredOutputDir = process.env.PAGES_OUTPUT_DIR?.trim();
-const outputDir = configuredOutputDir
-  ? path.resolve(repoRoot, configuredOutputDir)
-  : repoRoot;
+
+function resolveOutputDir() {
+  const configuredOutputDir = process.env.PAGES_OUTPUT_DIR?.trim();
+  if (configuredOutputDir) {
+    return path.resolve(repoRoot, configuredOutputDir);
+  }
+
+  const fallbackDirs = ["dist", "build", "public"];
+  for (const dir of fallbackDirs) {
+    const candidate = path.join(repoRoot, dir);
+    if (fs.existsSync(path.join(candidate, "_redirects"))) {
+      return candidate;
+    }
+  }
+
+  return repoRoot;
+}
+
+const outputDir = resolveOutputDir();
 const redirectsPath = path.join(outputDir, "_redirects");
 
 if (!fs.existsSync(redirectsPath)) {
@@ -36,7 +51,7 @@ for (const [index, rawLine] of lines.entries()) {
     continue;
   }
 
-  if (/\b\d{3}!\b/.test(line)) {
+  if (/(^|\s)\d{3}!(?=\s|$)/.test(line)) {
     errors.push(`Line ${lineNumber}: force-redirect syntax is not allowed (${line})`);
   }
 
