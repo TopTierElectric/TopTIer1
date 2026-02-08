@@ -108,6 +108,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.addEventListener("click", function (event) {
+    const gaTarget = event.target.closest("[data-ga-event]");
+    if (gaTarget && typeof gtag === "function") {
+      gtag("event", gaTarget.dataset.gaEvent, {
+        event_label: gaTarget.dataset.gaLabel || "",
+        event_destination: gaTarget.dataset.gaDestination || "",
+      });
+    }
+
     const link = event.target.closest("a[href]");
     const button = event.target.closest("button[data-cta]");
     trackCta(button || link);
