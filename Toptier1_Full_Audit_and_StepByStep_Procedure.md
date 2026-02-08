@@ -558,7 +558,7 @@ Required:
 Verification commands:
 
 ```bash
-# After running: npx wrangler pages dev dist --port 8788
+# After running: npx wrangler pages dev . --port 8788
 curl -I http://127.0.0.1:8788/
 curl -I http://127.0.0.1:8788/assets/css/styles.css
 ```
@@ -872,7 +872,7 @@ Run locally:
 ```bash
 npm ci
 npm run build
-npx wrangler pages dev dist --port 8788
+npx wrangler pages dev . --port 8788
 node scripts/check-redirects-cloudflare.mjs
 node scripts/check-navigation-sim.mjs
 npx lighthouse http://127.0.0.1:8788/ --only-categories=performance,seo,accessibility,best-practices
