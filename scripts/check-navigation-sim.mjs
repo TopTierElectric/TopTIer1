@@ -32,12 +32,11 @@ const buildSeedRoutes = () => {
 
 const extractInternalLinks = (html, sourcePath) => {
   const links = new Set();
-  const hrefRegex = /href\s*=\s*(?:"([^"]+)"|'([^']+)'|([^\s>]+))/gi;
+  const anchorHrefRegex = /<a\b[^>]*\bhref\s*=\s*(?:"([^"]+)"|'([^']+)'|([^\s>]+))/gi;
 
-  for (const match of html.matchAll(hrefRegex)) {
+  for (const match of html.matchAll(anchorHrefRegex)) {
     const rawHref = (match[1] || match[2] || match[3] || "").trim();
-    if (!rawHref) continue;
-    if (rawHref.startsWith("#")) continue;
+    if (!rawHref || rawHref.startsWith("#")) continue;
     if (/^(mailto:|tel:|javascript:)/i.test(rawHref)) continue;
 
     let candidate;
@@ -48,6 +47,7 @@ const extractInternalLinks = (html, sourcePath) => {
     }
 
     if (candidate.hostname !== HOST || candidate.port !== String(PORT)) continue;
+
     candidate.hash = "";
     links.add(`${candidate.pathname}${candidate.search}`);
   }
@@ -62,12 +62,11 @@ const waitForServer = async () => {
   while (Date.now() - startedAt < timeoutMs) {
     try {
       const res = await fetch(`${BASE_URL}/`, { redirect: "manual" });
-      if (res.status >= 200 && res.status < 600) {
-        return;
-      }
+      if (res.status >= 200 && res.status < 600) return;
     } catch {
-      // Retry until timeout.
+      // keep waiting
     }
+
     await sleep(300);
   }
 
@@ -83,29 +82,26 @@ const fetchFinal = async (route) => {
     if (visited.has(current)) {
       return { finalPath: current, status: 0, chain, body: "", note: "redirect-loop" };
     }
-    visited.add(current);
 
+    visited.add(current);
     const response = await fetch(`${BASE_URL}${current}`, { redirect: "manual" });
     chain.push(`${current} [${response.status}]`);
 
     if (response.status >= 300 && response.status < 400) {
       const location = response.headers.get("location");
-      if (!location) {
-        return { finalPath: current, status: response.status, chain, body: "" };
-      }
+      if (!location) return { finalPath: current, status: response.status, chain, body: "" };
 
       const next = new URL(location, `${BASE_URL}${current}`);
       if (next.hostname !== HOST || next.port !== String(PORT)) {
         return { finalPath: `${next.pathname}${next.search}`, status: response.status, chain, body: "" };
       }
+
       current = `${next.pathname}${next.search}`;
       continue;
     }
 
-    const body = response.headers.get("content-type")?.includes("text/html")
-      ? await response.text()
-      : "";
-
+    const isHtml = response.headers.get("content-type")?.includes("text/html");
+    const body = isHtml ? await response.text() : "";
     return { finalPath: current, status: response.status, chain, body };
   }
 
@@ -116,19 +112,18 @@ const stopWrangler = async (wrangler) => {
   if (wrangler.killed || wrangler.exitCode !== null) return;
 
   wrangler.kill("SIGTERM");
-  await Promise.race([
-    new Promise((resolve) => wrangler.once("exit", resolve)),
-    sleep(2_000),
-  ]);
+  await Promise.race([new Promise((resolve) => wrangler.once("exit", resolve)), sleep(2_000)]);
 
-  if (wrangler.exitCode === null) {
-    wrangler.kill("SIGKILL");
-  }
+  if (wrangler.exitCode === null) wrangler.kill("SIGKILL");
 };
 
 const run = async () => {
   ensureOutputDir();
   const seedRoutes = buildSeedRoutes();
+
+  if (!seedRoutes.length) {
+    throw new Error(`No seed routes discovered in output directory: ${OUTPUT_DIR}`);
+  }
 
   const wrangler = spawn(
     "npx",
@@ -143,7 +138,6 @@ const run = async () => {
   const seen = new Set();
   const failures = [];
   const warnings = [];
-  let checked = 0;
 
   try {
     await waitForServer();
@@ -151,10 +145,9 @@ const run = async () => {
     while (queue.length) {
       const route = queue.shift();
       if (!route || seen.has(route)) continue;
-      seen.add(route);
 
+      seen.add(route);
       const result = await fetchFinal(route);
-      checked += 1;
 
       if (result.status >= 400) {
         failures.push(`${route} -> ${result.finalPath} returned ${result.status} (${result.chain.join(" -> ")})`);
@@ -167,6 +160,7 @@ const run = async () => {
       }
 
       if (!result.body) continue;
+
       for (const link of extractInternalLinks(result.body, result.finalPath)) {
         if (!seen.has(link)) queue.push(link);
       }
@@ -186,7 +180,7 @@ const run = async () => {
     process.exit(1);
   }
 
-  console.log(`✅ Wrangler navigation simulation passed (${checked} routes checked from ${seedRoutes.length} seeds).`);
+  console.log(`✅ Wrangler navigation simulation passed (${seen.size} routes checked from ${seedRoutes.length} seeds).`);
 };
 
 run().catch((error) => {
