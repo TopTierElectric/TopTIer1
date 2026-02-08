@@ -2,77 +2,36 @@ name: Deploy Production
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
   deployments: write
 
-concurrency:
-  group: deploy-prod-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   deploy:
-    name: Deploy to Cloudflare Pages (production)
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Use Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: npm
 
-      - name: Install dependencies
+      - name: Install deps
         run: npm ci
 
-      - name: Build site
+      - name: Build
         run: npm run build
 
-      - name: Validate deploy secrets
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
-            echo "Missing secret: CLOUDFLARE_API_TOKEN" >&2
-            exit 1
-          fi
-          if [ -z "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
-            echo "Missing secret: CLOUDFLARE_ACCOUNT_ID" >&2
-            exit 1
-          fi
-          if [ -z "${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME }}" ]; then
-            echo "Missing secret: CLOUDFLARE_PAGES_PROJECT_NAME" >&2
-            exit 1
-          fi
-
-      - name: Resolve deploy inputs
-        id: deploy_inputs
-        shell: bash
-        env:
-          PROJECT_NAME: ${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME }}
-          DEPLOY_DIR: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_DIR }}
-        run: |
-          set -euo pipefail
-          if [ -z "${DEPLOY_DIR}" ]; then
-            DEPLOY_DIR='.'
-          fi
-
-          echo "project_name=${PROJECT_NAME}" >> "$GITHUB_OUTPUT"
-          echo "deploy_dir=${DEPLOY_DIR}" >> "$GITHUB_OUTPUT"
-
-      - name: Deploy with Wrangler
+      - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: >-
-            pages deploy ${{ steps.deploy_inputs.outputs.deploy_dir }}
-            --project-name=${{ steps.deploy_inputs.outputs.project_name }}
-            --branch=main
+          command: pages deploy . --project-name=${{ secrets.CLOUDFLARE_PAGES_PROJECT }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
