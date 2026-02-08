@@ -16,11 +16,18 @@ function run(cmd) {
 }
 
 function resolveBaseRef() {
-  const hasOriginMain = run('git rev-parse --verify origin/main').length > 0;
-  if (hasOriginMain) {
-    const base = run('git merge-base HEAD origin/main')[0];
+  const upstreamCandidates = ['origin/main', 'origin/master', 'main', 'master'];
+
+  for (const ref of upstreamCandidates) {
+    const exists = run(`git rev-parse --verify ${ref}`).length > 0;
+    if (!exists) continue;
+
+    const base = run(`git merge-base HEAD ${ref}`)[0];
     if (base) return base;
   }
+
+  const reflogStart = run("git reflog --format='%H' HEAD | tail -n 1")[0];
+  if (reflogStart) return reflogStart;
 
   const prev = run('git rev-parse --verify HEAD~1')[0];
   return prev || null;
@@ -55,12 +62,13 @@ function missingFields(entryBody) {
 const imageExt = /\.(avif|gif|jpe?g|png|svg|webp)$/i;
 const baseRef = resolveBaseRef();
 const changedFromBase = baseRef
-  ? run(`git diff --name-only --diff-filter=A ${baseRef}...HEAD -- assets/images`)
+  ? run(`git diff --name-only --diff-filter=A ${baseRef}..HEAD -- assets/images`)
   : [];
-const stagedOrUnstaged = run('git diff --name-only --diff-filter=A -- assets/images');
+const staged = run('git diff --cached --name-only --diff-filter=A -- assets/images');
+const unstaged = run('git diff --name-only --diff-filter=A -- assets/images');
 const untracked = run('git ls-files --others --exclude-standard -- assets/images');
 
-const addedImages = [...new Set([...changedFromBase, ...stagedOrUnstaged, ...untracked])]
+const addedImages = [...new Set([...changedFromBase, ...staged, ...unstaged, ...untracked])]
   .filter((p) => imageExt.test(p))
   .sort();
 
