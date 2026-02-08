@@ -143,8 +143,15 @@ header nav a {
 }
 
 /* Active navigation link styling */
-header nav a.active {
+header nav a.active:not(.btn) {
   color: var(--secondary);
+}
+
+header nav .nav-cta .btn.active,
+header nav .nav-cta .btn[aria-current="page"] {
+  color: var(--brand-black);
+  background: var(--brand-gold);
+  border-color: var(--brand-gold-dark);
 }
 
 header nav a:hover,
