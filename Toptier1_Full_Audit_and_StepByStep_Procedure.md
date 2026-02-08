@@ -884,7 +884,6 @@ scripts/with-chrome-path.sh npx lighthouse http://127.0.0.1:8788/ --only-categor
 WITH_CHROME_AUTO_APT=1 scripts/with-chrome-path.sh npx lighthouse http://127.0.0.1:8788/ --only-categories=performance,seo,accessibility,best-practices --chrome-flags='--headless=new --no-sandbox' --output=json --output-path=reports/lh-pages.json
 ```
 
-
 Manual checks:
 
 - Visit:
