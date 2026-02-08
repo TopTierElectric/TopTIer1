@@ -20,6 +20,7 @@
     "check:no-binaries": "bash scripts/check-no-binary-files.sh",
     "qa": "npm run format:check && npm run lint && npm run check:placeholders && npm run check:origin-redirects && npm run audit:images && npm run qa:server-checks",
     "check:origin-redirects": "node scripts/check-origin-redirects.js",
+    "check:redirects:cloudflare": "node scripts/check-redirects-cloudflare.mjs",
     "repo:clean-export": "node scripts/create-clean-repo.mjs",
     "audit:images": "node scripts/audit-image-text-references.js",
     "qa:server-checks": "bash -lc 'set -euo pipefail; npx http-server -p 8888 >/tmp/http.log 2>&1 & SERVER_PID=$!; trap \"kill $SERVER_PID\" EXIT; npx wait-on http://127.0.0.1:8888; npm run audit:links && npm run audit:a11y && npm run audit:lighthouse'",
