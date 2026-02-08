@@ -617,7 +617,7 @@ Verification:
 
 Verification:
 
-- `npx lighthouse http://127.0.0.1:8788/ --only-categories=performance,seo,accessibility,best-practices`
+- `scripts/with-chrome-path.sh npx lighthouse http://127.0.0.1:8788/ --only-categories=performance,seo,accessibility,best-practices`
 
 ---
 
@@ -875,8 +875,15 @@ npm run build
 npx wrangler pages dev . --port 8788
 node scripts/check-redirects-cloudflare.mjs
 node scripts/check-navigation-sim.mjs
-npx lighthouse http://127.0.0.1:8788/ --only-categories=performance,seo,accessibility,best-practices
+scripts/with-chrome-path.sh npx lighthouse http://127.0.0.1:8788/ --only-categories=performance,seo,accessibility,best-practices
 ```
+
+- If Lighthouse fails with `CHROME_PATH`/browser runtime errors, run through wrapper auto-provisioning first:
+
+```bash
+WITH_CHROME_AUTO_APT=1 scripts/with-chrome-path.sh npx lighthouse http://127.0.0.1:8788/ --only-categories=performance,seo,accessibility,best-practices --chrome-flags='--headless=new --no-sandbox' --output=json --output-path=reports/lh-pages.json
+```
+
 
 Manual checks:
 
