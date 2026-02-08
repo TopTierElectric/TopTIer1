@@ -90,11 +90,33 @@ const extractInternalLinks = (html, sourcePath) => {
   return links;
 };
 
-const waitForServer = async () => {
+const waitForServer = async (wrangler) => {
   const timeoutMs = 30_000;
   const startedAt = Date.now();
+  let startupFailure;
+
+  wrangler.once("exit", (code, signal) => {
+    startupFailure = {
+      reason: signal ? `signal ${signal}` : `code ${code}`,
+      type: "exit",
+    };
+  });
+
+  wrangler.once("error", (error) => {
+    startupFailure = {
+      reason: error.message,
+      type: "error",
+    };
+  });
 
   while (Date.now() - startedAt < timeoutMs) {
+    if (startupFailure) {
+      const context = startupFailure.type === "error"
+        ? `failed to start (${startupFailure.reason})`
+        : `exited before startup (${startupFailure.reason})`;
+      throw new Error(`wrangler pages dev ${context}`);
+    }
+
     try {
       const res = await fetch(`${BASE_URL}/`, { redirect: "manual" });
       if (res.status >= 200 && res.status < 600) return;
@@ -183,10 +205,9 @@ const run = async () => {
   const queue = [...seedRoutes];
   const seen = new Set();
   const failures = [];
-  const warnings = [];
 
   try {
-    await waitForServer();
+    await waitForServer(wrangler);
 
     while (queue.length) {
       const route = queue.shift();
@@ -201,7 +222,7 @@ const run = async () => {
       }
 
       if (result.note) {
-        warnings.push(`${route} ended with ${result.note} (${result.chain.join(" -> ")})`);
+        failures.push(`${route} ended with ${result.note} (${result.chain.join(" -> ")})`);
         continue;
       }
 
@@ -213,11 +234,6 @@ const run = async () => {
     }
   } finally {
     await stopWrangler(wrangler);
-  }
-
-  if (warnings.length) {
-    console.warn("⚠️ Wrangler navigation simulation warnings:");
-    for (const warning of warnings) console.warn(`- ${warning}`);
   }
 
   if (failures.length) {
