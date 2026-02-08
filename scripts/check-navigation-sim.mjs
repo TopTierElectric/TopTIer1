@@ -130,6 +130,25 @@ const waitForServer = async (wrangler) => {
   throw new Error(`Timed out waiting for wrangler pages dev at ${BASE_URL}`);
 };
 
+
+const expectedCanonicalForHtmlRoute = (route) => {
+  const parsed = new URL(route, BASE_URL);
+  const pathname = parsed.pathname;
+
+  if (!pathname.endsWith('.html')) return null;
+
+  let canonicalPath;
+  if (pathname === '/index.html') {
+    canonicalPath = '/';
+  } else if (pathname.endsWith('/index.html')) {
+    canonicalPath = pathname.slice(0, -'index.html'.length);
+  } else {
+    canonicalPath = pathname.slice(0, -'.html'.length);
+  }
+
+  return `${canonicalPath}${parsed.search}`;
+};
+
 const fetchFinal = async (route) => {
   let current = route;
   const visited = new Set();
@@ -223,6 +242,14 @@ const run = async () => {
 
       if (result.note) {
         failures.push(`${route} ended with ${result.note} (${result.chain.join(" -> ")})`);
+        continue;
+      }
+
+      const expectedCanonical = expectedCanonicalForHtmlRoute(route);
+      if (expectedCanonical && result.finalPath !== expectedCanonical) {
+        failures.push(
+          `${route} canonicalized to unexpected destination ${result.finalPath} (expected ${expectedCanonical}; chain: ${result.chain.join(" -> ")})`,
+        );
         continue;
       }
 
