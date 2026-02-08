@@ -9,7 +9,6 @@
 ## Implemented Advancements
 
 1. **Forced canonical protocol + host**
-
    - Added explicit 301 redirect rules to force all variants to `https://toptier-electrical.com/*`:
      - `http://toptier-electrical.com/*`
      - `http://www.toptier-electrical.com/*`
@@ -17,7 +16,6 @@
    - This removes duplicate-host indexation risk and consolidates link equity to one canonical origin.
 
 2. **Reduced recurring asset 404s from legacy logo paths**
-
    - Added redirects from legacy logo aliases to the live logo asset:
      - `/images/logos/TopTierElectrical_Primary_FlatGold_512.png`
      - `/images/logos/TopTierElectrical_Primary_FlatGold_512.webp`
@@ -38,15 +36,12 @@
 ## Remaining Advancements Recommended (Next Pass)
 
 1. **Replace legacy logo references directly in HTML templates**
-
    - Redirect aliases are safe, but direct path cleanup will reduce redirect hops and improve performance.
 
 2. **Add automated redirect regression checks in CI**
-
    - Add a script that validates all critical routes return expected status and final canonical URL.
 
 3. **Evaluate slash-normalization policy**
-
    - Confirm behavior for `.html/` and mixed trailing-slash variants and add rules if needed.
 
 4. **Monitor 404 logs after deploy**

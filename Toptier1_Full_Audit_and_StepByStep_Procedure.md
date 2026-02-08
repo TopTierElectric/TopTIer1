@@ -25,6 +25,7 @@ This section records a direct verification pass against the current repository s
 - Production deployment uses `cloudflare/wrangler-action@v3` and checks required Cloudflare secrets.
 - `check:redirects-cloudflare` currently passes.
 - `check:navigation-sim` currently passes under `wrangler pages dev`, including extensionless redirect + destination checks.
+- Repository `qa` workflow now explicitly runs `check:redirects-cloudflare` and `check:navigation-sim` before server-side audits, preserving the step-by-step routing verification sequence documented here.
 
 ### C) Accuracy corrections to the procedural text
 
@@ -524,17 +525,14 @@ Cloudflare’s docs for CI Direct Upload show `wrangler-action@v3` and the requi
 Fixes:
 
 1. **Internal links must use extensionless paths**:
-
    - ✅ `/contact`
    - ❌ `/contact.html` (creates an extra redirect hop due to Pages `.html → extensionless` behavior)
 
 2. Ensure `_redirects` does not contain extensionless → `.html` redirects:
-
    - ❌ `/contact /contact.html 301`
    - ✅ rely on platform; optionally explicitly redirect `/.html` → extensionless only if you need to override legacy
 
 3. Canonical tags must match the canonical URL strategy (extensionless):
-
    - `<link rel="canonical" href="https://example.com/contact">`
 
 4. Add automated checks:
@@ -791,8 +789,9 @@ For below-the-fold images:
   --brand-2: #0ea5e9; /* electric blue */
 
   /* Typography */
-  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Inter,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-sans:
+    system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial,
+    "Noto Sans", "Liberation Sans", sans-serif;
   --font-display: var(--font-sans);
 
   /* Layout */
