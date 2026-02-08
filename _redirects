@@ -1,7 +1,6 @@
-# Canonical host + protocol enforcement (Cloudflare Pages)
-http://toptier-electrical.com/* https://toptier-electrical.com/:splat 301
-http://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301
-https://www.toptier-electrical.com/* https://toptier-electrical.com/:splat 301
+# Cloudflare Pages _redirects supports path redirects only.
+# Host/protocol canonicalization (www -> apex, http -> https) must be enforced
+# in Cloudflare zone Redirect Rules/Bulk Redirects, not here.
 
 # Legacy entry aliases (keep minimal)
 /index / 301
