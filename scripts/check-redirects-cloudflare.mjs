@@ -1,45 +1,78 @@
 #!/usr/bin/env node
-import fs from 'node:fs';
-import path from 'node:path';
 
-const outputDir = process.env.PAGES_OUTPUT_DIR || '.';
-const redirectsPath = path.join(process.cwd(), outputDir, '_redirects');
+import fs from "node:fs";
+import path from "node:path";
 
-if (!fs.existsSync(redirectsPath)) {
-  console.log(`[redirects] no ${redirectsPath} found (skipping).`);
-  process.exit(0);
+const repoRoot = process.cwd();
+
+function resolveOutputDir() {
+  const configuredOutputDir = process.env.PAGES_OUTPUT_DIR?.trim();
+  if (configuredOutputDir) {
+    return path.resolve(repoRoot, configuredOutputDir);
+  }
+
+  const fallbackDirs = ["dist", "build", "public"];
+  for (const dir of fallbackDirs) {
+    const candidate = path.join(repoRoot, dir);
+    if (fs.existsSync(path.join(candidate, "_redirects"))) {
+      return candidate;
+    }
+  }
+
+  return repoRoot;
 }
 
-const content = fs.readFileSync(redirectsPath, 'utf8');
-const invalidBangTokens = content.match(/\b\d{3}!\b/g);
-if (invalidBangTokens?.length) {
-  console.error(
-    `[redirects] invalid status token(s): ${[...new Set(invalidBangTokens)].join(', ')}`,
-  );
+const outputDir = resolveOutputDir();
+const redirectsPath = path.join(outputDir, "_redirects");
+
+if (!fs.existsSync(redirectsPath)) {
+  console.error(`❌ Missing _redirects file at: ${redirectsPath}`);
   process.exit(1);
 }
 
-let failed = false;
-const lines = content.split(/\r?\n/);
-for (let index = 0; index < lines.length; index += 1) {
-  const line = lines[index].trim();
-  if (!line || line.startsWith('#')) continue;
+const lines = fs.readFileSync(redirectsPath, "utf8").split(/\r?\n/);
+const errors = [];
+let checkedRules = 0;
 
-  const parts = line.split(/\s+/);
-  if (parts.length < 2 || parts.length > 3) {
-    console.error(`[redirects] line ${index + 1} has invalid token count: "${lines[index]}"`);
-    failed = true;
+for (const [index, rawLine] of lines.entries()) {
+  const lineNumber = index + 1;
+  const line = rawLine.trim();
+
+  if (!line || line.startsWith("#")) {
     continue;
   }
 
-  if (parts.length === 3 && !/^\d{3}$/.test(parts[2])) {
-    console.error(`[redirects] line ${index + 1} has invalid status code: "${lines[index]}"`);
-    failed = true;
+  const tokens = line.split(/\s+/);
+
+  if (tokens.length < 2 || tokens.length > 3) {
+    errors.push(
+      `Line ${lineNumber}: expected 2-3 tokens but found ${tokens.length} (${line})`,
+    );
+    continue;
   }
+
+  const statusToken = tokens[2];
+  const hasForceRedirectSyntax = /\b\d{3}!\b/.test(line) || /^\d{3}!$/.test(statusToken);
+
+  if (hasForceRedirectSyntax) {
+    errors.push(`Line ${lineNumber}: force-redirect syntax is not allowed (${line})`);
+  } else if (statusToken && !/^\d+$/.test(statusToken)) {
+    errors.push(
+      `Line ${lineNumber}: status token must be numeric when present (${line})`,
+    );
+  }
+
+  checkedRules += 1;
 }
 
-if (failed) {
+if (errors.length > 0) {
+  console.error("❌ Cloudflare redirects validation failed:");
+  for (const error of errors) {
+    console.error(`- ${error}`);
+  }
   process.exit(1);
 }
 
-console.log('[redirects] OK');
+console.log(
+  `✅ Cloudflare redirects validation passed (${checkedRules} rules, ${path.relative(repoRoot, redirectsPath)}).`,
+);

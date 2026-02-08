@@ -65,6 +65,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build
+        run: npm run build
+
+      - name: Validate Cloudflare redirects output
+        run: npm run check:redirects:cloudflare
+
       - name: Enforce no binary image files in changes
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
