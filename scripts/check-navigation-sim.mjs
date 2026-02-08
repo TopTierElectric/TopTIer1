@@ -18,6 +18,41 @@ const ensureOutputDir = () => {
   }
 };
 
+const DEFAULT_IGNORED_DIRS = new Set(["node_modules", ".git", ".wrangler"]);
+
+const discoverSeedRoutes = (dir, rootDir = dir) => {
+  const seeds = new Set();
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      if (DEFAULT_IGNORED_DIRS.has(entry.name)) continue;
+      for (const route of discoverSeedRoutes(path.join(dir, entry.name), rootDir)) seeds.add(route);
+      continue;
+    }
+
+    if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
+
+    const absPath = path.join(dir, entry.name);
+    const relPath = path.relative(rootDir, absPath).replace(/\\/g, "/");
+
+    if (relPath === "404.html") continue;
+    if (relPath === "index.html") {
+      seeds.add("/");
+      continue;
+    }
+
+    if (relPath.endsWith("/index.html")) {
+      seeds.add(`/${relPath.slice(0, -"/index.html".length)}`);
+      continue;
+    }
+
+    seeds.add(`/${relPath}`);
+  }
+
+  return seeds;
+};
+
 const buildSeedRoutes = () => {
   const configured = process.env.NAV_SIM_SEED_ROUTES
     ? process.env.NAV_SIM_SEED_ROUTES.split(",").map((route) => route.trim()).filter(Boolean)
@@ -27,7 +62,7 @@ const buildSeedRoutes = () => {
     return [...new Set(configured.map((route) => (route.startsWith("/") ? route : `/${route}`)))];
   }
 
-  return ["/"];
+  return [...discoverSeedRoutes(OUTPUT_DIR)];
 };
 
 const extractInternalLinks = (html, sourcePath) => {
@@ -109,12 +144,23 @@ const fetchFinal = async (route) => {
 };
 
 const stopWrangler = async (wrangler) => {
-  if (wrangler.killed || wrangler.exitCode !== null) return;
+  if (wrangler.exitCode !== null) return;
 
-  wrangler.kill("SIGTERM");
+  try {
+    process.kill(-wrangler.pid, "SIGTERM");
+  } catch {
+    wrangler.kill("SIGTERM");
+  }
+
   await Promise.race([new Promise((resolve) => wrangler.once("exit", resolve)), sleep(2_000)]);
 
-  if (wrangler.exitCode === null) wrangler.kill("SIGKILL");
+  if (wrangler.exitCode === null) {
+    try {
+      process.kill(-wrangler.pid, "SIGKILL");
+    } catch {
+      wrangler.kill("SIGKILL");
+    }
+  }
 };
 
 const run = async () => {
@@ -128,7 +174,7 @@ const run = async () => {
   const wrangler = spawn(
     "npx",
     ["wrangler", "pages", "dev", OUTPUT_DIR, "--port", String(PORT)],
-    { stdio: ["ignore", "pipe", "pipe"] },
+    { stdio: ["ignore", "pipe", "pipe"], detached: true },
   );
 
   wrangler.stdout.on("data", (chunk) => process.stdout.write(`[wrangler] ${chunk}`));
