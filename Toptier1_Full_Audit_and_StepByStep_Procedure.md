@@ -6,6 +6,42 @@ This document compiles and **interprets the routing/security/CI plan**, plus a *
 
 ---
 
+## Verification addendum (repository-verified, recent activity)
+
+This section records a direct verification pass against the current repository state and recent merged Codex activity.
+
+### A) Recent merged Codex activity reviewed
+
+- `Merge pull request #117` from `codex/conduct-full-audit-and-implementation-process`
+- `Merge pull request #114` from `codex/add-ci-and-production-deployment-workflows`
+- `Merge pull request #112` from `codex/add-navigation-check-script-with-wrangler`
+- `Merge pull request #111` from `codex/create-check-redirects-script-for-cloudflare`
+
+### B) What is verified as accurate right now
+
+- Cloudflare-style extensionless canonical redirects are present in root `_redirects` (for example `/contact.html /contact 301`).
+- Security headers and cache directives are present in root `_headers`.
+- CI includes build, redirect syntax guard, extensionless policy checks, and navigation simulation (`check:navigation-sim`).
+- Production deployment uses `cloudflare/wrangler-action@v3` and checks required Cloudflare secrets.
+- `check:redirects-cloudflare` currently passes.
+- `check:navigation-sim` currently passes under `wrangler pages dev`, including extensionless redirect + destination checks.
+
+### C) Accuracy corrections to the procedural text
+
+To keep this document fully accurate with implementation reality:
+
+1. References to `public/_redirects` and `public/_headers` should be interpreted as **repository root** (`_redirects`, `_headers`) for this project.
+2. References to output directory `dist/` should be interpreted as the current static-site output root (`.`), unless the project later adopts a build directory.
+3. Terraform/OIDC/IaC workflow examples in this document are **optional hardening patterns** and are not currently implemented in `.github/workflows/ci.yml`.
+
+### D) Verification verdict
+
+- Routing + redirect procedure: **Verified correct** against active scripts and runtime simulation.
+- Header/security procedure: **Verified correct** against active `_headers` policy file.
+- CI/deploy procedure: **Partially implemented** (core Cloudflare checks/deploy are implemented; Terraform/OIDC/IaC sections are guidance, not active pipeline requirements).
+
+---
+
 ## 0) Target end‑state (what “done” means)
 
 ### Hosting + routing
