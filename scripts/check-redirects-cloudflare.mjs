@@ -51,11 +51,12 @@ for (const [index, rawLine] of lines.entries()) {
     continue;
   }
 
-  if (/(^|\s)\d{3}!(?=\s|$)/.test(line)) {
-    errors.push(`Line ${lineNumber}: force-redirect syntax is not allowed (${line})`);
-  }
+  const statusToken = tokens[2];
+  const hasForceRedirectSyntax = /\b\d{3}!\b/.test(line) || /^\d{3}!$/.test(statusToken);
 
-  if (tokens.length === 3 && !/^\d+$/.test(tokens[2])) {
+  if (hasForceRedirectSyntax) {
+    errors.push(`Line ${lineNumber}: force-redirect syntax is not allowed (${line})`);
+  } else if (statusToken && !/^\d+$/.test(statusToken)) {
     errors.push(
       `Line ${lineNumber}: status token must be numeric when present (${line})`,
     );
