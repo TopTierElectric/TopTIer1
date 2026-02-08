@@ -5,9 +5,67 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
+  detect-terraform:
+    runs-on: ubuntu-latest
+    outputs:
+      has_terraform: ${{ steps.check.outputs.has_terraform }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: check
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find . -type f -name '*.tf' -print -quit | grep -q .; then
+            echo "has_terraform=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_terraform=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  terraform:
+    needs: detect-terraform
+    if: needs.detect-terraform.outputs.has_terraform == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.8.5
+
+      - name: Configure AWS credentials (OIDC)
+        if: ${{ vars.AWS_ROLE_TO_ASSUME != '' && vars.AWS_REGION != '' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Terraform fmt (check)
+        run: terraform fmt -check -recursive
+
+      - name: Terraform init
+        run: terraform init -input=false -backend=false
+
+      - name: Terraform validate
+        run: terraform validate
+
+      - name: Terraform plan (no apply)
+        run: terraform plan -input=false -lock=false -no-color
+
+      - name: Trivy IaC scan
+        uses: aquasecurity/trivy-action@0.24.0
+        with:
+          scan-type: config
+          scan-ref: .
+          hide-progress: true
+
   site:
+    needs: detect-terraform
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:

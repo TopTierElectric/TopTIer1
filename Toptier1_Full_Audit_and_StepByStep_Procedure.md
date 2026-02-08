@@ -32,13 +32,13 @@ To keep this document fully accurate with implementation reality:
 
 1. References to `public/_redirects` and `public/_headers` should be interpreted as **repository root** (`_redirects`, `_headers`) for this project.
 2. References to output directory `dist/` should be interpreted as the current static-site output root (`.`), unless the project later adopts a build directory.
-3. Terraform/OIDC/IaC workflow examples in this document are **optional hardening patterns** and are not currently implemented in `.github/workflows/ci.yml`.
+3. Terraform/OIDC/IaC checks are now wired in CI with conditional execution when `.tf` files exist (plus optional AWS OIDC configuration via repository Variables).
 
 ### D) Verification verdict
 
 - Routing + redirect procedure: **Verified correct** against active scripts and runtime simulation.
 - Header/security procedure: **Verified correct** against active `_headers` policy file.
-- CI/deploy procedure: **Partially implemented** (core Cloudflare checks/deploy are implemented; Terraform/OIDC/IaC sections are guidance, not active pipeline requirements).
+- CI/deploy procedure: **Verified implemented** (Cloudflare checks/deploy are active, and Terraform/OIDC/IaC checks are implemented in CI when Terraform code is present).
 
 ---
 
