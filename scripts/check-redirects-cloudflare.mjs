@@ -4,6 +4,7 @@ import path from 'node:path';
 
 const outputDir = process.env.PAGES_OUTPUT_DIR || '.';
 const redirectsPath = path.join(process.cwd(), outputDir, '_redirects');
+const supportedStatusCodes = new Set(['200', '301', '302', '303', '307', '308']);
 
 if (!fs.existsSync(redirectsPath)) {
   console.log(`[redirects] no ${redirectsPath} found (skipping).`);
@@ -27,14 +28,30 @@ for (let index = 0; index < lines.length; index += 1) {
 
   const parts = line.split(/\s+/);
   if (parts.length < 2 || parts.length > 3) {
-    console.error(`[redirects] line ${index + 1} has invalid token count: "${lines[index]}"`);
+    console.error(
+      `[redirects] line ${index + 1} has invalid token count: "${lines[index]}"`,
+    );
     failed = true;
     continue;
   }
 
-  if (parts.length === 3 && !/^\d{3}$/.test(parts[2])) {
-    console.error(`[redirects] line ${index + 1} has invalid status code: "${lines[index]}"`);
-    failed = true;
+  if (parts.length === 3) {
+    const status = parts[2];
+
+    if (!/^\d{3}$/.test(status)) {
+      console.error(
+        `[redirects] line ${index + 1} has invalid status format (must be 3 digits): "${lines[index]}"`,
+      );
+      failed = true;
+      continue;
+    }
+
+    if (!supportedStatusCodes.has(status)) {
+      console.error(
+        `[redirects] line ${index + 1} uses unsupported status ${status}: "${lines[index]}". Supported: ${[...supportedStatusCodes].join(', ')}`,
+      );
+      failed = true;
+    }
   }
 }
 
