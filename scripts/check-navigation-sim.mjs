@@ -1,86 +1,251 @@
 #!/usr/bin/env node
-import { spawn } from 'node:child_process';
 
-const outputDir = process.env.PAGES_OUTPUT_DIR || '.';
-const baseUrl = process.env.PAGES_BASE_URL || 'http://localhost:8788';
-const seedPaths = ['/'];
+import fs from "node:fs";
+import path from "node:path";
+import { spawn } from "node:child_process";
+
+const PORT = Number(process.env.PAGES_DEV_PORT || 8788);
+const HOST = "127.0.0.1";
+const BASE_URL = `http://${HOST}:${PORT}`;
+const OUTPUT_DIR = path.resolve(process.env.PAGES_OUTPUT_DIR || ".");
+const MAX_REDIRECTS = 10;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-function extractInternalLinks(html) {
-  const links = new Set();
-  const regex = /href\s*=\s*["']([^"']+)["']/gi;
-  let match;
-
-  while ((match = regex.exec(html)) !== null) {
-    const href = match[1].trim();
-    if (!href) continue;
-    if (href.startsWith('#')) continue;
-    if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('sms:') || href.startsWith('javascript:')) continue;
-    if (href.startsWith('http://') || href.startsWith('https://')) continue;
-
-    const normalized = href.startsWith('/') ? href : `/${href.replace(/^\.\//, '')}`;
-    links.add(normalized.split('?')[0].split('#')[0]);
+const ensureOutputDir = () => {
+  if (!fs.existsSync(OUTPUT_DIR) || !fs.statSync(OUTPUT_DIR).isDirectory()) {
+    throw new Error(`PAGES_OUTPUT_DIR does not exist or is not a directory: ${OUTPUT_DIR}`);
   }
+};
 
-  return [...links];
-}
+const DEFAULT_IGNORED_DIRS = new Set(["node_modules", ".git", ".wrangler"]);
 
-async function fetchFollow(url) {
-  return fetch(url, { redirect: 'follow' });
-}
+const discoverSeedRoutes = (dir, rootDir = dir) => {
+  const seeds = new Set();
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-async function waitForServer(maxAttempts = 120) {
-  for (let i = 0; i < maxAttempts; i += 1) {
-    try {
-      const res = await fetchFollow(baseUrl);
-      if (res.ok || res.status < 500) return;
-    } catch {}
-    await sleep(1000);
-  }
-
-  throw new Error('[nav] wrangler pages dev did not become ready in time');
-}
-
-async function main() {
-  const child = spawn('npx', ['wrangler', 'pages', 'dev', outputDir, '--port', '8788'], {
-    stdio: 'inherit',
-  });
-
-  try {
-    await waitForServer();
-
-    const queue = new Set(seedPaths);
-    const visited = new Set();
-
-    while (queue.size > 0) {
-      const route = queue.values().next().value;
-      queue.delete(route);
-      if (visited.has(route)) continue;
-      visited.add(route);
-
-      const response = await fetchFollow(`${baseUrl}${route}`);
-      if (response.status >= 400) {
-        throw new Error(`[nav] FAIL ${route} -> HTTP ${response.status}`);
-      }
-
-      const contentType = response.headers.get('content-type') || '';
-      if (contentType.includes('text/html')) {
-        const html = await response.text();
-        for (const link of extractInternalLinks(html)) {
-          if (/\.(png|jpe?g|webp|avif|svg|css|js|pdf)$/i.test(link)) continue;
-          queue.add(link);
-        }
-      }
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      if (DEFAULT_IGNORED_DIRS.has(entry.name)) continue;
+      for (const route of discoverSeedRoutes(path.join(dir, entry.name), rootDir)) seeds.add(route);
+      continue;
     }
 
-    console.log(`[nav] OK (${visited.size} routes checked)`);
-  } finally {
-    child.kill('SIGTERM');
-  }
-}
+    if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
 
-main().catch((error) => {
-  console.error(error.message || error);
+    const absPath = path.join(dir, entry.name);
+    const relPath = path.relative(rootDir, absPath).replace(/\\/g, "/");
+
+    if (relPath === "404.html") continue;
+    if (relPath === "index.html") {
+      seeds.add("/");
+      continue;
+    }
+
+    if (relPath.endsWith("/index.html")) {
+      seeds.add(`/${relPath.slice(0, -"/index.html".length)}`);
+      continue;
+    }
+
+    seeds.add(`/${relPath}`);
+  }
+
+  return seeds;
+};
+
+const buildSeedRoutes = () => {
+  const configured = process.env.NAV_SIM_SEED_ROUTES
+    ? process.env.NAV_SIM_SEED_ROUTES.split(",").map((route) => route.trim()).filter(Boolean)
+    : [];
+
+  if (configured.length) {
+    return [...new Set(configured.map((route) => (route.startsWith("/") ? route : `/${route}`)))];
+  }
+
+  return [...discoverSeedRoutes(OUTPUT_DIR)];
+};
+
+const extractInternalLinks = (html, sourcePath) => {
+  const links = new Set();
+  const anchorHrefRegex = /<a\b[^>]*\bhref\s*=\s*(?:"([^"]+)"|'([^']+)'|([^\s>]+))/gi;
+
+  for (const match of html.matchAll(anchorHrefRegex)) {
+    const rawHref = (match[1] || match[2] || match[3] || "").trim();
+    if (!rawHref || rawHref.startsWith("#")) continue;
+    if (/^(mailto:|tel:|javascript:)/i.test(rawHref)) continue;
+
+    let candidate;
+    try {
+      candidate = new URL(rawHref, `${BASE_URL}${sourcePath}`);
+    } catch {
+      continue;
+    }
+
+    if (candidate.hostname !== HOST || candidate.port !== String(PORT)) continue;
+
+    candidate.hash = "";
+    links.add(`${candidate.pathname}${candidate.search}`);
+  }
+
+  return links;
+};
+
+const waitForServer = async (wrangler) => {
+  const timeoutMs = 30_000;
+  const startedAt = Date.now();
+  let startupFailure;
+
+  wrangler.once("exit", (code, signal) => {
+    startupFailure = {
+      reason: signal ? `signal ${signal}` : `code ${code}`,
+      type: "exit",
+    };
+  });
+
+  wrangler.once("error", (error) => {
+    startupFailure = {
+      reason: error.message,
+      type: "error",
+    };
+  });
+
+  while (Date.now() - startedAt < timeoutMs) {
+    if (startupFailure) {
+      const context = startupFailure.type === "error"
+        ? `failed to start (${startupFailure.reason})`
+        : `exited before startup (${startupFailure.reason})`;
+      throw new Error(`wrangler pages dev ${context}`);
+    }
+
+    try {
+      const res = await fetch(`${BASE_URL}/`, { redirect: "manual" });
+      if (res.status >= 200 && res.status < 600) return;
+    } catch {
+      // keep waiting
+    }
+
+    await sleep(300);
+  }
+
+  throw new Error(`Timed out waiting for wrangler pages dev at ${BASE_URL}`);
+};
+
+const fetchFinal = async (route) => {
+  let current = route;
+  const visited = new Set();
+  const chain = [];
+
+  for (let i = 0; i < MAX_REDIRECTS; i += 1) {
+    if (visited.has(current)) {
+      return { finalPath: current, status: 0, chain, body: "", note: "redirect-loop" };
+    }
+
+    visited.add(current);
+    const response = await fetch(`${BASE_URL}${current}`, { redirect: "manual" });
+    chain.push(`${current} [${response.status}]`);
+
+    if (response.status >= 300 && response.status < 400) {
+      const location = response.headers.get("location");
+      if (!location) return { finalPath: current, status: response.status, chain, body: "" };
+
+      const next = new URL(location, `${BASE_URL}${current}`);
+      if (next.hostname !== HOST || next.port !== String(PORT)) {
+        return { finalPath: `${next.pathname}${next.search}`, status: response.status, chain, body: "" };
+      }
+
+      current = `${next.pathname}${next.search}`;
+      continue;
+    }
+
+    const isHtml = response.headers.get("content-type")?.includes("text/html");
+    const body = isHtml ? await response.text() : "";
+    return { finalPath: current, status: response.status, chain, body };
+  }
+
+  return { finalPath: current, status: 0, chain, body: "", note: "redirect-limit" };
+};
+
+const stopWrangler = async (wrangler) => {
+  if (wrangler.exitCode !== null) return;
+
+  try {
+    process.kill(-wrangler.pid, "SIGTERM");
+  } catch {
+    wrangler.kill("SIGTERM");
+  }
+
+  await Promise.race([new Promise((resolve) => wrangler.once("exit", resolve)), sleep(2_000)]);
+
+  if (wrangler.exitCode === null) {
+    try {
+      process.kill(-wrangler.pid, "SIGKILL");
+    } catch {
+      wrangler.kill("SIGKILL");
+    }
+  }
+};
+
+const run = async () => {
+  ensureOutputDir();
+  const seedRoutes = buildSeedRoutes();
+
+  if (!seedRoutes.length) {
+    throw new Error(`No seed routes discovered in output directory: ${OUTPUT_DIR}`);
+  }
+
+  const wrangler = spawn(
+    "npx",
+    ["wrangler", "pages", "dev", OUTPUT_DIR, "--port", String(PORT)],
+    { stdio: ["ignore", "pipe", "pipe"], detached: true },
+  );
+
+  wrangler.stdout.on("data", (chunk) => process.stdout.write(`[wrangler] ${chunk}`));
+  wrangler.stderr.on("data", (chunk) => process.stderr.write(`[wrangler] ${chunk}`));
+
+  const queue = [...seedRoutes];
+  const seen = new Set();
+  const failures = [];
+
+  try {
+    await waitForServer(wrangler);
+
+    while (queue.length) {
+      const route = queue.shift();
+      if (!route || seen.has(route)) continue;
+
+      seen.add(route);
+      const result = await fetchFinal(route);
+
+      if (result.status >= 400) {
+        failures.push(`${route} -> ${result.finalPath} returned ${result.status} (${result.chain.join(" -> ")})`);
+        continue;
+      }
+
+      if (result.note) {
+        failures.push(`${route} ended with ${result.note} (${result.chain.join(" -> ")})`);
+        continue;
+      }
+
+      if (!result.body) continue;
+
+      for (const link of extractInternalLinks(result.body, result.finalPath)) {
+        if (!seen.has(link)) queue.push(link);
+      }
+    }
+  } finally {
+    await stopWrangler(wrangler);
+  }
+
+  if (failures.length) {
+    console.error("❌ Wrangler navigation simulation failed:");
+    for (const failure of failures) console.error(`- ${failure}`);
+    process.exit(1);
+  }
+
+  console.log(`✅ Wrangler navigation simulation passed (${seen.size} routes checked from ${seedRoutes.length} seeds).`);
+};
+
+run().catch((error) => {
+  console.error(`❌ ${error.message}`);
   process.exit(1);
 });
