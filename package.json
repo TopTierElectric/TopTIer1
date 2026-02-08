@@ -13,7 +13,7 @@
     "lint:css": "echo 'stylelint baseline not configured for legacy stylesheet; skipping'",
     "audit:deps": "npm audit --audit-level=high",
     "validate:html": "bash -lc \"ls *.html | grep -v '^styleguide-top-tier-electrical.html$' | xargs npx html-validate\"",
-    "audit:links": "node scripts/crawl.js http://localhost:8888/ reports && node -e \"const r=require('./reports/crawl_raw.json');const bad=r.pages.filter(p=>p.status!==200);if(bad.length){console.error('Broken pages:',bad.map(p=>p.url).join(', '));process.exit(1)};if(r.orphans.length){console.error('Orphan pages:',r.orphans.join(', '));process.exit(1)};console.log('Internal crawl passed:',r.pages.length,'pages');\"",
+    "audit:links": "node scripts/audit-links-cloudflare.mjs",
     "audit:a11y": "scripts/with-chrome-path.sh npx pa11y-ci",
     "audit:lighthouse": "scripts/with-chrome-path.sh bash -lc \"mkdir -p reports && npx lighthouse http://127.0.0.1:8888 --output=html --output-path=reports/lighthouse.html --chrome-flags='--headless=new --no-sandbox'\"",
     "check:placeholders": "node scripts/check-placeholders.js",
@@ -23,7 +23,9 @@
     "repo:clean-export": "node scripts/create-clean-repo.mjs",
     "audit:images": "node scripts/audit-image-text-references.js",
     "qa:server-checks": "bash -lc 'set -euo pipefail; npx http-server -p 8888 >/tmp/http.log 2>&1 & SERVER_PID=$!; trap \"kill $SERVER_PID\" EXIT; npx wait-on http://127.0.0.1:8888; npm run audit:links && npm run audit:a11y && npm run audit:lighthouse'",
-    "check:navigation-sim": "node scripts/check-navigation-simulation.js"
+    "check:navigation-sim": "node scripts/check-navigation-sim.mjs",
+    "check:extensionless-links": "node scripts/check-extensionless-links.mjs",
+    "check:redirects-cloudflare": "node scripts/check-redirects-cloudflare.mjs"
   },
   "keywords": [
     "electrician",

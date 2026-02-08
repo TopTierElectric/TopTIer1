@@ -42,10 +42,5 @@ jobs:
           npm run check:origin-redirects
           npm run audit:images
 
-      - name: Verify internal links
-        run: |
-          npx http-server -p 8888 >/tmp/http.log 2>&1 &
-          SERVER_PID=$!
-          trap 'kill "$SERVER_PID"' EXIT
-          npx wait-on http://127.0.0.1:8888
-          npm run audit:links
+      - name: Verify internal links (Cloudflare Pages simulation)
+        run: npm run audit:links
