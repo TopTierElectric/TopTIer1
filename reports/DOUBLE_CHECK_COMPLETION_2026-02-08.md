@@ -14,12 +14,14 @@ Objective: confirm all recent audit/remediation artifacts were fully re-validate
 ## Outcomes
 
 1. Redirect enforcement is now deterministic at lint time:
+
    - absolute source URLs in `_redirects` are rejected,
    - source must start with `/`,
    - destination must be relative path or absolute URL,
    - invalid status markers (e.g., `301!`) remain blocked.
 
 2. Runtime routing simulation is clean:
+
    - Wrangler parsed 5 valid redirect rules,
    - no invalid absolute-rule warnings,
    - navigation simulation passed 49 route checks.
