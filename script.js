@@ -157,7 +157,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     const hasFinancingLink = Array.from(list.querySelectorAll("a")).some(
       function (link) {
-        return (link.getAttribute("href") || "").replace(".html", "") === "financing";
+        return (
+          (link.getAttribute("href") || "").replace(".html", "") === "financing"
+        );
       },
     );
     if (hasFinancingLink) {
