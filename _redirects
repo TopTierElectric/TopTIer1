@@ -8,7 +8,7 @@
 /home / 301
 
 # Canonical route hygiene
-/comercial /commercial 301
+/comercial /commercial-electrical-maintenance 301
 /commercial /commercial-electrical-maintenance 301
 
 # Optional: true legacy semantic redirects (only if these URLs were used historically)
