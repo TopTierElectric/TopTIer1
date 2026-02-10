@@ -141,35 +141,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
-
-  // Keep pre-footer quick links consistent without hand-editing every page.
-  const quickLinksSections = document.querySelectorAll(
-    ".pre-footer .footer-col",
-  );
-  quickLinksSections.forEach(function (column) {
-    const heading = column.querySelector("h4");
-    const list = column.querySelector("ul");
-    if (!heading || !list) {
-      return;
-    }
-    if (heading.textContent.trim().toLowerCase() !== "quick links") {
-      return;
-    }
-    const hasFinancingLink = Array.from(list.querySelectorAll("a")).some(
-      function (link) {
-        return (
-          (link.getAttribute("href") || "").replace(".html", "") === "financing"
-        );
-      },
-    );
-    if (hasFinancingLink) {
-      return;
-    }
-    const item = document.createElement("li");
-    const anchor = document.createElement("a");
-    anchor.href = "financing";
-    anchor.textContent = "Financing";
-    item.appendChild(anchor);
-    list.appendChild(item);
-  });
 });
