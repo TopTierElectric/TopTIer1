@@ -144,7 +144,7 @@ header nav a {
 
 /* Active navigation link styling */
 header nav a.active:not(.btn) {
-  color: var(--secondary);
+  color: var(--brand-gold);
 }
 
 header nav .nav-cta .btn.active,
@@ -156,7 +156,7 @@ header nav .nav-cta .btn[aria-current="page"] {
 
 header nav a:hover,
 header nav a:focus {
-  color: var(--secondary);
+  color: var(--brand-gold);
 }
 
 /* Mobile nav toggle */
@@ -1552,7 +1552,7 @@ footer p {
   background: #fee2e2;
 }
 
-.action-link-emergency {
+.action-link-text {
   grid-column: 1 / -1;
   text-align: center;
   color: #b91c1c;
@@ -2180,4 +2180,41 @@ header nav a:hover {
 .hero .btn-secondary:hover {
   background: white;
   color: var(--primary);
+}
+
+/* 2026 strategy alignment overrides */
+.btn-primary {
+  background: var(--brand-gold) !important;
+  color: var(--brand-black) !important;
+  border: 1px solid var(--brand-gold-dark) !important;
+}
+
+.btn-ghost {
+  background: transparent !important;
+  color: var(--brand-gold) !important;
+  border: 1px solid var(--brand-gold) !important;
+}
+
+.btn-secondary {
+  background: transparent !important;
+  color: var(--brand-black) !important;
+  border: 2px solid var(--brand-gold) !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: rgba(212, 175, 55, 0.14) !important;
+  color: var(--brand-black) !important;
+}
+
+.sticky-bar {
+  background: var(--brand-black) !important;
+}
+
+.action-link-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--secondary);
+  text-decoration: underline;
+  font-weight: 600;
 }
