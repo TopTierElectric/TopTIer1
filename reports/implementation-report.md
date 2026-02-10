@@ -417,11 +417,11 @@ Use implementation packets for exact instructions:
 - Blog post: `implementation_packets/21_blog-ev-charging.md`
 - Blog post: `implementation_packets/22_blog-surge-protection.md`
 
-## 11) IMPLEMENTATION BACKLOG + DEPLOYMENT PROCESS (NETLIFY + CLOUDFLARE)
+## 11) IMPLEMENTATION BACKLOG + DEPLOYMENT PROCESS (CLOUDFLARE)
 
 ### 11.1 Backlog (PRIORITIZED BY ROI)
 
-**NOT VERIFIED**: Netlify/Cloudflare deployment assumption is unverified; confirm hosting in DNS and build logs.
+**NOT VERIFIED**: Cloudflare deployment assumption is unverified; confirm hosting in DNS and build logs.
 
 ### 11.2 Deployment process
 

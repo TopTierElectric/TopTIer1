@@ -15,7 +15,7 @@
 
 ## Redirect Mechanism Present
 
-- Redirect behavior in this project is configured via the static Netlify-style `_redirects` file.
+- Redirect behavior in this project is configured via the static static-host style `_redirects` file.
 - `_redirects` contains path aliases and legacy URL redirects (301), plus a 404 fallback.
 - The file explicitly notes protocol/host canonicalization is handled at Cloudflare edge, not origin.
 

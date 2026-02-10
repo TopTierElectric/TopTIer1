@@ -10,7 +10,7 @@
 
 - **Conflict markers:** No conflict markers detected in HTML files. (`rg "<<<<<<<|=======|>>>>>>>" *.html`)
 - **Homepage JSON-LD:** JSON-LD blocks are intact and parseable. (`index.html` scripts)
-- **Headers file:** `_headers` uses valid Netlify-style path blocks and active directives.
+- **Headers file:** `_headers` uses valid hosting-platform style path blocks and active directives.
 - **Blog navigation:** `blog.html` uses `id="main-nav"` and the same `.menu-toggle` selectors as `script.js`.
 - **Form labels:** Form inputs in `index.html` and `services.html` include associated `<label>` elements.
 - **Sitemap/robots:** `sitemap.xml` and `robots.txt` are present at repo root.

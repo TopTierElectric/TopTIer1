@@ -27,7 +27,7 @@ const FORBIDDEN_PATTERNS = [
     regex: /header\s*\(\s*["']Location:\s*https:\/\//i,
   },
   {
-    label: "Netlify/Cloudflare style host+protocol canonicalization at origin",
+    label: "host+protocol canonicalization at origin",
     regex: /^https?:\/\/[^\s]+\/\*\s+https:\/\/[^\s]+\/:splat\s+301!?/im,
   },
 ];

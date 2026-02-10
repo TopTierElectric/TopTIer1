@@ -239,7 +239,7 @@ if (!fs.existsSync(redirectsPath)) {
 
 const content = fs.readFileSync(redirectsPath, "utf8");
 
-// 1) reject invalid Netlify-style markers like "301!"
+// 1) reject invalid host-style markers like "301!"
 const badBang = content.match(/\b\d{3}!\b/g);
 if (badBang?.length) {
   console.error(

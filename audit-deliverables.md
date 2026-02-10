@@ -1,66 +1,66 @@
-# Top Tier Electrical Audit Deliverables (Netlify Deploy Preview)
+# Top Tier Electrical Audit Deliverables (Deploy Preview)
 
 1. Site Crawl Inventory (Pages + Templates)
 
-- **Crawl scope + parity check:** Netlify deploy preview home page responded (200). Production home page returned HTTP 503 during crawl, so parity could not be confirmed beyond the deploy preview response. (See crawl note in §2 for required inputs.)
-- **Discovered pages + purpose (Netlify preview URLs):**
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/ — Home, primary marketing funnel + lead capture.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/services.html — Services overview + section anchors.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/contact.html — Contact/estimate form.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/booking.html — Booking call-to-action.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/testimonials.html — Reviews/testimonials.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/financing.html — Financing options.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/emergency.html — Emergency services.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/gallery.html — Project gallery.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/faq.html — FAQ.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/blog.html — Blog landing page.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/blog-electrical-safety.html — Blog detail.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/blog-right-electrician.html — Blog detail.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/blog-ev-charging.html — Blog detail.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/blog-surge-protection.html — Blog detail.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/service-areas.html — Service areas.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/panel-upgrades.html — Service detail.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/ev-chargers.html — Service detail.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/lighting.html — Service detail.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/404.html — 404 page.
-  - https://697d4b34cba0de1bd51c556c--toptierelectrical.netlify.app/styleguide-top-tier-electrical.html — Style guide (internal reference).
+- **Crawl scope + parity check:** deploy preview home page responded (200). Production home page returned HTTP 503 during crawl, so parity could not be confirmed beyond the deploy preview response. (See crawl note in §2 for required inputs.)
+- **Discovered pages + purpose (preview URLs):**
+  - https://preview.toptierelectrical.example/ — Home, primary marketing funnel + lead capture.
+  - https://preview.toptierelectrical.example/services.html — Services overview + section anchors.
+  - https://preview.toptierelectrical.example/contact.html — Contact/estimate form.
+  - https://preview.toptierelectrical.example/booking.html — Booking call-to-action.
+  - https://preview.toptierelectrical.example/testimonials.html — Reviews/testimonials.
+  - https://preview.toptierelectrical.example/financing.html — Financing options.
+  - https://preview.toptierelectrical.example/emergency.html — Emergency services.
+  - https://preview.toptierelectrical.example/gallery.html — Project gallery.
+  - https://preview.toptierelectrical.example/faq.html — FAQ.
+  - https://preview.toptierelectrical.example/blog.html — Blog landing page.
+  - https://preview.toptierelectrical.example/blog-electrical-safety.html — Blog detail.
+  - https://preview.toptierelectrical.example/blog-right-electrician.html — Blog detail.
+  - https://preview.toptierelectrical.example/blog-ev-charging.html — Blog detail.
+  - https://preview.toptierelectrical.example/blog-surge-protection.html — Blog detail.
+  - https://preview.toptierelectrical.example/service-areas.html — Service areas.
+  - https://preview.toptierelectrical.example/panel-upgrades.html — Service detail.
+  - https://preview.toptierelectrical.example/ev-chargers.html — Service detail.
+  - https://preview.toptierelectrical.example/lighting.html — Service detail.
+  - https://preview.toptierelectrical.example/404.html — 404 page.
+  - https://preview.toptierelectrical.example/styleguide-top-tier-electrical.html — Style guide (internal reference).
 - **Repeating section types observed:** header/nav, hero/intro, trust strip, content grid (services/blog/testimonials), CTA block, pre-footer, footer.
 - **SEO-score-relevant issues found during crawl (no structural changes suggested):**
   - `styleguide-top-tier-electrical.html` lacks a canonical tag (all other pages include one).
   - Production URL returned HTTP 503 during crawl, so production parity (titles/canonicals) could not be verified.
 
-2. Network Requests Audit (27 Requests from Netlify Observability)
-   **Missing input required:** I cannot access the Netlify Observability request list programmatically. Please provide **only** one of the following: (a) an exported list/screenshot of the 27 requests (name + type + domain + cache headers if visible). Once provided, I will replace the placeholders below with exact values and validation steps.
+2. Network Requests Audit (27 Requests from Hosting Observability)
+   **Missing input required:** I cannot access the hosting observability request list programmatically. Please provide **only** one of the following: (a) an exported list/screenshot of the 27 requests (name + type + domain + cache headers if visible). Once provided, I will replace the placeholders below with exact values and validation steps.
 
 | Req ID  | Resource URL + domain                       | Resource type | Current cache behavior | Lighthouse risk | Fix (exact) + where to implement                                            | Verification steps in Edge DevTools                                |
 | ------- | ------------------------------------------- | ------------- | ---------------------- | --------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| REQ-001 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-002 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-003 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-004 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-005 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-006 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-007 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-008 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-009 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-010 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-011 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-012 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-013 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-014 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-015 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-016 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-017 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-018 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-019 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-020 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-021 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-022 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-023 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-024 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-025 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-026 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
-| REQ-027 | unknown (need Netlify Observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `netlify.toml`/`_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-001 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-002 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-003 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-004 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-005 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-006 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-007 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-008 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-009 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-010 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-011 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-012 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-013 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-014 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-015 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-016 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-017 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-018 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-019 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-020 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-021 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-022 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-023 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-024 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-025 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-026 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
+| REQ-027 | unknown (need hosting observability export) | unknown       | unknown                | unknown         | Provide request list; then map fixes to `_headers`/HTML head | Network tab: confirm request + response headers; Lighthouse re-run |
 
 3. Image Asset Audit (single master table; ALL images currently used)
    **Note:** Visual inspection is not available in this environment; issues are based on dimensions, orientation, and file integrity. Provide any image URLs or screenshots if you want visual quality validation (lighting, clutter, color balance).
@@ -166,7 +166,7 @@ Allowed micro-adjustments (within existing structure): normalize padding around 
 - **Graphics verification checklist:**
   - Hero text legible on mobile; consistent crops; no compression artifacts; palette/structure unchanged.
 
-7. Lighthouse Remediation Plan (modular, audit-ready, Netlify/static)
+7. Lighthouse Remediation Plan (modular, audit-ready, static hosting)
    Issue → Why it matters → Exact fix → Where to implement → Code/config snippet → How to verify.
 
 7A) Performance Optimization
@@ -194,7 +194,7 @@ Allowed micro-adjustments (within existing structure): normalize padding around 
 
 - **Responsive images + lazy loading** → reduce LCP/data → implement `srcset`/`sizes` and `loading="lazy"` below the fold → HTML templates → (reference GLOBAL-STANDARDS v1, Image performance rules) → Verify: Network tab shows smaller image variants and `img` requests lazy-load.
 
-- **Caching for immutable assets** → improve repeat visits → Netlify headers for `/assets/*` → `_headers` or `netlify.toml` →
+- **Caching for immutable assets** → improve repeat visits → hosting headers for `/assets/*` → `_headers` rules →
 
 ```
 /assets/*
@@ -222,7 +222,7 @@ Allowed micro-adjustments (within existing structure): normalize padding around 
 
 7C) Best Practices Fixes (baseline 83)
 
-- **Security headers** → prevent common attacks → Netlify `_headers` or `netlify.toml` →
+- **Security headers** → prevent common attacks → `_headers` configuration →
 
 ```
 /*
@@ -278,12 +278,12 @@ Allowed micro-adjustments (within existing structure): normalize padding around 
 
 - **Robots/sitemap** → crawlability → ensure `robots.txt` and `sitemap.xml` are deployed and referenced → repo root → Verify: `https://site/robots.txt` + `https://site/sitemap.xml`.
 
-7E) Netlify Deployment Hygiene
+7E) Deployment Hygiene
 
 - **Production minification** → faster loads → ensure build tool minifies assets → build config/package.json → Verify: view source (minified) + Lighthouse.
 - **Disable source maps in production** → security → build config → Verify: no `*.map` in Network.
-- **Suppress dev-only logs** → cleanliness → env vars in Netlify UI → Verify: Console clean.
-- **Validate redirects/headers** → ensure `_headers` or `netlify.toml` applied → deploy preview + production → Verify: headers present in Network tab.
+- **Suppress dev-only logs** → cleanliness → hosting environment variables → Verify: Console clean.
+- **Validate redirects/headers** → ensure `_headers` rules applied → deploy preview + production → Verify: headers present in Network tab.
 - **Confirm caching headers** → align with audit → verify cache headers on static assets → Network tab (tie to §2 table when provided).
 
 8. Continuous Verification + Excel Tracking (Windows 11 workflow)
