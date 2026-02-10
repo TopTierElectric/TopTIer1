@@ -8,7 +8,6 @@
 /home / 301
 
 # Optional: true legacy semantic redirects (only if these URLs were used historically)
-/about /services 301
 /pricing /services 301
-/financing /booking 301
-/financing.html /booking 301
+/financing /services 301
+/financing.html /services 301

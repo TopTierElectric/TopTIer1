@@ -518,6 +518,15 @@ header nav a:focus {
   gap: 1.5rem;
 }
 
+.proof-lanes {
+  display: grid;
+  gap: 2rem;
+}
+
+.proof-lane h3 {
+  margin-bottom: 1rem;
+}
+
 .proof-card {
   background: white;
   border-radius: 12px;
@@ -647,6 +656,17 @@ header nav a:focus {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
+}
+
+.scope-drivers {
+  background: #f8fafc;
+  border-left: 4px solid var(--primary);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+}
+
+.scope-drivers h4 {
+  margin: 0 0 0.4rem;
 }
 
 .proof-chips {
@@ -1492,7 +1512,7 @@ footer p {
 }
 .action-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   max-width: 600px;
   width: 100%;
@@ -1530,6 +1550,14 @@ footer p {
 }
 .action-emergency:hover {
   background: #fee2e2;
+}
+
+.action-link-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #b91c1c;
+  text-decoration: underline;
+  font-weight: 600;
 }
 @media (max-width: 480px) {
   .action-grid {
@@ -2152,4 +2180,30 @@ header nav a:hover {
 .hero .btn-secondary:hover {
   background: white;
   color: var(--primary);
+}
+
+/* 2026 strategy alignment overrides */
+.btn-primary {
+  background: var(--brand-gold) !important;
+  color: var(--brand-black) !important;
+  border: 1px solid var(--brand-gold-dark) !important;
+}
+
+.btn-ghost,
+.btn-secondary {
+  background: transparent !important;
+  color: var(--brand-gold) !important;
+  border: 1px solid var(--brand-gold) !important;
+}
+
+.sticky-bar {
+  background: var(--brand-black) !important;
+}
+
+.action-link-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--secondary);
+  text-decoration: underline;
+  font-weight: 600;
 }
