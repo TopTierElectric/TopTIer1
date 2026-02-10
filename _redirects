@@ -6,14 +6,23 @@
 /index / 301
 /index.html / 301
 /home / 301
+/home/ / 301
 
 # Canonical route hygiene
 /comercial /commercial 301
+/comercial/ /commercial 301
+/comercial.html /commercial 301
 /commercial /commercial-electrical-maintenance 301
+/commercial/ /commercial-electrical-maintenance 301
+/commercial.html /commercial-electrical-maintenance 301
 
 # Legacy GoDaddy route migrations
 /residential /residential-electrician-allegan-mi 301
+/residential/ /residential-electrician-allegan-mi 301
+/residential.html /residential-electrician-allegan-mi 301
 /contact-us /contact 301
+/contact-us/ /contact 301
+/contact-us.html /contact 301
 
 # Optional: true legacy semantic redirects (only if these URLs were used historically)
 /about /services 301
