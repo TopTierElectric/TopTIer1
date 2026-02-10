@@ -30,7 +30,6 @@ const ROOT_FILES_TO_KEEP = [
   '.pa11yci',
   '.stylelintrc.json',
   'README.md',
-  'readme.md',
   '404.html'
 ];
 
