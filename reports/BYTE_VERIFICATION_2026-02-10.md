@@ -3,9 +3,11 @@
 Scanned 40 root HTML files.
 
 ## Files with forbidden byte-pattern hits
+
 - None
 
 ## File hashes
+
 - `404.html` `614155adf85e6ac5d69785fa04e714925f3c1ca6efb1cd4894940cad32c34b69` (9026 bytes)
 - `about.html` `79f03945ac16f37831d13e85ef013ba55ac109cc8944ca76f6bf0e8044be8eeb` (4395 bytes)
 - `blog-electrical-safety.html` `6e2d83db25047b1b125cee701b5300844f2807da461488ac5905b9df1a3343cb` (14457 bytes)

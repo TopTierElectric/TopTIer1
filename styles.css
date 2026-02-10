@@ -2189,22 +2189,11 @@ header nav a:hover {
   border: 1px solid var(--brand-gold-dark) !important;
 }
 
-.btn-ghost {
+.btn-ghost,
+.btn-secondary {
   background: transparent !important;
   color: var(--brand-gold) !important;
   border: 1px solid var(--brand-gold) !important;
-}
-
-.btn-secondary {
-  background: transparent !important;
-  color: var(--brand-black) !important;
-  border: 2px solid var(--brand-gold) !important;
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus {
-  background: rgba(212, 175, 55, 0.14) !important;
-  color: var(--brand-black) !important;
 }
 
 .sticky-bar {
