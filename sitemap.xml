@@ -138,4 +138,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://toptier-electrical.com/residential</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://toptier-electrical.com/commercial</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://toptier-electrical.com/electrician-grand-rapids</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toptier-electrical.com/electrician-ada</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toptier-electrical.com/electrician-allegan</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toptier-electrical.com/electrician-holland</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toptier-electrical.com/electrician-zeeland</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toptier-electrical.com/electrician-hudsonville</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
