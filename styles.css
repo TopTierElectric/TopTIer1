@@ -1552,7 +1552,7 @@ footer p {
   background: #fee2e2;
 }
 
-.action-link-emergency {
+.action-link-text {
   grid-column: 1 / -1;
   text-align: center;
   color: #b91c1c;
@@ -2180,4 +2180,31 @@ header nav a:hover {
 .hero .btn-secondary:hover {
   background: white;
   color: var(--primary);
+}
+
+
+/* 2026 strategy alignment overrides */
+.btn-primary {
+  background: var(--brand-gold) !important;
+  color: var(--brand-black) !important;
+  border: 1px solid var(--brand-gold-dark) !important;
+}
+
+.btn-ghost,
+.btn-secondary {
+  background: transparent !important;
+  color: var(--brand-gold) !important;
+  border: 1px solid var(--brand-gold) !important;
+}
+
+.sticky-bar {
+  background: var(--brand-black) !important;
+}
+
+.action-link-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--secondary);
+  text-decoration: underline;
+  font-weight: 600;
 }
