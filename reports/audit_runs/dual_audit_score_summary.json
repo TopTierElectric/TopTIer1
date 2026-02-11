@@ -1,0 +1,17 @@
+{
+  "version1": {
+    "performance": 0.97,
+    "accessibility": 0.94,
+    "bestPractices": 0.96,
+    "seo": 1
+  },
+  "version2": {
+    "performance": 0.99,
+    "accessibility": 0.94,
+    "bestPractices": 0.96,
+    "seo": 1
+  },
+  "scoresIdentical": false,
+  "fetchTime1": "2026-02-11T23:10:18.402Z",
+  "fetchTime2": "2026-02-11T23:10:39.628Z"
+}
