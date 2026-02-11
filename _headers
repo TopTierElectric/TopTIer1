@@ -33,3 +33,16 @@ https://:version.:project.pages.dev/*
 
 /script.js
   Cache-Control: public, max-age=31536000, immutable
+
+# Legacy redirect aliases should never be edge-sticky for long periods.
+/index
+  Cache-Control: public, max-age=0, must-revalidate
+
+/home
+  Cache-Control: public, max-age=0, must-revalidate
+
+/financing
+  Cache-Control: public, max-age=0, must-revalidate
+
+/pricing
+  Cache-Control: public, max-age=0, must-revalidate
