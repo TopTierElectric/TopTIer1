@@ -9,6 +9,19 @@ const HOST = "127.0.0.1";
 const BASE_URL = `http://${HOST}:${PORT}`;
 const OUTPUT_DIR = path.resolve(process.env.PAGES_OUTPUT_DIR || ".");
 const MAX_REDIRECTS = 10;
+const WRANGLER_CMD = process.platform === "win32" ? "wrangler.cmd" : "wrangler";
+
+const resolveWranglerCommand = () => {
+  const localBin = path.resolve("node_modules", ".bin", WRANGLER_CMD);
+  if (fs.existsSync(localBin)) {
+    return { command: localBin, args: ["pages", "dev"] };
+  }
+
+  return {
+    command: "npx",
+    args: ["--yes", "wrangler@4.64.0", "pages", "dev"],
+  };
+};
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -91,7 +104,7 @@ const extractInternalLinks = (html, sourcePath) => {
 };
 
 const waitForServer = async (wrangler) => {
-  const timeoutMs = 30_000;
+  const timeoutMs = 60_000;
   const startedAt = Date.now();
   let startupFailure;
 
@@ -212,9 +225,10 @@ const run = async () => {
     throw new Error(`No seed routes discovered in output directory: ${OUTPUT_DIR}`);
   }
 
+  const wranglerExec = resolveWranglerCommand();
   const wrangler = spawn(
-    "npx",
-    ["wrangler", "pages", "dev", OUTPUT_DIR, "--port", String(PORT)],
+    wranglerExec.command,
+    [...wranglerExec.args, OUTPUT_DIR, "--port", String(PORT)],
     { stdio: ["ignore", "pipe", "pipe"], detached: true },
   );
 
