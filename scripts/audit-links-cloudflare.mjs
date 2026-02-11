@@ -14,7 +14,7 @@ function resolveWranglerCommand() {
 
   return {
     command: 'npx',
-    args: ['--no-install', 'wrangler', 'pages', 'dev'],
+    args: ['--yes', 'wrangler@4.64.0', 'pages', 'dev'],
   };
 }
 
