@@ -1,8 +1,22 @@
 #!/usr/bin/env node
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
+import path from 'node:path';
 
 const baseUrl = 'http://127.0.0.1:8788/';
+const WRANGLER_CMD = process.platform === 'win32' ? 'wrangler.cmd' : 'wrangler';
+
+function resolveWranglerCommand() {
+  const localBin = path.resolve('node_modules', '.bin', WRANGLER_CMD);
+  if (fs.existsSync(localBin)) {
+    return { command: localBin, args: ['pages', 'dev'] };
+  }
+
+  return {
+    command: 'npx',
+    args: ['--no-install', 'wrangler', 'pages', 'dev'],
+  };
+}
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -31,8 +45,9 @@ function run(command, args) {
 
 async function main() {
   const shouldStartServer = process.env.SKIP_WRANGLER_PAGES_DEV !== '1';
+  const wranglerExec = resolveWranglerCommand();
   const server = shouldStartServer
-    ? spawn('npx', ['wrangler', 'pages', 'dev', '.', '--port', '8788'], { stdio: 'inherit' })
+    ? spawn(wranglerExec.command, [...wranglerExec.args, '.', '--port', '8788'], { stdio: 'inherit' })
     : null;
 
   try {

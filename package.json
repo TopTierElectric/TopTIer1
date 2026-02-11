@@ -22,7 +22,7 @@
     "check:origin-redirects": "node scripts/check-origin-redirects.js",
     "repo:clean-export": "node scripts/create-clean-repo.mjs",
     "audit:images": "node scripts/audit-image-text-references.js",
-    "qa:server-checks": "bash -lc 'set -euo pipefail; npx wrangler pages dev . --port 8788 >/tmp/wrangler-pages-dev.log 2>&1 & SERVER_PID=$!; trap \"kill $SERVER_PID\" EXIT; npx wait-on http://127.0.0.1:8788; npm run audit:a11y && npm run audit:lighthouse'",
+    "qa:server-checks": "bash -lc 'set -euo pipefail; npx --no-install wrangler pages dev . --port 8788 >/tmp/wrangler-pages-dev.log 2>&1 & SERVER_PID=$!; trap \"kill $SERVER_PID 2>/dev/null || true\" EXIT; npx wait-on http://127.0.0.1:8788; npm run audit:a11y && npm run audit:lighthouse'",
     "check:navigation-sim": "node scripts/check-navigation-sim.mjs",
     "check:extensionless-links": "node scripts/check-extensionless-links.mjs",
     "check:redirects-cloudflare": "node scripts/check-redirects-cloudflare.mjs",
