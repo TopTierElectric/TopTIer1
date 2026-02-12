@@ -57,7 +57,6 @@ npm run cf:whoami
 npm run cf:deploy
 ```
 
-
 ### Minimal verification
 
 ```bash
