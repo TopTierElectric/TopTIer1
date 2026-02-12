@@ -53,11 +53,11 @@ install_puppeteer_chrome() {
 }
 
 install_playwright_chromium() {
-  echo "Attempting Playwright Chromium install (with system deps)..." >&2
-  npx --yes playwright@1.54.2 install --with-deps chromium >&2
+  echo "Attempting Playwright Chromium install..." >&2
+  npx --yes playwright@1.54.2 install chromium >&2
 }
 
-install_system_chromium_linux() {
+install_browser_runtime_deps_linux() {
   if [[ "${WITH_CHROME_AUTO_APT:-1}" != "1" ]]; then
     return 0
   fi
@@ -66,9 +66,52 @@ install_system_chromium_linux() {
     return 0
   fi
 
-  echo "Attempting system Chromium install via apt-get for missing runtime dependencies..." >&2
+  echo "Attempting Linux browser runtime dependency install via apt-get..." >&2
   export DEBIAN_FRONTEND=noninteractive
   apt-get update -y >&2 || return 0
+
+  install_first_available_pkg() {
+    local candidates="$1"
+    IFS='|' read -r -a opts <<< "$candidates"
+    for pkg in "${opts[@]}"; do
+      if ! apt-cache show "$pkg" >/dev/null 2>&1; then
+        continue
+      fi
+
+      if apt-get install -y --no-install-recommends "$pkg" >&2; then
+        return 0
+      fi
+
+      if apt-get install -y --fix-missing --no-install-recommends "$pkg" >&2; then
+        return 0
+      fi
+    done
+    return 0
+  }
+
+  local dep_sets=(
+    "libatk1.0-0|libatk1.0-0t64"
+    "libatk-bridge2.0-0|libatk-bridge2.0-0t64"
+    "libcups2|libcups2t64"
+    "libnss3"
+    "libx11-xcb1"
+    "libxcomposite1"
+    "libxdamage1"
+    "libxfixes3"
+    "libxrandr2"
+    "libgbm1"
+    "libgtk-3-0"
+    "libxkbcommon0"
+    "libatspi2.0-0|libatspi2.0-0t64"
+    "libxshmfence1"
+    "libasound2|libasound2t64"
+  )
+
+  for dep in "${dep_sets[@]}"; do
+    install_first_available_pkg "$dep"
+  done
+
+  # Optional fallback if no cached/installed browser can run yet.
   apt-get install -y chromium >&2 || apt-get install -y chromium-browser >&2 || true
 }
 
@@ -85,8 +128,9 @@ print_browser_diagnostics() {
 
 if ! discover_browser; then
   install_puppeteer_chrome || true
+  discover_browser || install_browser_runtime_deps_linux
   discover_browser || install_playwright_chromium || true
-  discover_browser || install_system_chromium_linux
+  discover_browser || install_browser_runtime_deps_linux
   discover_browser || {
     echo "CHROME_PATH is not set and no usable Chrome/Chromium executable was found after install attempts." >&2
     echo "Fix: install Chrome/Chromium dependencies or set CHROME_PATH to a valid browser executable." >&2

@@ -33,3 +33,35 @@ Then push `dist/clean-repo` to a new GitHub repo (see `docs/CLEAN_REPO_EXPORT.md
 ## Repository hygiene
 
 Legacy planning documents that are no longer used have been removed to keep the root and docs folders focused on active implementation and verification artifacts.
+
+## Cloudflare Pages via Wrangler
+
+This repository now includes reusable Wrangler deployment wiring:
+
+- `wrangler.jsonc` for local/project config
+- `cf:*` npm scripts in `package.json`
+- `.github/workflows/deploy-prod.yml` as the primary production deploy on `main`
+- `.github/workflows/deploy-cloudflare-pages.yml` as a manual fallback deploy workflow
+
+### Required GitHub Secrets
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+
+### One-time local setup
+
+```bash
+npm install
+npx wrangler login
+npm run cf:whoami
+npm run cf:deploy
+```
+
+### Minimal verification
+
+```bash
+npm run build
+npm run cf:whoami
+```
+
+> Note: Wrangler `4.64.0` does not support `wrangler pages deploy --dry-run`.
