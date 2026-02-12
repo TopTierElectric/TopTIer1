@@ -55,3 +55,13 @@ npx wrangler login
 npm run cf:whoami
 npm run cf:deploy
 ```
+
+
+### Minimal verification
+
+```bash
+npm run build
+npm run cf:whoami
+```
+
+> Note: Wrangler `4.64.0` does not support `wrangler pages deploy --dry-run`.
