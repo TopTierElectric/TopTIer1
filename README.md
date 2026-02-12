@@ -40,7 +40,8 @@ This repository now includes reusable Wrangler deployment wiring:
 
 - `wrangler.jsonc` for local/project config
 - `cf:*` npm scripts in `package.json`
-- `.github/workflows/deploy-cloudflare-pages.yml` for CI deploys on `main`
+- `.github/workflows/deploy-prod.yml` as the primary production deploy on `main`
+- `.github/workflows/deploy-cloudflare-pages.yml` as a manual fallback deploy workflow
 
 ### Required GitHub Secrets
 

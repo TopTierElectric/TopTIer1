@@ -4,7 +4,8 @@
 
 **Indicators checked:**
 
-- `wrangler.toml` or `.wrangler/`: **not found**
+- `wrangler.toml` at repo root: **present**
+- `wrangler.jsonc` at repo root: **present**
 - `/functions/` directory: **not found**
 - Build output directories (dist/, build/, public/): **not found**
 - `_headers` / `_redirects` files in repo root: **present**
