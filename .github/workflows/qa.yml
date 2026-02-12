@@ -37,23 +37,36 @@ jobs:
         run: |
           set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            libatk1.0-0 \
-            libnss3 \
-            libx11-xcb1 \
-            libxcomposite1 \
-            libxdamage1 \
-            libxrandr2 \
-            libgbm1 \
-            libgtk-3-0
 
-          # Ubuntu package naming differs across runner images.
-          if apt-cache show libasound2 >/dev/null 2>&1; then
-            sudo apt-get install -y --no-install-recommends libasound2
-          else
-            sudo apt-get install -y --no-install-recommends libasound2t64
-          fi
+          install_first_available_pkg() {
+            local candidates="$1"
+            IFS='|' read -r -a opts <<< "$candidates"
+            for pkg in "${opts[@]}"; do
+              if ! apt-cache show "$pkg" >/dev/null 2>&1; then
+                continue
+              fi
+              if sudo apt-get install -y --no-install-recommends "$pkg"; then
+                return 0
+              fi
+            done
+            return 0
+          }
 
+          dep_sets=(
+            "libatk1.0-0|libatk1.0-0t64"
+            "libnss3"
+            "libx11-xcb1"
+            "libxcomposite1"
+            "libxdamage1"
+            "libxrandr2"
+            "libgbm1"
+            "libgtk-3-0|libgtk-3-0t64"
+            "libasound2|libasound2t64"
+          )
+
+          for dep in "${dep_sets[@]}"; do
+            install_first_available_pkg "$dep"
+          done
       - name: Verify npm lockfile exists
         run: |
           if [ ! -f package-lock.json ]; then
