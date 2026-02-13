@@ -28,7 +28,7 @@
 **Fix**
 
 - Make primary CTA “Call or Book” with a secondary “Request Estimate” form below the hero. Make the form optional and reduce fields to name + phone/email.
-- Add a compact trust bar under the hero headline with “MI License #631210 • Licensed & Insured • 2-Year Warranty.”
+- Add a compact trust bar under the hero headline with “MI License #6220430 • Licensed & Insured • 2-Year Warranty.”
 - Replace emoji-based icons with a consistent stroke icon set.
 
 **Copy/paste spec (layout + tokens)**
@@ -38,7 +38,7 @@
   - `.hero-cta-secondary` = Outline button (Gold 600 border, Ink text)
   - `.hero-form` = vertical stack with 16px gap, label text 12px uppercase
 - Trust bar (new):
-  - `<div class="hero-trust">MI License #631210 • Licensed & Insured • 2-Year Warranty • Local West Michigan</div>`
+  - `<div class="hero-trust">MI License #6220430 • Licensed & Insured • 2-Year Warranty • Local West Michigan</div>`
   - Background: `--neutral-50`, text: `--ink-900`
 
 **Why it matters**
@@ -493,7 +493,7 @@ Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' h
 
 - Replace form endpoints with real submission target (Worker or CRM).
 - Add hero CTA row on Services and Service Areas.
-- Insert “MI License #631210” in hero trust line on Home and Services.
+- Insert “MI License #6220430” in hero trust line on Home and Services.
 - Add reassurance line to Contact and Booking forms.
 - Replace emoji trust icons with a consistent outline icon set.
 
