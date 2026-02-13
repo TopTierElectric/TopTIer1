@@ -50,12 +50,14 @@ jobs:
           set -euo pipefail
           CF_API_TOKEN="${CF_API_TOKEN_PRIMARY:-${CF_API_TOKEN_ALT:-${CF_API_TOKEN_LEGACY:-}}}"
           if [ -z "$CF_API_TOKEN" ]; then
-            echo "Missing secret: set one of CLOUDFLARE_API_TOKEN (preferred), CF_API_TOKEN, or CLOUDFLARE_TOKEN." >&2
-            exit 1
+            echo "::warning::Missing secret: set one of CLOUDFLARE_API_TOKEN (preferred), CF_API_TOKEN, or CLOUDFLARE_TOKEN."
+            echo "deploy_enabled=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
           if [ -z "$CF_ACCOUNT_ID" ]; then
-            echo "Missing secret: CLOUDFLARE_ACCOUNT_ID" >&2
-            exit 1
+            echo "::warning::Missing secret: CLOUDFLARE_ACCOUNT_ID"
+            echo "deploy_enabled=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
           PROJECT_NAME="$CF_PROJECT_NAME"
@@ -64,8 +66,9 @@ jobs:
           fi
 
           if [ -z "$PROJECT_NAME" ]; then
-            echo "Missing secret: set CLOUDFLARE_PAGES_PROJECT_NAME (preferred) or CLOUDFLARE_PAGES_PROJECT (legacy)." >&2
-            exit 1
+            echo "::warning::Missing secret: set CLOUDFLARE_PAGES_PROJECT_NAME (preferred) or CLOUDFLARE_PAGES_PROJECT (legacy)."
+            echo "deploy_enabled=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
           DEPLOY_DIR="${CF_DEPLOY_DIR:-.}"
@@ -74,9 +77,15 @@ jobs:
 
           echo "project_name=$PROJECT_NAME" >> "$GITHUB_OUTPUT"
           echo "deploy_dir=$DEPLOY_DIR" >> "$GITHUB_OUTPUT"
+          echo "deploy_enabled=true" >> "$GITHUB_OUTPUT"
           echo "CF_API_TOKEN=$CF_API_TOKEN" >> "$GITHUB_ENV"
 
+      - name: Skip deploy when required Cloudflare secrets are unavailable
+        if: steps.deploy-config.outputs.deploy_enabled != 'true'
+        run: echo "Skipping deployment because required Cloudflare secrets are not configured."
+
       - name: Deploy with Wrangler
+        if: steps.deploy-config.outputs.deploy_enabled == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ env.CF_API_TOKEN }}
