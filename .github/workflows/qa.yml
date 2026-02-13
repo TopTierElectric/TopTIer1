@@ -81,6 +81,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Validate GitHub workflow YAML
+        run: npm run check:workflows
+
       - name: Validate Cloudflare redirects output
         run: npm run check:redirects-cloudflare
 

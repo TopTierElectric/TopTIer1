@@ -61,6 +61,7 @@ npm run cf:deploy
 
 ```bash
 npm run build
+npm run check:workflows
 npm run cf:whoami
 ```
 
