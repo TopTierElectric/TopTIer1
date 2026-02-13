@@ -18,7 +18,7 @@ gallery.html
 
 ## Acceptance Criteria
 
-Footer only lists MI License #631210.
+Footer only lists MI License #6220430.
 
 ## Verification Steps
 
