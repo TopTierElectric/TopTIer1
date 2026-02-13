@@ -45,7 +45,7 @@ This repository now includes reusable Wrangler deployment wiring:
 
 ### Required GitHub Secrets
 
-- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_API_TOKEN` (preferred), `CF_API_TOKEN`, or `CLOUDFLARE_TOKEN`
 - `CLOUDFLARE_ACCOUNT_ID`
 
 ### One-time local setup
