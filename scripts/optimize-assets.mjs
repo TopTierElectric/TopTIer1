@@ -7,12 +7,12 @@ const logosDir = path.join(root, 'images', 'logos');
 const heroSource = path.join(root, 'assets', 'images', 'hero.jpg');
 
 const logoFiles = [
-  'TopTierElectrical_Primary_Black_2048.png',
-  'TopTierElectrical_Primary_FlatGold_2048.png',
-  'TopTierElectrical_Primary_FlatGold_4096.png',
-  'TopTierElectrical_Primary_FlatGold_512.png',
-  'TopTierElectrical_Primary_White_2048.png',
-  'TopTierElectrical_Primary_White_512.png'
+  'assets/images/logos/TopTierElectrical_Primary_Black_2048.png',
+  'assets/images/logos/TopTierElectrical_Primary_FlatGold_2048.png',
+  'assets/images/logos/TopTierElectrical_Primary_FlatGold_4096.png',
+  'assets/images/logos/TopTierElectrical_Primary_FlatGold_512.png',
+  'assets/images/logos/TopTierElectrical_Primary_White_2048.png',
+  'assets/images/logos/TopTierElectrical_Primary_White_512.png'
 ];
 
 const ensureDir = (dir) => {
