@@ -67,6 +67,8 @@ jobs:
 
           DEPLOY_DIR="${CF_DEPLOY_DIR:-.}"
 
+          echo "::add-mask::$CF_API_TOKEN"
+
           echo "project_name=$PROJECT_NAME" >> "$GITHUB_OUTPUT"
           echo "deploy_dir=$DEPLOY_DIR" >> "$GITHUB_OUTPUT"
 
