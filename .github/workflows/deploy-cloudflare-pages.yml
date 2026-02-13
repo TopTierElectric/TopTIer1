@@ -24,8 +24,24 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Resolve Cloudflare deploy token
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN_PRIMARY: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN_ALT: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN_LEGACY: ${{ secrets.CLOUDFLARE_TOKEN }}
+        run: |
+          set -euo pipefail
+          CF_TOKEN="${CLOUDFLARE_API_TOKEN_PRIMARY:-${CLOUDFLARE_API_TOKEN_ALT:-${CLOUDFLARE_API_TOKEN_LEGACY:-}}}"
+          if [ -z "$CF_TOKEN" ]; then
+            echo "Missing secret: set one of CLOUDFLARE_API_TOKEN (preferred), CF_API_TOKEN, or CLOUDFLARE_TOKEN." >&2
+            exit 1
+          fi
+          echo "::add-mask::$CF_TOKEN"
+          echo "CLOUDFLARE_API_TOKEN=$CF_TOKEN" >> "$GITHUB_ENV"
+
       - name: Deploy to Cloudflare Pages
         run: npx wrangler@4.64.0 pages deploy . --project-name=toptier-electrical --branch=main
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ env.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

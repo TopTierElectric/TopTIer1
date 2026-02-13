@@ -39,15 +39,18 @@ jobs:
         id: deploy-config
         shell: bash
         env:
-          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_API_TOKEN_PRIMARY: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_API_TOKEN_ALT: ${{ secrets.CF_API_TOKEN }}
+          CF_API_TOKEN_LEGACY: ${{ secrets.CLOUDFLARE_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CF_PROJECT_NAME: ${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME }}
           CF_PROJECT_LEGACY: ${{ secrets.CLOUDFLARE_PAGES_PROJECT }}
           CF_DEPLOY_DIR: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_DIR }}
         run: |
           set -euo pipefail
+          CF_API_TOKEN="${CF_API_TOKEN_PRIMARY:-${CF_API_TOKEN_ALT:-${CF_API_TOKEN_LEGACY:-}}}"
           if [ -z "$CF_API_TOKEN" ]; then
-            echo "Missing secret: CLOUDFLARE_API_TOKEN" >&2
+            echo "Missing secret: set one of CLOUDFLARE_API_TOKEN (preferred), CF_API_TOKEN, or CLOUDFLARE_TOKEN." >&2
             exit 1
           fi
           if [ -z "$CF_ACCOUNT_ID" ]; then
@@ -67,13 +70,16 @@ jobs:
 
           DEPLOY_DIR="${CF_DEPLOY_DIR:-.}"
 
+          echo "::add-mask::$CF_API_TOKEN"
+
           echo "project_name=$PROJECT_NAME" >> "$GITHUB_OUTPUT"
           echo "deploy_dir=$DEPLOY_DIR" >> "$GITHUB_OUTPUT"
+          echo "CF_API_TOKEN=$CF_API_TOKEN" >> "$GITHUB_ENV"
 
       - name: Deploy with Wrangler
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ env.CF_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: >-
             pages deploy ${{ steps.deploy-config.outputs.deploy_dir }}
