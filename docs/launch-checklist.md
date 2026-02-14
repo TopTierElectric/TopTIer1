@@ -1,0 +1,16 @@
+# Launch Checklist (Non-Negotiable)
+
+## Build gates (must pass)
+- No broken internal links
+- Every page has unique title + meta description
+- Exactly one H1 per page
+- Canonicals correct
+- robots + sitemap generated
+- License number consistent everywhere (MI License #6220430)
+- Forms have labels / accessibility
+
+## Manual checks
+- Mobile: sticky bar does not cover submit buttons
+- Booking form submits and redirects to /thank-you
+- Emergency call CTA works on mobile
+- GBP links use UTMs

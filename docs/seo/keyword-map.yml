@@ -1,0 +1,21 @@
+pages:
+  /services:
+    primary: "electrician west michigan"
+    secondary:
+      - "electrical contractor west michigan"
+  /panel-upgrades:
+    primary: "electrical panel upgrade west michigan"
+    secondary:
+      - "service upgrade electrician"
+  /ev-chargers:
+    primary: "ev charger installation west michigan"
+    secondary:
+      - "level 2 charger install"
+  /generators:
+    primary: "generator installation west michigan"
+    secondary:
+      - "transfer switch installation"
+  /electrician-grand-rapids:
+    primary: "electrician grand rapids mi"
+    secondary:
+      - "electrical panel upgrade grand rapids"
