@@ -1,6 +1,7 @@
 # Launch Checklist (Non-Negotiable)
 
 ## Build gates (must pass)
+- Full sweep verification passes (`npm run verify:full-sweep`)
 - Zero-update verification passes for 3 continuous runs (`npm run verify:stability`)
 - Verification run is zero-update clean (`npm run verify:zero-updates`)
 - No broken internal links
