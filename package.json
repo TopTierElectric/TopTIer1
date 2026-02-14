@@ -23,7 +23,7 @@
     "repo:clean-export": "node scripts/create-clean-repo.mjs",
     "audit:images": "node scripts/audit-image-text-references.js",
     "qa:server-checks": "bash -lc 'set -euo pipefail; if [ -x node_modules/.bin/wrangler ]; then WRANGLER=node_modules/.bin/wrangler; WRANGLER_ARGS=\"pages dev . --port 8788\"; else WRANGLER=npx; WRANGLER_ARGS=\"--yes wrangler@4.64.0 pages dev . --port 8788\"; fi; bash -lc \"$WRANGLER $WRANGLER_ARGS\" >/tmp/wrangler-pages-dev.log 2>&1 & SERVER_PID=$!; trap \"kill $SERVER_PID 2>/dev/null || true\" EXIT; npx wait-on http://127.0.0.1:8788; npm run audit:a11y && npm run audit:lighthouse'",
-    "check:navigation-sim": "node scripts/check-navigation-sim.mjs",
+    "check:navigation-sim": "PAGES_DEV_PORT=8790 node scripts/check-navigation-sim.mjs",
     "check:extensionless-links": "node scripts/check-extensionless-links.mjs",
     "check:redirects-cloudflare": "node scripts/check-redirects-cloudflare.mjs",
     "check:extensionless-collisions": "node scripts/check-extensionless-collisions.mjs",
