@@ -1,6 +1,7 @@
 # Launch Checklist (Non-Negotiable)
 
 ## Build gates (must pass)
+- Verification run is zero-update clean (`npm run verify:zero-updates`)
 - No broken internal links
 - Every page has unique title + meta description
 - Exactly one H1 per page

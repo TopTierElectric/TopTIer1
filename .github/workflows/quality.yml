@@ -13,4 +13,4 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: NODE_ENV=production npm run build
+      - run: npm run verify:zero-updates

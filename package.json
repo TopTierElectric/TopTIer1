@@ -2,12 +2,15 @@
   "name": "toptier-electrical-site",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=20.11.0" },
+  "engines": {
+    "node": ">=20.11.0"
+  },
   "scripts": {
     "clean": "node scripts/clean.mjs",
     "build": "node scripts/build.mjs",
     "verify": "node scripts/verify.mjs",
-    "dev": "node scripts/dev.mjs"
+    "dev": "node scripts/dev.mjs",
+    "verify:zero-updates": "node scripts/verify-zero-updates.mjs"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
