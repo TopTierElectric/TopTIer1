@@ -1,0 +1,7 @@
+- id: P0-NAV-001
+  title: "Unify header/footer across all pages"
+  priority: P0
+  done_when:
+    - "All pages compile through src/partials/layout.html"
+    - "No page contains custom header/footer markup"
+    - "CI build passes"
