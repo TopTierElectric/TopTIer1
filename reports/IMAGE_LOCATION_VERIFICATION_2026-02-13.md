@@ -1,9 +1,8 @@
-# Image Location Verification — 2026-02-13
+# Image Location Verification — 2026-02-14 (Re-Verification)
 
 ## Scope
-Re-verified the prior changes from:
-- `7b6270e` Audit image paths and centralize brand logo asset locations
-- `ad615c4` Fix logo optimization path resolution
+Re-verified the currently landed image-location changes from the latest branch state:
+- `ca846e8` Codex-generated pull request
 
 ## Verification checks
 - `node scripts/audit-image-text-references.js`
@@ -28,4 +27,4 @@ Re-verified the prior changes from:
   - Generated assets were intentionally cleaned after verification and not committed.
 
 ## Conclusion
-All image-path centralization changes are verified as correct with current repository checks.
+All image-path centralization and follow-up optimizer changes are verified as correct in the current repository state.
