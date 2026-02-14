@@ -10,7 +10,8 @@
     "build": "node scripts/build.mjs",
     "verify": "node scripts/verify.mjs",
     "dev": "node scripts/dev.mjs",
-    "verify:zero-updates": "node scripts/verify-zero-updates.mjs"
+    "verify:zero-updates": "node scripts/verify-zero-updates.mjs",
+    "verify:stability": "node scripts/verify-stability.mjs"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
