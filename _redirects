@@ -11,3 +11,11 @@
 /pricing /services 301
 /financing /services 301
 /financing.html /services 301
+
+# Legacy logo file locations migrated to assets/images/logos
+/TopTierElectrical_Primary_Black_2048.png /assets/images/logos/TopTierElectrical_Primary_Black_2048.png 301
+/TopTierElectrical_Primary_FlatGold_2048.png /assets/images/logos/TopTierElectrical_Primary_FlatGold_2048.png 301
+/TopTierElectrical_Primary_FlatGold_4096.png /assets/images/logos/TopTierElectrical_Primary_FlatGold_4096.png 301
+/TopTierElectrical_Primary_FlatGold_512.png /assets/images/logos/TopTierElectrical_Primary_FlatGold_512.png 301
+/TopTierElectrical_Primary_White_2048.png /assets/images/logos/TopTierElectrical_Primary_White_2048.png 301
+/TopTierElectrical_Primary_White_512.png /assets/images/logos/TopTierElectrical_Primary_White_512.png 301

@@ -3,7 +3,7 @@ import path from 'path';
 import sharp from 'sharp';
 
 const root = process.cwd();
-const logosDir = path.join(root, 'images', 'logos');
+const logosDir = path.join(root, 'assets', 'images', 'logos');
 const heroSource = path.join(root, 'assets', 'images', 'hero.jpg');
 
 const logoFiles = [
