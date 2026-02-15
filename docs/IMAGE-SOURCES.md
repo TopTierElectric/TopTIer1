@@ -29,3 +29,51 @@ All images here are stock assets. Do not imply depicted individuals are employee
 - License: Pending verification
 - Download date: Unknown
 - Notes: Original hero variant retained for fallback.
+
+- Local file: assets/images/logos/TopTierElectrical_Primary_Black_2048.png
+- Source page: Internal Top Tier Electrical brand identity package
+- Direct download: N/A (owner-supplied brand asset)
+- Author: Top Tier Electrical
+- License: Company-owned brand asset (usage permitted for this site)
+- Download date: Unknown (legacy repository asset)
+- Notes: Relocated from repository root to assets/images/logos for centralized logo management.
+
+- Local file: assets/images/logos/TopTierElectrical_Primary_FlatGold_2048.png
+- Source page: Internal Top Tier Electrical brand identity package
+- Direct download: N/A (owner-supplied brand asset)
+- Author: Top Tier Electrical
+- License: Company-owned brand asset (usage permitted for this site)
+- Download date: Unknown (legacy repository asset)
+- Notes: Relocated from repository root to assets/images/logos for centralized logo management.
+
+- Local file: assets/images/logos/TopTierElectrical_Primary_FlatGold_4096.png
+- Source page: Internal Top Tier Electrical brand identity package
+- Direct download: N/A (owner-supplied brand asset)
+- Author: Top Tier Electrical
+- License: Company-owned brand asset (usage permitted for this site)
+- Download date: Unknown (legacy repository asset)
+- Notes: Relocated from repository root to assets/images/logos for centralized logo management.
+
+- Local file: assets/images/logos/TopTierElectrical_Primary_FlatGold_512.png
+- Source page: Internal Top Tier Electrical brand identity package
+- Direct download: N/A (owner-supplied brand asset)
+- Author: Top Tier Electrical
+- License: Company-owned brand asset (usage permitted for this site)
+- Download date: Unknown (legacy repository asset)
+- Notes: Relocated from repository root to assets/images/logos for centralized logo management.
+
+- Local file: assets/images/logos/TopTierElectrical_Primary_White_2048.png
+- Source page: Internal Top Tier Electrical brand identity package
+- Direct download: N/A (owner-supplied brand asset)
+- Author: Top Tier Electrical
+- License: Company-owned brand asset (usage permitted for this site)
+- Download date: Unknown (legacy repository asset)
+- Notes: Relocated from repository root to assets/images/logos for centralized logo management.
+
+- Local file: assets/images/logos/TopTierElectrical_Primary_White_512.png
+- Source page: Internal Top Tier Electrical brand identity package
+- Direct download: N/A (owner-supplied brand asset)
+- Author: Top Tier Electrical
+- License: Company-owned brand asset (usage permitted for this site)
+- Download date: Unknown (legacy repository asset)
+- Notes: Relocated from repository root to assets/images/logos for centralized logo management.
