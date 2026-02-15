@@ -7,8 +7,10 @@ for (let i = 1; i <= runs; i += 1) {
   console.log(`\n▶ Stability run ${i}/${runs}`);
   execSync("npm run verify:zero-updates", {
     stdio: "inherit",
-    env: process.env
+    env: process.env,
   });
 }
 
-console.log(`\n✅ Stability verification passed for ${runs} continuous run(s).`);
+console.log(
+  `\n✅ Stability verification passed for ${runs} continuous run(s).`,
+);

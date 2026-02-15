@@ -11,10 +11,12 @@ function runBuild() {
   return new Promise((resolve, reject) => {
     const p = spawn("node", ["scripts/build.mjs"], {
       stdio: "inherit",
-      env: { ...process.env, NODE_ENV: "development" }
+      env: { ...process.env, NODE_ENV: "development" },
     });
 
-    p.on("exit", code => (code === 0 ? resolve() : reject(new Error(`build failed: ${code}`))));
+    p.on("exit", (code) =>
+      code === 0 ? resolve() : reject(new Error(`build failed: ${code}`)),
+    );
   });
 }
 
@@ -37,14 +39,18 @@ const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, `http://localhost:${PORT}`);
     let reqPath = url.pathname;
 
-    if (reqPath.endsWith("/") && reqPath !== "/") reqPath = reqPath.slice(0, -1);
+    if (reqPath.endsWith("/") && reqPath !== "/")
+      reqPath = reqPath.slice(0, -1);
 
     const clean = reqPath.replace(/^\//, "");
     const isAsset = /\.(css|js|png|jpg|jpeg|webp|avif|svg|ico)$/i.test(reqPath);
 
-    const filePath = reqPath === "/"
-      ? path.join(DIST, "index.html")
-      : (isAsset ? path.join(DIST, clean) : path.join(DIST, clean, "index.html"));
+    const filePath =
+      reqPath === "/"
+        ? path.join(DIST, "index.html")
+        : isAsset
+          ? path.join(DIST, clean)
+          : path.join(DIST, clean, "index.html");
 
     const data = await fs.readFile(filePath);
     res.writeHead(200, { "Content-Type": contentType(filePath) });
@@ -55,7 +61,9 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => console.log(`✅ Dev server: http://localhost:${PORT}`));
+server.listen(PORT, () =>
+  console.log(`✅ Dev server: http://localhost:${PORT}`),
+);
 
 const watcher = chokidar.watch("src", { ignoreInitial: true });
 
