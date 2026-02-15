@@ -1,6 +1,7 @@
 # Canonical NAP Record (Single Source of Truth)
 
 Use ONLY:
+
 - Business Name: Top Tier Electrical
 - Phone: (616) 334-7159
 - Website: https://toptier-electrical.com
