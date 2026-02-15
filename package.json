@@ -1,10 +1,6 @@
 {
   "name": "toptier-electrical-site",
   "private": true,
-  "type": "module",
-  "engines": {
-    "node": ">=20.11.0"
-  },
   "scripts": {
     "build": "echo 'Static site - no build required'",
     "dev": "npx http-server -p 8888",
@@ -28,16 +24,28 @@
     "check:navigation-sim": "PAGES_DEV_PORT=8790 node scripts/check-navigation-sim.mjs",
     "check:extensionless-links": "node scripts/check-extensionless-links.mjs",
     "check:redirects-cloudflare": "node scripts/check-redirects-cloudflare.mjs",
-    "check:no-binaries": "bash scripts/check-no-binary-files.sh",
-    "check:navigation": "node scripts/check-navigation-sim.mjs",
-    "qa": "npm run verify:zero-updates"
+    "check:extensionless-collisions": "node scripts/check-extensionless-collisions.mjs",
+    "audit:lighthouse:pages": "scripts/with-chrome-path.sh bash -lc \"mkdir -p reports && npx lighthouse http://127.0.0.1:8788 --only-categories=performance,seo,accessibility,best-practices --output=json --output-path=reports/lh-pages.json --chrome-flags='--headless=new --no-sandbox'\"",
+    "cf:deploy": "npm run build && wrangler pages deploy . --project-name=toptier-electrical",
+    "cf:deploy:dist": "wrangler pages deploy ./dist --project-name=toptier-electrical",
+    "cf:dev": "wrangler pages dev .",
+    "cf:whoami": "wrangler whoami",
+    "check:workflows": "node scripts/check-workflow-yaml.mjs"
+  },
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "node scripts/build.mjs",
+    "verify": "node scripts/verify.mjs",
+    "dev": "node scripts/dev.mjs",
+    "verify:zero-updates": "node scripts/verify-zero-updates.mjs",
+    "verify:stability": "node scripts/verify-stability.mjs",
+    "verify:full-sweep": "node scripts/verify-full-sweep.mjs"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
     "dotenv": "^16.4.5",
     "html-minifier-terser": "^7.2.0",
     "node-html-parser": "^6.1.13",
-    "sharp": "^0.33.5",
-    "yaml": "^2.5.1"
+    "sharp": "^0.33.5"
   }
 }
