@@ -1,6 +1,6 @@
-import { execSync } from "child_process";
-import fs from "fs";
-import path from "path";
+import { execSync } from "node:child_process";
+import fs from "node:fs";
+import path from "node:path";
 
 function run(cmd, env = {}) {
   execSync(cmd, { stdio: "inherit", env: { ...process.env, ...env } });
@@ -79,7 +79,7 @@ for (const svc of ['ev-chargers.html','generators.html','lighting.html','electri
   assert(raw.includes('<!--@include decision-cta -->'), `${file}: missing decision CTA include`);
 }
 
-const placeholders = execSync('rg -n "__PASTE_GOOGLE_REVIEW_LINK__" src/pages src/partials scripts src/data/site.json || true', { encoding: 'utf8' }).trim();
+const placeholders = execSync('rg -n "__PASTE_GOOGLE_REVIEW_LINK__" src/pages src/partials src/data/site.json || true', { encoding: 'utf8' }).trim();
 if (placeholders) {
   const allowed = placeholders.split('\n').every(line => line.includes('src/data/site.json'));
   assert(allowed, `placeholder found outside allowed validation list:
