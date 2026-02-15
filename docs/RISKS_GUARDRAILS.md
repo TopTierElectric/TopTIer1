@@ -25,3 +25,8 @@
 
 - One primary CTA per page plus a secondary “Call” CTA.
 - Trust stack on every money page (license, insurance clarity, warranty object, reviews proof, photos, process, risk reversal).
+
+## Workflow guardrails
+
+- Use `docs/ops/workflow-control-matrix.md` as the source of truth for mapping risk domains to scripts and workflow owners.
+- Add new automated checks to `qa.yml` first, then document any secondary duplication rationale.

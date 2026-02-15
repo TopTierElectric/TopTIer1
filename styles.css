@@ -423,6 +423,13 @@ header nav a:focus {
   margin-bottom: 2rem;
 }
 
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
 .hero-form {
   display: flex;
   flex-wrap: wrap;
@@ -1666,7 +1673,7 @@ footer p {
   font-weight: bold;
   font-size: 0.875rem;
   margin-bottom: 1rem;
-  animation: pulse 2s infinite;
+  animation: none;
 }
 @keyframes pulse {
   0%,
