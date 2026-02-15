@@ -1,2 +1,36 @@
-import fs from "fs/promises";import path from "path";import sharp from "sharp";import { ensureDir, copyFile } from "./fs.mjs";
-export async function buildImages({inDir,outDir,maxWidth=1600}){await ensureDir(outDir);const files=await fs.readdir(inDir).catch(()=>[]);for(const f of files){const src=path.join(inDir,f);if(/\.(svg|ico)$/i.test(f)){await copyFile(src,path.join(outDir,f));continue;}if(!/\.(png|jpe?g)$/i.test(f)){await copyFile(src,path.join(outDir,f));continue;}const base=f.replace(/\.(png|jpe?g)$/i,"");const img=sharp(src).resize({width:maxWidth,withoutEnlargement:true});await img.clone().avif({quality:55}).toFile(path.join(outDir,`${base}.avif`));await img.clone().webp({quality:78}).toFile(path.join(outDir,`${base}.webp`));await img.clone().jpeg({quality:82,mozjpeg:true}).toFile(path.join(outDir,`${base}.jpg`));}}
+import fs from "fs/promises";
+import path from "path";
+import sharp from "sharp";
+import { ensureDir, copyFile } from "./fs.mjs";
+export async function buildImages({ inDir, outDir, maxWidth = 1600 }) {
+  await ensureDir(outDir);
+  const files = await fs.readdir(inDir).catch(() => []);
+  for (const f of files) {
+    const src = path.join(inDir, f);
+    if (/\.(svg|ico)$/i.test(f)) {
+      await copyFile(src, path.join(outDir, f));
+      continue;
+    }
+    if (!/\.(png|jpe?g)$/i.test(f)) {
+      await copyFile(src, path.join(outDir, f));
+      continue;
+    }
+    const base = f.replace(/\.(png|jpe?g)$/i, "");
+    const img = sharp(src).resize({
+      width: maxWidth,
+      withoutEnlargement: true,
+    });
+    await img
+      .clone()
+      .avif({ quality: 55 })
+      .toFile(path.join(outDir, `${base}.avif`));
+    await img
+      .clone()
+      .webp({ quality: 78 })
+      .toFile(path.join(outDir, `${base}.webp`));
+    await img
+      .clone()
+      .jpeg({ quality: 82, mozjpeg: true })
+      .toFile(path.join(outDir, `${base}.jpg`));
+  }
+}
