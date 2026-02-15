@@ -1,0 +1,4 @@
+import path from "path";
+export function filePathToRoute(pagesRoot,filePath){const rel=path.relative(pagesRoot,filePath).replaceAll(path.sep,"/");if(rel==="index.html") return "/";if(rel.endsWith("/index.html")) return "/"+rel.replace("/index.html","");if(rel.endsWith(".html")) return "/"+rel.replace(".html","");return "/"+rel;}
+export function routeToOutFile(distRoot,route){if(route==="/") return path.join(distRoot,"index.html");return path.join(distRoot,route.replace(/^\//,""),"index.html");}
+export function canonicalUrl(siteDomain,route){const d=siteDomain.replace(/\/$/,"");return route==="/"?`${d}/`:`${d}${route}`;}
