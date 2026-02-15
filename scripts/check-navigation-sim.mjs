@@ -7,7 +7,7 @@ import { spawn } from "node:child_process";
 const PORT = Number(process.env.PAGES_DEV_PORT || 8788);
 const HOST = "127.0.0.1";
 const BASE_URL = `http://${HOST}:${PORT}`;
-const OUTPUT_DIR = path.resolve(process.env.PAGES_OUTPUT_DIR || ".");
+const OUTPUT_DIR = path.resolve(process.env.PAGES_OUTPUT_DIR || "dist");
 const MAX_REDIRECTS = 10;
 const WRANGLER_CMD = process.platform === "win32" ? "wrangler.cmd" : "wrangler";
 
