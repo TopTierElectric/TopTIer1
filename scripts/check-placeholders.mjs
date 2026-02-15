@@ -6,7 +6,7 @@ const disallowed = [
   "your-email@example.com",
   "REPLACE_WITH_REAL_TOKEN",
   "YOUR_ID_HERE",
-  "__PASTE_GOOGLE_REVIEW_LINK__"
+  "__PASTE_GOOGLE_REVIEW_LINK__",
 ];
 
 const root = process.cwd();
@@ -26,4 +26,6 @@ if (hits.length) {
   process.exit(1);
 }
 
-console.log(`✅ Placeholder check passed (${htmlFiles.length} HTML files scanned).`);
+console.log(
+  `✅ Placeholder check passed (${htmlFiles.length} HTML files scanned).`,
+);
