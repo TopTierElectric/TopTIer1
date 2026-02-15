@@ -26,3 +26,6 @@ build/
 
 # Netlify
 .netlify/
+
+# Archives
+*.zip
