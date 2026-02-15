@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require("fs");
-const path = require("path");
+import fs from "node:fs";
+import path from "node:path";
 
 const requestedBaseUrl = process.argv[2] || "http://localhost:8888/";
 const outputDir = process.argv[3] || "reports";

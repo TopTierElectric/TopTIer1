@@ -7,7 +7,8 @@ import { spawn } from "node:child_process";
 const PORT = Number(process.env.PAGES_DEV_PORT || 8788);
 const HOST = "127.0.0.1";
 const BASE_URL = `http://${HOST}:${PORT}`;
-const OUTPUT_DIR = path.resolve(process.env.PAGES_OUTPUT_DIR || ".");
+const DEFAULT_OUTPUT_DIR = fs.existsSync("dist") ? "dist" : ".";
+const OUTPUT_DIR = path.resolve(process.env.PAGES_OUTPUT_DIR || DEFAULT_OUTPUT_DIR);
 const MAX_REDIRECTS = 10;
 const WRANGLER_CMD = process.platform === "win32" ? "wrangler.cmd" : "wrangler";
 
@@ -31,7 +32,7 @@ const ensureOutputDir = () => {
   }
 };
 
-const DEFAULT_IGNORED_DIRS = new Set(["node_modules", ".git", ".wrangler"]);
+const DEFAULT_IGNORED_DIRS = new Set(["node_modules", ".git", ".wrangler", "src", "reports", "implementation_packets"]);
 
 const discoverSeedRoutes = (dir, rootDir = dir) => {
   const seeds = new Set();
