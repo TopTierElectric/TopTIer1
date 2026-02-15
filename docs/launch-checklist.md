@@ -13,6 +13,7 @@
 - Forms have labels / accessibility
 
 ## Manual checks
+
 - Mobile: sticky bar does not cover submit buttons
 - Booking form submits and redirects to /thank-you
 - Emergency call CTA works on mobile
