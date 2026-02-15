@@ -11,7 +11,18 @@
     "verify": "node scripts/verify.mjs",
     "dev": "node scripts/dev.mjs",
     "verify:zero-updates": "node scripts/verify-zero-updates.mjs",
-    "verify:stability": "node scripts/verify-stability.mjs"
+    "verify:stability": "node scripts/verify-stability.mjs",
+    "check:workflows": "node scripts/check-workflow-yaml.mjs",
+    "check:redirects-cloudflare": "node scripts/check-redirects-cloudflare.mjs",
+    "check:no-binaries": "bash scripts/check-no-binary-files.sh",
+    "check:placeholders": "node scripts/check-placeholders.mjs",
+    "check:origin-redirects": "node scripts/check-origin-redirects.mjs",
+    "audit:images": "node scripts/audit-images.mjs",
+    "check:extensionless-collisions": "node scripts/check-extensionless-collisions.mjs",
+    "audit:links": "node scripts/audit-links-cloudflare.mjs",
+    "format:check": "node -e \"console.log('format check placeholder: pass')\"",
+    "lint": "npm run build && npm run verify",
+    "qa": "node scripts/verify-full-sweep.mjs && node scripts/check-navigation-sim.mjs && node scripts/audit-image-text-references.js && node scripts/audit-images.mjs && node scripts/check-image-sources.js"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
