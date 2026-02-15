@@ -11,13 +11,28 @@
     "verify": "node scripts/verify.mjs",
     "dev": "node scripts/dev.mjs",
     "verify:zero-updates": "node scripts/verify-zero-updates.mjs",
-    "verify:stability": "node scripts/verify-stability.mjs"
+    "verify:stability": "node scripts/verify-stability.mjs",
+    "format:check": "npx --yes prettier@3.2.5 --check \"**/*.{html,css,js,json,md,mjs}\"",
+    "check:redirects-cloudflare": "node scripts/check-redirects-cloudflare.mjs",
+    "check:extensionless-links": "node scripts/check-extensionless-links.mjs",
+    "check:extensionless-collisions": "node scripts/check-extensionless-collisions.mjs",
+    "check:placeholders": "node scripts/check-placeholders.js",
+    "check:origin-redirects": "node scripts/check-origin-redirects.js",
+    "audit:images": "node scripts/audit-image-text-references.js",
+    "audit:links": "node scripts/audit-links-cloudflare.mjs",
+    "check:workflow-yaml": "node scripts/check-workflow-yaml.mjs",
+    "check:workflow-location": "node scripts/check-workflow-location.js",
+    "check:workflows": "npm run check:workflow-yaml && npm run check:workflow-location",
+    "check:no-binaries": "bash scripts/check-no-binary-files.sh",
+    "lint": "npm run check:extensionless-links && npm run check:extensionless-collisions",
+    "qa": "npm run format:check && npm run lint && npm run check:placeholders && npm run check:origin-redirects && npm run audit:images && npm run check:extensionless-collisions && npm run audit:links"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
     "dotenv": "^16.4.5",
     "html-minifier-terser": "^7.2.0",
     "node-html-parser": "^6.1.13",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "yaml": "^2.5.1"
   }
 }

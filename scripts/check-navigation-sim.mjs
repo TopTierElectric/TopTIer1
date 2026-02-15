@@ -7,7 +7,10 @@ import { spawn } from "node:child_process";
 const PORT = Number(process.env.PAGES_DEV_PORT || 8788);
 const HOST = "127.0.0.1";
 const BASE_URL = `http://${HOST}:${PORT}`;
-const OUTPUT_DIR = path.resolve(process.env.PAGES_OUTPUT_DIR || "dist");
+const DEFAULT_OUTPUT_DIR = fs.existsSync("dist") ? "dist" : ".";
+const OUTPUT_DIR = path.resolve(
+  process.env.PAGES_OUTPUT_DIR || DEFAULT_OUTPUT_DIR,
+);
 const MAX_REDIRECTS = 10;
 const WRANGLER_CMD = process.platform === "win32" ? "wrangler.cmd" : "wrangler";
 
@@ -27,11 +30,20 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const ensureOutputDir = () => {
   if (!fs.existsSync(OUTPUT_DIR) || !fs.statSync(OUTPUT_DIR).isDirectory()) {
-    throw new Error(`PAGES_OUTPUT_DIR does not exist or is not a directory: ${OUTPUT_DIR}`);
+    throw new Error(
+      `PAGES_OUTPUT_DIR does not exist or is not a directory: ${OUTPUT_DIR}`,
+    );
   }
 };
 
-const DEFAULT_IGNORED_DIRS = new Set(["node_modules", ".git", ".wrangler"]);
+const DEFAULT_IGNORED_DIRS = new Set([
+  "node_modules",
+  ".git",
+  ".wrangler",
+  "src",
+  "reports",
+  "implementation_packets",
+]);
 
 const discoverSeedRoutes = (dir, rootDir = dir) => {
   const seeds = new Set();
@@ -40,7 +52,11 @@ const discoverSeedRoutes = (dir, rootDir = dir) => {
   for (const entry of entries) {
     if (entry.isDirectory()) {
       if (DEFAULT_IGNORED_DIRS.has(entry.name)) continue;
-      for (const route of discoverSeedRoutes(path.join(dir, entry.name), rootDir)) seeds.add(route);
+      for (const route of discoverSeedRoutes(
+        path.join(dir, entry.name),
+        rootDir,
+      ))
+        seeds.add(route);
       continue;
     }
 
@@ -68,11 +84,19 @@ const discoverSeedRoutes = (dir, rootDir = dir) => {
 
 const buildSeedRoutes = () => {
   const configured = process.env.NAV_SIM_SEED_ROUTES
-    ? process.env.NAV_SIM_SEED_ROUTES.split(",").map((route) => route.trim()).filter(Boolean)
+    ? process.env.NAV_SIM_SEED_ROUTES.split(",")
+        .map((route) => route.trim())
+        .filter(Boolean)
     : [];
 
   if (configured.length) {
-    return [...new Set(configured.map((route) => (route.startsWith("/") ? route : `/${route}`)))];
+    return [
+      ...new Set(
+        configured.map((route) =>
+          route.startsWith("/") ? route : `/${route}`,
+        ),
+      ),
+    ];
   }
 
   return [...discoverSeedRoutes(OUTPUT_DIR)];
@@ -80,7 +104,8 @@ const buildSeedRoutes = () => {
 
 const extractInternalLinks = (html, sourcePath) => {
   const links = new Set();
-  const anchorHrefRegex = /<a\b[^>]*\bhref\s*=\s*(?:"([^"]+)"|'([^']+)'|([^\s>]+))/gi;
+  const anchorHrefRegex =
+    /<a\b[^>]*\bhref\s*=\s*(?:"([^"]+)"|'([^']+)'|([^\s>]+))/gi;
 
   for (const match of html.matchAll(anchorHrefRegex)) {
     const rawHref = (match[1] || match[2] || match[3] || "").trim();
@@ -94,7 +119,8 @@ const extractInternalLinks = (html, sourcePath) => {
       continue;
     }
 
-    if (candidate.hostname !== HOST || candidate.port !== String(PORT)) continue;
+    if (candidate.hostname !== HOST || candidate.port !== String(PORT))
+      continue;
 
     candidate.hash = "";
     links.add(`${candidate.pathname}${candidate.search}`);
@@ -124,9 +150,10 @@ const waitForServer = async (wrangler) => {
 
   while (Date.now() - startedAt < timeoutMs) {
     if (startupFailure) {
-      const context = startupFailure.type === "error"
-        ? `failed to start (${startupFailure.reason})`
-        : `exited before startup (${startupFailure.reason})`;
+      const context =
+        startupFailure.type === "error"
+          ? `failed to start (${startupFailure.reason})`
+          : `exited before startup (${startupFailure.reason})`;
       throw new Error(`wrangler pages dev ${context}`);
     }
 
@@ -143,20 +170,19 @@ const waitForServer = async (wrangler) => {
   throw new Error(`Timed out waiting for wrangler pages dev at ${BASE_URL}`);
 };
 
-
 const expectedCanonicalForHtmlRoute = (route) => {
   const parsed = new URL(route, BASE_URL);
   const pathname = parsed.pathname;
 
-  if (!pathname.endsWith('.html')) return null;
+  if (!pathname.endsWith(".html")) return null;
 
   let canonicalPath;
-  if (pathname === '/index.html') {
-    canonicalPath = '/';
-  } else if (pathname.endsWith('/index.html')) {
-    canonicalPath = pathname.slice(0, -'index.html'.length);
+  if (pathname === "/index.html") {
+    canonicalPath = "/";
+  } else if (pathname.endsWith("/index.html")) {
+    canonicalPath = pathname.slice(0, -"index.html".length);
   } else {
-    canonicalPath = pathname.slice(0, -'.html'.length);
+    canonicalPath = pathname.slice(0, -".html".length);
   }
 
   return `${canonicalPath}${parsed.search}`;
@@ -169,20 +195,34 @@ const fetchFinal = async (route) => {
 
   for (let i = 0; i < MAX_REDIRECTS; i += 1) {
     if (visited.has(current)) {
-      return { finalPath: current, status: 0, chain, body: "", note: "redirect-loop" };
+      return {
+        finalPath: current,
+        status: 0,
+        chain,
+        body: "",
+        note: "redirect-loop",
+      };
     }
 
     visited.add(current);
-    const response = await fetch(`${BASE_URL}${current}`, { redirect: "manual" });
+    const response = await fetch(`${BASE_URL}${current}`, {
+      redirect: "manual",
+    });
     chain.push(`${current} [${response.status}]`);
 
     if (response.status >= 300 && response.status < 400) {
       const location = response.headers.get("location");
-      if (!location) return { finalPath: current, status: response.status, chain, body: "" };
+      if (!location)
+        return { finalPath: current, status: response.status, chain, body: "" };
 
       const next = new URL(location, `${BASE_URL}${current}`);
       if (next.hostname !== HOST || next.port !== String(PORT)) {
-        return { finalPath: `${next.pathname}${next.search}`, status: response.status, chain, body: "" };
+        return {
+          finalPath: `${next.pathname}${next.search}`,
+          status: response.status,
+          chain,
+          body: "",
+        };
       }
 
       current = `${next.pathname}${next.search}`;
@@ -194,7 +234,13 @@ const fetchFinal = async (route) => {
     return { finalPath: current, status: response.status, chain, body };
   }
 
-  return { finalPath: current, status: 0, chain, body: "", note: "redirect-limit" };
+  return {
+    finalPath: current,
+    status: 0,
+    chain,
+    body: "",
+    note: "redirect-limit",
+  };
 };
 
 const stopWrangler = async (wrangler) => {
@@ -206,7 +252,10 @@ const stopWrangler = async (wrangler) => {
     wrangler.kill("SIGTERM");
   }
 
-  await Promise.race([new Promise((resolve) => wrangler.once("exit", resolve)), sleep(2_000)]);
+  await Promise.race([
+    new Promise((resolve) => wrangler.once("exit", resolve)),
+    sleep(2_000),
+  ]);
 
   if (wrangler.exitCode === null) {
     try {
@@ -222,7 +271,9 @@ const run = async () => {
   const seedRoutes = buildSeedRoutes();
 
   if (!seedRoutes.length) {
-    throw new Error(`No seed routes discovered in output directory: ${OUTPUT_DIR}`);
+    throw new Error(
+      `No seed routes discovered in output directory: ${OUTPUT_DIR}`,
+    );
   }
 
   const wranglerExec = resolveWranglerCommand();
@@ -232,8 +283,12 @@ const run = async () => {
     { stdio: ["ignore", "pipe", "pipe"], detached: true },
   );
 
-  wrangler.stdout.on("data", (chunk) => process.stdout.write(`[wrangler] ${chunk}`));
-  wrangler.stderr.on("data", (chunk) => process.stderr.write(`[wrangler] ${chunk}`));
+  wrangler.stdout.on("data", (chunk) =>
+    process.stdout.write(`[wrangler] ${chunk}`),
+  );
+  wrangler.stderr.on("data", (chunk) =>
+    process.stderr.write(`[wrangler] ${chunk}`),
+  );
 
   const queue = [...seedRoutes];
   const seen = new Set();
@@ -250,12 +305,16 @@ const run = async () => {
       const result = await fetchFinal(route);
 
       if (result.status >= 400) {
-        failures.push(`${route} -> ${result.finalPath} returned ${result.status} (${result.chain.join(" -> ")})`);
+        failures.push(
+          `${route} -> ${result.finalPath} returned ${result.status} (${result.chain.join(" -> ")})`,
+        );
         continue;
       }
 
       if (result.note) {
-        failures.push(`${route} ended with ${result.note} (${result.chain.join(" -> ")})`);
+        failures.push(
+          `${route} ended with ${result.note} (${result.chain.join(" -> ")})`,
+        );
         continue;
       }
 
@@ -283,7 +342,9 @@ const run = async () => {
     process.exit(1);
   }
 
-  console.log(`✅ Wrangler navigation simulation passed (${seen.size} routes checked from ${seedRoutes.length} seeds).`);
+  console.log(
+    `✅ Wrangler navigation simulation passed (${seen.size} routes checked from ${seedRoutes.length} seeds).`,
+  );
 };
 
 run().catch((error) => {
