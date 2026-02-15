@@ -1,0 +1,44 @@
+<!--@meta
+{
+  "title": "Contact | Top Tier Electrical",
+  "description": "Contact Top Tier Electrical for West Michigan electrical service. Call/text or send a message to confirm scope and next steps.",
+  "pageType": "contact",
+  "service": "none",
+  "city": "none",
+  "indexable": true,
+  "sitemap": {
+    "priority": 0.6,
+    "changefreq": "monthly"
+  },
+  "breadcrumb": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ]
+}
+-->
+<section class="container">
+  <h1>Contact</h1>
+  <p>Call/text for fast response, or send a message.</p>
+  <!--@include cta-call-inline -->
+  <form
+    class="form"
+    data-form="contact"
+    action="https://formsubmit.co/info@toptier-electrical.com"
+    method="POST"
+  >
+    <label for="cname">Name</label
+    ><input id="cname" name="name" required /><label for="cemail">Email</label
+    ><input id="cemail" name="email" type="email" required /><label
+      for="cmessage"
+      >Message</label
+    ><textarea id="cmessage" name="message" rows="6" required></textarea
+    ><button class="btn btn-primary" type="submit">Send Message</button>
+  </form>
+  <!--@include decision-cta -->
+</section>

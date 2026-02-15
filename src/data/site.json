@@ -1,0 +1,117 @@
+{
+  "brand": "Top Tier Electrical",
+  "domain": "https://toptier-electrical.com",
+  "locale": "en_US",
+  "phone_e164": "+16163347159",
+  "phone_display": "(616) 334-7159",
+  "email": "info@toptier-electrical.com",
+  "license_label": "MI License",
+  "license_number": "6220430",
+  "hours_display": "Mon-Fri 8am-6pm \u00b7 Sat 9am-1pm",
+  "service_areas_short": [
+    "Holland",
+    "Grand Rapids",
+    "Byron Center",
+    "Zeeland",
+    "Saugatuck",
+    "Hudsonville",
+    "Allegan"
+  ],
+  "cta_primary": {
+    "label": "Request Scheduling",
+    "href": "/booking"
+  },
+  "cta_secondary": {
+    "label": "Call / Text",
+    "href": "tel:+16163347159"
+  },
+  "nav_primary": [
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Service Areas",
+      "href": "/service-areas"
+    },
+    {
+      "label": "Gallery",
+      "href": "/gallery"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "FAQ",
+      "href": "/faq"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "nav_footer": [
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Residential",
+      "href": "/residential"
+    },
+    {
+      "label": "Commercial",
+      "href": "/commercial"
+    },
+    {
+      "label": "Financing",
+      "href": "/financing"
+    },
+    {
+      "label": "Emergency",
+      "href": "/emergency"
+    },
+    {
+      "label": "Testimonials",
+      "href": "/testimonials"
+    },
+    {
+      "label": "Leave a Review",
+      "href": "/reviews"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "gbp": {
+    "utm_profile": "?utm_source=google&utm_medium=organic&utm_campaign=gbp&utm_content=profile",
+    "utm_appointment": "?utm_source=google&utm_medium=organic&utm_campaign=gbp&utm_content=appointment",
+    "review_url": "https://g.page/r/CfExampleReview/review"
+  },
+  "redirects": [
+    {
+      "from": "/book-online",
+      "to": "/booking",
+      "status": 301
+    },
+    {
+      "from": "/schedule",
+      "to": "/booking",
+      "status": 301
+    }
+  ],
+  "headers": {
+    "security": true,
+    "assets_cache_immutable": true,
+    "html_cache_seconds": 3600
+  },
+  "validation": {
+    "forbidden_strings": ["631210", "__PASTE_GOOGLE_REVIEW_LINK__"]
+  }
+}
