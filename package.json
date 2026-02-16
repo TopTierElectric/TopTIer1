@@ -25,7 +25,8 @@
     "check:workflows": "npm run check:workflow-yaml && npm run check:workflow-location",
     "check:no-binaries": "bash scripts/check-no-binary-files.sh",
     "lint": "npm run check:extensionless-links && npm run check:extensionless-collisions",
-    "qa": "npm run format:check && npm run lint && npm run check:placeholders && npm run check:origin-redirects && npm run audit:images && npm run check:extensionless-collisions && npm run audit:links"
+    "qa": "npm run format:check && npm run lint && npm run check:placeholders && npm run check:origin-redirects && npm run audit:images && npm run check:extensionless-collisions && npm run audit:links",
+    "check:seo-quality-gates": "node scripts/seo-quality-gates.mjs"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
