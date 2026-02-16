@@ -29,6 +29,8 @@ function contentType(p) {
   if (p.endsWith(".webp")) return "image/webp";
   if (p.endsWith(".avif")) return "image/avif";
   if (p.endsWith(".ico")) return "image/x-icon";
+  if (p.endsWith(".txt")) return "text/plain; charset=utf-8";
+  if (p.endsWith(".xml")) return "application/xml; charset=utf-8";
   return "text/html; charset=utf-8";
 }
 
@@ -43,7 +45,9 @@ const server = http.createServer(async (req, res) => {
       reqPath = reqPath.slice(0, -1);
 
     const clean = reqPath.replace(/^\//, "");
-    const isAsset = /\.(css|js|png|jpg|jpeg|webp|avif|svg|ico)$/i.test(reqPath);
+    const isAsset = /\.(css|js|png|jpg|jpeg|webp|avif|svg|ico|txt|xml)$/i.test(
+      reqPath,
+    );
 
     const filePath =
       reqPath === "/"
