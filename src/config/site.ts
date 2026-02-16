@@ -11,9 +11,9 @@ export const SITE = {
   ogLocale: 'en_US',
 
   // TODO: fill in real values from your business
-  phoneE164: '+1XXXXXXXXXX',
-  phoneDisplay: '(XXX) XXX-XXXX',
-  smsE164: '+1XXXXXXXXXX',
+  phoneE164: '+16165550123',
+  phoneDisplay: '(616) 555-0123',
+  smsE164: '+16165550123',
   email: 'info@toptier-electrical.com',
 
   // Positioning (used for SEO + AEO)

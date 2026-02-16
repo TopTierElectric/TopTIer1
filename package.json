@@ -27,7 +27,10 @@
     "lint": "npm run check:extensionless-links && npm run check:extensionless-collisions",
     "qa": "npm run format:check && npm run lint && npm run check:placeholders && npm run check:origin-redirects && npm run audit:images && npm run check:extensionless-collisions && npm run audit:links",
     "seo:gates": "npm run check:seo-quality-gates",
-    "check:seo-quality-gates": "node scripts/seo-quality-gates.mjs"
+    "check:seo-quality-gates": "node scripts/seo-quality-gates.mjs",
+    "localseo:audit": "tsx scripts/local-seo-audit.ts --mode=static --outDir=artifacts/local-seo --failOnCritical",
+    "localseo:audit:live": "tsx scripts/local-seo-audit.ts --mode=live --baseUrl=https://www.toptier-electrical.com --outDir=artifacts/local-seo-live",
+    "localseo:ci": "tsx scripts/local-seo-audit.ts --mode=static --outDir=artifacts/local-seo --failOnCritical --failBelow=80"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
@@ -38,5 +41,9 @@
     "sharp": "^0.33.5",
     "yaml": "^2.5.1",
     "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "cheerio": "^1.2.0",
+    "tsx": "^4.21.0"
   }
 }
