@@ -2,7 +2,8 @@ import React from 'react'
 
 // Basic sanitizer per Next.js guidance: prevents "<" injection in JSON-LD.
 function toSafeJson(data: unknown): string {
-  return JSON.stringify(data).replace(/</g, '\\u003c')
+  const json = JSON.stringify(data)
+  return (json ?? 'null').replace(/</g, '\\u003c')
 }
 
 export function JsonLd({ data }: { data: unknown }) {
