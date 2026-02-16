@@ -99,7 +99,11 @@ export function LeadForm({ form }: { form: FormKind }) {
         <textarea name="message" rows={5} maxLength={4000} placeholder="Describe the issue, timeline, and any details that help." />
       </label>
 
-      <button type="submit" disabled={loading}>
+      <button
+        type="submit"
+        disabled={loading}
+        onClick={() => track({ event: 'lead_form_click', form, page_path: buildPagePath() })}
+      >
         {loading ? 'Sending…' : 'Request Service'}
       </button>
 
