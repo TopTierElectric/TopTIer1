@@ -6,7 +6,7 @@ import { SERVICES } from '@/config/services'
 import { buildPagePath } from '@/lib/analytics/events'
 import { track } from '@/components/analytics/Track'
 
-export type FormKind = 'home' | 'contact' | 'booking'
+type FormKind = 'home' | 'contact' | 'booking'
 
 export function LeadForm({ form }: { form: FormKind }) {
   const router = useRouter()
@@ -36,25 +36,21 @@ export function LeadForm({ form }: { form: FormKind }) {
 
     track({ event: 'lead_form_submit', form, page_path: payload.page_path })
 
-    try {
-      const res = await fetch('/api/leads', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
+    const res = await fetch('/api/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
 
-      if (!res.ok) {
-        setError('Something went wrong. Please call or text and we’ll take care of you.')
-        return
-      }
+    setLoading(false)
 
-      track({ event: 'lead_form_success', form, page_path: payload.page_path })
-      router.push(form === 'booking' ? '/thanks-booking' : '/thanks-contact')
-    } catch {
+    if (!res.ok) {
       setError('Something went wrong. Please call or text and we’ll take care of you.')
-    } finally {
-      setLoading(false)
+      return
     }
+
+    track({ event: 'lead_form_success', form, page_path: payload.page_path })
+    router.push(form === 'booking' ? '/thanks-booking' : '/thanks-contact')
   }
 
   return (
