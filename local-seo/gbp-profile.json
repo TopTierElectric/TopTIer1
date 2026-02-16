@@ -1,0 +1,47 @@
+{
+  "asOfDate": "2026-02-16",
+  "businessName": "Top Tier Electrical",
+  "isServiceAreaBusiness": true,
+  "addressShown": false,
+  "address": null,
+  "phoneE164": "+1XXXXXXXXXX",
+  "websiteUrl": "https://www.toptier-electrical.com/",
+  "appointmentUrl": "https://www.toptier-electrical.com/booking?utm_source=gbp&utm_medium=organic&utm_campaign=maps&utm_content=booking_link",
+  "primaryCategory": "Electrician",
+  "additionalCategories": [],
+  "serviceAreas": ["Holland, MI", "Grand Rapids, MI", "Zeeland, MI"],
+  "hours": {
+    "monday": "08:00-17:00",
+    "tuesday": "08:00-17:00",
+    "wednesday": "08:00-17:00",
+    "thursday": "08:00-17:00",
+    "friday": "08:00-17:00",
+    "saturday": "closed",
+    "sunday": "closed"
+  },
+  "services": [
+    {
+      "name": "Panel upgrades",
+      "description": "Upgrade or replace electrical panels for safety and capacity."
+    },
+    {
+      "name": "EV charger installation",
+      "description": "Home and commercial EV charger installs with load evaluation."
+    }
+  ],
+  "reviews": {
+    "rating": 4.9,
+    "count": 30,
+    "responseRatePercent": 95,
+    "lastReviewDate": "2026-02-01",
+    "lastOwnerResponseDate": "2026-02-05"
+  },
+  "photos": {
+    "count": 50,
+    "lastUploadDate": "2026-02-10"
+  },
+  "posts": {
+    "postingFrequencyPerMonth": 4,
+    "lastPostDate": "2026-02-12"
+  }
+}

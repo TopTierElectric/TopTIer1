@@ -1,0 +1,375 @@
+{
+  "asOfDate": "2026-02-16",
+  "baseUrl": "https://www.toptier-electrical.com",
+  "framework": "next_app_router",
+  "scores": {
+    "overall": {
+      "score": 85,
+      "coverage": 94
+    },
+    "perPillar": {
+      "relevance": {
+        "score": 85,
+        "coverage": 100
+      },
+      "distance": {
+        "score": 84,
+        "coverage": 80
+      },
+      "prominence": {
+        "score": 86,
+        "coverage": 100
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "CITATIONS_NAP_CONSISTENT",
+      "title": "Citations: NAP consistency across major directories (prominence reinforcement)",
+      "pillar": "prominence",
+      "weight": 6,
+      "severity": "medium",
+      "status": "warn",
+      "evidence": [
+        "Only 3 citations listed. Add major directories (Apple Maps, Bing, Yelp, etc.)."
+      ],
+      "fix": [
+        "Build a citations list and keep NAP consistent.",
+        "If service-area business (SAB), be consistent about address display where applicable."
+      ]
+    },
+    {
+      "id": "ENTITY_LOCALBUSINESS_SCHEMA_WIRED",
+      "title": "LocalBusiness/Electrician JSON-LD is wired into layout (entity clarity)",
+      "pillar": "relevance",
+      "weight": 4,
+      "severity": "critical",
+      "status": "pass",
+      "evidence": [
+        "Schema builder exists and layout references it."
+      ],
+      "fix": [
+        "Implement LocalBusiness (Electrician) JSON-LD and inject it globally in app/layout.tsx.",
+        "Ensure schema data matches visible NAP and service areas."
+      ],
+      "codexPrompt": "Add LocalBusiness/Electrician JSON-LD using a schema builder and inject via <script type=\"application/ld+json\"> in app/layout.tsx. Ensure telephone and areaServed match SITE config."
+    },
+    {
+      "id": "GBP_APPOINTMENT_URL_HAS_UTM",
+      "title": "GBP: Appointment URL includes UTM tracking (lead attribution)",
+      "pillar": "prominence",
+      "weight": 2,
+      "severity": "medium",
+      "status": "pass",
+      "evidence": [
+        "Appointment URL includes expected UTMs."
+      ],
+      "fix": [
+        "Set GBP appointment URL to /booking with UTMs: utm_source=gbp&utm_medium=organic&utm_campaign=maps."
+      ]
+    },
+    {
+      "id": "GBP_PHOTOS_FRESHNESS",
+      "title": "GBP: Photos are fresh (recent uploads)",
+      "pillar": "prominence",
+      "weight": 2,
+      "severity": "low",
+      "status": "pass",
+      "evidence": [
+        "photos.count=50",
+        "min=20",
+        "lastUpload=2026-02-10",
+        "freshnessDays=6"
+      ],
+      "fix": [
+        "Upload new, real job photos weekly (panels, EV chargers, lighting, team, before/after)."
+      ]
+    },
+    {
+      "id": "GBP_POSTS_FREQUENCY",
+      "title": "GBP: Posting cadence is consistent (local engagement)",
+      "pillar": "prominence",
+      "weight": 2,
+      "severity": "low",
+      "status": "pass",
+      "evidence": [
+        "postingFrequencyPerMonth=4"
+      ],
+      "fix": [
+        "Post weekly (2–4 posts/month): before/after, safety tips, seasonal generator readiness, etc."
+      ]
+    },
+    {
+      "id": "GBP_PRIMARY_CATEGORY_SET",
+      "title": "GBP: Primary category is set (relevance)",
+      "pillar": "relevance",
+      "weight": 3,
+      "severity": "high",
+      "status": "pass",
+      "evidence": [
+        "Primary category: Electrician"
+      ],
+      "fix": [
+        "Ensure primary category is accurate (commonly “Electrician”). Add only truly relevant secondary categories."
+      ]
+    },
+    {
+      "id": "GBP_REVIEW_RESPONSE_RATE",
+      "title": "GBP: Owner response rate meets threshold (trust + prominence)",
+      "pillar": "prominence",
+      "weight": 4,
+      "severity": "medium",
+      "status": "pass",
+      "evidence": [
+        "responseRatePercent=95"
+      ],
+      "fix": [
+        "Respond to reviews consistently (target 90%+ response rate)."
+      ]
+    },
+    {
+      "id": "GBP_REVIEWS_HEALTH",
+      "title": "GBP: Reviews meet quality threshold (rating + count)",
+      "pillar": "prominence",
+      "weight": 6,
+      "severity": "high",
+      "status": "pass",
+      "evidence": [
+        "rating=4.9",
+        "count=30",
+        "threshold=4.5/20"
+      ],
+      "fix": [
+        "Implement a review SOP: ask every satisfied customer, respond to every review.",
+        "Aim for steady growth and recent reviews."
+      ]
+    },
+    {
+      "id": "GBP_SAB_ADDRESS_HIDDEN",
+      "title": "GBP: Service-area business hides address (compliance + distance clarity)",
+      "pillar": "distance",
+      "weight": 5,
+      "severity": "critical",
+      "status": "pass",
+      "evidence": [
+        "GBP address is hidden for service-area business."
+      ],
+      "fix": [
+        "In Google Business Profile: set as Service-area business and hide address if you travel to customers.",
+        "Ensure service areas are correctly configured."
+      ],
+      "codexPrompt": "No code change: update GBP settings to hide address if SAB. Then update local-seo/gbp-profile.json to reflect the change."
+    },
+    {
+      "id": "GBP_SERVICE_AREAS_ALIGN_WITH_SITE",
+      "title": "GBP: Service areas align with SITE.serviceAreas",
+      "pillar": "distance",
+      "weight": 4,
+      "severity": "medium",
+      "status": "pass",
+      "evidence": [
+        "GBP and site service areas match exactly."
+      ],
+      "fix": [
+        "Keep GBP service areas and website service area list consistent.",
+        "If the business expands/shrinks, update both at the same time."
+      ],
+      "codexPrompt": "Update src/config/site.ts (SITE.serviceAreas) or local-seo/gbp-profile.json so the lists match (same spelling/cities)."
+    },
+    {
+      "id": "GBP_SERVICE_AREAS_LIMIT_20",
+      "title": "GBP: Service areas count is within Google’s limit (≤ 20)",
+      "pillar": "distance",
+      "weight": 2,
+      "severity": "high",
+      "status": "pass",
+      "evidence": [
+        "GBP service areas = 3."
+      ],
+      "fix": [
+        "Reduce GBP service areas to 20 or fewer; prioritize revenue cities and realistic coverage."
+      ]
+    },
+    {
+      "id": "GBP_SERVICES_LISTED",
+      "title": "GBP: Services list is populated (relevance to queries)",
+      "pillar": "relevance",
+      "weight": 3,
+      "severity": "medium",
+      "status": "warn",
+      "evidence": [
+        "GBP services count is low (2). Add core services."
+      ],
+      "fix": [
+        "Add your core services to GBP (panel upgrades, EV chargers, generators, troubleshooting, lighting)."
+      ]
+    },
+    {
+      "id": "GBP_WEBSITE_HOST_MATCH",
+      "title": "GBP: Website URL host matches site host (relevance consistency)",
+      "pillar": "relevance",
+      "weight": 3,
+      "severity": "medium",
+      "status": "pass",
+      "evidence": [
+        "Host match: toptier-electrical.com"
+      ],
+      "fix": [
+        "Update GBP website URL to the canonical site host (prefer https + primary domain)."
+      ]
+    },
+    {
+      "id": "LOC_LOCATION_PAGES_THIN_RISK",
+      "title": "Location pages are not thin/templated (doorway risk check)",
+      "pillar": "distance",
+      "weight": 4,
+      "severity": "high",
+      "status": "not_applicable",
+      "evidence": [
+        "No location pages detected (heuristic)."
+      ],
+      "fix": [
+        "Keep only a few high-value location pages and make them genuinely useful (local proof, FAQs, travel expectations).",
+        "Avoid scaling dozens of near-identical city pages (doorway risk)."
+      ]
+    },
+    {
+      "id": "NAP_PHONE_E164_VALID",
+      "title": "Site phone is valid E.164 (+1XXXXXXXXXX) and not a placeholder",
+      "pillar": "relevance",
+      "weight": 3,
+      "severity": "critical",
+      "status": "pass",
+      "evidence": [
+        "SITE.phoneE164 looks valid: +16165550123"
+      ],
+      "fix": [
+        "Set SITE.phoneE164 to a real E.164 phone number (e.g., +1616XXXXXXX)."
+      ],
+      "codexPrompt": "Update src/config/site.ts to set SITE.phoneE164 and SITE.phoneDisplay with real values."
+    },
+    {
+      "id": "SITE_CONTACT_HAS_TEL_SMS",
+      "title": "Contact surface includes clickable tel: and sms: links (lead friction reduction)",
+      "pillar": "relevance",
+      "weight": 3,
+      "severity": "high",
+      "status": "pass",
+      "evidence": [
+        "Found tel: and sms: in codebase."
+      ],
+      "fix": [
+        "Add a Call/Text CTA component and use it on /contact, /booking, and on high-intent service pages."
+      ],
+      "codexPrompt": "Create a CallTextCTA component with tel: and sms: links and include it on contact + booking pages."
+    },
+    {
+      "id": "SITE_SERVICE_AREAS_PAGE_MENTIONS_ALL_CITIES",
+      "title": "Site: /service-areas mentions all configured service areas (distance reinforcement)",
+      "pillar": "distance",
+      "weight": 5,
+      "severity": "high",
+      "status": "warn",
+      "evidence": [
+        "/service-areas verification unavailable in static mode. Run --mode=live."
+      ],
+      "fix": [
+        "Ensure /service-areas lists every city you serve (match GBP service areas).",
+        "Add scheduling/travel expectations and link to top services."
+      ],
+      "codexPrompt": "Expand /service-areas page: list each city in SITE.serviceAreas, add travel expectations, and link to Residential/Commercial hubs + top service pages."
+    },
+    {
+      "id": "TECH_ROBOTS_PRESENT",
+      "title": "robots.txt is implemented in repo (Next metadata route or public file)",
+      "pillar": "relevance",
+      "weight": 2,
+      "severity": "high",
+      "status": "fail",
+      "evidence": [
+        "No robots implementation found."
+      ],
+      "fix": [
+        "Add app/robots.ts (Next metadata route) or public/robots.txt at site root."
+      ],
+      "codexPrompt": "Create app/robots.ts (Next.js App Router metadata route) that references sitemap and allows crawling of public pages. Ensure /robots.txt returns 200."
+    },
+    {
+      "id": "TECH_SITEMAP_PRESENT",
+      "title": "sitemap.xml is implemented in repo (Next metadata route or static public sitemap)",
+      "pillar": "relevance",
+      "weight": 2,
+      "severity": "high",
+      "status": "pass",
+      "evidence": [
+        "sitemap implementation detected."
+      ],
+      "fix": [
+        "Add app/sitemap.ts (Next metadata route) or generate public/sitemap.xml at build time."
+      ],
+      "codexPrompt": "Create app/sitemap.ts that lists core pages and service pages using config-driven slugs."
+    }
+  ],
+  "prioritizedActions": [
+    {
+      "id": "SITE_SERVICE_AREAS_PAGE_MENTIONS_ALL_CITIES",
+      "title": "Site: /service-areas mentions all configured service areas (distance reinforcement)",
+      "pillar": "distance",
+      "weight": 5,
+      "severity": "high",
+      "status": "warn",
+      "evidence": [
+        "/service-areas verification unavailable in static mode. Run --mode=live."
+      ],
+      "fix": [
+        "Ensure /service-areas lists every city you serve (match GBP service areas).",
+        "Add scheduling/travel expectations and link to top services."
+      ],
+      "codexPrompt": "Expand /service-areas page: list each city in SITE.serviceAreas, add travel expectations, and link to Residential/Commercial hubs + top service pages."
+    },
+    {
+      "id": "TECH_ROBOTS_PRESENT",
+      "title": "robots.txt is implemented in repo (Next metadata route or public file)",
+      "pillar": "relevance",
+      "weight": 2,
+      "severity": "high",
+      "status": "fail",
+      "evidence": [
+        "No robots implementation found."
+      ],
+      "fix": [
+        "Add app/robots.ts (Next metadata route) or public/robots.txt at site root."
+      ],
+      "codexPrompt": "Create app/robots.ts (Next.js App Router metadata route) that references sitemap and allows crawling of public pages. Ensure /robots.txt returns 200."
+    },
+    {
+      "id": "CITATIONS_NAP_CONSISTENT",
+      "title": "Citations: NAP consistency across major directories (prominence reinforcement)",
+      "pillar": "prominence",
+      "weight": 6,
+      "severity": "medium",
+      "status": "warn",
+      "evidence": [
+        "Only 3 citations listed. Add major directories (Apple Maps, Bing, Yelp, etc.)."
+      ],
+      "fix": [
+        "Build a citations list and keep NAP consistent.",
+        "If service-area business (SAB), be consistent about address display where applicable."
+      ]
+    },
+    {
+      "id": "GBP_SERVICES_LISTED",
+      "title": "GBP: Services list is populated (relevance to queries)",
+      "pillar": "relevance",
+      "weight": 3,
+      "severity": "medium",
+      "status": "warn",
+      "evidence": [
+        "GBP services count is low (2). Add core services."
+      ],
+      "fix": [
+        "Add your core services to GBP (panel upgrades, EV chargers, generators, troubleshooting, lighting)."
+      ]
+    }
+  ]
+}
