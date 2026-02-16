@@ -1,12 +1,14 @@
 import type { ReactNode } from 'react'
-import { JsonLd } from '@/components/seo/JsonLd'
-import { buildLocalBusinessJsonLd } from '@/lib/seo/schema'
+
+import { buildLocalBusinessJsonLd } from '../src/lib/seo/schema'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const localBusinessJsonLd = buildLocalBusinessJsonLd()
+
   return (
     <html lang="en">
       <body>
-        <JsonLd data={buildLocalBusinessJsonLd()} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
         {children}
       </body>
     </html>

@@ -1,0 +1,26 @@
+{
+  "asOfDate": "2026-02-16",
+  "citations": [
+    {
+      "provider": "Bing Places",
+      "url": "",
+      "name": "Top Tier Electrical",
+      "phoneE164": "+1XXXXXXXXXX",
+      "address": null
+    },
+    {
+      "provider": "Apple Maps",
+      "url": "",
+      "name": "Top Tier Electrical",
+      "phoneE164": "+1XXXXXXXXXX",
+      "address": null
+    },
+    {
+      "provider": "Yelp",
+      "url": "",
+      "name": "Top Tier Electrical",
+      "phoneE164": "+1XXXXXXXXXX",
+      "address": null
+    }
+  ]
+}
