@@ -45,9 +45,7 @@
       "weight": 4,
       "severity": "critical",
       "status": "pass",
-      "evidence": [
-        "Schema builder exists and layout references it."
-      ],
+      "evidence": ["Schema builder exists and layout references it."],
       "fix": [
         "Implement LocalBusiness (Electrician) JSON-LD and inject it globally in app/layout.tsx.",
         "Ensure schema data matches visible NAP and service areas."
@@ -61,9 +59,7 @@
       "weight": 2,
       "severity": "medium",
       "status": "pass",
-      "evidence": [
-        "Appointment URL includes expected UTMs."
-      ],
+      "evidence": ["Appointment URL includes expected UTMs."],
       "fix": [
         "Set GBP appointment URL to /booking with UTMs: utm_source=gbp&utm_medium=organic&utm_campaign=maps."
       ]
@@ -92,9 +88,7 @@
       "weight": 2,
       "severity": "low",
       "status": "pass",
-      "evidence": [
-        "postingFrequencyPerMonth=4"
-      ],
+      "evidence": ["postingFrequencyPerMonth=4"],
       "fix": [
         "Post weekly (2–4 posts/month): before/after, safety tips, seasonal generator readiness, etc."
       ]
@@ -106,9 +100,7 @@
       "weight": 3,
       "severity": "high",
       "status": "pass",
-      "evidence": [
-        "Primary category: Electrician"
-      ],
+      "evidence": ["Primary category: Electrician"],
       "fix": [
         "Ensure primary category is accurate (commonly “Electrician”). Add only truly relevant secondary categories."
       ]
@@ -120,12 +112,8 @@
       "weight": 4,
       "severity": "medium",
       "status": "pass",
-      "evidence": [
-        "responseRatePercent=95"
-      ],
-      "fix": [
-        "Respond to reviews consistently (target 90%+ response rate)."
-      ]
+      "evidence": ["responseRatePercent=95"],
+      "fix": ["Respond to reviews consistently (target 90%+ response rate)."]
     },
     {
       "id": "GBP_REVIEWS_HEALTH",
@@ -134,11 +122,7 @@
       "weight": 6,
       "severity": "high",
       "status": "pass",
-      "evidence": [
-        "rating=4.9",
-        "count=30",
-        "threshold=4.5/20"
-      ],
+      "evidence": ["rating=4.9", "count=30", "threshold=4.5/20"],
       "fix": [
         "Implement a review SOP: ask every satisfied customer, respond to every review.",
         "Aim for steady growth and recent reviews."
@@ -151,9 +135,7 @@
       "weight": 5,
       "severity": "critical",
       "status": "pass",
-      "evidence": [
-        "GBP address is hidden for service-area business."
-      ],
+      "evidence": ["GBP address is hidden for service-area business."],
       "fix": [
         "In Google Business Profile: set as Service-area business and hide address if you travel to customers.",
         "Ensure service areas are correctly configured."
@@ -167,9 +149,7 @@
       "weight": 4,
       "severity": "medium",
       "status": "pass",
-      "evidence": [
-        "GBP and site service areas match exactly."
-      ],
+      "evidence": ["GBP and site service areas match exactly."],
       "fix": [
         "Keep GBP service areas and website service area list consistent.",
         "If the business expands/shrinks, update both at the same time."
@@ -183,9 +163,7 @@
       "weight": 2,
       "severity": "high",
       "status": "pass",
-      "evidence": [
-        "GBP service areas = 3."
-      ],
+      "evidence": ["GBP service areas = 3."],
       "fix": [
         "Reduce GBP service areas to 20 or fewer; prioritize revenue cities and realistic coverage."
       ]
@@ -197,9 +175,7 @@
       "weight": 3,
       "severity": "medium",
       "status": "warn",
-      "evidence": [
-        "GBP services count is low (2). Add core services."
-      ],
+      "evidence": ["GBP services count is low (2). Add core services."],
       "fix": [
         "Add your core services to GBP (panel upgrades, EV chargers, generators, troubleshooting, lighting)."
       ]
@@ -211,9 +187,7 @@
       "weight": 3,
       "severity": "medium",
       "status": "pass",
-      "evidence": [
-        "Host match: toptier-electrical.com"
-      ],
+      "evidence": ["Host match: toptier-electrical.com"],
       "fix": [
         "Update GBP website URL to the canonical site host (prefer https + primary domain)."
       ]
@@ -225,9 +199,7 @@
       "weight": 4,
       "severity": "high",
       "status": "not_applicable",
-      "evidence": [
-        "No location pages detected (heuristic)."
-      ],
+      "evidence": ["No location pages detected (heuristic)."],
       "fix": [
         "Keep only a few high-value location pages and make them genuinely useful (local proof, FAQs, travel expectations).",
         "Avoid scaling dozens of near-identical city pages (doorway risk)."
@@ -240,9 +212,7 @@
       "weight": 3,
       "severity": "critical",
       "status": "pass",
-      "evidence": [
-        "SITE.phoneE164 looks valid: +16165550123"
-      ],
+      "evidence": ["SITE.phoneE164 looks valid: +16165550123"],
       "fix": [
         "Set SITE.phoneE164 to a real E.164 phone number (e.g., +1616XXXXXXX)."
       ],
@@ -255,9 +225,7 @@
       "weight": 3,
       "severity": "high",
       "status": "pass",
-      "evidence": [
-        "Found tel: and sms: in codebase."
-      ],
+      "evidence": ["Found tel: and sms: in codebase."],
       "fix": [
         "Add a Call/Text CTA component and use it on /contact, /booking, and on high-intent service pages."
       ],
@@ -286,9 +254,7 @@
       "weight": 2,
       "severity": "high",
       "status": "fail",
-      "evidence": [
-        "No robots implementation found."
-      ],
+      "evidence": ["No robots implementation found."],
       "fix": [
         "Add app/robots.ts (Next metadata route) or public/robots.txt at site root."
       ],
@@ -301,9 +267,7 @@
       "weight": 2,
       "severity": "high",
       "status": "pass",
-      "evidence": [
-        "sitemap implementation detected."
-      ],
+      "evidence": ["sitemap implementation detected."],
       "fix": [
         "Add app/sitemap.ts (Next metadata route) or generate public/sitemap.xml at build time."
       ],
@@ -334,9 +298,7 @@
       "weight": 2,
       "severity": "high",
       "status": "fail",
-      "evidence": [
-        "No robots implementation found."
-      ],
+      "evidence": ["No robots implementation found."],
       "fix": [
         "Add app/robots.ts (Next metadata route) or public/robots.txt at site root."
       ],
@@ -364,9 +326,7 @@
       "weight": 3,
       "severity": "medium",
       "status": "warn",
-      "evidence": [
-        "GBP services count is low (2). Add core services."
-      ],
+      "evidence": ["GBP services count is low (2). Add core services."],
       "fix": [
         "Add your core services to GBP (panel upgrades, EV chargers, generators, troubleshooting, lighting)."
       ]
