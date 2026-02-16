@@ -9,8 +9,6 @@
 
 # Optional: true legacy semantic redirects (only if these URLs were used historically)
 /pricing /services 301
-/financing /services 301
-/financing.html /services 301
 
 # Legacy logo file locations migrated to assets/images/logos
 /TopTierElectrical_Primary_Black_2048.png /assets/images/logos/TopTierElectrical_Primary_Black_2048.png 301
