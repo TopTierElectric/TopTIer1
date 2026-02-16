@@ -1,18 +1,14 @@
 import type { MetadataRoute } from 'next'
+import { SITE } from '@/config/site'
 
-function siteUrl(): string {
-  return (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.toptier-electrical.com').replace(/\/+$/, '')
-}
+const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? SITE.baseUrl).replace(/\/+$/, '')
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = siteUrl()
-
   return {
     rules: {
       userAgent: '*',
       allow: '/',
     },
     sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
   }
 }
