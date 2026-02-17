@@ -2,5 +2,8 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "toptier-electrical",
   "compatibility_date": "2026-02-10",
-  "pages_build_output_dir": "."
+  "pages_build_output_dir": "dist",
+  "build": {
+    "command": "npm run build",
+  },
 }
