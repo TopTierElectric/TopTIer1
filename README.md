@@ -38,7 +38,7 @@ Legacy planning documents that are no longer used have been removed to keep the 
 
 This repository now includes reusable Wrangler deployment wiring:
 
-- `wrangler.jsonc` for local/project config
+- `wrangler.toml` and `wrangler.jsonc` for project config
 - `cf:*` npm scripts in `package.json`
 - `.github/workflows/deploy-prod.yml` as the primary production deploy on `main`
 - `.github/workflows/deploy-cloudflare-pages.yml` as a manual fallback deploy workflow
@@ -62,7 +62,14 @@ npm run cf:deploy
 ```bash
 npm run build
 npm run check:workflows
+npm run check:redirects-cloudflare
+npm run check:navigation-sim
 npm run cf:whoami
 ```
 
 > Note: Wrangler `4.64.0` does not support `wrangler pages deploy --dry-run`.
+
+### Cloudflare Pages build settings
+
+Cloudflare Pages should be configured to run `npm run build` and deploy from `dist/`.
+This is also encoded in `wrangler.toml` / `wrangler.jsonc` to avoid root-directory deploy drift.
