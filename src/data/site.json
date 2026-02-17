@@ -104,6 +104,141 @@
       "from": "/schedule",
       "to": "/booking",
       "status": 301
+    },
+    {
+      "from": "/index",
+      "to": "/",
+      "status": 301
+    },
+    {
+      "from": "/index.html",
+      "to": "/",
+      "status": 301
+    },
+    {
+      "from": "/home",
+      "to": "/",
+      "status": 301
+    },
+    {
+      "from": "/pricing",
+      "to": "/services",
+      "status": 301
+    },
+    {
+      "from": "/blog-electrical-safety",
+      "to": "/blog",
+      "status": 301
+    },
+    {
+      "from": "/blog-ev-charging",
+      "to": "/blog",
+      "status": 301
+    },
+    {
+      "from": "/blog-generator-readiness",
+      "to": "/blog/winter-generator-readiness",
+      "status": 301
+    },
+    {
+      "from": "/blog-panel-upgrade-signs",
+      "to": "/blog",
+      "status": 301
+    },
+    {
+      "from": "/blog-right-electrician",
+      "to": "/blog",
+      "status": 301
+    },
+    {
+      "from": "/blog-surge-protection",
+      "to": "/blog",
+      "status": 301
+    },
+    {
+      "from": "/commercial-electrical-maintenance",
+      "to": "/commercial",
+      "status": 301
+    },
+    {
+      "from": "/commercial-electrician-allegan-mi",
+      "to": "/electrician-allegan",
+      "status": 301
+    },
+    {
+      "from": "/commercial-led-lighting-retrofit",
+      "to": "/lighting",
+      "status": 301
+    },
+    {
+      "from": "/electrical-design-consultation",
+      "to": "/services",
+      "status": 301
+    },
+    {
+      "from": "/electrician-ada",
+      "to": "/electrician-grand-rapids",
+      "status": 301
+    },
+    {
+      "from": "/electrician-hudsonville",
+      "to": "/service-areas",
+      "status": 301
+    },
+    {
+      "from": "/electrician-zeeland",
+      "to": "/service-areas",
+      "status": 301
+    },
+    {
+      "from": "/energy-consulting",
+      "to": "/services",
+      "status": 301
+    },
+    {
+      "from": "/energy-solutions",
+      "to": "/services",
+      "status": 301
+    },
+    {
+      "from": "/residential-electrician-allegan-mi",
+      "to": "/electrician-allegan",
+      "status": 301
+    },
+    {
+      "from": "/styleguide-top-tier-electrical",
+      "to": "/",
+      "status": 301
+    },
+    {
+      "from": "/TopTierElectrical_Primary_Black_2048.png",
+      "to": "/assets/images/logos/TopTierElectrical_Primary_Black_2048.png",
+      "status": 301
+    },
+    {
+      "from": "/TopTierElectrical_Primary_FlatGold_2048.png",
+      "to": "/assets/images/logos/TopTierElectrical_Primary_FlatGold_2048.png",
+      "status": 301
+    },
+    {
+      "from": "/TopTierElectrical_Primary_FlatGold_4096.png",
+      "to": "/assets/images/logos/TopTierElectrical_Primary_FlatGold_4096.png",
+      "status": 301
+    },
+    {
+      "from": "/TopTierElectrical_Primary_FlatGold_512.png",
+      "to": "/assets/images/logos/TopTierElectrical_Primary_FlatGold_512.png",
+      "status": 301
+    },
+    {
+      "from": "/TopTierElectrical_Primary_White_2048.png",
+      "to": "/assets/images/logos/TopTierElectrical_Primary_White_2048.png",
+      "status": 301
+    },
+    {
+      "from": "/TopTierElectrical_Primary_White_512.png",
+      "to": "/assets/images/logos/TopTierElectrical_Primary_White_512.png",
+      "status": 301
     }
   ],
   "headers": {
