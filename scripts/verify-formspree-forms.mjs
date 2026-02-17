@@ -1,13 +1,13 @@
-import { readFile } from 'node:fs/promises';
+import { readFile } from "node:fs/promises";
 
 const REQUIRED_FORM_FILES = [
-  'contact.html',
-  'booking.html',
-  'src/pages/contact.html',
-  'src/pages/booking.html',
+  "contact.html",
+  "booking.html",
+  "src/pages/contact.html",
+  "src/pages/booking.html",
 ];
 
-const REQUIRED_ACTION = 'https://formspree.io/f/mkovbvgj';
+const REQUIRED_ACTION = "https://formspree.io/f/mkovbvgj";
 const FORBIDDEN_PATTERNS = [
   /toptierelectric11723@gmail\.com/g,
   /https:\/\/formsubmit\.co/g,
@@ -21,14 +21,14 @@ function getFormBlock(html, file) {
 }
 
 for (const file of REQUIRED_FORM_FILES) {
-  const html = await readFile(file, 'utf8');
+  const html = await readFile(file, "utf8");
   const form = getFormBlock(html, file);
 
   if (!form.includes(`action="${REQUIRED_ACTION}"`)) {
     throw new Error(`${file}: form action is not ${REQUIRED_ACTION}`);
   }
 
-  for (const requiredName of ['_subject', '_next', '_gotcha']) {
+  for (const requiredName of ["_subject", "_next", "_gotcha"]) {
     if (!form.includes(`name="${requiredName}"`)) {
       throw new Error(`${file}: missing hidden field ${requiredName}`);
     }
@@ -40,15 +40,15 @@ for (const file of REQUIRED_FORM_FILES) {
 }
 
 const allFilesToScan = [
-  'contact.html',
-  'booking.html',
-  'src/pages/contact.html',
-  'src/pages/booking.html',
-  '_headers',
+  "contact.html",
+  "booking.html",
+  "src/pages/contact.html",
+  "src/pages/booking.html",
+  "_headers",
 ];
 
 for (const file of allFilesToScan) {
-  const content = await readFile(file, 'utf8');
+  const content = await readFile(file, "utf8");
   for (const forbidden of FORBIDDEN_PATTERNS) {
     forbidden.lastIndex = 0;
     if (forbidden.test(content)) {
@@ -57,4 +57,4 @@ for (const file of allFilesToScan) {
   }
 }
 
-console.log('Formspree form verification passed.');
+console.log("Formspree form verification passed.");
