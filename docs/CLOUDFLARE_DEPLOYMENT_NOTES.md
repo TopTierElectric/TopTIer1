@@ -20,7 +20,7 @@
 
 ## Forms handling
 
-- Current forms post to a placeholder Formsubmit endpoint (`https://formsubmit.co/your-email@example.com`).
+- Current forms post to a placeholder Formsubmit endpoint (`https://formspree.io/f/mkovbvgj
 - If this is Cloudflare Pages, recommend using Pages Functions for form handling + Turnstile validation in Sprint 1.
 - If non-Pages, recommend a Worker or third-party form service, documented in Cloudflare dashboard rules.
 

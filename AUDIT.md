@@ -21,7 +21,7 @@
 ## Before/after evidence
 
 - Canonical + OG URLs: previously pointed to `https://www.toptier-electrical.com/` and now use the apex `https://toptier-electrical.com/` in all HTML heads.
-- Forms: previously used `https://formsubmit.co/your-email@example.com`; now use `https://formsubmit.co/toptierelectric11723@gmail.com` with honeypot field.
+- Forms: previously used `https://formspree.io/f/mkovbvgj
 - Analytics: placeholder Cloudflare beacon tokens removed and replaced with a real token in every HTML head.
 
 ## Reports + outputs

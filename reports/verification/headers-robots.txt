@@ -10,7 +10,7 @@ access-control-allow-origin: *
 cache-control: public, max-age=14400, stale-while-revalidate=86400
 etag: "32d7f707a7fd279816c73ff9621f8163"
 strict-transport-security: max-age=31536000; includeSubDomains; preload
-content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self' https://formsubmit.co
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self' https://formspree.io/f/mkovbvgj
 permissions-policy: geolocation=(), camera=(), microphone=()
 referrer-policy: strict-origin-when-cross-origin
 x-content-type-options: nosniff

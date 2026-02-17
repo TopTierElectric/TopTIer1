@@ -29,9 +29,28 @@
   <form
     class="form"
     data-form="contact"
-    action="https://formsubmit.co/info@toptier-electrical.com"
+    action="https://formspree.io/f/mkovbvgj"
     method="POST"
   >
+    <input
+      type="hidden"
+      name="_subject"
+      value="New contact request from Top Tier Electrical"
+    />
+    <input
+      type="hidden"
+      name="_next"
+      value="https://toptier-electrical.com/thank-you"
+    />
+    <input type="hidden" name="form_name" value="Contact form" />
+    <input
+      class="form-honeypot"
+      type="text"
+      name="_gotcha"
+      tabindex="-1"
+      autocomplete="off"
+      aria-hidden="true"
+    />
     <label for="cname">Name</label
     ><input id="cname" name="name" required /><label for="cemail">Email</label
     ><input id="cemail" name="email" type="email" required /><label

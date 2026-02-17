@@ -8,7 +8,7 @@ The site has three HTML forms that submit to a placeholder Formsubmit endpoint a
 
 ### Home hero form (index.html)
 
-- Action: `https://formsubmit.co/your-email@example.com`
+- Action: `https://formspree.io/f/mkovbvgj
 - Method: POST
 - Required fields: name, email
 - CTA: "Request a Clear Estimate"
@@ -17,7 +17,7 @@ The site has three HTML forms that submit to a placeholder Formsubmit endpoint a
 
 ### Booking form (booking.html)
 
-- Action: `https://formsubmit.co/your-email@example.com`
+- Action: `https://formspree.io/f/mkovbvgj
 - Method: POST
 - Required fields: name, email, phone, service, preferred date, preferred time
 - Optional fields: notes
@@ -27,7 +27,7 @@ The site has three HTML forms that submit to a placeholder Formsubmit endpoint a
 
 ### Contact form (contact.html)
 
-- Action: `https://formsubmit.co/your-email@example.com`
+- Action: `https://formspree.io/f/mkovbvgj
 - Method: POST
 - Required fields: name, email, message
 - CTA: "Request a Quote"
