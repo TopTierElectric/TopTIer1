@@ -30,7 +30,8 @@
     "check:seo-quality-gates": "node scripts/seo-quality-gates.mjs",
     "localseo:audit": "tsx scripts/local-seo-audit.ts --mode=static --outDir=artifacts/local-seo --failOnCritical",
     "localseo:audit:live": "tsx scripts/local-seo-audit.ts --mode=live --baseUrl=https://www.toptier-electrical.com --outDir=artifacts/local-seo-live",
-    "localseo:ci": "tsx scripts/local-seo-audit.ts --mode=static --outDir=artifacts/local-seo --failOnCritical --failBelow=80"
+    "localseo:ci": "tsx scripts/local-seo-audit.ts --mode=static --outDir=artifacts/local-seo --failOnCritical --failBelow=80",
+    "check:navigation-sim": "node scripts/check-navigation-sim.mjs"
   },
   "dependencies": {
     "chokidar": "^3.6.0",

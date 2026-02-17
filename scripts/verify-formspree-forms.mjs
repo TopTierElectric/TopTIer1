@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 
 const REQUIRED_FORM_FILES = [
+  "index.html",
   "contact.html",
   "booking.html",
   "src/pages/contact.html",
@@ -40,6 +41,7 @@ for (const file of REQUIRED_FORM_FILES) {
 }
 
 const allFilesToScan = [
+  "index.html",
   "contact.html",
   "booking.html",
   "src/pages/contact.html",
