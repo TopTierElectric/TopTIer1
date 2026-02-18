@@ -127,12 +127,12 @@
     },
     {
       "from": "/blog-electrical-safety",
-      "to": "/blog",
+      "to": "/blog/electrical-safety-tips",
       "status": 301
     },
     {
       "from": "/blog-ev-charging",
-      "to": "/blog",
+      "to": "/blog/ev-charger-installation-guide",
       "status": 301
     },
     {
@@ -142,17 +142,17 @@
     },
     {
       "from": "/blog-panel-upgrade-signs",
-      "to": "/blog",
+      "to": "/blog/signs-you-need-panel-upgrade",
       "status": 301
     },
     {
       "from": "/blog-right-electrician",
-      "to": "/blog",
+      "to": "/blog/how-to-choose-right-electrician",
       "status": 301
     },
     {
       "from": "/blog-surge-protection",
-      "to": "/blog",
+      "to": "/blog/whole-home-surge-protection",
       "status": 301
     },
     {
