@@ -247,9 +247,6 @@
     "html_cache_seconds": 3600
   },
   "validation": {
-    "forbidden_strings": [
-      "631210",
-      "__PASTE_GOOGLE_REVIEW_LINK__"
-    ]
+    "forbidden_strings": ["631210", "__PASTE_GOOGLE_REVIEW_LINK__"]
   }
 }
