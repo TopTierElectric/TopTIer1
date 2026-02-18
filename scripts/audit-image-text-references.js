@@ -4,7 +4,13 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const SKIP_DIRS = new Set([".git", "node_modules", "reports", "dist"]);
+const SKIP_DIRS = new Set([
+  ".git",
+  "node_modules",
+  "reports",
+  "dist",
+  "Past_work_webp",
+]);
 const HTML_EXT = ".html";
 const CSS_EXT = ".css";
 const MD_EXT = ".md";
