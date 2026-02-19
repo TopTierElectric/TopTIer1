@@ -39,12 +39,12 @@ export const SERVICES: Service[] = [
     quickAnswers: [
       {
         q: 'Do I need a panel upgrade for an EV charger?',
-        a: 'Not always. We perform a load evaluation to confirm capacity and recommend the safest install path.',
+        a: 'Not always. We perform a load evaluation to verify your current panel capacity, identify breaker space, and recommend the safest path for your vehicle and daily charging habits.',
         anchor: '#load-eval',
       },
       {
         q: 'Hardwired vs plug-in?',
-        a: 'Hardwired installs are common for higher-amp chargers and long-term reliability; plug-in can work for specific use cases.',
+        a: 'Hardwired installs are usually preferred for higher-amp charging and long-term reliability, while plug-in setups can fit lower-amp situations with the proper receptacle and dedicated circuit protection.',
         anchor: '#hardwired-vs-plugin',
       },
     ],
@@ -57,8 +57,13 @@ export const SERVICES: Service[] = [
     quickAnswers: [
       {
         q: 'What does a transfer switch do?',
-        a: 'A transfer switch safely routes power from utility to generator so your home can run selected circuits during an outage.',
+        a: 'A transfer switch safely moves power from utility service to generator output so selected circuits stay energized during outages without backfeeding utility lines.',
         anchor: '#transfer-switch',
+      },
+      {
+        q: 'How do I choose generator size?',
+        a: 'We calculate your essential loads, startup demands, and future needs so the generator can run priority appliances reliably and avoid nuisance trips during extended outages.',
+        anchor: '#generator-sizing',
       },
     ],
   },
@@ -70,8 +75,13 @@ export const SERVICES: Service[] = [
     quickAnswers: [
       {
         q: 'What should I do if I smell burning?',
-        a: 'If safe, turn off the affected circuit and call immediately. If there’s smoke or fire risk, call emergency services first.',
+        a: 'If safe, turn off the affected circuit and call immediately. If there is smoke, sparking, or fire risk, leave the area and contact emergency services first.',
         anchor: '#burning-smell',
+      },
+      {
+        q: 'Do you troubleshoot partial power loss?',
+        a: 'Yes. We diagnose panel faults, failed breakers, damaged conductors, and utility-side indicators to restore service safely and document the repair options clearly.',
+        anchor: '#partial-power-loss',
       },
     ],
   },
