@@ -10,6 +10,16 @@
 # Optional: true legacy semantic redirects (only if these URLs were used historically)
 /pricing /services 301
 
+# Blog aliases: ensure extensionless public URLs resolve on hosts that don't
+# auto-map `/path` to `/path.html`.
+/blog /blog.html 301
+/blog/electrical-safety-tips /blog-electrical-safety.html 301
+/blog/signs-you-need-panel-upgrade /blog-panel-upgrade-signs.html 301
+/blog/ev-charger-installation-guide /blog-ev-charging.html 301
+/blog/whole-home-surge-protection /blog-surge-protection.html 301
+/blog/how-to-choose-right-electrician /blog-right-electrician.html 301
+/blog/winter-generator-readiness /blog-generator-readiness.html 301
+
 # Legacy logo file locations migrated to assets/images/logos
 /TopTierElectrical_Primary_Black_2048.png /assets/images/logos/TopTierElectrical_Primary_Black_2048.png 301
 /TopTierElectrical_Primary_FlatGold_2048.png /assets/images/logos/TopTierElectrical_Primary_FlatGold_2048.png 301
