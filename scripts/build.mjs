@@ -61,6 +61,7 @@ const buildHead = (meta, route) => {
   const canonical = canonicalUrl(site.domain, route),
     robots = meta.indexable ? "index,follow" : "noindex,nofollow",
     ogImage = meta.ogImage || "/assets/img/og-default.jpg";
+  const absoluteOgImage = `${site.domain.replace(/\/$/, "")}${ogImage}`;
   return [
     `<meta charset="utf-8">`,
     `<meta name="viewport" content="width=device-width, initial-scale=1">`,
@@ -74,8 +75,9 @@ const buildHead = (meta, route) => {
     `<meta property="og:title" content="${meta.title}">`,
     `<meta property="og:description" content="${meta.description}">`,
     `<meta property="og:url" content="${canonical}">`,
-    `<meta property="og:image" content="${site.domain.replace(/\/$/, "")}${ogImage}">`,
+    `<meta property="og:image" content="${absoluteOgImage}">`,
     `<meta name="twitter:card" content="summary_large_image">`,
+    `<meta name="twitter:image" content="${absoluteOgImage}">`,
     `<link rel="stylesheet" href="/assets/css/styles.css?v=${BUILD_ID}">`,
     `<script defer src="/assets/js/site.js?v=${BUILD_ID}"></script>`,
   ].join("\n");
@@ -142,7 +144,7 @@ const generateRedirectsFile = () =>
     .map((r) => `${r.from} ${r.to} ${r.status || 301}`)
     .join("\n") + "\n";
 const generateHeadersFile = () =>
-  `/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n\n/*\n  Cache-Control: public, max-age=${site.headers?.html_cache_seconds || 3600}\n`;
+  `/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n\n/Past_work_webp/*\n  Cache-Control: public, max-age=31536000, immutable\n\n/*\n  Cache-Control: public, max-age=${site.headers?.html_cache_seconds || 3600}\n`;
 async function expandIncludes(content, data) {
   const re = /<!--\s*@include\s+([a-zA-Z0-9/_-]+)\s*-->/g;
   let m,

@@ -53,7 +53,16 @@ const isSkippableRef = (value) => {
   );
 };
 
-const cleanRef = (value) => value.split("#")[0].split("?")[0].trim();
+const safeDecodeURIComponent = (value) => {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+};
+
+const cleanRef = (value) =>
+  safeDecodeURIComponent(value.split("#")[0].split("?")[0].trim());
 
 const normalizeMarkdownRef = (value) => {
   const trimmed = value.trim();
