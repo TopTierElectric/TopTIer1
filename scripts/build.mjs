@@ -81,8 +81,9 @@ const buildHead = (meta, route) => {
   ].join("\n");
 };
 const buildSchema = (meta, route) => {
-  const schemas = [
-    {
+  const schemas = [];
+  if (meta.schemaMode !== "custom")
+    schemas.push({
       "@context": "https://schema.org",
       "@type": "Electrician",
       name: site.brand,
@@ -90,8 +91,7 @@ const buildSchema = (meta, route) => {
       telephone: site.phone_e164,
       email: site.email,
       areaServed: (site.service_areas_short || []).map((c) => `${c}, MI`),
-    },
-  ];
+    });
   if (Array.isArray(meta.breadcrumb) && meta.breadcrumb.length > 1)
     schemas.push({
       "@context": "https://schema.org",
