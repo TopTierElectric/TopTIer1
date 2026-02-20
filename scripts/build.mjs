@@ -21,6 +21,7 @@ const PAGES_DIR = path.resolve("src/pages"),
   DATA_DIR = path.resolve("src/data"),
   ASSETS_DIR = path.resolve("src/assets"),
   STATIC_DIR = path.resolve("src/static"),
+  PAST_WORK_WEBP_DIR = path.resolve("Past_work_webp"),
   DIST_DIR = path.resolve("dist");
 const BUILD_ID = process.env.BUILD_ID || String(Date.now());
 const IS_PROD = process.env.NODE_ENV === "production";
@@ -173,8 +174,30 @@ async function copyAssetsWithoutRasterImages() {
     }
   }
 }
+async function copyPastWorkWebpToDist() {
+  if (!(await exists(PAST_WORK_WEBP_DIR))) return;
+  const targetDir = path.join(DIST_DIR, "Past_work_webp");
+  const stack = [[PAST_WORK_WEBP_DIR, targetDir]];
+  while (stack.length) {
+    const [fromDir, toDir] = stack.pop();
+    await fs.mkdir(toDir, { recursive: true });
+    for (const entry of await fs.readdir(fromDir, { withFileTypes: true })) {
+      const from = path.join(fromDir, entry.name);
+      const to = path.join(toDir, entry.name);
+      if (entry.isDirectory()) {
+        stack.push([from, to]);
+        continue;
+      }
+      if (entry.isFile() && entry.name.toLowerCase().endsWith(".webp")) {
+        await fs.copyFile(from, to);
+      }
+    }
+  }
+}
+
 await emptyDir(DIST_DIR);
 await copyAssetsWithoutRasterImages();
+await copyPastWorkWebpToDist();
 await buildImages({
   inDir: path.join(ASSETS_DIR, "img"),
   outDir: path.join(DIST_DIR, "assets", "img"),

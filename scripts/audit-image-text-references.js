@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
+const OWN_DOMAIN = "toptier-electrical.com";
 const SKIP_DIRS = new Set([
   ".git",
   "node_modules",
@@ -53,7 +54,36 @@ const isSkippableRef = (value) => {
   );
 };
 
-const cleanRef = (value) => value.split("#")[0].split("?")[0].trim();
+const cleanRef = (value) => {
+  let ref = value.split("#")[0].split("?")[0].trim();
+  if (!ref) return ref;
+
+  if (ref.startsWith("//")) {
+    ref = `https:${ref}`;
+  }
+
+  if (ref.startsWith("http://") || ref.startsWith("https://")) {
+    try {
+      const url = new URL(ref);
+      const host = url.hostname.toLowerCase();
+      if (host === OWN_DOMAIN || host.endsWith(`.${OWN_DOMAIN}`)) {
+        ref = url.pathname;
+      }
+    } catch {
+      // ignore URL parsing errors
+    }
+  }
+
+  if (ref.includes("%")) {
+    try {
+      ref = decodeURIComponent(ref);
+    } catch {
+      // ignore decode errors
+    }
+  }
+
+  return ref;
+};
 
 const normalizeMarkdownRef = (value) => {
   const trimmed = value.trim();
@@ -154,6 +184,23 @@ for (const filePath of htmlFiles) {
       if (resolved && !fs.existsSync(resolved)) {
         addMissingReference(filePath, ref, "source[srcset]");
       }
+    }
+  }
+
+  const htmlUrlRe =
+    /url\(\s*(?:"([^"]+)"|'([^']+)'|&quot;([^&]+)&quot;|([^\s)]+))\s*\)/gi;
+  let urlMatch;
+  while ((urlMatch = htmlUrlRe.exec(content)) !== null) {
+    const raw = (
+      urlMatch[1] ??
+      urlMatch[2] ??
+      urlMatch[3] ??
+      urlMatch[4] ??
+      ""
+    ).trim();
+    const resolved = resolveRef(filePath, raw);
+    if (resolved && !fs.existsSync(resolved)) {
+      addMissingReference(filePath, raw, "html[url()]");
     }
   }
 }
