@@ -21,6 +21,7 @@ const PAGES_DIR = path.resolve("src/pages"),
   DATA_DIR = path.resolve("src/data"),
   ASSETS_DIR = path.resolve("src/assets"),
   STATIC_DIR = path.resolve("src/static"),
+  PAST_WORK_WEBP_DIR = path.resolve("Past_work_webp"),
   DIST_DIR = path.resolve("dist");
 const BUILD_ID = process.env.BUILD_ID || String(Date.now());
 const IS_PROD = process.env.NODE_ENV === "production";
@@ -60,7 +61,8 @@ const buildBreadcrumbHtml = (meta) => {
 const buildHead = (meta, route) => {
   const canonical = canonicalUrl(site.domain, route),
     robots = meta.indexable ? "index,follow" : "noindex,nofollow",
-    ogImage = meta.ogImage || "/assets/img/og-default.jpg";
+    ogImage = meta.ogImage || "/assets/img/og-default.jpg",
+    ogImageAbsolute = new URL(ogImage, site.domain).toString();
   return [
     `<meta charset="utf-8">`,
     `<meta name="viewport" content="width=device-width, initial-scale=1">`,
@@ -74,8 +76,11 @@ const buildHead = (meta, route) => {
     `<meta property="og:title" content="${meta.title}">`,
     `<meta property="og:description" content="${meta.description}">`,
     `<meta property="og:url" content="${canonical}">`,
-    `<meta property="og:image" content="${site.domain.replace(/\/$/, "")}${ogImage}">`,
+    `<meta property="og:image" content="${ogImageAbsolute}">`,
     `<meta name="twitter:card" content="summary_large_image">`,
+    `<meta name="twitter:title" content="${meta.title}">`,
+    `<meta name="twitter:description" content="${meta.description}">`,
+    `<meta name="twitter:image" content="${ogImageAbsolute}">`,
     `<link rel="stylesheet" href="/assets/css/styles.css?v=${BUILD_ID}">`,
     `<script defer src="/assets/js/site.js?v=${BUILD_ID}"></script>`,
   ].join("\n");
@@ -142,7 +147,7 @@ const generateRedirectsFile = () =>
     .map((r) => `${r.from} ${r.to} ${r.status || 301}`)
     .join("\n") + "\n";
 const generateHeadersFile = () =>
-  `/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n\n/*\n  Cache-Control: public, max-age=${site.headers?.html_cache_seconds || 3600}\n`;
+  `https://:project.pages.dev/*\n  X-Robots-Tag: noindex\n\nhttps://:version.:project.pages.dev/*\n  X-Robots-Tag: noindex\n\n/assets/*\n  ! Cache-Control\n  Cache-Control: public, max-age=31536000, immutable\n\n/Past_work_webp/*\n  ! Cache-Control\n  Cache-Control: public, max-age=31536000, immutable\n\n/*\n  Cache-Control: public, max-age=${site.headers?.html_cache_seconds || 3600}\n`;
 async function expandIncludes(content, data) {
   const re = /<!--\s*@include\s+([a-zA-Z0-9/_-]+)\s*-->/g;
   let m,
@@ -160,6 +165,53 @@ async function expandIncludes(content, data) {
   out += content.slice(last);
   return out;
 }
+async function copyPastWorkWebpAssets(srcDir, destDir) {
+  await fs.mkdir(destDir, { recursive: true });
+  for (const entry of await fs.readdir(srcDir, { withFileTypes: true })) {
+    const from = path.join(srcDir, entry.name);
+    const to = path.join(destDir, entry.name);
+    if (entry.isDirectory()) {
+      await copyPastWorkWebpAssets(from, to);
+      continue;
+    }
+    if (!entry.isFile()) continue;
+    if (!entry.name.toLowerCase().endsWith(".webp")) continue;
+    await fs.mkdir(path.dirname(to), { recursive: true });
+    await fs.copyFile(from, to);
+  }
+}
+
+async function listWebpFiles(dir, prefix = "") {
+  const files = [];
+  for (const entry of await fs.readdir(dir, { withFileTypes: true })) {
+    const rel = path.join(prefix, entry.name);
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...(await listWebpFiles(full, rel)));
+      continue;
+    }
+    if (entry.isFile() && entry.name.toLowerCase().endsWith(".webp")) {
+      files.push(rel);
+    }
+  }
+  return files.sort((a, b) => a.localeCompare(b));
+}
+
+async function verifyPastWorkWebpCopy(srcDir, destDir) {
+  const webpFiles = await listWebpFiles(srcDir);
+  for (const relPath of webpFiles) {
+    const source = path.join(srcDir, relPath);
+    const dest = path.join(destDir, relPath);
+    const [srcBytes, destBytes] = await Promise.all([
+      fs.readFile(source),
+      fs.readFile(dest),
+    ]);
+    if (!srcBytes.equals(destBytes)) {
+      throw new Error(`Past_work_webp byte mismatch for ${relPath}`);
+    }
+  }
+}
+
 async function copyAssetsWithoutRasterImages() {
   for (const e of await fs.readdir(ASSETS_DIR, { withFileTypes: true })) {
     const from = path.join(ASSETS_DIR, e.name),
@@ -181,6 +233,11 @@ await buildImages({
   maxWidth: 1600,
 });
 if (await exists(STATIC_DIR)) await copyDir(STATIC_DIR, DIST_DIR);
+if (await exists(PAST_WORK_WEBP_DIR)) {
+  const distPastWorkWebpDir = path.join(DIST_DIR, "Past_work_webp");
+  await copyPastWorkWebpAssets(PAST_WORK_WEBP_DIR, distPastWorkWebpDir);
+  await verifyPastWorkWebpCopy(PAST_WORK_WEBP_DIR, distPastWorkWebpDir);
+}
 const pageFiles = (await walkFiles(PAGES_DIR)).filter((f) =>
   f.endsWith(".html"),
 );
