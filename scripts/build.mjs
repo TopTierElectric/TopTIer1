@@ -169,7 +169,7 @@ const DEFAULT_OG_IMAGE_ALT = `${site.brand} — Electrician in West Michigan`;
 const buildHead = (meta, route, { preloadImage } = {}) => {
   const canonical = canonicalUrl(site.domain, route),
     robots = meta.indexable ? "index,follow" : "noindex,nofollow",
-    ogImage = meta.ogImage || "/assets/img/og-default.jpg",
+    ogImage = meta.ogImage || DEFAULT_OG_IMAGE,
     ogImageAbsolute = new URL(ogImage, site.domain).toString();
   return [
     `<meta charset="utf-8">`,
@@ -188,10 +188,14 @@ const buildHead = (meta, route, { preloadImage } = {}) => {
     `<meta property="og:description" content="${meta.description}">`,
     `<meta property="og:url" content="${canonical}">`,
     `<meta property="og:image" content="${ogImageAbsolute}">`,
+    `<meta property="og:image:width" content="${DEFAULT_OG_IMAGE_WIDTH}">`,
+    `<meta property="og:image:height" content="${DEFAULT_OG_IMAGE_HEIGHT}">`,
+    `<meta property="og:image:alt" content="${DEFAULT_OG_IMAGE_ALT}">`,
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="twitter:title" content="${meta.title}">`,
     `<meta name="twitter:description" content="${meta.description}">`,
     `<meta name="twitter:image" content="${ogImageAbsolute}">`,
+    `<meta name="twitter:image:alt" content="${DEFAULT_OG_IMAGE_ALT}">`,
     `<link rel="stylesheet" href="/assets/css/styles.css?v=${BUILD_ID}">`,
     `<script defer src="/assets/js/site.js?v=${BUILD_ID}"></script>`,
   ]
