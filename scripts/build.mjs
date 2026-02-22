@@ -359,21 +359,6 @@ async function copyAssetsWithoutRasterImages() {
     }
   }
 }
-async function copyPastWorkWebpAssets() {
-  if (!(await exists(PAST_WORK_WEBP_DIR))) return;
-  const outDir = path.join(DIST_DIR, "Past_work_webp");
-  await fs.mkdir(outDir, { recursive: true });
-  const entries = await fs.readdir(PAST_WORK_WEBP_DIR, { withFileTypes: true });
-  for (const e of entries) {
-    if (!e.isFile()) continue;
-    if (!/\.webp$/i.test(e.name)) continue;
-    await fs.copyFile(
-      path.join(PAST_WORK_WEBP_DIR, e.name),
-      path.join(outDir, e.name),
-    );
-  }
-}
-
 await emptyDir(DIST_DIR);
 await copyAssetsWithoutRasterImages();
 await buildImages({

@@ -1,0 +1,3182 @@
+{
+  "records": [
+    {
+      "path": ".env.example",
+      "size": 251,
+      "sha256": "5594ecc1830310506f7d6336dc2600cc6226769b616c96fb9dadbfa5dd2a93c8",
+      "crlf": 0,
+      "lf": 9
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "size": 2462,
+      "sha256": "6fce4161e74078261fc964e234ad6bd5f637af92d25a11ccaff8c88dff49a4a9",
+      "crlf": 0,
+      "lf": 98
+    },
+    {
+      "path": ".github/workflows/deploy-cloudflare-pages.yml",
+      "size": 2198,
+      "sha256": "b7489b7d3dbf945633364e6329450ad28f674f6300201d1405e102a4193eb18b",
+      "crlf": 0,
+      "lf": 61
+    },
+    {
+      "path": ".github/workflows/deploy-prod.yml",
+      "size": 3234,
+      "sha256": "60c036b76c7c3d19891d8852c8968db97df0882e9d5a1952c09b088bf62c9887",
+      "crlf": 0,
+      "lf": 96
+    },
+    {
+      "path": ".github/workflows/format-with-prettier.yml",
+      "size": 1161,
+      "sha256": "88c9d8a207a20cb93e26b2e4ff40eca8cd108e4a3caf06d40bd8a4b68af1b6d1",
+      "crlf": 0,
+      "lf": 45
+    },
+    {
+      "path": ".github/workflows/qa.yml",
+      "size": 2879,
+      "sha256": "5592f07cd033182215a4eaa3358b6804951d74023490a01a2c202735428fe31f",
+      "crlf": 0,
+      "lf": 109
+    },
+    {
+      "path": ".github/workflows/quality-gates.yml",
+      "size": 1125,
+      "sha256": "c9fe08b8e641025b64b8e47af77e0acfaf5a6adfa4e60622c4b6574dbbf0549c",
+      "crlf": 0,
+      "lf": 53
+    },
+    {
+      "path": ".github/workflows/quality.yml",
+      "size": 295,
+      "sha256": "d79d6fd27b90a9b0784393fec1253010965daebbe57714df0e4a3d9f7602fe0d",
+      "crlf": 0,
+      "lf": 16
+    },
+    {
+      "path": ".gitignore",
+      "size": 252,
+      "sha256": "b5040e9c9e7b56af867b6a9fcfbff5f3074b7e36c227ca252cd117396bd68b8a",
+      "crlf": 0,
+      "lf": 31
+    },
+    {
+      "path": ".htmlvalidate.json",
+      "size": 203,
+      "sha256": "7a2d18eec81b6ad3da810464379614dea3f699aee679f9be0b05a4e6fedd8cb9",
+      "crlf": 0,
+      "lf": 10
+    },
+    {
+      "path": ".pa11yci",
+      "size": 391,
+      "sha256": "a95a7a2ff465d639b13336699884ad207a5f1f3f688929dd3e37a62cac88d613",
+      "crlf": 0,
+      "lf": 19
+    },
+    {
+      "path": ".prettierignore",
+      "size": 35,
+      "sha256": "f5e85cfb7f45753f4d7ef1102d779dae464329c0b888350da8a41d77dc12d066",
+      "crlf": 0,
+      "lf": 2
+    },
+    {
+      "path": ".stylelintrc.json",
+      "size": 45,
+      "sha256": "e6ef821ae5a08d1cd14ee7ac71428fdc5ff7ddeb1e88132897bec69171899e4f",
+      "crlf": 0,
+      "lf": 3
+    },
+    {
+      "path": ".well-known/security.txt",
+      "size": 121,
+      "sha256": "0bcfaa50c0fef577d8c00bf4e9cc7ef9a449adadf47fc8cd1966715a99c180ed",
+      "crlf": 0,
+      "lf": 3
+    },
+    {
+      "path": "404.html",
+      "size": 9199,
+      "sha256": "4e320d8224ec7523ba7a5e763aa9c0b169b41dcc1404f2d3fd18ade1b6fbf7d6",
+      "crlf": 0,
+      "lf": 269
+    },
+    {
+      "path": "AUDIT.md",
+      "size": 2414,
+      "sha256": "103fe4cd250dee2f552729d60432757a5440efd444230241be2b82517e310569",
+      "crlf": 0,
+      "lf": 36
+    },
+    {
+      "path": "FINAL_VERIFICATION_PLAYBOOK.md",
+      "size": 1685,
+      "sha256": "8ead68bd2a4f84807fc549356ee811198c48a9d937573b8904e932cfff7fdfbe",
+      "crlf": 0,
+      "lf": 57
+    },
+    {
+      "path": "IMG_1183_Original.jpg",
+      "size": 13176,
+      "sha256": "97fa479bc6c4e6eef1ca55840eae968fe472e2fa62d71df91150086777f724c9",
+      "crlf": 1,
+      "lf": 70
+    },
+    {
+      "path": "IMG_1335_Original.jpg",
+      "size": 181870,
+      "sha256": "146c5ff68cd618b22b58a0de3b36fa738103560e6b7669faa1dcc13773b29fd6",
+      "crlf": 5,
+      "lf": 716
+    },
+    {
+      "path": "IMG_1380_Original.jpg",
+      "size": 22797,
+      "sha256": "aa3c6fce794bb2728cc77aec13ed7060b4278c5bfa91541de86c76c37af756f8",
+      "crlf": 2,
+      "lf": 125
+    },
+    {
+      "path": "IMG_1805_Original.jpg",
+      "size": 158465,
+      "sha256": "772798ccf0168c3192a1fe004a7552c71796c2b7fcbedc3339b0048d0549e7e4",
+      "crlf": 5,
+      "lf": 787
+    },
+    {
+      "path": "IMG_3053_Original.jpg",
+      "size": 193156,
+      "sha256": "be65764c08b2b7ffefb69045d450c6bfebd978c02d55092d90c7b94fe0b48b42",
+      "crlf": 5,
+      "lf": 718
+    },
+    {
+      "path": "PROMPT_BLOG_SITE_IMPLEMENTATION.md",
+      "size": 3465,
+      "sha256": "9f057248bb28884d7fca42a3578717778d4f3d44c3b76961e02f38e6189cdeb2",
+      "crlf": 0,
+      "lf": 83
+    },
+    {
+      "path": "Past_work_webp/3 PHase Service.webp",
+      "size": 29906,
+      "sha256": "c85d174e14da7ba465472e5ff42e908588edfe59fe6cab11bb59cf1d8ee5e2b0",
+      "crlf": 1,
+      "lf": 120
+    },
+    {
+      "path": "Past_work_webp/7550693456474594645.webp",
+      "size": 339712,
+      "sha256": "c3ef61e27eb29fa430f4edf92f29a177bd5b9397c57f4fef8d81ab1ae91d111f",
+      "crlf": 0,
+      "lf": 1279
+    },
+    {
+      "path": "Past_work_webp/After me.webp",
+      "size": 77044,
+      "sha256": "58bfc3608100d8e435322ada9c164513ba441c41bf7ece2948b8b337e0036a07",
+      "crlf": 0,
+      "lf": 286
+    },
+    {
+      "path": "Past_work_webp/Air Compressor.webp",
+      "size": 176636,
+      "sha256": "2fd3d71509cf0b636027201d6daf5318d05ab298a455f6d7e80b7caa6233bac5",
+      "crlf": 2,
+      "lf": 694
+    },
+    {
+      "path": "Past_work_webp/Barn.webp",
+      "size": 331814,
+      "sha256": "be6c06a6f74fb813d1bc1be23befb8981555bc319e0b132aca411c22d3d16e87",
+      "crlf": 3,
+      "lf": 1349
+    },
+    {
+      "path": "Past_work_webp/Before me.webp",
+      "size": 11540,
+      "sha256": "f835e6588e7368d5801c9c2e4d5e19f200b16f292183b0306bc0c35372376d97",
+      "crlf": 0,
+      "lf": 51
+    },
+    {
+      "path": "Past_work_webp/Blower Motor.webp",
+      "size": 732406,
+      "sha256": "41153f7a81cf457b1aa200cb976a7822f70527c3585c77e0151ad94dbd0a640b",
+      "crlf": 12,
+      "lf": 2840
+    },
+    {
+      "path": "Past_work_webp/CT CABINET Service upgrade.webp",
+      "size": 12978,
+      "sha256": "3c2cb87378d8c5c560b97ee55e1df4e4ec0a8850a19fd84082fc6f556b6de42f",
+      "crlf": 0,
+      "lf": 58
+    },
+    {
+      "path": "Past_work_webp/Conduit Piping.webp",
+      "size": 94212,
+      "sha256": "636757b7f7125d7e0b7051dbbe103119c2015732651a2fa11ec4bc6978bfc220",
+      "crlf": 3,
+      "lf": 380
+    },
+    {
+      "path": "Past_work_webp/Conduit.webp",
+      "size": 131356,
+      "sha256": "bf2a6b6f0e1ac6ea6187799050697cec5f731d97e7ef4da3132e3c2c657a81ee",
+      "crlf": 1,
+      "lf": 512
+    },
+    {
+      "path": "Past_work_webp/Control Cabinet.webp",
+      "size": 430296,
+      "sha256": "ce8a4e981c0f0d5f31cad3d9128e9203af628e52b6c09d469890638fad86436a",
+      "crlf": 4,
+      "lf": 1690
+    },
+    {
+      "path": "Past_work_webp/Control Work.webp",
+      "size": 53036,
+      "sha256": "ecb6dc07b1424930574d2e54b57e31fff2b429e8c1c36e4b93d2890039c8b3ed",
+      "crlf": 0,
+      "lf": 194
+    },
+    {
+      "path": "Past_work_webp/Counter Bar Lighting.webp",
+      "size": 90702,
+      "sha256": "38d04a475851d3851e728c32e2111916736ac78f53a1b4fa03da6a4ab9a40c44",
+      "crlf": 2,
+      "lf": 370
+    },
+    {
+      "path": "Past_work_webp/Dust Collector System.webp",
+      "size": 178458,
+      "sha256": "488fa79f5d951641619b045446ba8c84a50d75d4d178a982776fcf8671794c1c",
+      "crlf": 1,
+      "lf": 682
+    },
+    {
+      "path": "Past_work_webp/Dust Collector motor.webp",
+      "size": 150354,
+      "sha256": "8cdc26963ed69444d0edef4bc3cd5ca04c02da712a97b546f6fa2d66960da6c3",
+      "crlf": 1,
+      "lf": 574
+    },
+    {
+      "path": "Past_work_webp/EMT Piping.webp",
+      "size": 481426,
+      "sha256": "1f9c420f9055923170981170a83f9e196e720dbf30abcb7cb0dea9e3e0ceac03",
+      "crlf": 11,
+      "lf": 1837
+    },
+    {
+      "path": "Past_work_webp/Electrical Panels.webp",
+      "size": 113858,
+      "sha256": "0501337b902ddaca12656e238d9ee32efaf907dde25a1fdceeb7dc7717845660",
+      "crlf": 4,
+      "lf": 418
+    },
+    {
+      "path": "Past_work_webp/Exterior Light Fixtures.webp",
+      "size": 325554,
+      "sha256": "cd0f2a791579ef29cc66c8ed01ac7d5312fbc7a17890c32e0c8dc753a7c7058c",
+      "crlf": 6,
+      "lf": 1296
+    },
+    {
+      "path": "Past_work_webp/Field Controls.webp",
+      "size": 294728,
+      "sha256": "676afcbfcde7b8a2f39f5cb11c41003fef88944d187ac819cbace9be0605bdfd",
+      "crlf": 2,
+      "lf": 1138
+    },
+    {
+      "path": "Past_work_webp/Fire Response.webp",
+      "size": 191542,
+      "sha256": "003cd099d4ee8fefe989ba5d3075d77c4acb4992cf09581a5112739dde5a7f97",
+      "crlf": 5,
+      "lf": 706
+    },
+    {
+      "path": "Past_work_webp/Gas Station Service Call .webp",
+      "size": 410022,
+      "sha256": "d64b03360613f6effd476b40c91f916374427bd609fe163f0fc607742c73fc26",
+      "crlf": 7,
+      "lf": 1549
+    },
+    {
+      "path": "Past_work_webp/Horse Barn.webp",
+      "size": 392840,
+      "sha256": "2faf483af50da72e0c44fc2e817efb638a15beb62ba9ad8a90e0e8bc55c7abd4",
+      "crlf": 5,
+      "lf": 1501
+    },
+    {
+      "path": "Past_work_webp/Horse Stall Lighting.webp",
+      "size": 326750,
+      "sha256": "85a59723e9e3bffd51c2ba2289dca59fb53e13bda57d716115527f2d04201815",
+      "crlf": 7,
+      "lf": 1331
+    },
+    {
+      "path": "Past_work_webp/IMG_0733.webp",
+      "size": 26700,
+      "sha256": "0bb7e35de846135097520949414ab9113802ca44dfd281c584d433c597d2d146",
+      "crlf": 0,
+      "lf": 100
+    },
+    {
+      "path": "Past_work_webp/IMG_0852.webp",
+      "size": 13496,
+      "sha256": "26814ad9ffee98aedcd4b5a1279c70885dc8f57c7299ca3083a1bcb6b354e39e",
+      "crlf": 0,
+      "lf": 45
+    },
+    {
+      "path": "Past_work_webp/IMG_1380.webp",
+      "size": 305700,
+      "sha256": "c53462a66832d12c283b453b3f60bd741d855617b085806b3fbeec3645d50445",
+      "crlf": 2,
+      "lf": 1173
+    },
+    {
+      "path": "Past_work_webp/IMG_1599_Original.webp",
+      "size": 684932,
+      "sha256": "6aa5a8a7cfdc366cdc65e8c413e533857fce711bc9a6483d76c5302eb5d09965",
+      "crlf": 11,
+      "lf": 3226
+    },
+    {
+      "path": "Past_work_webp/IMG_8814.webp",
+      "size": 301786,
+      "sha256": "ab7287e2d6db3ddac341cab0f2183600e9fd7a7261454192d18cf223711d2cc5",
+      "crlf": 5,
+      "lf": 1159
+    },
+    {
+      "path": "Past_work_webp/Interior LED lighitng.webp",
+      "size": 269720,
+      "sha256": "541e79da087776fb1506ca6944df63c2a1ceab2f5ee2f120f1e0c681c39b3960",
+      "crlf": 4,
+      "lf": 1059
+    },
+    {
+      "path": "Past_work_webp/LED Hand Rail.webp",
+      "size": 96392,
+      "sha256": "fdfc6186acf3557a91b1bb96021bb2d3d55b73d6ec295118f62b43ecf797b8c5",
+      "crlf": 1,
+      "lf": 358
+    },
+    {
+      "path": "Past_work_webp/LED HandRail.webp",
+      "size": 121462,
+      "sha256": "c7dc5f30dc4319d7bc144e9e2effcaf5967b312dde2d57b23a695c3c2ca8da28",
+      "crlf": 1,
+      "lf": 496
+    },
+    {
+      "path": "Past_work_webp/LED shelves.webp",
+      "size": 34908,
+      "sha256": "07c15175e7ba5ee86b4345470721235bc3734853cf4632f86bf00bb302255994",
+      "crlf": 3,
+      "lf": 134
+    },
+    {
+      "path": "Past_work_webp/LOGO.webp",
+      "size": 31640,
+      "sha256": "c343bba59502d6e6bbd33d27998c33fc3679910b6f8d206ae35874b0567055b6",
+      "crlf": 2,
+      "lf": 129
+    },
+    {
+      "path": "Past_work_webp/Light Fixture.webp",
+      "size": 287372,
+      "sha256": "561c0047ac68c2367e6678f3632bb9467dc1c343213bf7ad94f1179b4790d2c9",
+      "crlf": 4,
+      "lf": 1108
+    },
+    {
+      "path": "Past_work_webp/Lighting Fixture.webp",
+      "size": 458306,
+      "sha256": "621daedbebaef1726be155d2ced508ad1fb7371f9be7d90d08a6eb5b12d8bf45",
+      "crlf": 9,
+      "lf": 1813
+    },
+    {
+      "path": "Past_work_webp/Lighting.webp",
+      "size": 102092,
+      "sha256": "6e8d9cddc256f41a96f12b938928141bc69f18aedf2ceb8a1975e92053cb20d8",
+      "crlf": 2,
+      "lf": 367
+    },
+    {
+      "path": "Past_work_webp/Low Voltage LED.webp",
+      "size": 79366,
+      "sha256": "c2186dd36c579b13d865cf19dd53299f9150c96d5daf3a5ee3cd265d23626f18",
+      "crlf": 0,
+      "lf": 316
+    },
+    {
+      "path": "Past_work_webp/Meter Socket Bank.webp",
+      "size": 252690,
+      "sha256": "5ae79ef2484f866331401e5c18af575cd24e446b53475b1afd1d591689f4d548",
+      "crlf": 2,
+      "lf": 947
+    },
+    {
+      "path": "Past_work_webp/Motor Control.webp",
+      "size": 332036,
+      "sha256": "1e89faab33d173a38d6a3dd53b1ce869ee65fe083455dcc8a68d1e84ca1d8876",
+      "crlf": 2,
+      "lf": 1226
+    },
+    {
+      "path": "Past_work_webp/Motor.webp",
+      "size": 26692,
+      "sha256": "7238c33517f1100eb45aa9863f5ec05b0669b21b806fba1ebe4aa0da1f8d8905",
+      "crlf": 1,
+      "lf": 92
+    },
+    {
+      "path": "Past_work_webp/Multi panel Assembly.webp",
+      "size": 230060,
+      "sha256": "378411595dd4186999bad0b505aa1129719e5033d7c03596b795a29c041981b1",
+      "crlf": 6,
+      "lf": 938
+    },
+    {
+      "path": "Past_work_webp/Panel Work.webp",
+      "size": 358468,
+      "sha256": "3b95b68257914335a2c02ef75a666df75c7eaf95a7ddb19a8595d5732fd8eeb9",
+      "crlf": 4,
+      "lf": 1418
+    },
+    {
+      "path": "Past_work_webp/Piping (2).webp",
+      "size": 86398,
+      "sha256": "231f017357a7977251baa526bc92eb235bf9d93fdf71cce914cb4478eb3c30cb",
+      "crlf": 3,
+      "lf": 354
+    },
+    {
+      "path": "Past_work_webp/Piping.webp",
+      "size": 87322,
+      "sha256": "b641ac967ebfaa0f89b5fc377340cb90cca017de5f34a9294c6581e2dc4d46ed",
+      "crlf": 4,
+      "lf": 362
+    },
+    {
+      "path": "Past_work_webp/Residential Electrical.webp",
+      "size": 189902,
+      "sha256": "6ca476d3e79dd499e63527354c25fe0c9b21e9076e5e9ab1dc7e5be926f05b52",
+      "crlf": 5,
+      "lf": 731
+    },
+    {
+      "path": "Past_work_webp/Residential Panel.webp",
+      "size": 336318,
+      "sha256": "a297b2962bd4030dccca3b8c5340d622d9e5727985bf0897133c86606a803ec7",
+      "crlf": 7,
+      "lf": 1328
+    },
+    {
+      "path": "Past_work_webp/Residential Wiring.webp",
+      "size": 303390,
+      "sha256": "e50a4a7de920327b8ab12b2888ef8c9258efdd20625adc50630e9e6ec3752e07",
+      "crlf": 5,
+      "lf": 1222
+    },
+    {
+      "path": "Past_work_webp/Residential panel  work.webp",
+      "size": 102220,
+      "sha256": "df0f13d247d34d406eefaa54a608d3ea30318fc26f89612e192ac4b7de43e1b0",
+      "crlf": 3,
+      "lf": 418
+    },
+    {
+      "path": "Past_work_webp/Selenoids.webp",
+      "size": 109224,
+      "sha256": "2b6eea9ab6d34842abb02aa2cfb303f122d7e00c5a82c874db7d381d6203068a",
+      "crlf": 4,
+      "lf": 443
+    },
+    {
+      "path": "Past_work_webp/Service after.webp",
+      "size": 318458,
+      "sha256": "e67e6f8caa4b9f277f2bed030720f5b01eef4b1f71ec0389170ec6eb0e74eacc",
+      "crlf": 5,
+      "lf": 1251
+    },
+    {
+      "path": "Past_work_webp/Service before.webp",
+      "size": 292962,
+      "sha256": "286e7eb541f727023961428784853fb15f7980c719d5801de14619693b3f13d6",
+      "crlf": 7,
+      "lf": 1133
+    },
+    {
+      "path": "Past_work_webp/SteelTech Conduit Room.webp",
+      "size": 386824,
+      "sha256": "13703c6f0ececded4aa4e1a6c6ce91a6029f46d82eaf763da06becebbb0408f2",
+      "crlf": 8,
+      "lf": 1555
+    },
+    {
+      "path": "Past_work_webp/Switch Gear.webp",
+      "size": 6904,
+      "sha256": "0df14dc2199cf8ff92edc90c44db13802285fb0d8b72ae563b3b36e041388985",
+      "crlf": 1,
+      "lf": 28
+    },
+    {
+      "path": "Past_work_webp/TopTierElectrical_Logo_Web_600w.webp",
+      "size": 341354,
+      "sha256": "eece192e7df0692fa28b3663772d5c36f678d6702c1b048ec31f8b6755cd081f",
+      "crlf": 7,
+      "lf": 1443
+    },
+    {
+      "path": "Past_work_webp/TopTierElectrical_OpenGraph_1200x630.webp",
+      "size": 237646,
+      "sha256": "4dfb568de796e8c48ad2b091cfd16bda20ccdc268b90dbe48166f01c221e28d3",
+      "crlf": 2,
+      "lf": 1133
+    },
+    {
+      "path": "Past_work_webp/Transformer.webp",
+      "size": 396132,
+      "sha256": "72f54930140fb436ee1ed9936c86da1986488239179eb185afd0eb51b2698db8",
+      "crlf": 9,
+      "lf": 1589
+    },
+    {
+      "path": "Past_work_webp/What not to do/Electrical Fail.webp",
+      "size": 275694,
+      "sha256": "9f89e9319cfb4b14e564390c629f3603bc04e2c58ee6f6ffb6eb48c1bddf4d0a",
+      "crlf": 2,
+      "lf": 1009
+    },
+    {
+      "path": "Past_work_webp/What not to do/Electrical Mess.webp",
+      "size": 591218,
+      "sha256": "146cd31df9133a5b2a16ffaddaac8758565b5f2a781e6bab1d015ef8e0a00aca",
+      "crlf": 13,
+      "lf": 2276
+    },
+    {
+      "path": "Past_work_webp/What not to do/IMG_0099.webp",
+      "size": 12650,
+      "sha256": "d5a2ff3f57a86a5ca6b52b12b2f2140a6932b30db9cc3e82db14cc16409f1e65",
+      "crlf": 0,
+      "lf": 43
+    },
+    {
+      "path": "Past_work_webp/What not to do/IMG_2522.webp",
+      "size": 13650,
+      "sha256": "171b35743bb954e94a804fae319836e59a8f71160707e44b55e80b4d9b21b7d4",
+      "crlf": 0,
+      "lf": 38
+    },
+    {
+      "path": "Past_work_webp/What not to do/IMG_3108.webp",
+      "size": 9228,
+      "sha256": "5f9644faf36c6a248efd1dbef4d5f3bf953b9efc94ed23a0a8e6ffd41495b5d1",
+      "crlf": 0,
+      "lf": 34
+    },
+    {
+      "path": "Past_work_webp/What not to do/IMG_6894.webp",
+      "size": 9994,
+      "sha256": "281466d943f6bb86524b49cd6bb0f4684d5ee32b46548d25df3c14c9a1807801",
+      "crlf": 0,
+      "lf": 40
+    },
+    {
+      "path": "Past_work_webp/What not to do/IMG_8175.webp",
+      "size": 9208,
+      "sha256": "8ca1b1ed9d9123396493968ce56eb4d8fc83ee262fb0720392886f93982d2a73",
+      "crlf": 0,
+      "lf": 34
+    },
+    {
+      "path": "Past_work_webp/Working through the Storms.webp",
+      "size": 103702,
+      "sha256": "76e8de9cb237fe100a5847ee1e1c0cd792d975f219bd14856edbe1fcda00e146",
+      "crlf": 4,
+      "lf": 423
+    },
+    {
+      "path": "Past_work_webp/backup Generator.webp",
+      "size": 276820,
+      "sha256": "79ad09589c889924bffdd1229934720d525f7460c7fd25ffb155668487cb3d2d",
+      "crlf": 3,
+      "lf": 1083
+    },
+    {
+      "path": "Past_work_webp/conversion_report.csv",
+      "size": 7011,
+      "sha256": "d49d1d0cafae38cfebae8da18ee11522ac65a2fe17265f26b71c96971f70c114",
+      "crlf": 0,
+      "lf": 68
+    },
+    {
+      "path": "Past_work_webp/conversion_report.json",
+      "size": 26769,
+      "sha256": "5685021a37879aece6e640856ea8f348bb744cce873c39261ea65b214023a4be",
+      "crlf": 0,
+      "lf": 950
+    },
+    {
+      "path": "Past_work_webp/index.html",
+      "size": 27265,
+      "sha256": "bd72f27b0709c6666d2d0a7ff67df53fa26abb9245e2e16e30ef2741f68463e7",
+      "crlf": 0,
+      "lf": 954
+    },
+    {
+      "path": "Past_work_webp/on site Service Sketch.webp",
+      "size": 351418,
+      "sha256": "65d176ba120a24afc2aafd92dc76e429f19d6d7cc10075bc4d3bdb35e2517040",
+      "crlf": 6,
+      "lf": 1362
+    },
+    {
+      "path": "Past_work_webp/panel.webp",
+      "size": 81048,
+      "sha256": "138c33ee577dedcecb3cecfba262042921d8e2b6128ea8d2fed662d47ef2e3a9",
+      "crlf": 0,
+      "lf": 287
+    },
+    {
+      "path": "README.md",
+      "size": 2441,
+      "sha256": "33f786ac0718c85e8ba085efd6f0666cc3a32b9a82461cf49bb40c7c3bfffb53",
+      "crlf": 0,
+      "lf": 75
+    },
+    {
+      "path": "SEO_CONTENT_BACKLOG.md",
+      "size": 6114,
+      "sha256": "eb98eda0b6a1f67909bfcca158b0e47d441bcd97dfcf211d42233b73cf9a66bb",
+      "crlf": 0,
+      "lf": 14
+    },
+    {
+      "path": "SEO_CONTENT_CHANGELOG.md",
+      "size": 8169,
+      "sha256": "56da47e4a97e12aec9b70688dad74225fba95bfbf4cc56e9a14007f6ff61c75d",
+      "crlf": 0,
+      "lf": 281
+    },
+    {
+      "path": "SEO_CONTENT_TRACKER.md",
+      "size": 13143,
+      "sha256": "2741b91fec2380b9d415b5fd9bb1eaaa76c2d5a82c4ca16375c0e9aa546387d5",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "TopTier_Implementation_Guide-01.jpg",
+      "size": 59117,
+      "sha256": "1202d75a90d439d01e7a6c531f82664654b0bc58af96e60964672a3a5125390c",
+      "crlf": 1,
+      "lf": 148
+    },
+    {
+      "path": "TopTier_Implementation_Guide-02.jpg",
+      "size": 22683,
+      "sha256": "4bd4bd71576381057af8d73832f101492a24ee7df13934f888f0eae010a0921b",
+      "crlf": 0,
+      "lf": 0
+    },
+    {
+      "path": "TopTier_Implementation_Guide-03.jpg",
+      "size": 220413,
+      "sha256": "3d425aa0748994a547cc212ca679308336018c3b425f4475d9e1210e5ff41012",
+      "crlf": 2,
+      "lf": 800
+    },
+    {
+      "path": "TopTier_Implementation_Guide-04.jpg",
+      "size": 235253,
+      "sha256": "47b2a9eb7da60b4fd842338158db07c79c1eaca3c0fed70402a81773eabf6e4c",
+      "crlf": 2,
+      "lf": 868
+    },
+    {
+      "path": "TopTier_Implementation_Guide-05.jpg",
+      "size": 78050,
+      "sha256": "a8f7a64daf39b1a5eccdd809e76b5643b5b083bb562ebb02f51726a891f2c738",
+      "crlf": 1,
+      "lf": 230
+    },
+    {
+      "path": "TopTier_Implementation_Guide-06.jpg",
+      "size": 296905,
+      "sha256": "32a432ddb20c0d102776208560f6e4bf1b0f2fda653d7ae7b4a99ad07c173393",
+      "crlf": 5,
+      "lf": 1177
+    },
+    {
+      "path": "TopTier_Implementation_Guide-07.jpg",
+      "size": 68330,
+      "sha256": "f692d00e63f8f146e38c9573e3e10cf695d44c57f32e8f050a058576c6c7a648",
+      "crlf": 0,
+      "lf": 226
+    },
+    {
+      "path": "TopTier_Implementation_Guide-08.jpg",
+      "size": 158304,
+      "sha256": "104c79b0f036bc357b15e328ef4dba4c2ce3a16e6d0cec8ded815389e5348465",
+      "crlf": 2,
+      "lf": 555
+    },
+    {
+      "path": "TopTier_Implementation_Guide-09.jpg",
+      "size": 162912,
+      "sha256": "f4aa2166f9ae9e1b90361385df9f8b8734cf5b34d3172bd4b8a170f019ce2913",
+      "crlf": 2,
+      "lf": 615
+    },
+    {
+      "path": "TopTier_Implementation_Guide-10.jpg",
+      "size": 111268,
+      "sha256": "e98ec42ac516b9ea4a54f870368495ed2d48b403854e22de60fdf8dd4a4bc354",
+      "crlf": 0,
+      "lf": 369
+    },
+    {
+      "path": "TopTier_Implementation_Guide-11.jpg",
+      "size": 216276,
+      "sha256": "e8db60dcdb99afb0ae943c2f413f4379a850acad91fceac7b1f08da86cfa47aa",
+      "crlf": 9,
+      "lf": 822
+    },
+    {
+      "path": "TopTier_Implementation_Guide-12.jpg",
+      "size": 169944,
+      "sha256": "79734d3b1c2d1fd3aab768b50e3c557399e0a9fa93f51911d57ec19858364892",
+      "crlf": 3,
+      "lf": 640
+    },
+    {
+      "path": "TopTier_Implementation_Guide-13.jpg",
+      "size": 277513,
+      "sha256": "15b2a4a50a52f623e656e775267f94bdd4b62d87be23949ace4abf78b0cbdfe4",
+      "crlf": 4,
+      "lf": 1064
+    },
+    {
+      "path": "TopTier_Implementation_Guide-14.jpg",
+      "size": 160701,
+      "sha256": "9e97862b036226c965d566c30efb281c2750de19da5e42a0f3a33387ee6e2bf3",
+      "crlf": 1,
+      "lf": 594
+    },
+    {
+      "path": "TopTier_Implementation_Guide-15.jpg",
+      "size": 176651,
+      "sha256": "c957c8d184d6980282d096d787bcdf05fabac43bc88350f11ac396f0aef3a7a1",
+      "crlf": 6,
+      "lf": 677
+    },
+    {
+      "path": "TopTier_Implementation_Guide-16.jpg",
+      "size": 107955,
+      "sha256": "506da78d9dc349163811225be081fad041ebabb434ef66d0998b147b0237764b",
+      "crlf": 2,
+      "lf": 357
+    },
+    {
+      "path": "TopTier_Implementation_Guide-17.jpg",
+      "size": 63644,
+      "sha256": "a3d62f39b9010abcccaca4c2f1b8767a7075be551262f70e7ed1599c7eec5db7",
+      "crlf": 0,
+      "lf": 156
+    },
+    {
+      "path": "TopTier_Implementation_Guide-18.jpg",
+      "size": 253951,
+      "sha256": "1afac49f02c0a6bbc6d0f8339fc28f98a4e18d14c721e4b72159e4ced1b341c7",
+      "crlf": 6,
+      "lf": 1031
+    },
+    {
+      "path": "TopTier_Implementation_Guide-19.jpg",
+      "size": 38859,
+      "sha256": "a7abff034b66db7c64b61a44304c47d88acb6353ebfee6c2cdd2e56207dcac3b",
+      "crlf": 1,
+      "lf": 69
+    },
+    {
+      "path": "TopTier_Implementation_Guide-20.jpg",
+      "size": 197130,
+      "sha256": "f0eedb63c1e11669f6018359600d744b9ae53c79b5326324377ca6b7dfbb3444",
+      "crlf": 1,
+      "lf": 749
+    },
+    {
+      "path": "TopTier_Implementation_Guide-21.jpg",
+      "size": 24851,
+      "sha256": "f8d6fa6db4cebaeb949742a883dbc01c5a295e704a924dbb33959eaf76fe530b",
+      "crlf": 0,
+      "lf": 9
+    },
+    {
+      "path": "TopTier_Implementation_Guide-22.jpg",
+      "size": 240314,
+      "sha256": "2dad36470558f7c6ccd7d1664f7d49895b37faeb7aa6c4f4ccc1e28ddb817326",
+      "crlf": 3,
+      "lf": 929
+    },
+    {
+      "path": "TopTier_Implementation_Guide-23.jpg",
+      "size": 193569,
+      "sha256": "c4c5df9181627babd1c8fb8db090761a5e15ca27a2fb981bc1cea3426de635e2",
+      "crlf": 4,
+      "lf": 660
+    },
+    {
+      "path": "Toptier1_Full_Audit_and_StepByStep_Procedure.md",
+      "size": 29134,
+      "sha256": "33537f93f9a6c64810daeed0bc7826d1c2e9c6c28e8be454e1413ad36495a242",
+      "crlf": 0,
+      "lf": 940
+    },
+    {
+      "path": "_headers",
+      "size": 1618,
+      "sha256": "746a40da32bbe5b87d85b253db1fee4c2d1c32e95ac8201a43bdb903953c056f",
+      "crlf": 0,
+      "lf": 41
+    },
+    {
+      "path": "_redirects",
+      "size": 1118,
+      "sha256": "722a841de31fb5192a8c695a8ce4fd9f303d809bef983f2a438a25879472b267",
+      "crlf": 0,
+      "lf": 19
+    },
+    {
+      "path": "about.html",
+      "size": 4788,
+      "sha256": "48d5cd90e9d773ae6c1c31d32b272031b7e792df96208eb0ecb4a747dcf543b4",
+      "crlf": 0,
+      "lf": 139
+    },
+    {
+      "path": "app/api/leads/route.ts",
+      "size": 2197,
+      "sha256": "98000fdd0b2b198434914f740bef8bab97693b8d3de68ce12b3d62e44a0f4ea6",
+      "crlf": 0,
+      "lf": 72
+    },
+    {
+      "path": "app/commercial/page.tsx",
+      "size": 1795,
+      "sha256": "01deafec943a31d360ebcf6d6d96880755d9188c5eeb6563b5c84210fbc25b8a",
+      "crlf": 0,
+      "lf": 56
+    },
+    {
+      "path": "app/layout.tsx",
+      "size": 456,
+      "sha256": "8aa2f1b1549f45747e7e1156e25dd8742a46b325a59d1ecfb7f795db9e73cf55",
+      "crlf": 0,
+      "lf": 16
+    },
+    {
+      "path": "app/residential/page.tsx",
+      "size": 2700,
+      "sha256": "024503313753799beb5e658d1cbfa224619865ce3355a5838df6381510c40270",
+      "crlf": 0,
+      "lf": 83
+    },
+    {
+      "path": "app/reviews/page.tsx",
+      "size": 1281,
+      "sha256": "0d88f56a8c7dddb9b86a71527a987c04526c3fd7cd254dc593b44ecbe5c8bd3f",
+      "crlf": 0,
+      "lf": 45
+    },
+    {
+      "path": "app/robots.ts",
+      "size": 341,
+      "sha256": "24606a2643bb1bd6227a9c50e8eba7753befc84c2847b3bdbc99e7edfe87cafc",
+      "crlf": 0,
+      "lf": 14
+    },
+    {
+      "path": "app/sitemap.ts",
+      "size": 1156,
+      "sha256": "4768de5c32e1f06f92f3e61c1781c847a84335b2e1a84e4164112be5dbc40d05",
+      "crlf": 0,
+      "lf": 43
+    },
+    {
+      "path": "app/thanks-booking/page.tsx",
+      "size": 503,
+      "sha256": "86d898d54825be7e54a96e20c288b8187cb0762a1e3278fc2d8908f2c8259954",
+      "crlf": 0,
+      "lf": 20
+    },
+    {
+      "path": "app/thanks-contact/page.tsx",
+      "size": 510,
+      "sha256": "2441948ac12491b93dd12ca124b9a80d88ae286166fa6a237ae454e4f0d32757",
+      "crlf": 0,
+      "lf": 20
+    },
+    {
+      "path": "artifacts/local-seo/codex-prompts.md",
+      "size": 1884,
+      "sha256": "f054c81bbca65c489eadb61de75da2c851a22aa97ac6ba81197aef30e99a18e0",
+      "crlf": 0,
+      "lf": 66
+    },
+    {
+      "path": "artifacts/local-seo/report.json",
+      "size": 12495,
+      "sha256": "514c52e8dcff857d49adbe97f33f3722d09b00016bf9511ecf32bee5763b36e1",
+      "crlf": 0,
+      "lf": 335
+    },
+    {
+      "path": "artifacts/local-seo/report.md",
+      "size": 4025,
+      "sha256": "0d6114c1a64d7e597b03a9292237e0780f87bcbca26b543a8363074127d47965",
+      "crlf": 0,
+      "lf": 72
+    },
+    {
+      "path": "assets/images/TopTierElectrical_logo_gold_qb_transparent.png",
+      "size": 279092,
+      "sha256": "aa6b78ce773474bf32d34a0e2edc6c864f12129f3333888a21947bda51b32557",
+      "crlf": 2,
+      "lf": 1066
+    },
+    {
+      "path": "assets/images/hero-original.jpg",
+      "size": 2352663,
+      "sha256": "6bc0a3eae374d985834a0d744e6146670a3f324f24150518770458de0927ecc4",
+      "crlf": 39,
+      "lf": 8327
+    },
+    {
+      "path": "assets/images/hero.jpg",
+      "size": 246897,
+      "sha256": "4b873c1332f6a61fd5ae0de33cba559347d0490d4d352802629ec74921e5ac91",
+      "crlf": 4,
+      "lf": 651
+    },
+    {
+      "path": "assets/images/logo.svg",
+      "size": 204,
+      "sha256": "d04caa0647c58488667fff890f0c1a1e186067062468adb0770f696fcb6361e8",
+      "crlf": 0,
+      "lf": 3
+    },
+    {
+      "path": "assets/images/logos/TopTierElectrical_Primary_Black_2048.png",
+      "size": 411221,
+      "sha256": "b554440086d91395b8a4e7bd79855abc3213c6e560c9b7e6715148441f751184",
+      "crlf": 4,
+      "lf": 1413
+    },
+    {
+      "path": "assets/images/logos/TopTierElectrical_Primary_FlatGold_2048.png",
+      "size": 442019,
+      "sha256": "11bde79f67503ea35f8f0826bf6722a6a74e25032b11103d792d0ca2661c0356",
+      "crlf": 10,
+      "lf": 1809
+    },
+    {
+      "path": "assets/images/logos/TopTierElectrical_Primary_FlatGold_4096.png",
+      "size": 1214175,
+      "sha256": "46d00ae655e82c8d438325114563214e79f32939141efb57d7123629e9a5ec57",
+      "crlf": 11,
+      "lf": 3365
+    },
+    {
+      "path": "assets/images/logos/TopTierElectrical_Primary_FlatGold_512.png",
+      "size": 53223,
+      "sha256": "6856cedb15f3c399ea2124bf0d5ca010c97ec754c815300e9f57e5040c7e0f5b",
+      "crlf": 2,
+      "lf": 263
+    },
+    {
+      "path": "assets/images/logos/TopTierElectrical_Primary_White_2048.png",
+      "size": 439610,
+      "sha256": "0e470f5e3dc4516778dc9c49f1e2ca57c4bc8904f27286179237df14ddb30ce1",
+      "crlf": 4,
+      "lf": 1513
+    },
+    {
+      "path": "assets/images/logos/TopTierElectrical_Primary_White_512.png",
+      "size": 50242,
+      "sha256": "5e246f10828b2615801322ad5c7d20b1f2e76aad9b284599d03232eef93f0141",
+      "crlf": 1,
+      "lf": 165
+    },
+    {
+      "path": "assets/images/projects/3-phase-service.jpg",
+      "size": 258387,
+      "sha256": "797238bc376ad6d3ad506b33d4047e755f3247ede30239f445259d96f10f0c6d",
+      "crlf": 6,
+      "lf": 875
+    },
+    {
+      "path": "assets/images/projects/480v-3-phase.jpg",
+      "size": 708425,
+      "sha256": "6f2d9efda87bfc54b9543601d5b3a890890f18d76a570eeacd1de159755f40e0",
+      "crlf": 6,
+      "lf": 3416
+    },
+    {
+      "path": "assets/images/projects/barn-photo.jpg",
+      "size": 946367,
+      "sha256": "5a9a972e2076b073b3043b2cf27803e6f9bc9ccf8e7c46c62dc3130c47ad4bf7",
+      "crlf": 12,
+      "lf": 3375
+    },
+    {
+      "path": "assets/images/projects/carl.jpg",
+      "size": 264083,
+      "sha256": "8b9dcd4f86753ca60ccf92d01312aa170ca5a9a87aee87be198259ccc10dc8f4",
+      "crlf": 0,
+      "lf": 471
+    },
+    {
+      "path": "assets/images/projects/commercial-control-panel-wiring.jpg",
+      "size": 689334,
+      "sha256": "2397af7e2df07cf8e3d58b1e7888e4cbc51e95ae8d6a73b1718aafa497853064",
+      "crlf": 9,
+      "lf": 3643
+    },
+    {
+      "path": "assets/images/projects/conduit-piping.jpg",
+      "size": 311517,
+      "sha256": "1b52be81f6d08baa1d2212b5a05e944d11ef616fcf0647543fc5af469325e351",
+      "crlf": 4,
+      "lf": 1149
+    },
+    {
+      "path": "assets/images/projects/conduit.jpg",
+      "size": 379305,
+      "sha256": "3213d8b31dd49afdc31e1b21655cb2f1fd0f86a0e57dacf10ce7388b66bcdde1",
+      "crlf": 1,
+      "lf": 1052
+    },
+    {
+      "path": "assets/images/projects/control-cabinet-2.jpg",
+      "size": 348645,
+      "sha256": "e698db2f1495466b91137342316296c7d86bfc19dcb744d7524efe4cfa61e80e",
+      "crlf": 4,
+      "lf": 1258
+    },
+    {
+      "path": "assets/images/projects/control-cabinet.jpg",
+      "size": 323270,
+      "sha256": "1947163ab78bf699b0c7bc18d7781930ce05284cc64d7eada2a8ac39db82e487",
+      "crlf": 2,
+      "lf": 1197
+    },
+    {
+      "path": "assets/images/projects/control-work.jpg",
+      "size": 366637,
+      "sha256": "180a9e8c4a86838f0b76dd78f4ad1977de7443fe0ec37d588a22fb7497b19940",
+      "crlf": 5,
+      "lf": 1612
+    },
+    {
+      "path": "assets/images/projects/dust-collector-motor.jpg",
+      "size": 311750,
+      "sha256": "fa946be0d5f719835e1b66482e2a53aa750702ffca1470b3eabdaeae6bb339be",
+      "crlf": 6,
+      "lf": 1066
+    },
+    {
+      "path": "assets/images/projects/dust-collector-system.jpg",
+      "size": 443067,
+      "sha256": "d675fe005c2310da4e086bba1839c144376874fc7bc90c72b951f9757c47c357",
+      "crlf": 3,
+      "lf": 1777
+    },
+    {
+      "path": "assets/images/projects/electrical-project-49-1200.jpg",
+      "size": 343244,
+      "sha256": "42f5d0ee107b532dade1e2324c186daabf2e91c41f20849d857efe83e27569f7",
+      "crlf": 3,
+      "lf": 1475
+    },
+    {
+      "path": "assets/images/projects/fire-response-2.jpg",
+      "size": 478187,
+      "sha256": "e18909d4fc2c281b6cad5c3cd12acd4b4fb03982a3de65a859660f86d3238901",
+      "crlf": 8,
+      "lf": 1495
+    },
+    {
+      "path": "assets/images/projects/gas-station-service.jpg",
+      "size": 4674447,
+      "sha256": "5c1d63e95f75d271970b6b2b8d821e81823c87e404c7678a429455d3ebaae3ab",
+      "crlf": 40,
+      "lf": 18271
+    },
+    {
+      "path": "assets/images/projects/generator-transfer-switch-install.jpg",
+      "size": 731211,
+      "sha256": "d2aa4e9faaa22daebc879f5a318cda36727d45c6aac024e7adf013375569f0f5",
+      "crlf": 5,
+      "lf": 2212
+    },
+    {
+      "path": "assets/images/projects/horse-stall-lighting.jpg",
+      "size": 2417036,
+      "sha256": "a6e1499830cd46e19687cdc4369e841c00a42f5ea9e47ca870c5a39942eb3944",
+      "crlf": 16,
+      "lf": 9827
+    },
+    {
+      "path": "assets/images/projects/kitchen-led.jpg",
+      "size": 239793,
+      "sha256": "d2034c828879dfea3f4726e407b96e2eee26fbe72cbc856263c15431886b55d5",
+      "crlf": 1,
+      "lf": 787
+    },
+    {
+      "path": "assets/images/projects/led-handrail-4.jpg",
+      "size": 1427891,
+      "sha256": "6ce6a042670106ec07739273b10bf22be99d2f27c4a8f54d85d27ebb004e05d3",
+      "crlf": 16,
+      "lf": 5676
+    },
+    {
+      "path": "assets/images/projects/led-handrail-5.jpg",
+      "size": 1468371,
+      "sha256": "e03b3af6c56d824993b7ceb6ee01397629d79a7459d7f266c0f53882d9e90e85",
+      "crlf": 15,
+      "lf": 6284
+    },
+    {
+      "path": "assets/images/projects/led-handrail.jpg",
+      "size": 183095,
+      "sha256": "957bba4c4332cfebcd669616ad5092158c0e2af287777aa8a82963449f3bab60",
+      "crlf": 4,
+      "lf": 513
+    },
+    {
+      "path": "assets/images/projects/led-shelfs.jpg",
+      "size": 195846,
+      "sha256": "0ba713a8dfafa4168c3fb5123e75aaf20e7dc2fe2b0f6a92c4cccf08f788c975",
+      "crlf": 1,
+      "lf": 655
+    },
+    {
+      "path": "assets/images/projects/led-shelves.jpg",
+      "size": 183441,
+      "sha256": "58f24cb16b167df56212db473e6ffb8b03535388afd36d8c9fa5592909495666",
+      "crlf": 4,
+      "lf": 673
+    },
+    {
+      "path": "assets/images/projects/logo.jpg",
+      "size": 177124,
+      "sha256": "1dd8ade1352374c5731e797c9084d62be48416736789db3c8accb37362117ae2",
+      "crlf": 0,
+      "lf": 545
+    },
+    {
+      "path": "assets/images/projects/motor-control.jpg",
+      "size": 2428905,
+      "sha256": "c8f0c08d7ee63c477ec555b3716635af463af2e57d9ae517785a948d7ae0ad07",
+      "crlf": 23,
+      "lf": 8479
+    },
+    {
+      "path": "assets/images/projects/motor.jpg",
+      "size": 224727,
+      "sha256": "4c287b707364809d85f823b309e0fd8b28f0f69b14e060d40936b2d840e1ee97",
+      "crlf": 7,
+      "lf": 884
+    },
+    {
+      "path": "assets/images/projects/myenergi-4SyUf9MvWjU-unsplash.jpg",
+      "size": 274031,
+      "sha256": "b891404547738c9bcee2c6644a0d9ff1772f7c820b0fd1f3279a064f1030c357",
+      "crlf": 4,
+      "lf": 1027
+    },
+    {
+      "path": "assets/images/projects/panel-work.jpg",
+      "size": 2699241,
+      "sha256": "42bbb0f1a7d625fc2bd74f98f480895ad2773d0fb9cb4888c124122ee2a0ad18",
+      "crlf": 17,
+      "lf": 9296
+    },
+    {
+      "path": "assets/images/projects/pipe-rack.jpg",
+      "size": 297056,
+      "sha256": "e2a6d6b10656119309318bbed5d62a4195cccaae9bd65af3b2e7af05823e8ef9",
+      "crlf": 7,
+      "lf": 1222
+    },
+    {
+      "path": "assets/images/projects/piping.jpg",
+      "size": 284914,
+      "sha256": "85ce8b935d6f9a5fe07715c0c47eab43acdd5b397c8bc1700f289f6731864fa8",
+      "crlf": 8,
+      "lf": 1302
+    },
+    {
+      "path": "assets/images/projects/selenoids.jpg",
+      "size": 336758,
+      "sha256": "4d0a9966844027fa461be84deee06758c1dc2f63a8e10679e66b3b35fce8cf71",
+      "crlf": 6,
+      "lf": 1548
+    },
+    {
+      "path": "assets/images/projects/service-after.jpg",
+      "size": 234431,
+      "sha256": "f811d93189dba127351c33cf6201930d6c383693494943879875f3987ee5d48b",
+      "crlf": 1,
+      "lf": 803
+    },
+    {
+      "path": "assets/images/projects/service-panel-upgrade-detail.jpg",
+      "size": 934140,
+      "sha256": "2052c64eb3bec5dd32eca77e459629ae238736aa73d9961ea895846313983731",
+      "crlf": 16,
+      "lf": 3218
+    },
+    {
+      "path": "assets/images/projects/service-upgrade-before.jpg",
+      "size": 358356,
+      "sha256": "65c25121dc866e0cb53a835375a2cec6f4951f2a6d9af8b24c0f8045a0acb217",
+      "crlf": 2,
+      "lf": 1298
+    },
+    {
+      "path": "assets/images/projects/storm-emergency.jpg",
+      "size": 217387,
+      "sha256": "65ad612c35502c210de7aa53918a86c2a02660eee3f46b11889605117e7c9843",
+      "crlf": 3,
+      "lf": 1196
+    },
+    {
+      "path": "assets/images/projects/transformer.jpg",
+      "size": 390101,
+      "sha256": "3c6abe7313894f798b399fc3fabc4e01409a43690f83c8e51ff15e0a7efd73fc",
+      "crlf": 3,
+      "lf": 1036
+    },
+    {
+      "path": "audit-deliverables.md",
+      "size": 32351,
+      "sha256": "4640cf983def781638328581620f7c395c2724608693722233bc7d3c72224540",
+      "crlf": 0,
+      "lf": 301
+    },
+    {
+      "path": "audit-findings.json",
+      "size": 649,
+      "sha256": "4698fd2ebb337fc346ea7c970a07ffa2e58e549832a742c64b429ae415fa1068",
+      "crlf": 0,
+      "lf": 22
+    },
+    {
+      "path": "audit-report.md",
+      "size": 2355,
+      "sha256": "2c2bab7ffd947f88d2797ff638489d24a8ec3a7e03d4497f1c1584f124f801ff",
+      "crlf": 0,
+      "lf": 53
+    },
+    {
+      "path": "backlog.yml",
+      "size": 229,
+      "sha256": "66098998e921123a45d5f21e3a7b536c85485cbf5f1535ed01bf79ffd3e2e9ce",
+      "crlf": 0,
+      "lf": 7
+    },
+    {
+      "path": "blog-electrical-safety.html",
+      "size": 14624,
+      "sha256": "e048bc41195bdeeda91b9c7b8d65245491060e793e0da2a82e45c768ef2ef0f9",
+      "crlf": 0,
+      "lf": 399
+    },
+    {
+      "path": "blog-ev-charging.html",
+      "size": 15904,
+      "sha256": "bcb0d495ac8a6798f163b064709a68b61c1e5b924cea7d0aa547ad0c1c8ca303",
+      "crlf": 0,
+      "lf": 440
+    },
+    {
+      "path": "blog-generator-readiness.html",
+      "size": 13565,
+      "sha256": "dc44f03b95b09d641021459ce65942ce8f8847db85f7b57ff9cdf61cb5483869",
+      "crlf": 0,
+      "lf": 386
+    },
+    {
+      "path": "blog-panel-upgrade-signs.html",
+      "size": 13307,
+      "sha256": "de942fadfc4904e9ceac4af8083f20a9f49e4eb663e693bd529dce646261c2fb",
+      "crlf": 0,
+      "lf": 383
+    },
+    {
+      "path": "blog-right-electrician.html",
+      "size": 16120,
+      "sha256": "5b43ed39d3611598bf989cbb16f494c69332cdde1ae876678ecaf7ffa47044ba",
+      "crlf": 0,
+      "lf": 434
+    },
+    {
+      "path": "blog-surge-protection.html",
+      "size": 14268,
+      "sha256": "633e7024c4a31a71ec502110fa35850a6e8033ff385dd31a46ec388e63d5d8ef",
+      "crlf": 0,
+      "lf": 408
+    },
+    {
+      "path": "blog.html",
+      "size": 18072,
+      "sha256": "3713fdf0c4ca11e5460e394e2e2e1d44c1e8c66663255dab5a94f9d97f8f46dc",
+      "crlf": 0,
+      "lf": 493
+    },
+    {
+      "path": "booking.html",
+      "size": 14632,
+      "sha256": "2c665623f316809bdd1eb544c3879ec3153dec01a2be3c0bca948b79d0795f91",
+      "crlf": 0,
+      "lf": 408
+    },
+    {
+      "path": "branches.txt",
+      "size": 3266,
+      "sha256": "b2cf5e0a51fb2fd46db023201c23118f1fce15486ecfaab7ff4d771b89395cb9",
+      "crlf": 0,
+      "lf": 40
+    },
+    {
+      "path": "bundle export",
+      "size": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "crlf": 0,
+      "lf": 1
+    },
+    {
+      "path": "commercial-electrical-maintenance.html",
+      "size": 5527,
+      "sha256": "b4cfc098d3a80ace60dc91a5989ea3b3c2f357dab215411ba36261511c8ac93d",
+      "crlf": 0,
+      "lf": 154
+    },
+    {
+      "path": "commercial-electrician-allegan-mi.html",
+      "size": 8081,
+      "sha256": "c5ade30d7701150583f5fff288959aa696ec95581749b22588896f6638b4b71a",
+      "crlf": 0,
+      "lf": 230
+    },
+    {
+      "path": "commercial-led-lighting-retrofit.html",
+      "size": 5857,
+      "sha256": "e0d472a53984e7e2e49c13a246ac3a11975e38551314ac1f14e2f6fd7f59c617",
+      "crlf": 0,
+      "lf": 165
+    },
+    {
+      "path": "commercial.html",
+      "size": 3942,
+      "sha256": "dda2a23f775c2d023bb902a378963d6e4ee936775a36bdd1269444ef8dd33d63",
+      "crlf": 0,
+      "lf": 109
+    },
+    {
+      "path": "contact.html",
+      "size": 14056,
+      "sha256": "77810d9e4bb6ee30b0af1449537ae049fa17a6c2b3a5aa43e8a7b06c039335dd",
+      "crlf": 0,
+      "lf": 400
+    },
+    {
+      "path": "css/components.css",
+      "size": 2445,
+      "sha256": "96fbc57cb04e5529021b67b73e60c707b415de7408e0e2ce91879c3d50fe9123",
+      "crlf": 0,
+      "lf": 146
+    },
+    {
+      "path": "css/design-tokens.css",
+      "size": 1053,
+      "sha256": "3a3b0961c53ff0498eb7b0da62ac7b1370dbab87103a438f18d49fe3d8d65d02",
+      "crlf": 0,
+      "lf": 41
+    },
+    {
+      "path": "docs/CLEAN_REPO_EXPORT.md",
+      "size": 1773,
+      "sha256": "7b1f5f0c1c82e80cb7e2be1a07f6dcefae04fe6267b9387359e905b61e8ac9c1",
+      "crlf": 0,
+      "lf": 58
+    },
+    {
+      "path": "docs/CLOUDFLARE_DEPLOYMENT_NOTES.md",
+      "size": 1530,
+      "sha256": "1bae10d2ab66e7839b0c80d4741139f1f7f04d28be154a5c203132e60e915377",
+      "crlf": 0,
+      "lf": 40
+    },
+    {
+      "path": "docs/IMAGE-SOURCES.md",
+      "size": 3549,
+      "sha256": "212a90126457a748fb8bdf52a11ad22cc94956e85cedafd693de2fb0ce70920c",
+      "crlf": 0,
+      "lf": 79
+    },
+    {
+      "path": "docs/OVERHAUL_BACKLOG.md",
+      "size": 5522,
+      "sha256": "7be7541ebe2d720de7d1f707739e5f04722dc99d0fcdc38f3dd633717ceaf5ed",
+      "crlf": 0,
+      "lf": 16
+    },
+    {
+      "path": "docs/RISKS_GUARDRAILS.md",
+      "size": 1440,
+      "sha256": "365d757dff65c239d206f4ccd91e7f64e7ed7dd817a9be999713ad4b2f5be98a",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "docs/VERIFICATION_PLAYBOOK.md",
+      "size": 2330,
+      "sha256": "331a7d85163263e9973ebb40fe6ce411603f22189a434f28ffd894e4970b474e",
+      "crlf": 0,
+      "lf": 93
+    },
+    {
+      "path": "docs/citations-nap.md",
+      "size": 281,
+      "sha256": "295141a695b97a25aeb5fe5409b9abc835164e536e94ec79c4e7383cd6c390a0",
+      "crlf": 0,
+      "lf": 11
+    },
+    {
+      "path": "docs/competitive/serp-tracker.csv",
+      "size": 80,
+      "sha256": "3f0307589be5fe130b49d39b9b1ea250c79d098b985c098b3786d946e68474e0",
+      "crlf": 0,
+      "lf": 1
+    },
+    {
+      "path": "docs/gbp-utm.md",
+      "size": 375,
+      "sha256": "fdd05f33f8296f394500f1f2746f946e49d33550384c8215dfa7cf8ff9f11dbc",
+      "crlf": 0,
+      "lf": 11
+    },
+    {
+      "path": "docs/kpi-weekly-scorecard.csv",
+      "size": 199,
+      "sha256": "7b86d6583dc4639f32a1a5f66a9bd2915d8e47f177efd3343c6cf57600f80ce3",
+      "crlf": 0,
+      "lf": 1
+    },
+    {
+      "path": "docs/launch-checklist.md",
+      "size": 650,
+      "sha256": "f53932815f4b52a1575febc3c1522422a7c1ef430ecffff5e3d0a67bf0f63c48",
+      "crlf": 0,
+      "lf": 20
+    },
+    {
+      "path": "docs/measurement-plan.md",
+      "size": 1776,
+      "sha256": "18cb997186f623e7814741fd61752cea1dec01e3aab743d961f12b2e6e4fb080",
+      "crlf": 0,
+      "lf": 77
+    },
+    {
+      "path": "docs/ops/monthly.md",
+      "size": 235,
+      "sha256": "9bfeacd174de57c76c9dfdebab369c4afebc8e329541f36ba4e5a1a3097f4c5b",
+      "crlf": 0,
+      "lf": 6
+    },
+    {
+      "path": "docs/ops/quarterly.md",
+      "size": 129,
+      "sha256": "0fe3c0d2c2c90499b20df72642c19e32813e336b84afb26eb36eb0c7e48a1658",
+      "crlf": 0,
+      "lf": 5
+    },
+    {
+      "path": "docs/ops/weekly.md",
+      "size": 237,
+      "sha256": "dcbd8a53fa3620ce05de26844f7e841eed6451083625606a487bffd605a047a9",
+      "crlf": 0,
+      "lf": 7
+    },
+    {
+      "path": "docs/ops/workflow-control-matrix.md",
+      "size": 3485,
+      "sha256": "54f61c896cd22753a055a98b2afd0e1cc2068679108dfbae29e68861d5891f55",
+      "crlf": 0,
+      "lf": 33
+    },
+    {
+      "path": "docs/seo/keyword-map.yml",
+      "size": 622,
+      "sha256": "fd19d0f78bf75449ab691a613da9f972d42c7c2e3dc0dfa92415ec470ef6c202",
+      "crlf": 0,
+      "lf": 21
+    },
+    {
+      "path": "electrical-design-consultation.html",
+      "size": 5563,
+      "sha256": "87f72c9ab6bbf5cc35c20eca96119554d1a353e27652a7a6b06143308c12983c",
+      "crlf": 0,
+      "lf": 156
+    },
+    {
+      "path": "electrical-repairs.html",
+      "size": 21668,
+      "sha256": "a3396ed74636ff336ddcad7322602f9015a9e67bad5cd54aca5f7ff3c251e3a3",
+      "crlf": 0,
+      "lf": 595
+    },
+    {
+      "path": "electrician-ada.html",
+      "size": 2313,
+      "sha256": "c43daf5b8a46b9af9e108a27225580c24381539f68b70ba7b097bd3a51f580fd",
+      "crlf": 0,
+      "lf": 65
+    },
+    {
+      "path": "electrician-allegan.html",
+      "size": 2332,
+      "sha256": "e924fbaf043df298b8732cdc20f9a209da56a35dcd42d80bd38ad266ed6af715",
+      "crlf": 0,
+      "lf": 65
+    },
+    {
+      "path": "electrician-grand-rapids.html",
+      "size": 2388,
+      "sha256": "75e50b00138dc204351c45e8d27615e2ac956925290efd4952624ae1c8dbf9b0",
+      "crlf": 0,
+      "lf": 68
+    },
+    {
+      "path": "electrician-holland.html",
+      "size": 2341,
+      "sha256": "8ebb7094d0f3134348da3b6d3c8611c53d8106d72e592afc409a75ac2481efe1",
+      "crlf": 0,
+      "lf": 65
+    },
+    {
+      "path": "electrician-hudsonville.html",
+      "size": 2391,
+      "sha256": "3c989e093fc573a14e111d922ea71cf98ff0023549f10504a7eabdf1b9fed413",
+      "crlf": 0,
+      "lf": 68
+    },
+    {
+      "path": "electrician-zeeland.html",
+      "size": 2364,
+      "sha256": "ba556a9cb7b547eeaf626f770bcafa6201ef470237cbb9538ae340baf4e21be4",
+      "crlf": 0,
+      "lf": 67
+    },
+    {
+      "path": "emergency.html",
+      "size": 13574,
+      "sha256": "ce6f2f4428abce6205ec6f0fd6dc28eef2064034945da307254fca78d74463a6",
+      "crlf": 0,
+      "lf": 384
+    },
+    {
+      "path": "energy-consulting.html",
+      "size": 15313,
+      "sha256": "8522a4b92f917d17f83f24a618a64f732c87356a7f1eac46467d4bba9464e98e",
+      "crlf": 0,
+      "lf": 448
+    },
+    {
+      "path": "energy-solutions.html",
+      "size": 16003,
+      "sha256": "2ec9ffd063bbaefbfabeb27c520a808ac26804000a52a1fe34f39cdbe26d3088",
+      "crlf": 0,
+      "lf": 465
+    },
+    {
+      "path": "ev-chargers.html",
+      "size": 18815,
+      "sha256": "a01485b7a1090a563516a9d7b8b73ffd3a90349156e914258e15a932b607a958",
+      "crlf": 0,
+      "lf": 537
+    },
+    {
+      "path": "faq.html",
+      "size": 15959,
+      "sha256": "1396cbf0c52e2885fa3c576ce903d264fc3e23865075739c9d7531d03a4a88a0",
+      "crlf": 0,
+      "lf": 448
+    },
+    {
+      "path": "financing.html",
+      "size": 3937,
+      "sha256": "b6f5b6053b6a38c519899908f0f6e963e4845e5cc973afaabe9d53be7b9dacfd",
+      "crlf": 0,
+      "lf": 109
+    },
+    {
+      "path": "gallery.html",
+      "size": 22847,
+      "sha256": "96d8febc045b071ab0f78aad05f96912f6489269f5bcd2d484b72b23bf46e923",
+      "crlf": 0,
+      "lf": 615
+    },
+    {
+      "path": "generators.html",
+      "size": 18960,
+      "sha256": "a322e6653653ba06e873e724d5998d162bb03bb5d780499d41dbd8c01ccf2c9c",
+      "crlf": 0,
+      "lf": 546
+    },
+    {
+      "path": "img-0733-69955aad77cc2.webp",
+      "size": 25912,
+      "sha256": "f4c745fe43e095a4ff66c96631f95364ae87ce62226494c3ba1e7d5b0d0b8602",
+      "crlf": 0,
+      "lf": 108
+    },
+    {
+      "path": "implementation_packets/01_home.md",
+      "size": 744,
+      "sha256": "de25d0a71f1b6b3c0f36703958429ef41faecd9afce280ec8278d46d9646eef2",
+      "crlf": 0,
+      "lf": 27
+    },
+    {
+      "path": "implementation_packets/02_services.md",
+      "size": 664,
+      "sha256": "aed14245dabd998140d56d0d81978aa9c689d10cda4ac342b93ebc3887903a93",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/03_panel-upgrades.md",
+      "size": 609,
+      "sha256": "72e32e891e9cf586743384252a2aae1e453366060f4131b04a6ff9e8f1a842fb",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/04_ev-chargers.md",
+      "size": 561,
+      "sha256": "4b73055d9a0c5486086df5f2ecd5b85c9f7d8e6d9cef466b5ef8a9a6cf047903",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/05_lighting.md",
+      "size": 478,
+      "sha256": "02d68b45ffc153323d23506c032de4bfc3a261d36bd02ef20b12f6c8a3474e23",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/06_electrical-repairs.md",
+      "size": 585,
+      "sha256": "bd733b844c2e2d788a5bdcadd316969b8dbbcd21be6b16d987f194e056f5f63e",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/07_generators.md",
+      "size": 560,
+      "sha256": "28f556f86faf34920990ca7cba3c8c1d377999ee2bd33da17cc7b5275f3e8ce5",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/08_energy-solutions.md",
+      "size": 540,
+      "sha256": "be92c69dfcafa9232868946b544784bd7bdaad648ce298c98b45d963eb9fb4de",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/09_energy-consulting.md",
+      "size": 568,
+      "sha256": "676c74496efab7073397a908a26cf613df38c30bfbb54ada544664a1917db650",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/10_service-areas.md",
+      "size": 588,
+      "sha256": "c78281a1b8fe6277c4c2fd646fb38dea6ad6f15cc8582c4cf77a66cdcc0a10f5",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/11_contact.md",
+      "size": 617,
+      "sha256": "12fd71c5786201bd1d0976fd7d430ed6342ea47e6ff80c9eed2c251cdf89e556",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/12_booking.md",
+      "size": 511,
+      "sha256": "2ae67d71179c1386c3cb43d0af7e3225847b7e6e6c9cc754a0afa7b65a78e905",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/13_testimonials.md",
+      "size": 477,
+      "sha256": "9c8ccdaf2af5307a68349acc7fe62b15357ad9564e032379e1bb880cbb4616d1",
+      "crlf": 0,
+      "lf": 25
+    },
+    {
+      "path": "implementation_packets/14_financing.md",
+      "size": 423,
+      "sha256": "f01a17451c716bb453cd169cd543ae60d75f93eff1f88553e4ce51683dc4cb91",
+      "crlf": 0,
+      "lf": 25
+    },
+    {
+      "path": "implementation_packets/15_emergency.md",
+      "size": 420,
+      "sha256": "9a13d72d5e7d63e8506efd73fe56e41a0ddd2c1808dc3307b45582223dd98167",
+      "crlf": 0,
+      "lf": 25
+    },
+    {
+      "path": "implementation_packets/16_gallery.md",
+      "size": 336,
+      "sha256": "bc64aad495d7c79147aa40001c68164be4d3324582c3b1aef69075800bcf2759",
+      "crlf": 0,
+      "lf": 25
+    },
+    {
+      "path": "implementation_packets/17_faq.md",
+      "size": 409,
+      "sha256": "8f8dcf638a5d173bfcc8f817d4b1669f7ce0414279e1fbbb8fbae0382602b262",
+      "crlf": 0,
+      "lf": 25
+    },
+    {
+      "path": "implementation_packets/18_blog.md",
+      "size": 443,
+      "sha256": "a4cf300daa7b99b6aea85111dac91c17a97dcae02cec08e95e5d49216ebc6106",
+      "crlf": 0,
+      "lf": 25
+    },
+    {
+      "path": "implementation_packets/19_blog-electrical-safety.md",
+      "size": 606,
+      "sha256": "3a3945d205a8ce4f3b9468bb1941483665d152332ae99fb7ebdc3e54dc5d3770",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/20_blog-right-electrician.md",
+      "size": 585,
+      "sha256": "d34d5d2c1c3b7035b9835a2959c0fa7070baec09e0297d214b39fc2346286569",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/21_blog-ev-charging.md",
+      "size": 568,
+      "sha256": "fc14ca7802353fc35aff370ad9122ad9220bee9e47dc14651ac805129c80a9cc",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/22_blog-surge-protection.md",
+      "size": 541,
+      "sha256": "4effb3a6211d5bce79e461610d0dc347ef954be357829e388a29f7d4a6681021",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "implementation_packets/23_facebook-alignment.md",
+      "size": 1262,
+      "sha256": "9a3b39fa45e1baf520f9ff5c8c2f11b4bf99fa9bc42cf4b2316c9c2980a0adae",
+      "crlf": 0,
+      "lf": 41
+    },
+    {
+      "path": "index.html",
+      "size": 28585,
+      "sha256": "da3486204533073faf33cc302d165f094c2a9204b82674364d6dded3a0f687e7",
+      "crlf": 0,
+      "lf": 786
+    },
+    {
+      "path": "lighting.html",
+      "size": 17877,
+      "sha256": "72b66bcb11bcecc3f8fe8b2e7c08121b3839807cc996c15f66f6dd72ec46f582",
+      "crlf": 0,
+      "lf": 508
+    },
+    {
+      "path": "local-seo/citations.example.json",
+      "size": 515,
+      "sha256": "75667f85d53786f8b08151a1efcdd24aaee06d678e408fcec99704f58e3f01a6",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "local-seo/citations.json",
+      "size": 515,
+      "sha256": "75667f85d53786f8b08151a1efcdd24aaee06d678e408fcec99704f58e3f01a6",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "local-seo/gbp-profile.example.json",
+      "size": 1343,
+      "sha256": "2d838b50f4406eaf345588522712edae5159592fc924c7ba74def240a28b8087",
+      "crlf": 0,
+      "lf": 47
+    },
+    {
+      "path": "local-seo/gbp-profile.json",
+      "size": 1343,
+      "sha256": "2d838b50f4406eaf345588522712edae5159592fc924c7ba74def240a28b8087",
+      "crlf": 0,
+      "lf": 47
+    },
+    {
+      "path": "next.config.ts",
+      "size": 654,
+      "sha256": "9e5866a6d8e06d6c10e6fe9e0c98458facff8ed7d98ba48b3b1dd883f102a9fa",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "owner_friendly_with_dog_800.webp",
+      "size": 96712,
+      "sha256": "c5bfca602ee55a5341a9bf18bb7b7d9f829b33711067f7aba21d7418276b3052",
+      "crlf": 0,
+      "lf": 383
+    },
+    {
+      "path": "package-lock.json",
+      "size": 64641,
+      "sha256": "0a65eed5f3688a02d767b00886856fd7b576fbe9acb16a2e3286767bfc386020",
+      "crlf": 0,
+      "lf": 1907
+    },
+    {
+      "path": "package.json",
+      "size": 2518,
+      "sha256": "1802fcf71b776e5d612b1d6b8fe8b407b84644d73e89f1db42f7adfe9efcb14d",
+      "crlf": 0,
+      "lf": 50
+    },
+    {
+      "path": "panel-upgrades.html",
+      "size": 19128,
+      "sha256": "3b388e3f053b6831b68ea247a6dfeb99c1127eab3c9f3634a96b674de8a3e44a",
+      "crlf": 0,
+      "lf": 532
+    },
+    {
+      "path": "reports/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "crlf": 0,
+      "lf": 0
+    },
+    {
+      "path": "reports/AUDIT_ZERO_UPDATE_VERIFICATION.md",
+      "size": 1315,
+      "sha256": "295a78a0148586267d671ef74bd90d6c54efaccb6c46df78b43700c757b5a117",
+      "crlf": 0,
+      "lf": 34
+    },
+    {
+      "path": "reports/BASELINE_URL_INVENTORY.csv",
+      "size": 10345,
+      "sha256": "386f07d3b4f594638cbc522723b5ff384f6b3aebec03569ac089724ecb1868cd",
+      "crlf": 0,
+      "lf": 36
+    },
+    {
+      "path": "reports/BYTE_VERIFICATION_2026-02-10.md",
+      "size": 4395,
+      "sha256": "d9b1a9caa164171045fb42af0438f27d5e5b787084dd67116f97d528bc7415ea",
+      "crlf": 0,
+      "lf": 50
+    },
+    {
+      "path": "reports/CI_VERIFICATION_2026-02-14.md",
+      "size": 714,
+      "sha256": "f2053101285e14fd1c96d725d20872ec6e4f4aacdd33df124eee0d19de70223d",
+      "crlf": 0,
+      "lf": 28
+    },
+    {
+      "path": "reports/DOUBLE_CHECK_COMPLETION_2026-02-08.md",
+      "size": 1626,
+      "sha256": "d112430ea59038b2ba4693ef8a8a5be7d4d5cff1d4015481ee1d670e85c8b787",
+      "crlf": 0,
+      "lf": 44
+    },
+    {
+      "path": "reports/EXECUTIVE_DEVELOPER_MODE_AUDIT_2026-02-08.md",
+      "size": 7621,
+      "sha256": "da1bc12c2f7cff954eea7a3c2a4ea57ab8e6c824903ede3a908fcae30f31417a",
+      "crlf": 0,
+      "lf": 84
+    },
+    {
+      "path": "reports/FORMS_BASELINE.md",
+      "size": 1388,
+      "sha256": "e3b2de399f750ee38d59481fd28c13a09be6e38dd8fc4e4d9af3f67d700e4661",
+      "crlf": 0,
+      "lf": 44
+    },
+    {
+      "path": "reports/FULL_AUDIT_CONTINUOUS_SWEEP_2026-02-15.md",
+      "size": 1371,
+      "sha256": "9da0fa1ef1718d4f2f1d9b224b2ad019de04fbe27a5dfe99a3b3a1813be03f67",
+      "crlf": 0,
+      "lf": 33
+    },
+    {
+      "path": "reports/FULL_AUDIT_CONTINUOUS_SWEEP_2026-02-16.md",
+      "size": 1276,
+      "sha256": "2bcfd608fb761970b054ee7f236945767deef8cb2d694fb89bdb229af24b7bb2",
+      "crlf": 0,
+      "lf": 38
+    },
+    {
+      "path": "reports/FULL_STACK_BYTE_AUDIT_2026-02-10.md",
+      "size": 8382,
+      "sha256": "8a546a92e2f01a9ff027eb27190a38a3f91bedd65461a66d45a4ba5956d91d5d",
+      "crlf": 0,
+      "lf": 168
+    },
+    {
+      "path": "reports/FULL_VERIFICATION_SWEEP_2026-02-15.md",
+      "size": 1676,
+      "sha256": "e0eda059732d1e07a650abb3243508f0fcbb63261b9fec732603a724c49bd2d8",
+      "crlf": 0,
+      "lf": 61
+    },
+    {
+      "path": "reports/IMAGE_INVENTORY_LOCAL.csv",
+      "size": 7772,
+      "sha256": "dd33aab683b8b8c474108db352f06f42af8d2828f29c9b6eb9aaac117369de1f",
+      "crlf": 75,
+      "lf": 75
+    },
+    {
+      "path": "reports/IMAGE_INVENTORY_LOCAL.md",
+      "size": 28800,
+      "sha256": "a104eba7b80677174147a83b1982ca017c4c069a1817f150ee45bd6512b3ed72",
+      "crlf": 0,
+      "lf": 76
+    },
+    {
+      "path": "reports/IMAGE_LOCATION_TEXT_AUDIT_2026-02-15.md",
+      "size": 6056,
+      "sha256": "edc020e2c011b2a388700bb4bd007117c8dda24494f221acdb494d122b359b3c",
+      "crlf": 0,
+      "lf": 43
+    },
+    {
+      "path": "reports/IMAGE_LOCATION_VERIFICATION_2026-02-13.md",
+      "size": 1252,
+      "sha256": "60d6d87e83a26db1a50bcfee906ea1902c51f26b50fc9633feca285d149e71be",
+      "crlf": 0,
+      "lf": 38
+    },
+    {
+      "path": "reports/IMAGE_LOCATION_VERIFICATION_2026-02-14_SWEEPS.md",
+      "size": 1534,
+      "sha256": "95c9ec2e754580bbdf8f53cafe784e6bee919f7c98a3348675367b348e2ddac1",
+      "crlf": 0,
+      "lf": 35
+    },
+    {
+      "path": "reports/IMAGE_TEXT_REFERENCE_AUDIT.md",
+      "size": 228,
+      "sha256": "abd30ba0316fd7af1a0da406995a40d6df0370b2283e408d80a199e56a55ad30",
+      "crlf": 0,
+      "lf": 8
+    },
+    {
+      "path": "reports/LIGHTHOUSE_BASELINE.md",
+      "size": 2793,
+      "sha256": "5f034f2266c68cc0b7af7dfb2a18f19a779115f466ff7eb82e64cd6dc0061cba",
+      "crlf": 0,
+      "lf": 45
+    },
+    {
+      "path": "reports/LINKCHECK_BASELINE.md",
+      "size": 581,
+      "sha256": "33d00a119a3d2b7fd1f91cc7d8d97d5f93097df9157337e056e8a1f0c48a0adf",
+      "crlf": 0,
+      "lf": 16
+    },
+    {
+      "path": "reports/MARKETING_OCD_AUDIT_2026-02-06.md",
+      "size": 7311,
+      "sha256": "ca9bb3a5ed052e0525fe886ac31dd46d33d57cf295a3d1fb6dcf120030523578",
+      "crlf": 0,
+      "lf": 179
+    },
+    {
+      "path": "reports/MASTER_IMPROVEMENT_LIST_2026-02-10.md",
+      "size": 8264,
+      "sha256": "06a5b0d4dba997c028ad187ff0b460fd3988f61643602a5a076e2632f55bfb09",
+      "crlf": 0,
+      "lf": 144
+    },
+    {
+      "path": "reports/MASTER_IMPROVEMENT_LIST_2026-02-10_REFRESH.md",
+      "size": 4161,
+      "sha256": "04c5baa3a9bd6491a6da455592f0c14edcbd492c789f6c8b134bd5f50b7f5c9b",
+      "crlf": 0,
+      "lf": 64
+    },
+    {
+      "path": "reports/NAV_BASELINE.md",
+      "size": 625,
+      "sha256": "9d23128198d0dcff2d8055ab92167bca11b5456fb05ef56bde807c4b84b21278",
+      "crlf": 0,
+      "lf": 29
+    },
+    {
+      "path": "reports/PROCEDURE_ACCURACY_VERIFICATION_2026-02-08.md",
+      "size": 1905,
+      "sha256": "227753d61a1880baea3416506dd182b9941b130edbb373834af89e75a161d0d7",
+      "crlf": 0,
+      "lf": 33
+    },
+    {
+      "path": "reports/PR_RECREATION_ZERO_ERRORS_2026-02-14.md",
+      "size": 874,
+      "sha256": "1758d76d79db32ed97e2343eb55eb5cdc446f8b7b82f38286b41bbb60f8e5d47",
+      "crlf": 0,
+      "lf": 28
+    },
+    {
+      "path": "reports/QA_GATE_FIX_VERIFICATION_2026-02-15.md",
+      "size": 899,
+      "sha256": "572a38069cc8fb74438f8c4f0381793aae5c3ac1ae5348497c45172b29fb53ca",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "reports/REDIRECTS_ERRORS_HOST_CANONICALISATION_AUDIT.md",
+      "size": 2882,
+      "sha256": "eb638de986d560d3b3a35ab7fb83496df998f957d8c1bfc639ee0fa3df13909e",
+      "crlf": 0,
+      "lf": 71
+    },
+    {
+      "path": "reports/REDIRECT_CODE_AUDIT.md",
+      "size": 1625,
+      "sha256": "d1b7bc20ef771565d6c0d510704bdf7fb94d513af86abdc95995d36c3266a59a",
+      "crlf": 0,
+      "lf": 34
+    },
+    {
+      "path": "reports/SYSTEM_AUDIT_IMPLEMENTATION_RESOLUTION_2026-02-08.md",
+      "size": 5484,
+      "sha256": "a96b7c0b55b53d817c2495e6df96f3ac0d148ba96b305ac08146a43906c0b5c2",
+      "crlf": 0,
+      "lf": 86
+    },
+    {
+      "path": "reports/URL_INVENTORY_LOCAL.csv",
+      "size": 8920,
+      "sha256": "4bdc493a69a79ca81a9db7a33806cdd0064a004ad40b685e1af4cd832c0b9590",
+      "crlf": 23,
+      "lf": 23
+    },
+    {
+      "path": "reports/URL_INVENTORY_LOCAL.md",
+      "size": 16116,
+      "sha256": "803020a159b3602ba4b0be025cf639304382577dec031034f13566bc4b4d8cc4",
+      "crlf": 0,
+      "lf": 24
+    },
+    {
+      "path": "reports/VP_DEVELOPMENT_SYSTEM_AUDIT_2026-02-08.md",
+      "size": 7765,
+      "sha256": "62016ff382ed0f14ea8d3eb315a89ec55fb83f9b51ed3e9aeb4c9a72f390e977",
+      "crlf": 0,
+      "lf": 190
+    },
+    {
+      "path": "reports/brand-system-cloudflare-audit.md",
+      "size": 16095,
+      "sha256": "4a30f8e373861901b1e19c66edb6ca3f6e50a9a7fe37c04dd43ffe41952d30a3",
+      "crlf": 0,
+      "lf": 506
+    },
+    {
+      "path": "reports/crawl_raw.json",
+      "size": 58988,
+      "sha256": "cde8a4a002566743404d106b7cc6ff9ae86c6f0377ee5ec59b498947556f840e",
+      "crlf": 0,
+      "lf": 1490
+    },
+    {
+      "path": "reports/implementation-report.md",
+      "size": 70881,
+      "sha256": "2177bf93e2c64ef4d56d4dafb9ab15b19210f73488e8d3a42ea68aa80df62620",
+      "crlf": 0,
+      "lf": 428
+    },
+    {
+      "path": "reports/newestupdate-implementation.md",
+      "size": 451,
+      "sha256": "c60b736febf78de411919e5c7a191b86ab0a467714d9ed9ebd60508c23b0b98a",
+      "crlf": 0,
+      "lf": 10
+    },
+    {
+      "path": "reports/verification/headers-apex-home.txt",
+      "size": 205,
+      "sha256": "eefd42360bd1805ecd1da0695f2a68773884f030b640c4567ae921d10f2b57cf",
+      "crlf": 10,
+      "lf": 10
+    },
+    {
+      "path": "reports/verification/headers-apex-sitemap.txt",
+      "size": 205,
+      "sha256": "96fffc15a93d5bba9f1ebf44f28b805a55d1a14e9c5b181a63a3207c1202011c",
+      "crlf": 10,
+      "lf": 10
+    },
+    {
+      "path": "reports/verification/headers-http-www-home.txt",
+      "size": 928,
+      "sha256": "39e4d6a563f332166460ead71b30739cdac5fc1aaab8f046506d71ab7aa4c9a1",
+      "crlf": 16,
+      "lf": 16
+    },
+    {
+      "path": "reports/verification/headers-robots.txt",
+      "size": 1587,
+      "sha256": "b0c368c3a9eedbaeb1a83302a446e8d9937e4bb5d268f06f61ac4952af5add70",
+      "crlf": 30,
+      "lf": 30
+    },
+    {
+      "path": "reports/verification/headers-www-contact.txt",
+      "size": 2234,
+      "sha256": "38d09c33b31e54e7898c985e886d43c14ef710c77817d001059268080300a62c",
+      "crlf": 31,
+      "lf": 31
+    },
+    {
+      "path": "reports/verification/headers-www-home.txt",
+      "size": 2225,
+      "sha256": "19a8939b240cdd7e1ee156e97d67d7951e5a954a6c587edb3fbbb7eb7d4ea160",
+      "crlf": 31,
+      "lf": 31
+    },
+    {
+      "path": "reports/verification/headers-www-services.txt",
+      "size": 2232,
+      "sha256": "77371ac4fd35daa09ddf093141c96c323232894b5ce535c959daf7777adc0329",
+      "crlf": 31,
+      "lf": 31
+    },
+    {
+      "path": "reports/verification/headers-www-sitemap.txt",
+      "size": 2226,
+      "sha256": "96a90468bffc220dcd2c5d5e1f486d5599ac9c9a2af88e7e5b99cebe05bf8a44",
+      "crlf": 31,
+      "lf": 31
+    },
+    {
+      "path": "reports/verification/robots.txt",
+      "size": 1754,
+      "sha256": "ae6224791c15eb6999342514dd50bd9b1a52e2dc0d441e41afb2ff4137f04943",
+      "crlf": 0,
+      "lf": 60
+    },
+    {
+      "path": "reports/workflow-performance-verification.md",
+      "size": 2642,
+      "sha256": "f3348a04114ee1aa0c4cbd5f0264adc0b6bf6665995038e714ca44681d5c0929",
+      "crlf": 0,
+      "lf": 67
+    },
+    {
+      "path": "residential-electrician-allegan-mi.html",
+      "size": 8958,
+      "sha256": "13b18971b87f0167487d667449e25df8b37ba45fa616058f50a846fabada9fcc",
+      "crlf": 0,
+      "lf": 246
+    },
+    {
+      "path": "residential.html",
+      "size": 3558,
+      "sha256": "6bf647549b4d1de135bf6caabf5099876046e1fc4b3e6fcf72c6dabe0b7782a8",
+      "crlf": 0,
+      "lf": 95
+    },
+    {
+      "path": "robots.txt",
+      "size": 75,
+      "sha256": "c3517290435466ab391fa2d55eebaaacff02f79af19213d1e2129b3bcaf9a401",
+      "crlf": 0,
+      "lf": 3
+    },
+    {
+      "path": "script.js",
+      "size": 4198,
+      "sha256": "67d4d4aa9f5f3709d6274a42c12df0e90ec2df61935f63aa3955fb2d637ea4fc",
+      "crlf": 0,
+      "lf": 144
+    },
+    {
+      "path": "scripts/audit-image-text-references.js",
+      "size": 8818,
+      "sha256": "571508d33b5b2962cf39af8781cb23b49706e56e0b4aa2e06652899b59876cbf",
+      "crlf": 0,
+      "lf": 318
+    },
+    {
+      "path": "scripts/audit-images.mjs",
+      "size": 582,
+      "sha256": "90669c2cdc0a79d2a8a9e29e827697aa3251640044c3f6567a518c8bad5331ae",
+      "crlf": 0,
+      "lf": 21
+    },
+    {
+      "path": "scripts/audit-links-cloudflare.mjs",
+      "size": 2394,
+      "sha256": "b60f0892b84bce5b340d83e5f58f79eea2e0dd08592ac113320087fdf4611bde",
+      "crlf": 0,
+      "lf": 88
+    },
+    {
+      "path": "scripts/build.mjs",
+      "size": 16125,
+      "sha256": "838a6f54dfa1eb98638e0ede1870d834008ae805a1550c9200c81bd687a6e179",
+      "crlf": 0,
+      "lf": 456
+    },
+    {
+      "path": "scripts/check-extensionless-collisions.mjs",
+      "size": 1133,
+      "sha256": "bc2036fe53e6e7600e84d8352553c015d617ddb28bebc17ea1f89a4465ea6598",
+      "crlf": 0,
+      "lf": 41
+    },
+    {
+      "path": "scripts/check-extensionless-links.mjs",
+      "size": 1365,
+      "sha256": "d299375729beb1b95f1738c3af1d217b8ab3e3ca8ed1ef8700eb79333372f781",
+      "crlf": 0,
+      "lf": 45
+    },
+    {
+      "path": "scripts/check-image-sources.js",
+      "size": 3512,
+      "sha256": "b411ac5918af8fe036c213f5d8603ce5c3664cc6953bede287c7376b40f4b311",
+      "crlf": 0,
+      "lf": 137
+    },
+    {
+      "path": "scripts/check-navigation-sim.mjs",
+      "size": 9027,
+      "sha256": "cf57bbb6ba75d286c47e49f0f6c591ad38247f1637484ba053552bda1bee146d",
+      "crlf": 0,
+      "lf": 353
+    },
+    {
+      "path": "scripts/check-navigation-simulation.js",
+      "size": 735,
+      "sha256": "e02b6504beb03541a942cba2f815ed20ff2ffb6fe34008c2a8739ae68f53ccd9",
+      "crlf": 0,
+      "lf": 25
+    },
+    {
+      "path": "scripts/check-no-binary-files.sh",
+      "size": 1413,
+      "sha256": "f3d584ee50c45c34b779db7cd9464cbfef5c549aef8edf92ecb24364108ebb48",
+      "crlf": 0,
+      "lf": 61
+    },
+    {
+      "path": "scripts/check-origin-redirects.js",
+      "size": 2241,
+      "sha256": "ed3e5e38fa8c74a67251a3104233a65862ca304db94fa923e152c2f4abd69e86",
+      "crlf": 0,
+      "lf": 84
+    },
+    {
+      "path": "scripts/check-origin-redirects.mjs",
+      "size": 365,
+      "sha256": "1e777bc66fcdb025e4a1af429808846a14e5ec4e5db88c24a7f0e7cd865b1e4e",
+      "crlf": 0,
+      "lf": 15
+    },
+    {
+      "path": "scripts/check-placeholders.js",
+      "size": 764,
+      "sha256": "bdfb79025f24481d3737e1037fc2a293a344e3890f459a472e22cd93c111174e",
+      "crlf": 0,
+      "lf": 33
+    },
+    {
+      "path": "scripts/check-placeholders.mjs",
+      "size": 807,
+      "sha256": "320aa9999f8307320e972bea4e27ca41cbea589b80758e04a724a78b214744ca",
+      "crlf": 0,
+      "lf": 31
+    },
+    {
+      "path": "scripts/check-redirects-cloudflare.mjs",
+      "size": 2708,
+      "sha256": "b59f14d2b95bcb29dfd907ff5cc885867cc02c292c20d0023176e19966139e17",
+      "crlf": 0,
+      "lf": 101
+    },
+    {
+      "path": "scripts/check-workflow-location.js",
+      "size": 1049,
+      "sha256": "c3967aec5d5e9052ed2b432f104301988fc0003e0b5d53d1c8a31e9048815e5a",
+      "crlf": 0,
+      "lf": 40
+    },
+    {
+      "path": "scripts/check-workflow-yaml.mjs",
+      "size": 1097,
+      "sha256": "35f57b5ee660004b0f3319fb1b5e89ec3896a8860517406ad20a9d9cb41ebed7",
+      "crlf": 0,
+      "lf": 43
+    },
+    {
+      "path": "scripts/clean.mjs",
+      "size": 99,
+      "sha256": "b7dfc57a0b3fc3eb6eff49fd02027c0b42c460361d01c7417e431785a17f072b",
+      "crlf": 0,
+      "lf": 3
+    },
+    {
+      "path": "scripts/crawl.js",
+      "size": 9175,
+      "sha256": "8b18be53f82aaf0cda6264bdc0d5d0c48346c6899377aca52cf04224da6e7a3e",
+      "crlf": 0,
+      "lf": 334
+    },
+    {
+      "path": "scripts/create-clean-repo.mjs",
+      "size": 8220,
+      "sha256": "f083032bfb969fdfc75ce1917a2777d0a464a4f06ac302f3d760ceb4a617e18d",
+      "crlf": 0,
+      "lf": 287
+    },
+    {
+      "path": "scripts/dev.mjs",
+      "size": 2412,
+      "sha256": "b698c2903296b497d3e65d8d9cb4583cef241bed2e1eec0b5eeedb87612935d3",
+      "crlf": 0,
+      "lf": 87
+    },
+    {
+      "path": "scripts/gsc-gap.mjs",
+      "size": 947,
+      "sha256": "a8e68dbdc58cf945a6fd94de6b04ab5c164ca8c12007c0dbad3bf832e42a8eca",
+      "crlf": 0,
+      "lf": 36
+    },
+    {
+      "path": "scripts/lib/fs.mjs",
+      "size": 1366,
+      "sha256": "b7d0c01f98c9579f73be2319cd9f13e7db1ad82d99c548d2032ee9562b267c8c",
+      "crlf": 0,
+      "lf": 46
+    },
+    {
+      "path": "scripts/lib/images.mjs",
+      "size": 1059,
+      "sha256": "d9351f87822ec5745003f33e30219e637e4bbdfd775ca5a42b408624e2234a25",
+      "crlf": 0,
+      "lf": 36
+    },
+    {
+      "path": "scripts/lib/meta.mjs",
+      "size": 486,
+      "sha256": "f5ab17b2940f7f0b29e82a95934e9efa132e38f929608220857e0adb142fa7c6",
+      "crlf": 0,
+      "lf": 14
+    },
+    {
+      "path": "scripts/lib/template.mjs",
+      "size": 994,
+      "sha256": "37198f78cc525151ba9033a82c435f7a2badc1d8ed5a2966a5a5d4d17f412d45",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "scripts/lib/urls.mjs",
+      "size": 697,
+      "sha256": "4014c420bd67a7487ab9f476cbdcacf3478e3423985e2552beb4a314e0403d5a",
+      "crlf": 0,
+      "lf": 16
+    },
+    {
+      "path": "scripts/lib/validate.mjs",
+      "size": 7153,
+      "sha256": "96a5355406d4d7939699b712c13a03c2b243706772f76f0e3eb8787eec815013",
+      "crlf": 0,
+      "lf": 219
+    },
+    {
+      "path": "scripts/local-seo-audit.ts",
+      "size": 5259,
+      "sha256": "3cbb82aad05d918512ad0675cdc603e8b7b8aa0a4adf2d22fb1706b650304165",
+      "crlf": 0,
+      "lf": 161
+    },
+    {
+      "path": "scripts/optimize-assets.mjs",
+      "size": 2249,
+      "sha256": "31c3398214860203c4383ece434ff062cbebff82b1173bf2ade44aa8e9e46496",
+      "crlf": 0,
+      "lf": 82
+    },
+    {
+      "path": "scripts/savage-audit-all-branches.sh",
+      "size": 8148,
+      "sha256": "e8f3143531670b10045d97a30b06bfc51930d62a1626c76b266c953d41155973",
+      "crlf": 0,
+      "lf": 250
+    },
+    {
+      "path": "scripts/savage-audit.sh",
+      "size": 17973,
+      "sha256": "17202d30ffb0e3f001365ef1469f2a7d3f848bac15210c13ea101f9a6f5ae019",
+      "crlf": 0,
+      "lf": 466
+    },
+    {
+      "path": "scripts/seo-quality-gates.mjs",
+      "size": 1661,
+      "sha256": "78e7835cf616be776263d33a70fe766cd85d12d16df65fea520fdc68a4d2450f",
+      "crlf": 0,
+      "lf": 64
+    },
+    {
+      "path": "scripts/verify-formspree-forms.mjs",
+      "size": 1618,
+      "sha256": "2a43ae497069f5e5292f5b617083628d0dc441abe27c514ff0576d1c20329668",
+      "crlf": 0,
+      "lf": 62
+    },
+    {
+      "path": "scripts/verify-full-sweep.mjs",
+      "size": 4551,
+      "sha256": "489b877ea97f692eec559dd801bbf6b166b19f6e029f418b11489197c4a8616c",
+      "crlf": 0,
+      "lf": 166
+    },
+    {
+      "path": "scripts/verify-stability.mjs",
+      "size": 446,
+      "sha256": "f83394f245fc4c216b775bccc5097d6df9e143130351f07755753f4d38f7999e",
+      "crlf": 0,
+      "lf": 16
+    },
+    {
+      "path": "scripts/verify-zero-updates.mjs",
+      "size": 914,
+      "sha256": "26563ab81177fcd6febcc842ff2a76152a7be53ad817078929834ee9cf061d4f",
+      "crlf": 0,
+      "lf": 39
+    },
+    {
+      "path": "scripts/verify.mjs",
+      "size": 246,
+      "sha256": "12cb863aabeb6f0b3e2d8700a661b27efb43d8e93af0e1d236097f937c0803c0",
+      "crlf": 0,
+      "lf": 5
+    },
+    {
+      "path": "scripts/with-chrome-path.sh",
+      "size": 3721,
+      "sha256": "d8685de71f7e84601d90d083dfdd480aff2da82ac334b6f7e07cab63d3efbafe",
+      "crlf": 0,
+      "lf": 144
+    },
+    {
+      "path": "service-areas.html",
+      "size": 12453,
+      "sha256": "7671e3697bfc42b8bca2e77c0b5e509caf84a971e0be67303da4af60d5d45a8e",
+      "crlf": 0,
+      "lf": 354
+    },
+    {
+      "path": "services.html",
+      "size": 24400,
+      "sha256": "5dad1a40a18d7ef128f04525d2854baa21c2198be84ec9ab017308a3f8ce812b",
+      "crlf": 0,
+      "lf": 660
+    },
+    {
+      "path": "sitemap.xml",
+      "size": 5654,
+      "sha256": "8a2b372dacf399cb6874ad6adfceb87828e746a6ff1c3d058c8f0d08a9140c0d",
+      "crlf": 0,
+      "lf": 165
+    },
+    {
+      "path": "src/assets/css/styles.css",
+      "size": 7178,
+      "sha256": "0c84f9121b62d6200d3a7862f10f5f19115d8f9c093aca931156407ef24e86ff",
+      "crlf": 0,
+      "lf": 418
+    },
+    {
+      "path": "src/assets/js/site.js",
+      "size": 4392,
+      "sha256": "cab6bef0e9c4c9eac1f711bd17aaa609fa8dba78d858daf6d467d90e03c71667",
+      "crlf": 0,
+      "lf": 156
+    },
+    {
+      "path": "src/components/HeroImage.tsx",
+      "size": 238,
+      "sha256": "f3c451b895c0518d357cd23d5aa75d9da5bac7ecda1416dd03c15cfb2f228ecc",
+      "crlf": 0,
+      "lf": 13
+    },
+    {
+      "path": "src/components/analytics/Track.tsx",
+      "size": 389,
+      "sha256": "29826e584b8a20a93bd3f5e9b11b056efcd55340275f762c371aad6dee82a825",
+      "crlf": 0,
+      "lf": 14
+    },
+    {
+      "path": "src/components/cta/CallTextCTA.tsx",
+      "size": 698,
+      "sha256": "9ee289f0fecc624f182e60e9b49078cc98706cc27d36453adb08a5a86c2d1884",
+      "crlf": 0,
+      "lf": 26
+    },
+    {
+      "path": "src/components/forms/LeadForm.tsx",
+      "size": 3200,
+      "sha256": "85202ed879534d19de8f03c6c06fea94ca84152c8abb9a963ed228484939e747",
+      "crlf": 0,
+      "lf": 113
+    },
+    {
+      "path": "src/components/seo/Breadcrumbs.tsx",
+      "size": 501,
+      "sha256": "b3422d189acf6bc21fbfa38b051bca18329776820d2e724798dda6f95d815da2",
+      "crlf": 0,
+      "lf": 18
+    },
+    {
+      "path": "src/components/seo/JsonLd.tsx",
+      "size": 472,
+      "sha256": "fe79cffdf4b71d1406323d0df288e210985c9410ff33285b980bc1592ea32a59",
+      "crlf": 0,
+      "lf": 17
+    },
+    {
+      "path": "src/config/pages.ts",
+      "size": 1109,
+      "sha256": "f6b466f33c61b0cb98fb744a32cae9bd0ba6407543ce71c08c84ec0463bf584e",
+      "crlf": 0,
+      "lf": 20
+    },
+    {
+      "path": "src/config/services.ts",
+      "size": 3546,
+      "sha256": "d7bf5d808e5f132562d8bf214fc1b6994ae18a2d8ac659f79fd54a18fb88a733",
+      "crlf": 0,
+      "lf": 88
+    },
+    {
+      "path": "src/config/site.ts",
+      "size": 1694,
+      "sha256": "205bca4ca864ab36a680dc45695d851a80fa176be19fec2396d8c049a540cb4f",
+      "crlf": 0,
+      "lf": 51
+    },
+    {
+      "path": "src/data/site.json",
+      "size": 5624,
+      "sha256": "0e25a9e9150240ff302bfac6f4623e3bdd81fb9394930d22b359249e18cb2497",
+      "crlf": 0,
+      "lf": 252
+    },
+    {
+      "path": "src/lib/analytics/events.ts",
+      "size": 571,
+      "sha256": "3763b6da57f2a8353f54d6ac83bd2b4ed228ce69efe5e6adead04d862b8e899c",
+      "crlf": 0,
+      "lf": 11
+    },
+    {
+      "path": "src/lib/marketing/utm.ts",
+      "size": 540,
+      "sha256": "60c7ffbebe45c8373c5e1f9fa23f5767a10bc5950b56792140dc9e97c70d73a0",
+      "crlf": 0,
+      "lf": 27
+    },
+    {
+      "path": "src/lib/seo/metadata.ts",
+      "size": 1427,
+      "sha256": "af9520ad5af0df7c92c5d6709802e9ae098c900492c5233bff145dd33e9c70b3",
+      "crlf": 0,
+      "lf": 56
+    },
+    {
+      "path": "src/lib/seo/schema.ts",
+      "size": 2310,
+      "sha256": "f8d73d968e86ada286d115605f489e7c274d40a184fae1c0b792e26b042b91ad",
+      "crlf": 0,
+      "lf": 80
+    },
+    {
+      "path": "src/local-seo/audit.ts",
+      "size": 2174,
+      "sha256": "a6a7fac811590fa4891f8cd4ba7f1a6ae8bdd2b095bf12bf5203f9c31156cce2",
+      "crlf": 0,
+      "lf": 74
+    },
+    {
+      "path": "src/local-seo/citations.ts",
+      "size": 1156,
+      "sha256": "83d4ea8133b7df830f355bde6c51f1477ee6b615c77b67eab84bb46e757100f4",
+      "crlf": 0,
+      "lf": 39
+    },
+    {
+      "path": "src/local-seo/date.ts",
+      "size": 494,
+      "sha256": "29be04b543fd08d0c4f10984959e48e6a70fdac7106498eb169e9cfb7d527650",
+      "crlf": 0,
+      "lf": 14
+    },
+    {
+      "path": "src/local-seo/fetch.ts",
+      "size": 684,
+      "sha256": "5cbc468baccda7bb6707b4bfc3e99753c750e39e5530ab73016236bb6f8cbe22",
+      "crlf": 0,
+      "lf": 21
+    },
+    {
+      "path": "src/local-seo/format.ts",
+      "size": 3215,
+      "sha256": "1c2313a3df4b4f3de1efa105503668461515ec8c114ddda2d97a8c608028591a",
+      "crlf": 0,
+      "lf": 101
+    },
+    {
+      "path": "src/local-seo/gbp.ts",
+      "size": 2109,
+      "sha256": "325e3d81f2220cc47e04911015f3de3cf056ae154e6965bda9c29c41148fc856",
+      "crlf": 0,
+      "lf": 61
+    },
+    {
+      "path": "src/local-seo/parse.ts",
+      "size": 3885,
+      "sha256": "8e227bbc5805552d9f8eb1ae43b121656718a87f42d19ab4f86a418b66333a76",
+      "crlf": 0,
+      "lf": 138
+    },
+    {
+      "path": "src/local-seo/repo.ts",
+      "size": 3396,
+      "sha256": "6920cfed0b145276d6a1aeefe4d0ea26cf2abe834cd3b0780ebb786802898c18",
+      "crlf": 0,
+      "lf": 117
+    },
+    {
+      "path": "src/local-seo/rules.ts",
+      "size": 20878,
+      "sha256": "d96434dbdfee3734d4b05dcbd732437bc8e64539e3db1bdba7bca3dce8695f0f",
+      "crlf": 0,
+      "lf": 498
+    },
+    {
+      "path": "src/local-seo/score.ts",
+      "size": 1478,
+      "sha256": "d92695e3124f8e5d978f2cf4335a3be4214820532df4bb0075d32a5065820e5e",
+      "crlf": 0,
+      "lf": 48
+    },
+    {
+      "path": "src/local-seo/thresholds.ts",
+      "size": 572,
+      "sha256": "54cfbfd8f9ee7e2ef21f5c48223d35ca3429dbeb3991478850c55effecf511a7",
+      "crlf": 0,
+      "lf": 24
+    },
+    {
+      "path": "src/local-seo/types.ts",
+      "size": 3258,
+      "sha256": "56252a1bdbd9359aad861cc0fd3c3737e14c45df67d570c23c2863b7e08f26ba",
+      "crlf": 0,
+      "lf": 146
+    },
+    {
+      "path": "src/pages/about.html",
+      "size": 792,
+      "sha256": "db9b558f53cc3bde309b9f394f2d866baf29975edd274ee111a39ec680ebd14e",
+      "crlf": 0,
+      "lf": 33
+    },
+    {
+      "path": "src/pages/blog/electrical-safety-tips/index.html",
+      "size": 1394,
+      "sha256": "a9a2027a30f912020933b74c2dfa2bcd3689c661899cf5de908b1828d5cbf12a",
+      "crlf": 0,
+      "lf": 40
+    },
+    {
+      "path": "src/pages/blog/ev-charger-installation-guide/index.html",
+      "size": 1417,
+      "sha256": "d1eb9c307a70f77fb6b4bf048fe9404dd8c050388cc94a0b864c99a59c163270",
+      "crlf": 0,
+      "lf": 42
+    },
+    {
+      "path": "src/pages/blog/how-to-choose-right-electrician/index.html",
+      "size": 1363,
+      "sha256": "89fde67f2d8f09f548e361be1cdefa36ad2d50780cf7908d2a827ed53ce9b4f5",
+      "crlf": 0,
+      "lf": 42
+    },
+    {
+      "path": "src/pages/blog/index.html",
+      "size": 1488,
+      "sha256": "1c294010d7c8a6895f7bada6c0b32c8c3f3e32efd2dd3b2b3e98bf4fb0e8bd36",
+      "crlf": 0,
+      "lf": 64
+    },
+    {
+      "path": "src/pages/blog/signs-you-need-panel-upgrade/index.html",
+      "size": 1365,
+      "sha256": "005945e63df54b4c7eccbb1a6e86e7ed2843ac750217bc04caec35458fe2c81f",
+      "crlf": 0,
+      "lf": 38
+    },
+    {
+      "path": "src/pages/blog/whole-home-surge-protection/index.html",
+      "size": 1428,
+      "sha256": "6c1315009ed2058a39b0d5de663f22c9ee48236e6a76e5a55fbc63e4dd1de06f",
+      "crlf": 0,
+      "lf": 40
+    },
+    {
+      "path": "src/pages/blog/winter-generator-readiness/index.html",
+      "size": 864,
+      "sha256": "9e93a9737b67073686214298ae1c5af02d86c50bcc635bb3b5d7600fa048cc56",
+      "crlf": 0,
+      "lf": 33
+    },
+    {
+      "path": "src/pages/booking.html",
+      "size": 1773,
+      "sha256": "1158aa99a152adcc7b7af460bd0e29b0a1194498dae8074eaf620a61875366f8",
+      "crlf": 0,
+      "lf": 66
+    },
+    {
+      "path": "src/pages/code-corrections.html",
+      "size": 2490,
+      "sha256": "03a3dfbe42df626251417e9b4689c40e4f753ccbf1e150de03ba12c693c6cd06",
+      "crlf": 0,
+      "lf": 78
+    },
+    {
+      "path": "src/pages/commercial.html",
+      "size": 835,
+      "sha256": "036e60ed16ae1816c2e6d4ea3e6cb0d28a99daebcc6ea98d2e5d244699cdf308",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "src/pages/contact.html",
+      "size": 1671,
+      "sha256": "649c841f347c12f758b67578c384306ff3193c27d337fcbd0a299dd918fa182b",
+      "crlf": 0,
+      "lf": 64
+    },
+    {
+      "path": "src/pages/dedicated-circuits.html",
+      "size": 2399,
+      "sha256": "2259df7f3b0c07c478b6b556ee613d7d53b12500a0c79ae6608f19a22cdf79d0",
+      "crlf": 0,
+      "lf": 75
+    },
+    {
+      "path": "src/pages/electrical-repairs.html",
+      "size": 2503,
+      "sha256": "7028c113afd54153e70a95d4df7e541ba8d76ac781fbdd563282bf39bc094ac3",
+      "crlf": 0,
+      "lf": 78
+    },
+    {
+      "path": "src/pages/electrician-allegan.html",
+      "size": 2785,
+      "sha256": "227d03f60b85cb8597c328c1dcaf444457630fed2471dc0a99892a38de6a286d",
+      "crlf": 0,
+      "lf": 81
+    },
+    {
+      "path": "src/pages/electrician-grand-haven.html",
+      "size": 2870,
+      "sha256": "e4baeb7215a5c476ffd7c9623c1fbe24d010ef5d709918c145cc7fedb6e0c46e",
+      "crlf": 0,
+      "lf": 81
+    },
+    {
+      "path": "src/pages/electrician-grand-rapids.html",
+      "size": 2903,
+      "sha256": "b6aeea7daf865e324425d6a56b26d3d7bbea62f33cde18e79ad804650cf59738",
+      "crlf": 0,
+      "lf": 77
+    },
+    {
+      "path": "src/pages/electrician-holland.html",
+      "size": 2831,
+      "sha256": "2ca8faa01a863f9d03c02126547063673506cec7dd6aeee419c1ce3e8fa6b083",
+      "crlf": 0,
+      "lf": 81
+    },
+    {
+      "path": "src/pages/electrician-muskegon.html",
+      "size": 2748,
+      "sha256": "3c6edb8e90bb745941f64b0d4035f0f6edd3e8597447ff276f045f07c5a7bde9",
+      "crlf": 0,
+      "lf": 78
+    },
+    {
+      "path": "src/pages/emergency.html",
+      "size": 819,
+      "sha256": "a6217ab688a83502d189f66bb1a178a9ccb3a351a8b6e003a612521993263568",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "src/pages/ev-chargers.html",
+      "size": 2423,
+      "sha256": "42a631c82c54fdf09fff79febc7e65d916279b95a055dfded6f79961be13d8bc",
+      "crlf": 0,
+      "lf": 76
+    },
+    {
+      "path": "src/pages/faq.html",
+      "size": 756,
+      "sha256": "bde889ee3ae949c923ed849eada40035121a6d5f4719c08909b74ac6da97ac3b",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "src/pages/financing.html",
+      "size": 756,
+      "sha256": "30cbe984d327c721f2d6b699fcc4c47609fa05b509c2e34c83c9912841104292",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "src/pages/gallery.html",
+      "size": 5041,
+      "sha256": "1fc95e813931e0d21d492d4036326783dd30cb1b28a3db5f9c38e3cbf417e57d",
+      "crlf": 0,
+      "lf": 178
+    },
+    {
+      "path": "src/pages/generators.html",
+      "size": 2476,
+      "sha256": "65082194447d74db17ba3f89f784bd7f872ac2c26ee6b072c12e4fa4093711e8",
+      "crlf": 0,
+      "lf": 80
+    },
+    {
+      "path": "src/pages/index.html",
+      "size": 2891,
+      "sha256": "d0c0873e376799097c4ffaf4d74c37c78a89c5fae1df240782a4e1fed90c40d1",
+      "crlf": 0,
+      "lf": 102
+    },
+    {
+      "path": "src/pages/lighting.html",
+      "size": 2465,
+      "sha256": "8d4ace42ec6d51e4c50a983e400085615c14e6420cf857337cf2d2f119957755",
+      "crlf": 0,
+      "lf": 80
+    },
+    {
+      "path": "src/pages/panel-upgrades.html",
+      "size": 818,
+      "sha256": "196569485b1193b606c257af1c7d17b45800557b2a10bfff862f52bb4b450872",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "src/pages/residential.html",
+      "size": 856,
+      "sha256": "1943e0dd26422b4d91689be719a135cd350166a60dce29c14229e6ba660fae79",
+      "crlf": 0,
+      "lf": 33
+    },
+    {
+      "path": "src/pages/reviews.html",
+      "size": 752,
+      "sha256": "b056bfdfae3dfd81e7e5aea06dc3bc0eeb91646340b07299437a1e01d5c523a8",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "src/pages/service-areas.html",
+      "size": 759,
+      "sha256": "9f5dc139318d57fb1ed11014a2b4b27d5754d0d28ee528147a1a64e98094ba6b",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "src/pages/services.html",
+      "size": 1259,
+      "sha256": "021e47c4c7629efcf640bd37027870b265bdec7e0395545b92cb1c1d275f6719",
+      "crlf": 0,
+      "lf": 44
+    },
+    {
+      "path": "src/pages/testimonials.html",
+      "size": 9703,
+      "sha256": "90065dd26f5e7ec0a154de328387a4f7e73fe7d6dda367f9805bceed1e0e2a59",
+      "crlf": 0,
+      "lf": 331
+    },
+    {
+      "path": "src/pages/thank-you.html",
+      "size": 738,
+      "sha256": "55e86f018cc9f27eb0b6b750812ecdd7fa707fa3f418a03630c82a4eb70bb96f",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "src/partials/footer.html",
+      "size": 1397,
+      "sha256": "e7418559a90e75d864cd16ec9863858bb2e321bce09effc1486013974e74df7c",
+      "crlf": 0,
+      "lf": 51
+    },
+    {
+      "path": "src/partials/header.html",
+      "size": 1132,
+      "sha256": "b0dc0b4d8f413ad9a74842b0254477bed6d679dca6d1cc8634970f23a4561295",
+      "crlf": 0,
+      "lf": 41
+    },
+    {
+      "path": "src/partials/includes/cta-call-inline.html",
+      "size": 173,
+      "sha256": "cb49d8aed01f5ddd7ecedb128260b10bdcb2bcc7cc8fabbacf85f4dee5a422dc",
+      "crlf": 0,
+      "lf": 9
+    },
+    {
+      "path": "src/partials/includes/cta-emergency-call.html",
+      "size": 168,
+      "sha256": "60dac4ef635e122e0d0544d572ba182dbfde568a43e6d5eb0442fc226cb49b51",
+      "crlf": 0,
+      "lf": 9
+    },
+    {
+      "path": "src/partials/includes/cta-hero-dual.html",
+      "size": 347,
+      "sha256": "e0c6c8967be70916f379029a33029fd999206aaabb2512b3d9b9a9f7be9dd881",
+      "crlf": 0,
+      "lf": 15
+    },
+    {
+      "path": "src/partials/includes/decision-cta.html",
+      "size": 544,
+      "sha256": "b0b2ad4bef12f68aa0ee15b34bdd537b056e89eb1de8ffd049b69d795fbcdf7f",
+      "crlf": 0,
+      "lf": 21
+    },
+    {
+      "path": "src/partials/includes/gbp-review-button.html",
+      "size": 150,
+      "sha256": "ef9c7617d90cb86948293cc840fde26608671b3a8900ba9c7efa9d2ae40768fb",
+      "crlf": 0,
+      "lf": 9
+    },
+    {
+      "path": "src/partials/layout.html",
+      "size": 407,
+      "sha256": "954f33edceb207dd51a6eeefd80b6678b7a4e9a93c2b4cadf038ccec0ffc6597",
+      "crlf": 0,
+      "lf": 16
+    },
+    {
+      "path": "styleguide-top-tier-electrical.html",
+      "size": 21000,
+      "sha256": "24c309fae17df6ca1c42509028e4226d80a80223bb52a96273cc38a824c93b52",
+      "crlf": 0,
+      "lf": 708
+    },
+    {
+      "path": "styles.css",
+      "size": 39104,
+      "sha256": "3aea82654b5074f47f9e57e280c3b8bec7c58ccfa08d6e72927d45f582967aad",
+      "crlf": 0,
+      "lf": 2237
+    },
+    {
+      "path": "switch-gear-69955ab06fdb5.webp",
+      "size": 6796,
+      "sha256": "d3b4df18e6495a4a145df063fbeb5605cd077991064733102d628bff4a116e95",
+      "crlf": 0,
+      "lf": 29
+    },
+    {
+      "path": "testimonials.html",
+      "size": 13278,
+      "sha256": "0badecab0a91683d7bacf9fd30f927ac82a10111ef2ab83d3d228f5c1d525711",
+      "crlf": 0,
+      "lf": 381
+    },
+    {
+      "path": "thank-you.html",
+      "size": 8351,
+      "sha256": "a9b04243c991aa37ad176d8d6accbca8d0b6a5833b15d8a84f0d5960fb704530",
+      "crlf": 0,
+      "lf": 241
+    },
+    {
+      "path": "tools/center_and_pad_logo.py",
+      "size": 5426,
+      "sha256": "50be9ac3f7ec77097fde7c9f253a50b21837384743bfb4322a74ebe008f28479",
+      "crlf": 0,
+      "lf": 155
+    },
+    {
+      "path": "toptier-service-pages/services/commercial-electrical/index.md",
+      "size": 1126,
+      "sha256": "01f0be97d4dc7395151bf4d8592c432d21c4b29f541cbce39e90958381fd312c",
+      "crlf": 0,
+      "lf": 30
+    },
+    {
+      "path": "toptier-service-pages/services/custom-home-new-construction/index.md",
+      "size": 2941,
+      "sha256": "bbd190822e3b41f3aae73c8c9202ff45737bd05880792d1847f8a0969c652f77",
+      "crlf": 0,
+      "lf": 73
+    },
+    {
+      "path": "toptier-service-pages/services/ev-charger-installation/index.md",
+      "size": 928,
+      "sha256": "f11444f33a2dd9c349e4dc55dc05aa5ee70e895ba971a764e4c8f3e922fea1a9",
+      "crlf": 0,
+      "lf": 28
+    },
+    {
+      "path": "toptier-service-pages/services/index.md",
+      "size": 2668,
+      "sha256": "58686582bdeebbfeeb66c49ad17f9ea66ce43af335dbf619c19781e86a99cd3c",
+      "crlf": 0,
+      "lf": 81
+    },
+    {
+      "path": "toptier-service-pages/services/industrial-equipment-power/index.md",
+      "size": 1034,
+      "sha256": "e862dc9fe73fb53a2fd107f77834b71cc32835af84f274277808d238fd396f85",
+      "crlf": 0,
+      "lf": 29
+    },
+    {
+      "path": "toptier-service-pages/services/lighting-design-installation/index.md",
+      "size": 1118,
+      "sha256": "35c9d23634ffb75af36ad202a28ab0dbb788754ee4dcda0369d5956689d35e95",
+      "crlf": 0,
+      "lf": 31
+    },
+    {
+      "path": "toptier-service-pages/services/low-voltage-structured-cabling/index.md",
+      "size": 741,
+      "sha256": "e0e2e0397cb73d89c17a45c215c2534761def052c12006d543136426a71cf97e",
+      "crlf": 0,
+      "lf": 20
+    },
+    {
+      "path": "toptier-service-pages/services/panel-service-upgrades/index.md",
+      "size": 1484,
+      "sha256": "7ba6a5245f7b511347aebaf491007a962a8a551e0daf9577011e5e730d99b70f",
+      "crlf": 0,
+      "lf": 42
+    },
+    {
+      "path": "toptier-service-pages/services/residential-remodels-additions/index.md",
+      "size": 1960,
+      "sha256": "69dd5cee0e814714f08d81a31dfd3f5989ddd385b8d57360aff5aac7801db06d",
+      "crlf": 0,
+      "lf": 51
+    },
+    {
+      "path": "toptier-service-pages/services/service-calls-troubleshooting/index.md",
+      "size": 1206,
+      "sha256": "a9d761994d876b9a5268868e6237f090273cdd7ee696901c02488635b4d9069a",
+      "crlf": 0,
+      "lf": 38
+    },
+    {
+      "path": "toptier-service-pages/services/specialty-systems-walkins-rtus/index.md",
+      "size": 1081,
+      "sha256": "b9d1b2b4bc373fa9eb8989a371a8334f1ed223bee15e90b6ac0c9dca97de0e11",
+      "crlf": 0,
+      "lf": 27
+    },
+    {
+      "path": "toptier-service-pages/services/standby-generators/index.md",
+      "size": 1199,
+      "sha256": "d574fab202cea1ba162fb89d38d2aefeb04835951c15c73e3623a000124c8a17",
+      "crlf": 0,
+      "lf": 32
+    },
+    {
+      "path": "wrangler.jsonc",
+      "size": 217,
+      "sha256": "a54b57291d4f15a1c9dad8556c24456039e1ef6746708c5c4a637caa3e3f9dd0",
+      "crlf": 0,
+      "lf": 9
+    },
+    {
+      "path": "wrangler.toml",
+      "size": 129,
+      "sha256": "0cd9a80d418b54c1506c56b65794454b6ee3a6a8245d03e8e826acf58d14acef",
+      "crlf": 0,
+      "lf": 6
+    }
+  ]
+}
