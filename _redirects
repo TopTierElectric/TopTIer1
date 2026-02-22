@@ -17,3 +17,16 @@
 /TopTierElectrical_Primary_FlatGold_512.png /assets/images/logos/TopTierElectrical_Primary_FlatGold_512.png 301
 /TopTierElectrical_Primary_White_2048.png /assets/images/logos/TopTierElectrical_Primary_White_2048.png 301
 /TopTierElectrical_Primary_White_512.png /assets/images/logos/TopTierElectrical_Primary_White_512.png 301
+
+# Canonical route aliases for slash-style blog/service slugs
+/blog/electrical-safety-tips /blog-electrical-safety 301
+/blog/ev-charger-installation-guide /blog-ev-charging 301
+/blog/how-to-choose-right-electrician /blog-right-electrician 301
+/blog/signs-you-need-panel-upgrade /blog-panel-upgrade-signs 301
+/blog/whole-home-surge-protection /blog-surge-protection 301
+/blog/winter-generator-readiness /blog-generator-readiness 301
+/code-corrections /electrical-repairs 301
+/dedicated-circuits /services 301
+/electrician-grand-haven /service-areas 301
+/electrician-muskegon /service-areas 301
+/reviews /testimonials 301

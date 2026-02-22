@@ -128,7 +128,7 @@ const resolveRef = (fromFile, ref) => {
   if (cleaned.startsWith("/")) {
     return path.join(ROOT, cleaned.replace(/^\//, ""));
   }
-  return path.resolve(path.dirname(fromFile), decoded);
+  return path.resolve(path.dirname(fromFile), cleaned);
 };
 
 const parseAttributes = (tag) => {
