@@ -270,12 +270,6 @@ summary {
   aspect-ratio: 4 / 3;
 }
 
-.hero-media .hero-panel-image {
-  object-fit: contain;
-  transform: rotate(90deg) scale(0.92);
-  transform-origin: center;
-}
-
 /* Check-list bullets */
 .checklist {
   list-style: none;

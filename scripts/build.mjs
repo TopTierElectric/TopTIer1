@@ -71,10 +71,10 @@ const HERO_DEFAULT = {
   alt: "Exterior lighting upgrade installed by a licensed electrician",
 };
 const HERO_HOME = {
-  src: heroSrc("Electrical Panels.webp"),
-  width: 686,
-  height: 915,
-  alt: "Electrical panel wiring detail with clean labeling and organized conductors",
+  src: heroSrc("IMG_1380.webp"),
+  width: 2048,
+  height: 1536,
+  alt: "Electrician working inside an electrical panel with clean labeling",
 };
 const HERO_BY_SERVICE = {
   panel_upgrades: {
