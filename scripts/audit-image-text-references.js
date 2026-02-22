@@ -14,6 +14,30 @@ const SKIP_DIRS = new Set([
 const HTML_EXT = ".html";
 const CSS_EXT = ".css";
 const MD_EXT = ".md";
+const SITE_JSON_PATH = path.join(ROOT, "src", "data", "site.json");
+
+const loadOwnDomain = () => {
+  const envDomain = process.env.OWN_DOMAIN || process.env.SITE_DOMAIN;
+  if (envDomain) return envDomain;
+  if (!fs.existsSync(SITE_JSON_PATH)) return "";
+
+  try {
+    const siteConfig = JSON.parse(fs.readFileSync(SITE_JSON_PATH, "utf8"));
+    return siteConfig?.domain || "";
+  } catch {
+    return "";
+  }
+};
+
+const ownDomain = loadOwnDomain();
+const ownHost = (() => {
+  if (!ownDomain) return "";
+  try {
+    return new URL(ownDomain).host.toLowerCase();
+  } catch {
+    return "";
+  }
+})();
 
 const walkFiles = (startDir, extension) => {
   const out = [];
@@ -44,16 +68,43 @@ const isSkippableRef = (value) => {
   const v = value.trim();
   return (
     v === "" ||
-    v.startsWith("http://") ||
-    v.startsWith("https://") ||
-    v.startsWith("//") ||
     v.startsWith("data:") ||
     v.startsWith("blob:") ||
     v.startsWith("#")
   );
 };
 
-const cleanRef = (value) => value.split("#")[0].split("?")[0].trim();
+const safeDecode = (value) => {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+};
+
+const cleanRef = (value) => {
+  if (!value) return "";
+  let ref = String(value).trim();
+  if (ref.startsWith("//")) {
+    ref = `https:${ref}`;
+  }
+
+  ref = ref.split("#")[0].split("?")[0].trim();
+
+  if (/^https?:\/\//i.test(ref)) {
+    try {
+      const parsed = new URL(ref);
+      if (!ownHost || parsed.host.toLowerCase() !== ownHost) {
+        return ref;
+      }
+      ref = parsed.pathname || "/";
+    } catch {
+      return ref;
+    }
+  }
+
+  return safeDecode(ref);
+};
 
 const normalizeMarkdownRef = (value) => {
   const trimmed = value.trim();
@@ -64,9 +115,16 @@ const normalizeMarkdownRef = (value) => {
   return trimmed.split(/\s+"[^"]*"\s*$/)[0].trim();
 };
 
+const normalizeUrlToken = (value) =>
+  value
+    .trim()
+    .replace(/&quot;/gi, '"')
+    .replace(/^['"]|['"]$/g, "");
+
 const resolveRef = (fromFile, ref) => {
   const cleaned = cleanRef(ref);
   if (isSkippableRef(cleaned)) return null;
+  if (/^https?:\/\//i.test(cleaned)) return null;
   if (cleaned.startsWith("/")) {
     return path.join(ROOT, cleaned.replace(/^\//, ""));
   }
@@ -156,6 +214,16 @@ for (const filePath of htmlFiles) {
       }
     }
   }
+
+  const htmlUrlRe = /url\(\s*(['"]?)([^'"\)]+)\1\s*\)/gi;
+  let htmlUrlMatch;
+  while ((htmlUrlMatch = htmlUrlRe.exec(content)) !== null) {
+    const rawRef = normalizeUrlToken(htmlUrlMatch[2] || "");
+    const resolved = resolveRef(filePath, rawRef);
+    if (resolved && !fs.existsSync(resolved)) {
+      addMissingReference(filePath, rawRef, "html[url()]");
+    }
+  }
 }
 
 for (const filePath of cssFiles) {
@@ -163,7 +231,7 @@ for (const filePath of cssFiles) {
   const urlRe = /url\(([^)]+)\)/gi;
   let m;
   while ((m = urlRe.exec(content)) !== null) {
-    const raw = m[1].trim().replace(/^['"]|['"]$/g, "");
+    const raw = normalizeUrlToken(m[1]);
     const resolved = resolveRef(filePath, raw);
     if (resolved && !fs.existsSync(resolved)) {
       addMissingReference(filePath, raw, "css[url()]");
