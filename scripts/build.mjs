@@ -58,7 +58,115 @@ const buildBreadcrumbHtml = (meta) => {
   if (b.length <= 1) return "";
   return `<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>${b.map((x, i) => (i === b.length - 1 ? `<li aria-current="page">${x.name}</li>` : `<li><a href="${x.url}">${x.name}</a></li>`)).join("")}</ol></nav>`;
 };
-const buildHead = (meta, route) => {
+
+const normalizeHeroAlt = (alt) =>
+  String(alt || "")
+    .replaceAll(/\s+/g, " ")
+    .trim();
+const heroSrc = (fileName) => encodeURI(`/Past_work_webp/${fileName}`);
+const HERO_DEFAULT = {
+  src: heroSrc("Exterior Light Fixtures.webp"),
+  width: 2048,
+  height: 1536,
+  alt: "Exterior lighting upgrade installed by a licensed electrician",
+};
+const HERO_HOME = {
+  src: heroSrc("IMG_1380.webp"),
+  width: 2048,
+  height: 1536,
+  alt: "Electrician working inside an electrical panel with clean labeling",
+};
+const HERO_BY_SERVICE = {
+  panel_upgrades: {
+    src: heroSrc("IMG_1380.webp"),
+    width: 2048,
+    height: 1536,
+    alt: "Electrical panel upgrade with clean labeling and code-compliant installation",
+  },
+  ev_chargers: {
+    src: heroSrc("Residential Wiring.webp"),
+    width: 2048,
+    height: 1536,
+    alt: "Residential wiring preparation for EV charger installation",
+  },
+  generators: {
+    src: heroSrc("backup Generator.webp"),
+    width: 2048,
+    height: 1536,
+    alt: "Backup generator and transfer equipment for reliable home power",
+  },
+  lighting: {
+    src: heroSrc("Lighting.webp"),
+    width: 1200,
+    height: 900,
+    alt: "Interior lighting installation and upgrades",
+  },
+  repairs: {
+    src: heroSrc("Service after.webp"),
+    width: 1536,
+    height: 2048,
+    alt: "Electrical service repair completed with upgraded meter equipment",
+  },
+  code_corrections: {
+    src: heroSrc("Field Controls.webp"),
+    width: 1536,
+    height: 2048,
+    alt: "Electrical code correction work on control wiring and safety components",
+  },
+  dedicated_circuits: {
+    src: heroSrc("Residential Wiring.webp"),
+    width: 2048,
+    height: 1536,
+    alt: "Dedicated circuit wiring and clean junction box workmanship",
+  },
+};
+const HERO_BY_PAGE_TYPE = {
+  emergency: {
+    src: heroSrc("Working through the Storms.webp"),
+    width: 1080,
+    height: 810,
+    alt: "Emergency electrical response during severe weather conditions",
+  },
+  commercial: {
+    src: heroSrc("Gas Station Service Call .webp"),
+    width: 2048,
+    height: 1536,
+    alt: "Commercial electrical troubleshooting and control wiring in the field",
+  },
+  residential: {
+    src: heroSrc("Residential Electrical.webp"),
+    width: 1536,
+    height: 2048,
+    alt: "Residential electrical wiring and workmanship in progress",
+  },
+  blog: {
+    src: heroSrc("Conduit Piping.webp"),
+    width: 1080,
+    height: 810,
+    alt: "Electrical conduit and piping installation detail",
+  },
+};
+const getPageHero = (meta, route) => {
+  if (route === "/") return HERO_HOME;
+  if (meta?.service && HERO_BY_SERVICE[meta.service])
+    return HERO_BY_SERVICE[meta.service];
+  if (meta?.pageType && HERO_BY_PAGE_TYPE[meta.pageType])
+    return HERO_BY_PAGE_TYPE[meta.pageType];
+  return HERO_DEFAULT;
+};
+const buildPageHeroHtml = (hero) => {
+  if (!hero?.src) return "";
+  const alt = normalizeHeroAlt(hero.alt);
+  return `<figure class="page-hero"><div class="page-hero__media"><img src="${hero.src}" width="${hero.width}" height="${hero.height}" alt="${alt}" decoding="async" loading="eager" fetchpriority="high"></div></figure>`;
+};
+
+const DEFAULT_OG_IMAGE =
+  "/Past_work_webp/TopTierElectrical_OpenGraph_1200x630.webp";
+const DEFAULT_OG_IMAGE_WIDTH = 1200;
+const DEFAULT_OG_IMAGE_HEIGHT = 630;
+const DEFAULT_OG_IMAGE_ALT = `${site.brand} — Electrician in West Michigan`;
+
+const buildHead = (meta, route, { preloadImage } = {}) => {
   const canonical = canonicalUrl(site.domain, route),
     robots = meta.indexable ? "index,follow" : "noindex,nofollow",
     ogImage = meta.ogImage || "/assets/img/og-default.jpg",
@@ -70,6 +178,9 @@ const buildHead = (meta, route) => {
     `<meta name="description" content="${meta.description}">`,
     `<link rel="canonical" href="${canonical}">`,
     `<meta name="robots" content="${robots}">`,
+    preloadImage
+      ? `<link rel="preload" as="image" href="${preloadImage}">`
+      : "",
     `<meta property="og:site_name" content="${site.brand}">`,
     `<meta property="og:type" content="website">`,
     `<meta property="og:locale" content="${site.locale || "en_US"}">`,
@@ -83,9 +194,19 @@ const buildHead = (meta, route) => {
     `<meta name="twitter:image" content="${ogImageAbsolute}">`,
     `<link rel="stylesheet" href="/assets/css/styles.css?v=${BUILD_ID}">`,
     `<script defer src="/assets/js/site.js?v=${BUILD_ID}"></script>`,
-  ].join("\n");
+  ]
+    .filter(Boolean)
+    .join("\n");
 };
-const buildSchema = (meta, route) => {
+const buildSchema = (meta, route, hero) => {
+  const canonical = canonicalUrl(site.domain, route);
+  const ogImage = meta.ogImage || DEFAULT_OG_IMAGE;
+  const ogImageAbs = `${site.domain.replace(/\/$/, "")}${ogImage}`;
+  const logoAbs = `${site.domain.replace(/\/$/, "")}${encodeURI("/Past_work_webp/TopTierElectrical_Logo_Web_600w.webp")}`;
+  const heroAbs = hero?.src
+    ? `${site.domain.replace(/\/$/, "")}${hero.src}`
+    : ogImageAbs;
+
   const schemas = [
     {
       "@context": "https://schema.org",
@@ -94,9 +215,20 @@ const buildSchema = (meta, route) => {
       url: site.domain,
       telephone: site.phone_e164,
       email: site.email,
+      logo: logoAbs,
+      image: ogImageAbs,
       areaServed: (site.service_areas_short || []).map((c) => `${c}, MI`),
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: meta.title,
+      description: meta.description,
+      url: canonical,
+      primaryImageOfPage: heroAbs,
+    },
   ];
+
   if (Array.isArray(meta.breadcrumb) && meta.breadcrumb.length > 1)
     schemas.push({
       "@context": "https://schema.org",
@@ -108,6 +240,7 @@ const buildSchema = (meta, route) => {
         item: canonicalUrl(site.domain, b.url),
       })),
     });
+
   if (Array.isArray(meta.faq) && meta.faq.length)
     schemas.push({
       "@context": "https://schema.org",
@@ -118,6 +251,7 @@ const buildSchema = (meta, route) => {
         acceptedAnswer: { "@type": "Answer", text: x.a },
       })),
     });
+
   return schemas
     .map(
       (o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`,
@@ -225,6 +359,21 @@ async function copyAssetsWithoutRasterImages() {
     }
   }
 }
+async function copyPastWorkWebpAssets() {
+  if (!(await exists(PAST_WORK_WEBP_DIR))) return;
+  const outDir = path.join(DIST_DIR, "Past_work_webp");
+  await fs.mkdir(outDir, { recursive: true });
+  const entries = await fs.readdir(PAST_WORK_WEBP_DIR, { withFileTypes: true });
+  for (const e of entries) {
+    if (!e.isFile()) continue;
+    if (!/\.webp$/i.test(e.name)) continue;
+    await fs.copyFile(
+      path.join(PAST_WORK_WEBP_DIR, e.name),
+      path.join(outDir, e.name),
+    );
+  }
+}
+
 await emptyDir(DIST_DIR);
 await copyAssetsWithoutRasterImages();
 await buildImages({
@@ -259,7 +408,11 @@ for (const filePath of pageFiles) {
     throw new Error(`${filePath}: missing required meta`);
   if (!meta.service) meta.service = "none";
   if (!meta.city) meta.city = "none";
-  const head = buildHead(meta, route),
+
+  const hero = getPageHero(meta, route);
+  const head = buildHead(meta, route, {
+      preloadImage: route === "/" ? hero.src : null,
+    }),
     header = render(headerTpl, { site, navPrimaryLinks }, { strict: true }),
     footer = render(
       footerTpl,
@@ -267,7 +420,8 @@ for (const filePath of pageFiles) {
       { strict: true },
     ),
     content = await expandIncludes(rawContent, { site, page: meta }),
-    schema = buildSchema(meta, route);
+    schema = buildSchema(meta, route, hero),
+    pageHeroHtml = route === "/" ? "" : buildPageHeroHtml(hero);
   let html = render(
     layoutTpl,
     {
@@ -277,6 +431,7 @@ for (const filePath of pageFiles) {
       header,
       footer,
       breadcrumbHtml: buildBreadcrumbHtml(meta),
+      pageHeroHtml,
       content,
       schema,
       analytics: buildAnalytics(),
