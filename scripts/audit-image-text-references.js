@@ -53,6 +53,14 @@ const isSkippableRef = (value) => {
   );
 };
 
+const safeDecode = (value) => {
+  try {
+    return decodeURI(value);
+  } catch {
+    return value;
+  }
+};
+
 const cleanRef = (value) => value.split("#")[0].split("?")[0].trim();
 
 const normalizeMarkdownRef = (value) => {
@@ -67,10 +75,13 @@ const normalizeMarkdownRef = (value) => {
 const resolveRef = (fromFile, ref) => {
   const cleaned = cleanRef(ref);
   if (isSkippableRef(cleaned)) return null;
-  if (cleaned.startsWith("/")) {
-    return path.join(ROOT, cleaned.replace(/^\//, ""));
+
+  const decoded = safeDecode(cleaned);
+
+  if (decoded.startsWith("/")) {
+    return path.join(ROOT, decoded.replace(/^\//, ""));
   }
-  return path.resolve(path.dirname(fromFile), cleaned);
+  return path.resolve(path.dirname(fromFile), decoded);
 };
 
 const parseAttributes = (tag) => {
