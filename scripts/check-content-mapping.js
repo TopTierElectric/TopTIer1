@@ -88,6 +88,14 @@ for (const file of [
   );
 }
 
+const energySolutionsHtml = read("energy-solutions.html");
+expect(
+  !/src="assets\/images\/projects\/generator-transfer-switch-install\.jpg"[\s\S]{0,400}?alt="[^"]*lighting/i.test(
+    energySolutionsHtml,
+  ),
+  "energy-solutions.html uses generator-transfer-switch imagery with lighting-oriented text (mismatched image description).",
+);
+
 const servicePageMappings = [
   {
     file: "generators.html",
