@@ -3,10 +3,19 @@
 ## A. Executive summary
 
 - Exact layer counts from `pairing.tsv`: IDENTICAL=0, CHANGED=0, MISSING_IN_SRC=387, EXTRA_IN_SRC=70.
-- Heuristic layer counts from `fuzzy_pairing.tsv`: total_candidates=1.
+- Heuristic layer counts from `fuzzy_pairing.tsv`: total_candidates=23.
 
 Top 10 highest-score fuzzy candidates (or fewer if unavailable):
-1. `testimonials.html` → `pages/testimonials.html` | score=0.8092 | evidence: `fuzzy_diffs/testimonials.html__TO__pages_testimonials.html.diff`, `fuzzy_byte_diffs/testimonials.html__TO__pages_testimonials.html.cmp.txt`.
+1. `testimonials.html` → `pages/testimonials.html` | score=1.2811 | evidence: `fuzzy_diffs/testimonials.html__TO__pages_testimonials.html.diff`, `fuzzy_byte_diffs/testimonials.html__TO__pages_testimonials.html.cmp.txt`.
+2. `residential.html` → `pages/residential.html` | score=0.6272 | evidence: `fuzzy_diffs/residential.html__TO__pages_residential.html.diff`, `fuzzy_byte_diffs/residential.html__TO__pages_residential.html.cmp.txt`.
+3. `commercial.html` → `pages/commercial.html` | score=0.5799 | evidence: `fuzzy_diffs/commercial.html__TO__pages_commercial.html.diff`, `fuzzy_byte_diffs/commercial.html__TO__pages_commercial.html.cmp.txt`.
+4. `thank-you.html` → `pages/thank-you.html` | score=0.5343 | evidence: `fuzzy_diffs/thank-you.html__TO__pages_thank-you.html.diff`, `fuzzy_byte_diffs/thank-you.html__TO__pages_thank-you.html.cmp.txt`.
+5. `about.html` → `pages/about.html` | score=0.5122 | evidence: `fuzzy_diffs/about.html__TO__pages_about.html.diff`, `fuzzy_byte_diffs/about.html__TO__pages_about.html.cmp.txt`.
+6. `financing.html` → `pages/financing.html` | score=0.5057 | evidence: `fuzzy_diffs/financing.html__TO__pages_financing.html.diff`, `fuzzy_byte_diffs/financing.html__TO__pages_financing.html.cmp.txt`.
+7. `faq.html` → `pages/faq.html` | score=0.4456 | evidence: `fuzzy_diffs/faq.html__TO__pages_faq.html.diff`, `fuzzy_byte_diffs/faq.html__TO__pages_faq.html.cmp.txt`.
+8. `contact.html` → `pages/contact.html` | score=0.4394 | evidence: `fuzzy_diffs/contact.html__TO__pages_contact.html.diff`, `fuzzy_byte_diffs/contact.html__TO__pages_contact.html.cmp.txt`.
+9. `generators.html` → `pages/generators.html` | score=0.4379 | evidence: `fuzzy_diffs/generators.html__TO__pages_generators.html.diff`, `fuzzy_byte_diffs/generators.html__TO__pages_generators.html.cmp.txt`.
+10. `electrician-holland.html` → `pages/electrician-holland.html` | score=0.4373 | evidence: `fuzzy_diffs/electrician-holland.html__TO__pages_electrician-holland.html.diff`, `fuzzy_byte_diffs/electrician-holland.html__TO__pages_electrician-holland.html.cmp.txt`.
 
 Highest-impact ROOT→SRC transplant items (top 10):
 1. `.github/workflows/deploy-prod.yml` — evidence: needs manual confirmation.
@@ -961,14 +970,81 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 
 | root_relpath | src_relpath | score | decision | evidence_filenames |
 |---|---|---:|---|---|
-| `testimonials.html` | `pages/testimonials.html` | 0.8092 | PORT_WITH_ADAPTATION | `fuzzy_diffs/testimonials.html__TO__pages_testimonials.html.diff`; `fuzzy_byte_diffs/testimonials.html__TO__pages_testimonials.html.cmp.txt` |
+| `testimonials.html` | `pages/testimonials.html` | 1.2811 | PORT_WITH_ADAPTATION | `fuzzy_diffs/testimonials.html__TO__pages_testimonials.html.diff`; `fuzzy_byte_diffs/testimonials.html__TO__pages_testimonials.html.cmp.txt` |
+| `residential.html` | `pages/residential.html` | 0.6272 | PORT_WITH_ADAPTATION | `fuzzy_diffs/residential.html__TO__pages_residential.html.diff`; `fuzzy_byte_diffs/residential.html__TO__pages_residential.html.cmp.txt` |
+| `commercial.html` | `pages/commercial.html` | 0.5799 | PORT_WITH_ADAPTATION | `fuzzy_diffs/commercial.html__TO__pages_commercial.html.diff`; `fuzzy_byte_diffs/commercial.html__TO__pages_commercial.html.cmp.txt` |
+| `thank-you.html` | `pages/thank-you.html` | 0.5343 | PORT_WITH_ADAPTATION | `fuzzy_diffs/thank-you.html__TO__pages_thank-you.html.diff`; `fuzzy_byte_diffs/thank-you.html__TO__pages_thank-you.html.cmp.txt` |
+| `about.html` | `pages/about.html` | 0.5122 | PORT_WITH_ADAPTATION | `fuzzy_diffs/about.html__TO__pages_about.html.diff`; `fuzzy_byte_diffs/about.html__TO__pages_about.html.cmp.txt` |
+| `financing.html` | `pages/financing.html` | 0.5057 | PORT_WITH_ADAPTATION | `fuzzy_diffs/financing.html__TO__pages_financing.html.diff`; `fuzzy_byte_diffs/financing.html__TO__pages_financing.html.cmp.txt` |
+| `faq.html` | `pages/faq.html` | 0.4456 | PORT_WITH_ADAPTATION | `fuzzy_diffs/faq.html__TO__pages_faq.html.diff`; `fuzzy_byte_diffs/faq.html__TO__pages_faq.html.cmp.txt` |
+| `contact.html` | `pages/contact.html` | 0.4394 | PORT_WITH_ADAPTATION | `fuzzy_diffs/contact.html__TO__pages_contact.html.diff`; `fuzzy_byte_diffs/contact.html__TO__pages_contact.html.cmp.txt` |
+| `generators.html` | `pages/generators.html` | 0.4379 | PORT_WITH_ADAPTATION | `fuzzy_diffs/generators.html__TO__pages_generators.html.diff`; `fuzzy_byte_diffs/generators.html__TO__pages_generators.html.cmp.txt` |
+| `electrician-holland.html` | `pages/electrician-holland.html` | 0.4373 | PORT_WITH_ADAPTATION | `fuzzy_diffs/electrician-holland.html__TO__pages_electrician-holland.html.diff`; `fuzzy_byte_diffs/electrician-holland.html__TO__pages_electrician-holland.html.cmp.txt` |
+| `ev-chargers.html` | `pages/ev-chargers.html` | 0.4350 | PORT_WITH_ADAPTATION | `fuzzy_diffs/ev-chargers.html__TO__pages_ev-chargers.html.diff`; `fuzzy_byte_diffs/ev-chargers.html__TO__pages_ev-chargers.html.cmp.txt` |
+| `booking.html` | `pages/booking.html` | 0.4342 | PORT_WITH_ADAPTATION | `fuzzy_diffs/booking.html__TO__pages_booking.html.diff`; `fuzzy_byte_diffs/booking.html__TO__pages_booking.html.cmp.txt` |
+| `emergency.html` | `pages/emergency.html` | 0.4286 | PORT_WITH_ADAPTATION | `fuzzy_diffs/emergency.html__TO__pages_emergency.html.diff`; `fuzzy_byte_diffs/emergency.html__TO__pages_emergency.html.cmp.txt` |
+| `electrical-repairs.html` | `pages/electrical-repairs.html` | 0.4243 | PORT_WITH_ADAPTATION | `fuzzy_diffs/electrical-repairs.html__TO__pages_electrical-repairs.html.diff`; `fuzzy_byte_diffs/electrical-repairs.html__TO__pages_electrical-repairs.html.cmp.txt` |
+| `electrician-grand-rapids.html` | `pages/electrician-grand-rapids.html` | 0.4228 | PORT_WITH_ADAPTATION | `fuzzy_diffs/electrician-grand-rapids.html__TO__pages_electrician-grand-rapids.html.diff`; `fuzzy_byte_diffs/electrician-grand-rapids.html__TO__pages_electrician-grand-rapids.html.cmp.txt` |
+| `electrician-allegan.html` | `pages/electrician-allegan.html` | 0.4214 | PORT_WITH_ADAPTATION | `fuzzy_diffs/electrician-allegan.html__TO__pages_electrician-allegan.html.diff`; `fuzzy_byte_diffs/electrician-allegan.html__TO__pages_electrician-allegan.html.cmp.txt` |
+| `gallery.html` | `pages/gallery.html` | 0.4209 | PORT_WITH_ADAPTATION | `fuzzy_diffs/gallery.html__TO__pages_gallery.html.diff`; `fuzzy_byte_diffs/gallery.html__TO__pages_gallery.html.cmp.txt` |
+| `service-areas.html` | `pages/service-areas.html` | 0.4109 | PORT_WITH_ADAPTATION | `fuzzy_diffs/service-areas.html__TO__pages_service-areas.html.diff`; `fuzzy_byte_diffs/service-areas.html__TO__pages_service-areas.html.cmp.txt` |
+| `lighting.html` | `pages/lighting.html` | 0.4107 | PORT_WITH_ADAPTATION | `fuzzy_diffs/lighting.html__TO__pages_lighting.html.diff`; `fuzzy_byte_diffs/lighting.html__TO__pages_lighting.html.cmp.txt` |
+| `index.html` | `pages/index.html` | 0.4103 | PORT_WITH_ADAPTATION | `fuzzy_diffs/index.html__TO__pages_index.html.diff`; `fuzzy_byte_diffs/index.html__TO__pages_index.html.cmp.txt` |
+| `panel-upgrades.html` | `pages/panel-upgrades.html` | 0.4089 | PORT_WITH_ADAPTATION | `fuzzy_diffs/panel-upgrades.html__TO__pages_panel-upgrades.html.diff`; `fuzzy_byte_diffs/panel-upgrades.html__TO__pages_panel-upgrades.html.cmp.txt` |
+| `services.html` | `pages/services.html` | 0.3842 | PORT_WITH_ADAPTATION | `fuzzy_diffs/services.html__TO__pages_services.html.diff`; `fuzzy_byte_diffs/services.html__TO__pages_services.html.cmp.txt` |
+| `Past_work_webp/Lighting.webp` | `pages/lighting.html` | 0.3739 | PORT_WITH_ADAPTATION | `fuzzy_diffs/Past_work_webp_Lighting.webp__TO__pages_lighting.html.diff`; `fuzzy_byte_diffs/Past_work_webp_Lighting.webp__TO__pages_lighting.html.cmp.txt` |
 
 #### Top correspondences transplant detail
-- `testimonials.html` → `pages/testimonials.html` (score 0.8092)
+- `testimonials.html` → `pages/testimonials.html` (score 1.2811)
   - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
   - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
   - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
   - Evidence: `fuzzy_diffs/testimonials.html__TO__pages_testimonials.html.diff`, `fuzzy_byte_diffs/testimonials.html__TO__pages_testimonials.html.cmp.txt`.
+- `residential.html` → `pages/residential.html` (score 0.6272)
+  - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
+  - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
+  - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
+  - Evidence: `fuzzy_diffs/residential.html__TO__pages_residential.html.diff`, `fuzzy_byte_diffs/residential.html__TO__pages_residential.html.cmp.txt`.
+- `commercial.html` → `pages/commercial.html` (score 0.5799)
+  - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
+  - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
+  - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
+  - Evidence: `fuzzy_diffs/commercial.html__TO__pages_commercial.html.diff`, `fuzzy_byte_diffs/commercial.html__TO__pages_commercial.html.cmp.txt`.
+- `thank-you.html` → `pages/thank-you.html` (score 0.5343)
+  - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
+  - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
+  - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
+  - Evidence: `fuzzy_diffs/thank-you.html__TO__pages_thank-you.html.diff`, `fuzzy_byte_diffs/thank-you.html__TO__pages_thank-you.html.cmp.txt`.
+- `about.html` → `pages/about.html` (score 0.5122)
+  - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
+  - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
+  - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
+  - Evidence: `fuzzy_diffs/about.html__TO__pages_about.html.diff`, `fuzzy_byte_diffs/about.html__TO__pages_about.html.cmp.txt`.
+- `financing.html` → `pages/financing.html` (score 0.5057)
+  - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
+  - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
+  - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
+  - Evidence: `fuzzy_diffs/financing.html__TO__pages_financing.html.diff`, `fuzzy_byte_diffs/financing.html__TO__pages_financing.html.cmp.txt`.
+- `faq.html` → `pages/faq.html` (score 0.4456)
+  - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
+  - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
+  - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
+  - Evidence: `fuzzy_diffs/faq.html__TO__pages_faq.html.diff`, `fuzzy_byte_diffs/faq.html__TO__pages_faq.html.cmp.txt`.
+- `contact.html` → `pages/contact.html` (score 0.4394)
+  - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
+  - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
+  - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
+  - Evidence: `fuzzy_diffs/contact.html__TO__pages_contact.html.diff`, `fuzzy_byte_diffs/contact.html__TO__pages_contact.html.cmp.txt`.
+- `generators.html` → `pages/generators.html` (score 0.4379)
+  - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
+  - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
+  - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
+  - Evidence: `fuzzy_diffs/generators.html__TO__pages_generators.html.diff`, `fuzzy_byte_diffs/generators.html__TO__pages_generators.html.cmp.txt`.
+- `electrician-holland.html` → `pages/electrician-holland.html` (score 0.4373)
+  - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
+  - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
+  - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
+  - Evidence: `fuzzy_diffs/electrician-holland.html__TO__pages_electrician-holland.html.diff`, `fuzzy_byte_diffs/electrician-holland.html__TO__pages_electrician-holland.html.cmp.txt`.
 
 ## C. Repo-level transplant plan
 

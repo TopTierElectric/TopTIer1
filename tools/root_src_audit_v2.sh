@@ -147,12 +147,15 @@ if [[ "$ENABLE_FUZZY" == "1" ]]; then
     --src-snap "$SRC_SNAP" \
     --root-manifest "$OUT_DIR/root_manifest.tsv" \
     --src-manifest "$OUT_DIR/src_manifest.tsv" \
-    --out "$OUT_DIR/fuzzy_pairing.tsv"
+    --out "$OUT_DIR/fuzzy_pairing.tsv" \
+    --min-score 0.35 \
+    --max-candidates 10 \
+    --read-bytes 400000
 
   mkdir -p "$OUT_DIR/fuzzy_diffs" "$OUT_DIR/fuzzy_byte_diffs"
   : > "$OUT_DIR/fuzzy_pairs_index.tsv"
 
-  tail -n +2 "$OUT_DIR/fuzzy_pairing.tsv" | while IFS=$'\t' read -r rrel srel score rsha ssha rsize ssize; do
+  tail -n +2 "$OUT_DIR/fuzzy_pairing.tsv" | sort -t$'\t' -k3,3nr | head -n 300 | while IFS=$'\t' read -r rrel srel score rsha ssha rsize ssize; do
     safe="$(echo "${rrel}__TO__${srel}" | sed 's#[/ ]#_#g')"
     git diff --no-index -- "$ROOT_SNAP/$rrel" "$SRC_SNAP/$srel" > "$OUT_DIR/fuzzy_diffs/${safe}.diff" || true
     (cmp -l "$ROOT_SNAP/$rrel" "$SRC_SNAP/$srel" | head -n 200) > "$OUT_DIR/fuzzy_byte_diffs/${safe}.cmp.txt" || true
