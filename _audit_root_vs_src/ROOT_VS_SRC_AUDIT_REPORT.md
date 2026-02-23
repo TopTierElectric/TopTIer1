@@ -2,7 +2,7 @@
 
 ## A. Executive summary
 
-- Exact layer counts from `pairing.tsv`: IDENTICAL=0, CHANGED=0, MISSING_IN_SRC=390, EXTRA_IN_SRC=70.
+- Exact layer counts from `pairing.tsv`: IDENTICAL=0, CHANGED=0, MISSING_IN_SRC=387, EXTRA_IN_SRC=70.
 - Heuristic layer counts from `fuzzy_pairing.tsv`: total_candidates=1.
 
 Top 10 highest-score fuzzy candidates (or fewer if unavailable):
@@ -471,9 +471,6 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | MISSING_IN_SRC | `testimonials.html` | `9ff723e2e3950fc6389c54c9f1bc99c84b4bc223ebae11db1056e594aaa0c723` | `—` | 13278 | — |
 | MISSING_IN_SRC | `thank-you.html` | `a9b04243c991aa37ad176d8d6accbca8d0b6a5833b15d8a84f0d5960fb704530` | `—` | 8351 | — |
 | MISSING_IN_SRC | `tools/center_and_pad_logo.py` | `50be9ac3f7ec77097fde7c9f253a50b21837384743bfb4322a74ebe008f28479` | `—` | 5426 | — |
-| MISSING_IN_SRC | `tools/fuzzy_pair.py` | `1a56cb12af5e762b52caa2a72bd27d1b89c03683f9ab0a87cbf1ebd248389fbe` | `—` | 3703 | — |
-| MISSING_IN_SRC | `tools/root_src_audit.sh` | `5b08b64f6cd798c8411924e3afa6701d78491278216a4e1b5b9485008b7fbb2c` | `—` | 7132 | — |
-| MISSING_IN_SRC | `tools/root_src_audit_v2.sh` | `cb881d3d92c1af7e7f50af7a83e2474fb51e097812f14ea0a658fa1473e5642c` | `—` | 6873 | — |
 | MISSING_IN_SRC | `toptier-service-pages/services/commercial-electrical/index.md` | `01f0be97d4dc7395151bf4d8592c432d21c4b29f541cbce39e90958381fd312c` | `—` | 1126 | — |
 | MISSING_IN_SRC | `toptier-service-pages/services/custom-home-new-construction/index.md` | `bbd190822e3b41f3aae73c8c9202ff45737bd05880792d1847f8a0969c652f77` | `—` | 2941 | — |
 | MISSING_IN_SRC | `toptier-service-pages/services/ev-charger-installation/index.md` | `f11444f33a2dd9c349e4dc55dc05aa5ee70e895ba971a764e4c8f3e922fea1a9` | `—` | 928 | — |
@@ -868,9 +865,6 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | `testimonials.html` | REPLACE_WITH_EQUIVALENT | `testimonials.html` | Manual review to map capability into SRC architecture. |
 | `thank-you.html` | REPLACE_WITH_EQUIVALENT | `thank-you.html` | Manual review to map capability into SRC architecture. |
 | `tools/center_and_pad_logo.py` | REPLACE_WITH_EQUIVALENT | `tools/center_and_pad_logo.py` | Manual review to map capability into SRC architecture. |
-| `tools/fuzzy_pair.py` | REPLACE_WITH_EQUIVALENT | `tools/fuzzy_pair.py` | Manual review to map capability into SRC architecture. |
-| `tools/root_src_audit.sh` | REPLACE_WITH_EQUIVALENT | `tools/root_src_audit.sh` | Manual review to map capability into SRC architecture. |
-| `tools/root_src_audit_v2.sh` | REPLACE_WITH_EQUIVALENT | `tools/root_src_audit_v2.sh` | Manual review to map capability into SRC architecture. |
 | `toptier-service-pages/services/commercial-electrical/index.md` | REPLACE_WITH_EQUIVALENT | `toptier-service-pages/services/commercial-electrical/index.md` | Confirm equivalent documentation section exists and links resolve. |
 | `toptier-service-pages/services/custom-home-new-construction/index.md` | REPLACE_WITH_EQUIVALENT | `toptier-service-pages/services/custom-home-new-construction/index.md` | Confirm equivalent documentation section exists and links resolve. |
 | `toptier-service-pages/services/ev-charger-installation/index.md` | REPLACE_WITH_EQUIVALENT | `toptier-service-pages/services/ev-charger-installation/index.md` | Confirm equivalent documentation section exists and links resolve. |

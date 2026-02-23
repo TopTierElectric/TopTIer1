@@ -51,6 +51,10 @@ SRC_SNAP="$WORKDIR/src_version"
 mkdir -p "$ROOT_SNAP" "$SRC_SNAP"
 
 EXCLUDES=(
+  --exclude "_audit_root_vs_src/"
+  --exclude "tools/root_src_audit*.sh"
+  --exclude "tools/fuzzy_pair.py"
+  --exclude "tools/generate_root_src_reports.py"
   --exclude ".git/"
   --exclude "$SRC_DIR/"
   --exclude "node_modules/"
