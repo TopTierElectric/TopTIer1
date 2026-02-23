@@ -25,13 +25,14 @@
     "check:workflows": "npm run check:workflow-yaml && npm run check:workflow-location",
     "check:no-binaries": "bash scripts/check-no-binary-files.sh",
     "lint": "npm run check:extensionless-links && npm run check:extensionless-collisions",
-    "qa": "npm run format:check && npm run lint && npm run check:placeholders && npm run check:origin-redirects && npm run audit:images && npm run check:extensionless-collisions && npm run audit:links",
+    "qa": "npm run format:check && npm run lint && npm run check:placeholders && npm run check:origin-redirects && npm run audit:images && npm run check:extensionless-collisions && npm run audit:links && npm run check:content-mapping",
     "seo:gates": "npm run check:seo-quality-gates",
     "check:seo-quality-gates": "node scripts/seo-quality-gates.mjs",
     "localseo:audit": "tsx scripts/local-seo-audit.ts --mode=static --outDir=artifacts/local-seo --failOnCritical",
     "localseo:audit:live": "tsx scripts/local-seo-audit.ts --mode=live --baseUrl=https://www.toptier-electrical.com --outDir=artifacts/local-seo-live",
     "localseo:ci": "tsx scripts/local-seo-audit.ts --mode=static --outDir=artifacts/local-seo --failOnCritical --failBelow=80",
-    "check:navigation-sim": "node scripts/check-navigation-sim.mjs"
+    "check:navigation-sim": "node scripts/check-navigation-sim.mjs",
+    "check:content-mapping": "node scripts/check-content-mapping.js"
   },
   "dependencies": {
     "chokidar": "^3.6.0",

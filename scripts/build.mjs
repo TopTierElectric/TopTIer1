@@ -169,7 +169,7 @@ const DEFAULT_OG_IMAGE_ALT = `${site.brand} — Electrician in West Michigan`;
 const buildHead = (meta, route, { preloadImage } = {}) => {
   const canonical = canonicalUrl(site.domain, route),
     robots = meta.indexable ? "index,follow" : "noindex,nofollow",
-    ogImage = meta.ogImage || "/assets/img/og-default.jpg",
+    ogImage = meta.ogImage || DEFAULT_OG_IMAGE,
     ogImageAbsolute = new URL(ogImage, site.domain).toString();
   return [
     `<meta charset="utf-8">`,
@@ -188,10 +188,14 @@ const buildHead = (meta, route, { preloadImage } = {}) => {
     `<meta property="og:description" content="${meta.description}">`,
     `<meta property="og:url" content="${canonical}">`,
     `<meta property="og:image" content="${ogImageAbsolute}">`,
+    `<meta property="og:image:width" content="${DEFAULT_OG_IMAGE_WIDTH}">`,
+    `<meta property="og:image:height" content="${DEFAULT_OG_IMAGE_HEIGHT}">`,
+    `<meta property="og:image:alt" content="${DEFAULT_OG_IMAGE_ALT}">`,
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="twitter:title" content="${meta.title}">`,
     `<meta name="twitter:description" content="${meta.description}">`,
     `<meta name="twitter:image" content="${ogImageAbsolute}">`,
+    `<meta name="twitter:image:alt" content="${DEFAULT_OG_IMAGE_ALT}">`,
     `<link rel="stylesheet" href="/assets/css/styles.css?v=${BUILD_ID}">`,
     `<script defer src="/assets/js/site.js?v=${BUILD_ID}"></script>`,
   ]
@@ -359,21 +363,6 @@ async function copyAssetsWithoutRasterImages() {
     }
   }
 }
-async function copyPastWorkWebpAssets() {
-  if (!(await exists(PAST_WORK_WEBP_DIR))) return;
-  const outDir = path.join(DIST_DIR, "Past_work_webp");
-  await fs.mkdir(outDir, { recursive: true });
-  const entries = await fs.readdir(PAST_WORK_WEBP_DIR, { withFileTypes: true });
-  for (const e of entries) {
-    if (!e.isFile()) continue;
-    if (!/\.webp$/i.test(e.name)) continue;
-    await fs.copyFile(
-      path.join(PAST_WORK_WEBP_DIR, e.name),
-      path.join(outDir, e.name),
-    );
-  }
-}
-
 await emptyDir(DIST_DIR);
 await copyAssetsWithoutRasterImages();
 await buildImages({
