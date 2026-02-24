@@ -2,32 +2,32 @@
 
 ## A. Executive summary
 
-- Exact layer counts from `pairing.tsv`: IDENTICAL=0, CHANGED=0, MISSING_IN_SRC=387, EXTRA_IN_SRC=70.
-- Heuristic layer counts from `fuzzy_pairing.tsv`: total_candidates=23.
+- Exact layer counts from `pairing.tsv`: IDENTICAL=47, CHANGED=0, MISSING_IN_SRC=341, EXTRA_IN_SRC=70.
+- Heuristic layer counts from `fuzzy_pairing.tsv`: total_candidates=74.
 
 Top 10 highest-score fuzzy candidates (or fewer if unavailable):
-1. `testimonials.html` → `pages/testimonials.html` | score=1.2811 | evidence: `fuzzy_diffs/testimonials.html__TO__pages_testimonials.html.diff`, `fuzzy_byte_diffs/testimonials.html__TO__pages_testimonials.html.cmp.txt`.
-2. `residential.html` → `pages/residential.html` | score=0.6272 | evidence: `fuzzy_diffs/residential.html__TO__pages_residential.html.diff`, `fuzzy_byte_diffs/residential.html__TO__pages_residential.html.cmp.txt`.
-3. `commercial.html` → `pages/commercial.html` | score=0.5799 | evidence: `fuzzy_diffs/commercial.html__TO__pages_commercial.html.diff`, `fuzzy_byte_diffs/commercial.html__TO__pages_commercial.html.cmp.txt`.
-4. `thank-you.html` → `pages/thank-you.html` | score=0.5343 | evidence: `fuzzy_diffs/thank-you.html__TO__pages_thank-you.html.diff`, `fuzzy_byte_diffs/thank-you.html__TO__pages_thank-you.html.cmp.txt`.
-5. `about.html` → `pages/about.html` | score=0.5122 | evidence: `fuzzy_diffs/about.html__TO__pages_about.html.diff`, `fuzzy_byte_diffs/about.html__TO__pages_about.html.cmp.txt`.
-6. `financing.html` → `pages/financing.html` | score=0.5057 | evidence: `fuzzy_diffs/financing.html__TO__pages_financing.html.diff`, `fuzzy_byte_diffs/financing.html__TO__pages_financing.html.cmp.txt`.
-7. `faq.html` → `pages/faq.html` | score=0.4456 | evidence: `fuzzy_diffs/faq.html__TO__pages_faq.html.diff`, `fuzzy_byte_diffs/faq.html__TO__pages_faq.html.cmp.txt`.
-8. `contact.html` → `pages/contact.html` | score=0.4394 | evidence: `fuzzy_diffs/contact.html__TO__pages_contact.html.diff`, `fuzzy_byte_diffs/contact.html__TO__pages_contact.html.cmp.txt`.
-9. `generators.html` → `pages/generators.html` | score=0.4379 | evidence: `fuzzy_diffs/generators.html__TO__pages_generators.html.diff`, `fuzzy_byte_diffs/generators.html__TO__pages_generators.html.cmp.txt`.
-10. `electrician-holland.html` → `pages/electrician-holland.html` | score=0.4373 | evidence: `fuzzy_diffs/electrician-holland.html__TO__pages_electrician-holland.html.diff`, `fuzzy_byte_diffs/electrician-holland.html__TO__pages_electrician-holland.html.cmp.txt`.
+1. `.env.example` → `.env.example` | score=1.3500 | evidence: `fuzzy_diffs/.env.example__TO__.env.example.diff`, `fuzzy_byte_diffs/.env.example__TO__.env.example.cmp.txt`.
+2. `.well-known/security.txt` → `.well-known/security.txt` | score=1.3500 | evidence: `fuzzy_diffs/.well-known_security.txt__TO__.well-known_security.txt.diff`, `fuzzy_byte_diffs/.well-known_security.txt__TO__.well-known_security.txt.cmp.txt`.
+3. `_headers` → `_headers` | score=1.3500 | evidence: `fuzzy_diffs/_headers__TO___headers.diff`, `fuzzy_byte_diffs/_headers__TO___headers.cmp.txt`.
+4. `_redirects` → `_redirects` | score=1.3500 | evidence: `fuzzy_diffs/_redirects__TO___redirects.diff`, `fuzzy_byte_diffs/_redirects__TO___redirects.cmp.txt`.
+5. `app/api/leads/route.ts` → `app/api/leads/route.ts` | score=1.3500 | evidence: `fuzzy_diffs/app_api_leads_route.ts__TO__app_api_leads_route.ts.diff`, `fuzzy_byte_diffs/app_api_leads_route.ts__TO__app_api_leads_route.ts.cmp.txt`.
+6. `scripts/audit-image-text-references.js` → `scripts/audit-image-text-references.js` | score=1.3500 | evidence: `fuzzy_diffs/scripts_audit-image-text-references.js__TO__scripts_audit-image-text-references.js.diff`, `fuzzy_byte_diffs/scripts_audit-image-text-references.js__TO__scripts_audit-image-text-references.js.cmp.txt`.
+7. `scripts/audit-images.mjs` → `scripts/audit-images.mjs` | score=1.3500 | evidence: `fuzzy_diffs/scripts_audit-images.mjs__TO__scripts_audit-images.mjs.diff`, `fuzzy_byte_diffs/scripts_audit-images.mjs__TO__scripts_audit-images.mjs.cmp.txt`.
+8. `scripts/audit-links-cloudflare.mjs` → `scripts/audit-links-cloudflare.mjs` | score=1.3500 | evidence: `fuzzy_diffs/scripts_audit-links-cloudflare.mjs__TO__scripts_audit-links-cloudflare.mjs.diff`, `fuzzy_byte_diffs/scripts_audit-links-cloudflare.mjs__TO__scripts_audit-links-cloudflare.mjs.cmp.txt`.
+9. `scripts/build.mjs` → `scripts/build.mjs` | score=1.3500 | evidence: `fuzzy_diffs/scripts_build.mjs__TO__scripts_build.mjs.diff`, `fuzzy_byte_diffs/scripts_build.mjs__TO__scripts_build.mjs.cmp.txt`.
+10. `scripts/check-content-mapping.js` → `scripts/check-content-mapping.js` | score=1.3500 | evidence: `fuzzy_diffs/scripts_check-content-mapping.js__TO__scripts_check-content-mapping.js.diff`, `fuzzy_byte_diffs/scripts_check-content-mapping.js__TO__scripts_check-content-mapping.js.cmp.txt`.
 
 Highest-impact ROOT→SRC transplant items (top 10):
 1. `.github/workflows/deploy-prod.yml` — evidence: needs manual confirmation.
 2. `.github/workflows/deploy-cloudflare-pages.yml` — evidence: needs manual confirmation.
 3. `.github/workflows/quality-gates.yml` — evidence: needs manual confirmation.
-4. `wrangler.toml` — evidence: needs manual confirmation.
-5. `wrangler.jsonc` — evidence: needs manual confirmation.
-6. `_headers` — evidence: needs manual confirmation.
-7. `_redirects` — evidence: needs manual confirmation.
-8. `.well-known/security.txt` — evidence: needs manual confirmation.
-9. `app/api/leads/route.ts` — evidence: needs manual confirmation.
-10. `scripts/seo-quality-gates.mjs` — evidence: needs manual confirmation.
+4. `.github/workflows/ci.yml` — evidence: needs manual confirmation.
+5. `.github/workflows/format-with-prettier.yml` — evidence: needs manual confirmation.
+6. `.github/workflows/qa.yml` — evidence: needs manual confirmation.
+7. `.github/workflows/quality.yml` — evidence: needs manual confirmation.
+8. `.gitignore` — evidence: needs manual confirmation.
+9. `.htmlvalidate.json` — evidence: needs manual confirmation.
+10. `.pa11yci` — evidence: needs manual confirmation.
 
 ## B. File-by-file audit (sorted)
 
@@ -37,7 +37,7 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 
 | status | relpath | root_sha | src_sha | root_size | src_size |
 |---|---|---|---|---:|---:|
-| MISSING_IN_SRC | `.env.example` | `5594ecc1830310506f7d6336dc2600cc6226769b616c96fb9dadbfa5dd2a93c8` | `—` | 251 | — |
+| IDENTICAL | `.env.example` | `5594ecc1830310506f7d6336dc2600cc6226769b616c96fb9dadbfa5dd2a93c8` | `5594ecc1830310506f7d6336dc2600cc6226769b616c96fb9dadbfa5dd2a93c8` | 251 | 251 |
 | MISSING_IN_SRC | `.github/workflows/ci.yml` | `6fce4161e74078261fc964e234ad6bd5f637af92d25a11ccaff8c88dff49a4a9` | `—` | 2462 | — |
 | MISSING_IN_SRC | `.github/workflows/deploy-cloudflare-pages.yml` | `b7489b7d3dbf945633364e6329450ad28f674f6300201d1405e102a4193eb18b` | `—` | 2198 | — |
 | MISSING_IN_SRC | `.github/workflows/deploy-prod.yml` | `60c036b76c7c3d19891d8852c8968db97df0882e9d5a1952c09b088bf62c9887` | `—` | 3234 | — |
@@ -50,7 +50,7 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | MISSING_IN_SRC | `.pa11yci` | `a95a7a2ff465d639b13336699884ad207a5f1f3f688929dd3e37a62cac88d613` | `—` | 391 | — |
 | MISSING_IN_SRC | `.prettierignore` | `f5e85cfb7f45753f4d7ef1102d779dae464329c0b888350da8a41d77dc12d066` | `—` | 35 | — |
 | MISSING_IN_SRC | `.stylelintrc.json` | `e6ef821ae5a08d1cd14ee7ac71428fdc5ff7ddeb1e88132897bec69171899e4f` | `—` | 45 | — |
-| MISSING_IN_SRC | `.well-known/security.txt` | `0bcfaa50c0fef577d8c00bf4e9cc7ef9a449adadf47fc8cd1966715a99c180ed` | `—` | 121 | — |
+| IDENTICAL | `.well-known/security.txt` | `0bcfaa50c0fef577d8c00bf4e9cc7ef9a449adadf47fc8cd1966715a99c180ed` | `0bcfaa50c0fef577d8c00bf4e9cc7ef9a449adadf47fc8cd1966715a99c180ed` | 121 | 121 |
 | MISSING_IN_SRC | `404.html` | `4e320d8224ec7523ba7a5e763aa9c0b169b41dcc1404f2d3fd18ade1b6fbf7d6` | `—` | 9199 | — |
 | MISSING_IN_SRC | `AUDIT.md` | `103fe4cd250dee2f552729d60432757a5440efd444230241be2b82517e310569` | `—` | 2414 | — |
 | MISSING_IN_SRC | `FINAL_VERIFICATION_PLAYBOOK.md` | `8ead68bd2a4f84807fc549356ee811198c48a9d937573b8904e932cfff7fdfbe` | `—` | 1685 | — |
@@ -158,10 +158,10 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | MISSING_IN_SRC | `TopTier_Implementation_Guide-22.jpg` | `2dad36470558f7c6ccd7d1664f7d49895b37faeb7aa6c4f4ccc1e28ddb817326` | `—` | 240314 | — |
 | MISSING_IN_SRC | `TopTier_Implementation_Guide-23.jpg` | `c4c5df9181627babd1c8fb8db090761a5e15ca27a2fb981bc1cea3426de635e2` | `—` | 193569 | — |
 | MISSING_IN_SRC | `Toptier1_Full_Audit_and_StepByStep_Procedure.md` | `33537f93f9a6c64810daeed0bc7826d1c2e9c6c28e8be454e1413ad36495a242` | `—` | 29134 | — |
-| MISSING_IN_SRC | `_headers` | `746a40da32bbe5b87d85b253db1fee4c2d1c32e95ac8201a43bdb903953c056f` | `—` | 1618 | — |
-| MISSING_IN_SRC | `_redirects` | `a4d86eb73201cbdeeddf70a71fa77e29f85c980b016cee13c972ce2ce116a36c` | `—` | 1738 | — |
+| IDENTICAL | `_headers` | `746a40da32bbe5b87d85b253db1fee4c2d1c32e95ac8201a43bdb903953c056f` | `746a40da32bbe5b87d85b253db1fee4c2d1c32e95ac8201a43bdb903953c056f` | 1618 | 1618 |
+| IDENTICAL | `_redirects` | `a4d86eb73201cbdeeddf70a71fa77e29f85c980b016cee13c972ce2ce116a36c` | `a4d86eb73201cbdeeddf70a71fa77e29f85c980b016cee13c972ce2ce116a36c` | 1738 | 1738 |
 | MISSING_IN_SRC | `about.html` | `48d5cd90e9d773ae6c1c31d32b272031b7e792df96208eb0ecb4a747dcf543b4` | `—` | 4788 | — |
-| MISSING_IN_SRC | `app/api/leads/route.ts` | `98000fdd0b2b198434914f740bef8bab97693b8d3de68ce12b3d62e44a0f4ea6` | `—` | 2197 | — |
+| IDENTICAL | `app/api/leads/route.ts` | `98000fdd0b2b198434914f740bef8bab97693b8d3de68ce12b3d62e44a0f4ea6` | `98000fdd0b2b198434914f740bef8bab97693b8d3de68ce12b3d62e44a0f4ea6` | 2197 | 2197 |
 | MISSING_IN_SRC | `app/commercial/page.tsx` | `01deafec943a31d360ebcf6d6d96880755d9188c5eeb6563b5c84210fbc25b8a` | `—` | 1795 | — |
 | MISSING_IN_SRC | `app/layout.tsx` | `8aa2f1b1549f45747e7e1156e25dd8742a46b325a59d1ecfb7f795db9e73cf55` | `—` | 456 | — |
 | MISSING_IN_SRC | `app/residential/page.tsx` | `024503313753799beb5e658d1cbfa224619865ce3355a5838df6381510c40270` | `—` | 2700 | — |
@@ -431,46 +431,46 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | MISSING_IN_SRC | `residential.html` | `6bf647549b4d1de135bf6caabf5099876046e1fc4b3e6fcf72c6dabe0b7782a8` | `—` | 3558 | — |
 | MISSING_IN_SRC | `robots.txt` | `c3517290435466ab391fa2d55eebaaacff02f79af19213d1e2129b3bcaf9a401` | `—` | 75 | — |
 | MISSING_IN_SRC | `script.js` | `67d4d4aa9f5f3709d6274a42c12df0e90ec2df61935f63aa3955fb2d637ea4fc` | `—` | 4198 | — |
-| MISSING_IN_SRC | `scripts/audit-image-text-references.js` | `571508d33b5b2962cf39af8781cb23b49706e56e0b4aa2e06652899b59876cbf` | `—` | 8818 | — |
-| MISSING_IN_SRC | `scripts/audit-images.mjs` | `90669c2cdc0a79d2a8a9e29e827697aa3251640044c3f6567a518c8bad5331ae` | `—` | 582 | — |
-| MISSING_IN_SRC | `scripts/audit-links-cloudflare.mjs` | `b60f0892b84bce5b340d83e5f58f79eea2e0dd08592ac113320087fdf4611bde` | `—` | 2394 | — |
-| MISSING_IN_SRC | `scripts/build.mjs` | `af83a9de5ff94ab31fff7f16d28adaed4d5d33853349f2120aa9f76f3d3a8bf8` | `—` | 16412 | — |
-| MISSING_IN_SRC | `scripts/check-content-mapping.js` | `a801adc5bf022d9f0569dbef7f22ced486335896d262667b606e7e163bcf68c5` | `—` | 4342 | — |
-| MISSING_IN_SRC | `scripts/check-extensionless-collisions.mjs` | `bc2036fe53e6e7600e84d8352553c015d617ddb28bebc17ea1f89a4465ea6598` | `—` | 1133 | — |
-| MISSING_IN_SRC | `scripts/check-extensionless-links.mjs` | `d299375729beb1b95f1738c3af1d217b8ab3e3ca8ed1ef8700eb79333372f781` | `—` | 1365 | — |
-| MISSING_IN_SRC | `scripts/check-image-sources.js` | `b411ac5918af8fe036c213f5d8603ce5c3664cc6953bede287c7376b40f4b311` | `—` | 3512 | — |
-| MISSING_IN_SRC | `scripts/check-navigation-sim.mjs` | `cf57bbb6ba75d286c47e49f0f6c591ad38247f1637484ba053552bda1bee146d` | `—` | 9027 | — |
-| MISSING_IN_SRC | `scripts/check-navigation-simulation.js` | `e02b6504beb03541a942cba2f815ed20ff2ffb6fe34008c2a8739ae68f53ccd9` | `—` | 735 | — |
-| MISSING_IN_SRC | `scripts/check-no-binary-files.sh` | `f3d584ee50c45c34b779db7cd9464cbfef5c549aef8edf92ecb24364108ebb48` | `—` | 1413 | — |
-| MISSING_IN_SRC | `scripts/check-origin-redirects.js` | `ed3e5e38fa8c74a67251a3104233a65862ca304db94fa923e152c2f4abd69e86` | `—` | 2241 | — |
-| MISSING_IN_SRC | `scripts/check-origin-redirects.mjs` | `1e777bc66fcdb025e4a1af429808846a14e5ec4e5db88c24a7f0e7cd865b1e4e` | `—` | 365 | — |
-| MISSING_IN_SRC | `scripts/check-placeholders.js` | `bdfb79025f24481d3737e1037fc2a293a344e3890f459a472e22cd93c111174e` | `—` | 764 | — |
-| MISSING_IN_SRC | `scripts/check-placeholders.mjs` | `320aa9999f8307320e972bea4e27ca41cbea589b80758e04a724a78b214744ca` | `—` | 807 | — |
-| MISSING_IN_SRC | `scripts/check-redirects-cloudflare.mjs` | `b59f14d2b95bcb29dfd907ff5cc885867cc02c292c20d0023176e19966139e17` | `—` | 2708 | — |
-| MISSING_IN_SRC | `scripts/check-workflow-location.js` | `c3967aec5d5e9052ed2b432f104301988fc0003e0b5d53d1c8a31e9048815e5a` | `—` | 1049 | — |
-| MISSING_IN_SRC | `scripts/check-workflow-yaml.mjs` | `35f57b5ee660004b0f3319fb1b5e89ec3896a8860517406ad20a9d9cb41ebed7` | `—` | 1097 | — |
-| MISSING_IN_SRC | `scripts/clean.mjs` | `b7dfc57a0b3fc3eb6eff49fd02027c0b42c460361d01c7417e431785a17f072b` | `—` | 99 | — |
-| MISSING_IN_SRC | `scripts/crawl.js` | `8b18be53f82aaf0cda6264bdc0d5d0c48346c6899377aca52cf04224da6e7a3e` | `—` | 9175 | — |
-| MISSING_IN_SRC | `scripts/create-clean-repo.mjs` | `f083032bfb969fdfc75ce1917a2777d0a464a4f06ac302f3d760ceb4a617e18d` | `—` | 8220 | — |
-| MISSING_IN_SRC | `scripts/dev.mjs` | `b698c2903296b497d3e65d8d9cb4583cef241bed2e1eec0b5eeedb87612935d3` | `—` | 2412 | — |
-| MISSING_IN_SRC | `scripts/gsc-gap.mjs` | `a8e68dbdc58cf945a6fd94de6b04ab5c164ca8c12007c0dbad3bf832e42a8eca` | `—` | 947 | — |
-| MISSING_IN_SRC | `scripts/lib/fs.mjs` | `b7d0c01f98c9579f73be2319cd9f13e7db1ad82d99c548d2032ee9562b267c8c` | `—` | 1366 | — |
-| MISSING_IN_SRC | `scripts/lib/images.mjs` | `d9351f87822ec5745003f33e30219e637e4bbdfd775ca5a42b408624e2234a25` | `—` | 1059 | — |
-| MISSING_IN_SRC | `scripts/lib/meta.mjs` | `f5ab17b2940f7f0b29e82a95934e9efa132e38f929608220857e0adb142fa7c6` | `—` | 486 | — |
-| MISSING_IN_SRC | `scripts/lib/template.mjs` | `37198f78cc525151ba9033a82c435f7a2badc1d8ed5a2966a5a5d4d17f412d45` | `—` | 994 | — |
-| MISSING_IN_SRC | `scripts/lib/urls.mjs` | `4014c420bd67a7487ab9f476cbdcacf3478e3423985e2552beb4a314e0403d5a` | `—` | 697 | — |
-| MISSING_IN_SRC | `scripts/lib/validate.mjs` | `96a5355406d4d7939699b712c13a03c2b243706772f76f0e3eb8787eec815013` | `—` | 7153 | — |
-| MISSING_IN_SRC | `scripts/local-seo-audit.ts` | `3cbb82aad05d918512ad0675cdc603e8b7b8aa0a4adf2d22fb1706b650304165` | `—` | 5259 | — |
-| MISSING_IN_SRC | `scripts/optimize-assets.mjs` | `31c3398214860203c4383ece434ff062cbebff82b1173bf2ade44aa8e9e46496` | `—` | 2249 | — |
-| MISSING_IN_SRC | `scripts/savage-audit-all-branches.sh` | `e8f3143531670b10045d97a30b06bfc51930d62a1626c76b266c953d41155973` | `—` | 8148 | — |
-| MISSING_IN_SRC | `scripts/savage-audit.sh` | `17202d30ffb0e3f001365ef1469f2a7d3f848bac15210c13ea101f9a6f5ae019` | `—` | 17973 | — |
-| MISSING_IN_SRC | `scripts/seo-quality-gates.mjs` | `78e7835cf616be776263d33a70fe766cd85d12d16df65fea520fdc68a4d2450f` | `—` | 1661 | — |
-| MISSING_IN_SRC | `scripts/verify-formspree-forms.mjs` | `2a43ae497069f5e5292f5b617083628d0dc441abe27c514ff0576d1c20329668` | `—` | 1618 | — |
-| MISSING_IN_SRC | `scripts/verify-full-sweep.mjs` | `489b877ea97f692eec559dd801bbf6b166b19f6e029f418b11489197c4a8616c` | `—` | 4551 | — |
-| MISSING_IN_SRC | `scripts/verify-stability.mjs` | `f83394f245fc4c216b775bccc5097d6df9e143130351f07755753f4d38f7999e` | `—` | 446 | — |
-| MISSING_IN_SRC | `scripts/verify-zero-updates.mjs` | `26563ab81177fcd6febcc842ff2a76152a7be53ad817078929834ee9cf061d4f` | `—` | 914 | — |
-| MISSING_IN_SRC | `scripts/verify.mjs` | `12cb863aabeb6f0b3e2d8700a661b27efb43d8e93af0e1d236097f937c0803c0` | `—` | 246 | — |
-| MISSING_IN_SRC | `scripts/with-chrome-path.sh` | `d8685de71f7e84601d90d083dfdd480aff2da82ac334b6f7e07cab63d3efbafe` | `—` | 3721 | — |
+| IDENTICAL | `scripts/audit-image-text-references.js` | `571508d33b5b2962cf39af8781cb23b49706e56e0b4aa2e06652899b59876cbf` | `571508d33b5b2962cf39af8781cb23b49706e56e0b4aa2e06652899b59876cbf` | 8818 | 8818 |
+| IDENTICAL | `scripts/audit-images.mjs` | `90669c2cdc0a79d2a8a9e29e827697aa3251640044c3f6567a518c8bad5331ae` | `90669c2cdc0a79d2a8a9e29e827697aa3251640044c3f6567a518c8bad5331ae` | 582 | 582 |
+| IDENTICAL | `scripts/audit-links-cloudflare.mjs` | `b60f0892b84bce5b340d83e5f58f79eea2e0dd08592ac113320087fdf4611bde` | `b60f0892b84bce5b340d83e5f58f79eea2e0dd08592ac113320087fdf4611bde` | 2394 | 2394 |
+| IDENTICAL | `scripts/build.mjs` | `af83a9de5ff94ab31fff7f16d28adaed4d5d33853349f2120aa9f76f3d3a8bf8` | `af83a9de5ff94ab31fff7f16d28adaed4d5d33853349f2120aa9f76f3d3a8bf8` | 16412 | 16412 |
+| IDENTICAL | `scripts/check-content-mapping.js` | `a801adc5bf022d9f0569dbef7f22ced486335896d262667b606e7e163bcf68c5` | `a801adc5bf022d9f0569dbef7f22ced486335896d262667b606e7e163bcf68c5` | 4342 | 4342 |
+| IDENTICAL | `scripts/check-extensionless-collisions.mjs` | `bc2036fe53e6e7600e84d8352553c015d617ddb28bebc17ea1f89a4465ea6598` | `bc2036fe53e6e7600e84d8352553c015d617ddb28bebc17ea1f89a4465ea6598` | 1133 | 1133 |
+| IDENTICAL | `scripts/check-extensionless-links.mjs` | `d299375729beb1b95f1738c3af1d217b8ab3e3ca8ed1ef8700eb79333372f781` | `d299375729beb1b95f1738c3af1d217b8ab3e3ca8ed1ef8700eb79333372f781` | 1365 | 1365 |
+| IDENTICAL | `scripts/check-image-sources.js` | `b411ac5918af8fe036c213f5d8603ce5c3664cc6953bede287c7376b40f4b311` | `b411ac5918af8fe036c213f5d8603ce5c3664cc6953bede287c7376b40f4b311` | 3512 | 3512 |
+| IDENTICAL | `scripts/check-navigation-sim.mjs` | `cf57bbb6ba75d286c47e49f0f6c591ad38247f1637484ba053552bda1bee146d` | `cf57bbb6ba75d286c47e49f0f6c591ad38247f1637484ba053552bda1bee146d` | 9027 | 9027 |
+| IDENTICAL | `scripts/check-navigation-simulation.js` | `e02b6504beb03541a942cba2f815ed20ff2ffb6fe34008c2a8739ae68f53ccd9` | `e02b6504beb03541a942cba2f815ed20ff2ffb6fe34008c2a8739ae68f53ccd9` | 735 | 735 |
+| IDENTICAL | `scripts/check-no-binary-files.sh` | `f3d584ee50c45c34b779db7cd9464cbfef5c549aef8edf92ecb24364108ebb48` | `f3d584ee50c45c34b779db7cd9464cbfef5c549aef8edf92ecb24364108ebb48` | 1413 | 1413 |
+| IDENTICAL | `scripts/check-origin-redirects.js` | `ed3e5e38fa8c74a67251a3104233a65862ca304db94fa923e152c2f4abd69e86` | `ed3e5e38fa8c74a67251a3104233a65862ca304db94fa923e152c2f4abd69e86` | 2241 | 2241 |
+| IDENTICAL | `scripts/check-origin-redirects.mjs` | `1e777bc66fcdb025e4a1af429808846a14e5ec4e5db88c24a7f0e7cd865b1e4e` | `1e777bc66fcdb025e4a1af429808846a14e5ec4e5db88c24a7f0e7cd865b1e4e` | 365 | 365 |
+| IDENTICAL | `scripts/check-placeholders.js` | `bdfb79025f24481d3737e1037fc2a293a344e3890f459a472e22cd93c111174e` | `bdfb79025f24481d3737e1037fc2a293a344e3890f459a472e22cd93c111174e` | 764 | 764 |
+| IDENTICAL | `scripts/check-placeholders.mjs` | `320aa9999f8307320e972bea4e27ca41cbea589b80758e04a724a78b214744ca` | `320aa9999f8307320e972bea4e27ca41cbea589b80758e04a724a78b214744ca` | 807 | 807 |
+| IDENTICAL | `scripts/check-redirects-cloudflare.mjs` | `b59f14d2b95bcb29dfd907ff5cc885867cc02c292c20d0023176e19966139e17` | `b59f14d2b95bcb29dfd907ff5cc885867cc02c292c20d0023176e19966139e17` | 2708 | 2708 |
+| IDENTICAL | `scripts/check-workflow-location.js` | `c3967aec5d5e9052ed2b432f104301988fc0003e0b5d53d1c8a31e9048815e5a` | `c3967aec5d5e9052ed2b432f104301988fc0003e0b5d53d1c8a31e9048815e5a` | 1049 | 1049 |
+| IDENTICAL | `scripts/check-workflow-yaml.mjs` | `35f57b5ee660004b0f3319fb1b5e89ec3896a8860517406ad20a9d9cb41ebed7` | `35f57b5ee660004b0f3319fb1b5e89ec3896a8860517406ad20a9d9cb41ebed7` | 1097 | 1097 |
+| IDENTICAL | `scripts/clean.mjs` | `b7dfc57a0b3fc3eb6eff49fd02027c0b42c460361d01c7417e431785a17f072b` | `b7dfc57a0b3fc3eb6eff49fd02027c0b42c460361d01c7417e431785a17f072b` | 99 | 99 |
+| IDENTICAL | `scripts/crawl.js` | `8b18be53f82aaf0cda6264bdc0d5d0c48346c6899377aca52cf04224da6e7a3e` | `8b18be53f82aaf0cda6264bdc0d5d0c48346c6899377aca52cf04224da6e7a3e` | 9175 | 9175 |
+| IDENTICAL | `scripts/create-clean-repo.mjs` | `f083032bfb969fdfc75ce1917a2777d0a464a4f06ac302f3d760ceb4a617e18d` | `f083032bfb969fdfc75ce1917a2777d0a464a4f06ac302f3d760ceb4a617e18d` | 8220 | 8220 |
+| IDENTICAL | `scripts/dev.mjs` | `b698c2903296b497d3e65d8d9cb4583cef241bed2e1eec0b5eeedb87612935d3` | `b698c2903296b497d3e65d8d9cb4583cef241bed2e1eec0b5eeedb87612935d3` | 2412 | 2412 |
+| IDENTICAL | `scripts/gsc-gap.mjs` | `a8e68dbdc58cf945a6fd94de6b04ab5c164ca8c12007c0dbad3bf832e42a8eca` | `a8e68dbdc58cf945a6fd94de6b04ab5c164ca8c12007c0dbad3bf832e42a8eca` | 947 | 947 |
+| IDENTICAL | `scripts/lib/fs.mjs` | `b7d0c01f98c9579f73be2319cd9f13e7db1ad82d99c548d2032ee9562b267c8c` | `b7d0c01f98c9579f73be2319cd9f13e7db1ad82d99c548d2032ee9562b267c8c` | 1366 | 1366 |
+| IDENTICAL | `scripts/lib/images.mjs` | `d9351f87822ec5745003f33e30219e637e4bbdfd775ca5a42b408624e2234a25` | `d9351f87822ec5745003f33e30219e637e4bbdfd775ca5a42b408624e2234a25` | 1059 | 1059 |
+| IDENTICAL | `scripts/lib/meta.mjs` | `f5ab17b2940f7f0b29e82a95934e9efa132e38f929608220857e0adb142fa7c6` | `f5ab17b2940f7f0b29e82a95934e9efa132e38f929608220857e0adb142fa7c6` | 486 | 486 |
+| IDENTICAL | `scripts/lib/template.mjs` | `37198f78cc525151ba9033a82c435f7a2badc1d8ed5a2966a5a5d4d17f412d45` | `37198f78cc525151ba9033a82c435f7a2badc1d8ed5a2966a5a5d4d17f412d45` | 994 | 994 |
+| IDENTICAL | `scripts/lib/urls.mjs` | `4014c420bd67a7487ab9f476cbdcacf3478e3423985e2552beb4a314e0403d5a` | `4014c420bd67a7487ab9f476cbdcacf3478e3423985e2552beb4a314e0403d5a` | 697 | 697 |
+| IDENTICAL | `scripts/lib/validate.mjs` | `96a5355406d4d7939699b712c13a03c2b243706772f76f0e3eb8787eec815013` | `96a5355406d4d7939699b712c13a03c2b243706772f76f0e3eb8787eec815013` | 7153 | 7153 |
+| IDENTICAL | `scripts/local-seo-audit.ts` | `3cbb82aad05d918512ad0675cdc603e8b7b8aa0a4adf2d22fb1706b650304165` | `3cbb82aad05d918512ad0675cdc603e8b7b8aa0a4adf2d22fb1706b650304165` | 5259 | 5259 |
+| IDENTICAL | `scripts/optimize-assets.mjs` | `31c3398214860203c4383ece434ff062cbebff82b1173bf2ade44aa8e9e46496` | `31c3398214860203c4383ece434ff062cbebff82b1173bf2ade44aa8e9e46496` | 2249 | 2249 |
+| IDENTICAL | `scripts/savage-audit-all-branches.sh` | `e8f3143531670b10045d97a30b06bfc51930d62a1626c76b266c953d41155973` | `e8f3143531670b10045d97a30b06bfc51930d62a1626c76b266c953d41155973` | 8148 | 8148 |
+| IDENTICAL | `scripts/savage-audit.sh` | `17202d30ffb0e3f001365ef1469f2a7d3f848bac15210c13ea101f9a6f5ae019` | `17202d30ffb0e3f001365ef1469f2a7d3f848bac15210c13ea101f9a6f5ae019` | 17973 | 17973 |
+| IDENTICAL | `scripts/seo-quality-gates.mjs` | `78e7835cf616be776263d33a70fe766cd85d12d16df65fea520fdc68a4d2450f` | `78e7835cf616be776263d33a70fe766cd85d12d16df65fea520fdc68a4d2450f` | 1661 | 1661 |
+| IDENTICAL | `scripts/verify-formspree-forms.mjs` | `2a43ae497069f5e5292f5b617083628d0dc441abe27c514ff0576d1c20329668` | `2a43ae497069f5e5292f5b617083628d0dc441abe27c514ff0576d1c20329668` | 1618 | 1618 |
+| IDENTICAL | `scripts/verify-full-sweep.mjs` | `489b877ea97f692eec559dd801bbf6b166b19f6e029f418b11489197c4a8616c` | `489b877ea97f692eec559dd801bbf6b166b19f6e029f418b11489197c4a8616c` | 4551 | 4551 |
+| IDENTICAL | `scripts/verify-stability.mjs` | `f83394f245fc4c216b775bccc5097d6df9e143130351f07755753f4d38f7999e` | `f83394f245fc4c216b775bccc5097d6df9e143130351f07755753f4d38f7999e` | 446 | 446 |
+| IDENTICAL | `scripts/verify-zero-updates.mjs` | `26563ab81177fcd6febcc842ff2a76152a7be53ad817078929834ee9cf061d4f` | `26563ab81177fcd6febcc842ff2a76152a7be53ad817078929834ee9cf061d4f` | 914 | 914 |
+| IDENTICAL | `scripts/verify.mjs` | `12cb863aabeb6f0b3e2d8700a661b27efb43d8e93af0e1d236097f937c0803c0` | `12cb863aabeb6f0b3e2d8700a661b27efb43d8e93af0e1d236097f937c0803c0` | 246 | 246 |
+| IDENTICAL | `scripts/with-chrome-path.sh` | `d8685de71f7e84601d90d083dfdd480aff2da82ac334b6f7e07cab63d3efbafe` | `d8685de71f7e84601d90d083dfdd480aff2da82ac334b6f7e07cab63d3efbafe` | 3721 | 3721 |
 | MISSING_IN_SRC | `service-areas.html` | `7671e3697bfc42b8bca2e77c0b5e509caf84a971e0be67303da4af60d5d45a8e` | `—` | 12453 | — |
 | MISSING_IN_SRC | `services.html` | `5dad1a40a18d7ef128f04525d2854baa21c2198be84ec9ab017308a3f8ce812b` | `—` | 24400 | — |
 | MISSING_IN_SRC | `sitemap.xml` | `8a2b372dacf399cb6874ad6adfceb87828e746a6ff1c3d058c8f0d08a9140c0d` | `—` | 5654 | — |
@@ -480,6 +480,7 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | MISSING_IN_SRC | `testimonials.html` | `9ff723e2e3950fc6389c54c9f1bc99c84b4bc223ebae11db1056e594aaa0c723` | `—` | 13278 | — |
 | MISSING_IN_SRC | `thank-you.html` | `a9b04243c991aa37ad176d8d6accbca8d0b6a5833b15d8a84f0d5960fb704530` | `—` | 8351 | — |
 | MISSING_IN_SRC | `tools/center_and_pad_logo.py` | `50be9ac3f7ec77097fde7c9f253a50b21837384743bfb4322a74ebe008f28479` | `—` | 5426 | — |
+| MISSING_IN_SRC | `tools/port_advanced_root_into_src.py` | `39667b9ff0c264949b3511789c0ce3248bfd915e7262db10a1d66e61f9e7c779` | `—` | 2970 | — |
 | MISSING_IN_SRC | `toptier-service-pages/services/commercial-electrical/index.md` | `01f0be97d4dc7395151bf4d8592c432d21c4b29f541cbce39e90958381fd312c` | `—` | 1126 | — |
 | MISSING_IN_SRC | `toptier-service-pages/services/custom-home-new-construction/index.md` | `bbd190822e3b41f3aae73c8c9202ff45737bd05880792d1847f8a0969c652f77` | `—` | 2941 | — |
 | MISSING_IN_SRC | `toptier-service-pages/services/ev-charger-installation/index.md` | `f11444f33a2dd9c349e4dc55dc05aa5ee70e895ba971a764e4c8f3e922fea1a9` | `—` | 928 | — |
@@ -492,8 +493,8 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | MISSING_IN_SRC | `toptier-service-pages/services/service-calls-troubleshooting/index.md` | `a9d761994d876b9a5268868e6237f090273cdd7ee696901c02488635b4d9069a` | `—` | 1206 | — |
 | MISSING_IN_SRC | `toptier-service-pages/services/specialty-systems-walkins-rtus/index.md` | `b9d1b2b4bc373fa9eb8989a371a8334f1ed223bee15e90b6ac0c9dca97de0e11` | `—` | 1081 | — |
 | MISSING_IN_SRC | `toptier-service-pages/services/standby-generators/index.md` | `d574fab202cea1ba162fb89d38d2aefeb04835951c15c73e3623a000124c8a17` | `—` | 1199 | — |
-| MISSING_IN_SRC | `wrangler.jsonc` | `a54b57291d4f15a1c9dad8556c24456039e1ef6746708c5c4a637caa3e3f9dd0` | `—` | 217 | — |
-| MISSING_IN_SRC | `wrangler.toml` | `0cd9a80d418b54c1506c56b65794454b6ee3a6a8245d03e8e826acf58d14acef` | `—` | 129 | — |
+| IDENTICAL | `wrangler.jsonc` | `a54b57291d4f15a1c9dad8556c24456039e1ef6746708c5c4a637caa3e3f9dd0` | `a54b57291d4f15a1c9dad8556c24456039e1ef6746708c5c4a637caa3e3f9dd0` | 217 | 217 |
+| IDENTICAL | `wrangler.toml` | `0cd9a80d418b54c1506c56b65794454b6ee3a6a8245d03e8e826acf58d14acef` | `0cd9a80d418b54c1506c56b65794454b6ee3a6a8245d03e8e826acf58d14acef` | 129 | 129 |
 
 ### B.2 Root-only / Src-only decisions
 
@@ -501,7 +502,6 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 
 | relpath | decision | proposed_target_in_SRC | verification_steps |
 |---|---|---|---|
-| `.env.example` | REPLACE_WITH_EQUIVALENT | `.env.example` | Manual review to map capability into SRC architecture. |
 | `.github/workflows/ci.yml` | PORT_WITH_ADAPTATION | `.github/workflows/ci.yml` | Run workflow lint + trigger dry-run on feature branch. |
 | `.github/workflows/deploy-cloudflare-pages.yml` | PORT_WITH_ADAPTATION | `.github/workflows/deploy-cloudflare-pages.yml` | Run workflow lint + trigger dry-run on feature branch. |
 | `.github/workflows/deploy-prod.yml` | PORT_WITH_ADAPTATION | `.github/workflows/deploy-prod.yml` | Run workflow lint + trigger dry-run on feature branch. |
@@ -514,7 +514,6 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | `.pa11yci` | REPLACE_WITH_EQUIVALENT | `.pa11yci` | Manual review to map capability into SRC architecture. |
 | `.prettierignore` | REPLACE_WITH_EQUIVALENT | `.prettierignore` | Manual review to map capability into SRC architecture. |
 | `.stylelintrc.json` | REPLACE_WITH_EQUIVALENT | `.stylelintrc.json` | Manual review to map capability into SRC architecture. |
-| `.well-known/security.txt` | PORT_AS_IS | `.well-known/security.txt` | Validate deploy + route/header behavior in preview. |
 | `404.html` | REPLACE_WITH_EQUIVALENT | `404.html` | Manual review to map capability into SRC architecture. |
 | `AUDIT.md` | REPLACE_WITH_EQUIVALENT | `AUDIT.md` | Confirm equivalent documentation section exists and links resolve. |
 | `FINAL_VERIFICATION_PLAYBOOK.md` | REPLACE_WITH_EQUIVALENT | `FINAL_VERIFICATION_PLAYBOOK.md` | Confirm equivalent documentation section exists and links resolve. |
@@ -622,10 +621,7 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | `TopTier_Implementation_Guide-22.jpg` | PORT_WITH_ADAPTATION | `assets/images/TopTier_Implementation_Guide-22.jpg` | Check image references, responsive loading, and Lighthouse performance. |
 | `TopTier_Implementation_Guide-23.jpg` | PORT_WITH_ADAPTATION | `assets/images/TopTier_Implementation_Guide-23.jpg` | Check image references, responsive loading, and Lighthouse performance. |
 | `Toptier1_Full_Audit_and_StepByStep_Procedure.md` | REPLACE_WITH_EQUIVALENT | `Toptier1_Full_Audit_and_StepByStep_Procedure.md` | Confirm equivalent documentation section exists and links resolve. |
-| `_headers` | PORT_AS_IS | `_headers` | Validate deploy + route/header behavior in preview. |
-| `_redirects` | PORT_AS_IS | `_redirects` | Validate deploy + route/header behavior in preview. |
 | `about.html` | REPLACE_WITH_EQUIVALENT | `about.html` | Manual review to map capability into SRC architecture. |
-| `app/api/leads/route.ts` | PORT_WITH_ADAPTATION | `api/leads/route.ts` | Run API contract tests and end-to-end form submission checks. |
 | `app/commercial/page.tsx` | REPLACE_WITH_EQUIVALENT | `app/commercial/page.tsx` | Manual review to map capability into SRC architecture. |
 | `app/layout.tsx` | REPLACE_WITH_EQUIVALENT | `app/layout.tsx` | Manual review to map capability into SRC architecture. |
 | `app/residential/page.tsx` | REPLACE_WITH_EQUIVALENT | `app/residential/page.tsx` | Manual review to map capability into SRC architecture. |
@@ -825,46 +821,6 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | `residential.html` | REPLACE_WITH_EQUIVALENT | `residential.html` | Manual review to map capability into SRC architecture. |
 | `robots.txt` | REPLACE_WITH_EQUIVALENT | `robots.txt` | Manual review to map capability into SRC architecture. |
 | `script.js` | REPLACE_WITH_EQUIVALENT | `script.js` | Manual review to map capability into SRC architecture. |
-| `scripts/audit-image-text-references.js` | PORT_AS_IS | `scripts/audit-image-text-references.js` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/audit-images.mjs` | PORT_AS_IS | `scripts/audit-images.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/audit-links-cloudflare.mjs` | PORT_AS_IS | `scripts/audit-links-cloudflare.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/build.mjs` | PORT_AS_IS | `scripts/build.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-content-mapping.js` | PORT_AS_IS | `scripts/check-content-mapping.js` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-extensionless-collisions.mjs` | PORT_AS_IS | `scripts/check-extensionless-collisions.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-extensionless-links.mjs` | PORT_AS_IS | `scripts/check-extensionless-links.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-image-sources.js` | PORT_AS_IS | `scripts/check-image-sources.js` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-navigation-sim.mjs` | PORT_AS_IS | `scripts/check-navigation-sim.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-navigation-simulation.js` | PORT_AS_IS | `scripts/check-navigation-simulation.js` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-no-binary-files.sh` | PORT_AS_IS | `scripts/check-no-binary-files.sh` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-origin-redirects.js` | PORT_AS_IS | `scripts/check-origin-redirects.js` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-origin-redirects.mjs` | PORT_AS_IS | `scripts/check-origin-redirects.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-placeholders.js` | PORT_AS_IS | `scripts/check-placeholders.js` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-placeholders.mjs` | PORT_AS_IS | `scripts/check-placeholders.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-redirects-cloudflare.mjs` | PORT_AS_IS | `scripts/check-redirects-cloudflare.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-workflow-location.js` | PORT_AS_IS | `scripts/check-workflow-location.js` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/check-workflow-yaml.mjs` | PORT_AS_IS | `scripts/check-workflow-yaml.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/clean.mjs` | PORT_AS_IS | `scripts/clean.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/crawl.js` | PORT_AS_IS | `scripts/crawl.js` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/create-clean-repo.mjs` | PORT_AS_IS | `scripts/create-clean-repo.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/dev.mjs` | PORT_AS_IS | `scripts/dev.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/gsc-gap.mjs` | PORT_AS_IS | `scripts/gsc-gap.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/lib/fs.mjs` | PORT_AS_IS | `scripts/lib/fs.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/lib/images.mjs` | PORT_AS_IS | `scripts/lib/images.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/lib/meta.mjs` | PORT_AS_IS | `scripts/lib/meta.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/lib/template.mjs` | PORT_AS_IS | `scripts/lib/template.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/lib/urls.mjs` | PORT_AS_IS | `scripts/lib/urls.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/lib/validate.mjs` | PORT_AS_IS | `scripts/lib/validate.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/local-seo-audit.ts` | PORT_AS_IS | `scripts/local-seo-audit.ts` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/optimize-assets.mjs` | PORT_AS_IS | `scripts/optimize-assets.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/savage-audit-all-branches.sh` | PORT_AS_IS | `scripts/savage-audit-all-branches.sh` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/savage-audit.sh` | PORT_AS_IS | `scripts/savage-audit.sh` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/seo-quality-gates.mjs` | PORT_AS_IS | `scripts/seo-quality-gates.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/verify-formspree-forms.mjs` | PORT_AS_IS | `scripts/verify-formspree-forms.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/verify-full-sweep.mjs` | PORT_AS_IS | `scripts/verify-full-sweep.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/verify-stability.mjs` | PORT_AS_IS | `scripts/verify-stability.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/verify-zero-updates.mjs` | PORT_AS_IS | `scripts/verify-zero-updates.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/verify.mjs` | PORT_AS_IS | `scripts/verify.mjs` | Execute script and verify non-zero exit on failing fixtures. |
-| `scripts/with-chrome-path.sh` | PORT_AS_IS | `scripts/with-chrome-path.sh` | Execute script and verify non-zero exit on failing fixtures. |
 | `service-areas.html` | REPLACE_WITH_EQUIVALENT | `service-areas.html` | Manual review to map capability into SRC architecture. |
 | `services.html` | REPLACE_WITH_EQUIVALENT | `services.html` | Manual review to map capability into SRC architecture. |
 | `sitemap.xml` | REPLACE_WITH_EQUIVALENT | `sitemap.xml` | Manual review to map capability into SRC architecture. |
@@ -874,6 +830,7 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | `testimonials.html` | REPLACE_WITH_EQUIVALENT | `testimonials.html` | Manual review to map capability into SRC architecture. |
 | `thank-you.html` | REPLACE_WITH_EQUIVALENT | `thank-you.html` | Manual review to map capability into SRC architecture. |
 | `tools/center_and_pad_logo.py` | REPLACE_WITH_EQUIVALENT | `tools/center_and_pad_logo.py` | Manual review to map capability into SRC architecture. |
+| `tools/port_advanced_root_into_src.py` | REPLACE_WITH_EQUIVALENT | `tools/port_advanced_root_into_src.py` | Manual review to map capability into SRC architecture. |
 | `toptier-service-pages/services/commercial-electrical/index.md` | REPLACE_WITH_EQUIVALENT | `toptier-service-pages/services/commercial-electrical/index.md` | Confirm equivalent documentation section exists and links resolve. |
 | `toptier-service-pages/services/custom-home-new-construction/index.md` | REPLACE_WITH_EQUIVALENT | `toptier-service-pages/services/custom-home-new-construction/index.md` | Confirm equivalent documentation section exists and links resolve. |
 | `toptier-service-pages/services/ev-charger-installation/index.md` | REPLACE_WITH_EQUIVALENT | `toptier-service-pages/services/ev-charger-installation/index.md` | Confirm equivalent documentation section exists and links resolve. |
@@ -886,8 +843,6 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | `toptier-service-pages/services/service-calls-troubleshooting/index.md` | REPLACE_WITH_EQUIVALENT | `toptier-service-pages/services/service-calls-troubleshooting/index.md` | Confirm equivalent documentation section exists and links resolve. |
 | `toptier-service-pages/services/specialty-systems-walkins-rtus/index.md` | REPLACE_WITH_EQUIVALENT | `toptier-service-pages/services/specialty-systems-walkins-rtus/index.md` | Confirm equivalent documentation section exists and links resolve. |
 | `toptier-service-pages/services/standby-generators/index.md` | REPLACE_WITH_EQUIVALENT | `toptier-service-pages/services/standby-generators/index.md` | Confirm equivalent documentation section exists and links resolve. |
-| `wrangler.jsonc` | PORT_AS_IS | `wrangler.jsonc` | Validate deploy + route/header behavior in preview. |
-| `wrangler.toml` | PORT_AS_IS | `wrangler.toml` | Validate deploy + route/header behavior in preview. |
 
 #### EXTRA_IN_SRC decisions (exhaustive)
 
@@ -970,81 +925,108 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 
 | root_relpath | src_relpath | score | decision | evidence_filenames |
 |---|---|---:|---|---|
+| `.env.example` | `.env.example` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/.env.example__TO__.env.example.diff`; `fuzzy_byte_diffs/.env.example__TO__.env.example.cmp.txt` |
+| `.well-known/security.txt` | `.well-known/security.txt` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/.well-known_security.txt__TO__.well-known_security.txt.diff`; `fuzzy_byte_diffs/.well-known_security.txt__TO__.well-known_security.txt.cmp.txt` |
+| `_headers` | `_headers` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/_headers__TO___headers.diff`; `fuzzy_byte_diffs/_headers__TO___headers.cmp.txt` |
+| `_redirects` | `_redirects` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/_redirects__TO___redirects.diff`; `fuzzy_byte_diffs/_redirects__TO___redirects.cmp.txt` |
+| `app/api/leads/route.ts` | `app/api/leads/route.ts` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/app_api_leads_route.ts__TO__app_api_leads_route.ts.diff`; `fuzzy_byte_diffs/app_api_leads_route.ts__TO__app_api_leads_route.ts.cmp.txt` |
+| `scripts/audit-image-text-references.js` | `scripts/audit-image-text-references.js` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_audit-image-text-references.js__TO__scripts_audit-image-text-references.js.diff`; `fuzzy_byte_diffs/scripts_audit-image-text-references.js__TO__scripts_audit-image-text-references.js.cmp.txt` |
+| `scripts/audit-images.mjs` | `scripts/audit-images.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_audit-images.mjs__TO__scripts_audit-images.mjs.diff`; `fuzzy_byte_diffs/scripts_audit-images.mjs__TO__scripts_audit-images.mjs.cmp.txt` |
+| `scripts/audit-links-cloudflare.mjs` | `scripts/audit-links-cloudflare.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_audit-links-cloudflare.mjs__TO__scripts_audit-links-cloudflare.mjs.diff`; `fuzzy_byte_diffs/scripts_audit-links-cloudflare.mjs__TO__scripts_audit-links-cloudflare.mjs.cmp.txt` |
+| `scripts/build.mjs` | `scripts/build.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_build.mjs__TO__scripts_build.mjs.diff`; `fuzzy_byte_diffs/scripts_build.mjs__TO__scripts_build.mjs.cmp.txt` |
+| `scripts/check-content-mapping.js` | `scripts/check-content-mapping.js` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-content-mapping.js__TO__scripts_check-content-mapping.js.diff`; `fuzzy_byte_diffs/scripts_check-content-mapping.js__TO__scripts_check-content-mapping.js.cmp.txt` |
+| `scripts/check-extensionless-collisions.mjs` | `scripts/check-extensionless-collisions.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-extensionless-collisions.mjs__TO__scripts_check-extensionless-collisions.mjs.diff`; `fuzzy_byte_diffs/scripts_check-extensionless-collisions.mjs__TO__scripts_check-extensionless-collisions.mjs.cmp.txt` |
+| `scripts/check-extensionless-links.mjs` | `scripts/check-extensionless-links.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-extensionless-links.mjs__TO__scripts_check-extensionless-links.mjs.diff`; `fuzzy_byte_diffs/scripts_check-extensionless-links.mjs__TO__scripts_check-extensionless-links.mjs.cmp.txt` |
+| `scripts/check-image-sources.js` | `scripts/check-image-sources.js` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-image-sources.js__TO__scripts_check-image-sources.js.diff`; `fuzzy_byte_diffs/scripts_check-image-sources.js__TO__scripts_check-image-sources.js.cmp.txt` |
+| `scripts/check-navigation-sim.mjs` | `scripts/check-navigation-sim.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-navigation-sim.mjs__TO__scripts_check-navigation-sim.mjs.diff`; `fuzzy_byte_diffs/scripts_check-navigation-sim.mjs__TO__scripts_check-navigation-sim.mjs.cmp.txt` |
+| `scripts/check-navigation-simulation.js` | `scripts/check-navigation-simulation.js` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-navigation-simulation.js__TO__scripts_check-navigation-simulation.js.diff`; `fuzzy_byte_diffs/scripts_check-navigation-simulation.js__TO__scripts_check-navigation-simulation.js.cmp.txt` |
+| `scripts/check-no-binary-files.sh` | `scripts/check-no-binary-files.sh` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-no-binary-files.sh__TO__scripts_check-no-binary-files.sh.diff`; `fuzzy_byte_diffs/scripts_check-no-binary-files.sh__TO__scripts_check-no-binary-files.sh.cmp.txt` |
+| `scripts/check-origin-redirects.js` | `scripts/check-origin-redirects.js` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-origin-redirects.js__TO__scripts_check-origin-redirects.js.diff`; `fuzzy_byte_diffs/scripts_check-origin-redirects.js__TO__scripts_check-origin-redirects.js.cmp.txt` |
+| `scripts/check-origin-redirects.mjs` | `scripts/check-origin-redirects.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-origin-redirects.mjs__TO__scripts_check-origin-redirects.mjs.diff`; `fuzzy_byte_diffs/scripts_check-origin-redirects.mjs__TO__scripts_check-origin-redirects.mjs.cmp.txt` |
+| `scripts/check-placeholders.js` | `scripts/check-placeholders.js` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-placeholders.js__TO__scripts_check-placeholders.js.diff`; `fuzzy_byte_diffs/scripts_check-placeholders.js__TO__scripts_check-placeholders.js.cmp.txt` |
+| `scripts/check-placeholders.mjs` | `scripts/check-placeholders.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-placeholders.mjs__TO__scripts_check-placeholders.mjs.diff`; `fuzzy_byte_diffs/scripts_check-placeholders.mjs__TO__scripts_check-placeholders.mjs.cmp.txt` |
+| `scripts/check-redirects-cloudflare.mjs` | `scripts/check-redirects-cloudflare.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-redirects-cloudflare.mjs__TO__scripts_check-redirects-cloudflare.mjs.diff`; `fuzzy_byte_diffs/scripts_check-redirects-cloudflare.mjs__TO__scripts_check-redirects-cloudflare.mjs.cmp.txt` |
+| `scripts/check-workflow-location.js` | `scripts/check-workflow-location.js` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-workflow-location.js__TO__scripts_check-workflow-location.js.diff`; `fuzzy_byte_diffs/scripts_check-workflow-location.js__TO__scripts_check-workflow-location.js.cmp.txt` |
+| `scripts/check-workflow-yaml.mjs` | `scripts/check-workflow-yaml.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-workflow-yaml.mjs__TO__scripts_check-workflow-yaml.mjs.diff`; `fuzzy_byte_diffs/scripts_check-workflow-yaml.mjs__TO__scripts_check-workflow-yaml.mjs.cmp.txt` |
+| `scripts/clean.mjs` | `scripts/clean.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_clean.mjs__TO__scripts_clean.mjs.diff`; `fuzzy_byte_diffs/scripts_clean.mjs__TO__scripts_clean.mjs.cmp.txt` |
+| `scripts/crawl.js` | `scripts/crawl.js` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_crawl.js__TO__scripts_crawl.js.diff`; `fuzzy_byte_diffs/scripts_crawl.js__TO__scripts_crawl.js.cmp.txt` |
+| `scripts/create-clean-repo.mjs` | `scripts/create-clean-repo.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_create-clean-repo.mjs__TO__scripts_create-clean-repo.mjs.diff`; `fuzzy_byte_diffs/scripts_create-clean-repo.mjs__TO__scripts_create-clean-repo.mjs.cmp.txt` |
+| `scripts/dev.mjs` | `scripts/dev.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_dev.mjs__TO__scripts_dev.mjs.diff`; `fuzzy_byte_diffs/scripts_dev.mjs__TO__scripts_dev.mjs.cmp.txt` |
+| `scripts/gsc-gap.mjs` | `scripts/gsc-gap.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_gsc-gap.mjs__TO__scripts_gsc-gap.mjs.diff`; `fuzzy_byte_diffs/scripts_gsc-gap.mjs__TO__scripts_gsc-gap.mjs.cmp.txt` |
+| `scripts/lib/fs.mjs` | `scripts/lib/fs.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_lib_fs.mjs__TO__scripts_lib_fs.mjs.diff`; `fuzzy_byte_diffs/scripts_lib_fs.mjs__TO__scripts_lib_fs.mjs.cmp.txt` |
+| `scripts/lib/images.mjs` | `scripts/lib/images.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_lib_images.mjs__TO__scripts_lib_images.mjs.diff`; `fuzzy_byte_diffs/scripts_lib_images.mjs__TO__scripts_lib_images.mjs.cmp.txt` |
+| `scripts/lib/meta.mjs` | `scripts/lib/meta.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_lib_meta.mjs__TO__scripts_lib_meta.mjs.diff`; `fuzzy_byte_diffs/scripts_lib_meta.mjs__TO__scripts_lib_meta.mjs.cmp.txt` |
+| `scripts/lib/template.mjs` | `scripts/lib/template.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_lib_template.mjs__TO__scripts_lib_template.mjs.diff`; `fuzzy_byte_diffs/scripts_lib_template.mjs__TO__scripts_lib_template.mjs.cmp.txt` |
+| `scripts/lib/urls.mjs` | `scripts/lib/urls.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_lib_urls.mjs__TO__scripts_lib_urls.mjs.diff`; `fuzzy_byte_diffs/scripts_lib_urls.mjs__TO__scripts_lib_urls.mjs.cmp.txt` |
+| `scripts/lib/validate.mjs` | `scripts/lib/validate.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_lib_validate.mjs__TO__scripts_lib_validate.mjs.diff`; `fuzzy_byte_diffs/scripts_lib_validate.mjs__TO__scripts_lib_validate.mjs.cmp.txt` |
+| `scripts/local-seo-audit.ts` | `scripts/local-seo-audit.ts` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_local-seo-audit.ts__TO__scripts_local-seo-audit.ts.diff`; `fuzzy_byte_diffs/scripts_local-seo-audit.ts__TO__scripts_local-seo-audit.ts.cmp.txt` |
+| `scripts/optimize-assets.mjs` | `scripts/optimize-assets.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_optimize-assets.mjs__TO__scripts_optimize-assets.mjs.diff`; `fuzzy_byte_diffs/scripts_optimize-assets.mjs__TO__scripts_optimize-assets.mjs.cmp.txt` |
+| `scripts/savage-audit-all-branches.sh` | `scripts/savage-audit-all-branches.sh` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_savage-audit-all-branches.sh__TO__scripts_savage-audit-all-branches.sh.diff`; `fuzzy_byte_diffs/scripts_savage-audit-all-branches.sh__TO__scripts_savage-audit-all-branches.sh.cmp.txt` |
+| `scripts/savage-audit.sh` | `scripts/savage-audit.sh` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_savage-audit.sh__TO__scripts_savage-audit.sh.diff`; `fuzzy_byte_diffs/scripts_savage-audit.sh__TO__scripts_savage-audit.sh.cmp.txt` |
+| `scripts/seo-quality-gates.mjs` | `scripts/seo-quality-gates.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_seo-quality-gates.mjs__TO__scripts_seo-quality-gates.mjs.diff`; `fuzzy_byte_diffs/scripts_seo-quality-gates.mjs__TO__scripts_seo-quality-gates.mjs.cmp.txt` |
+| `scripts/verify-formspree-forms.mjs` | `scripts/verify-formspree-forms.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_verify-formspree-forms.mjs__TO__scripts_verify-formspree-forms.mjs.diff`; `fuzzy_byte_diffs/scripts_verify-formspree-forms.mjs__TO__scripts_verify-formspree-forms.mjs.cmp.txt` |
+| `scripts/verify-full-sweep.mjs` | `scripts/verify-full-sweep.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_verify-full-sweep.mjs__TO__scripts_verify-full-sweep.mjs.diff`; `fuzzy_byte_diffs/scripts_verify-full-sweep.mjs__TO__scripts_verify-full-sweep.mjs.cmp.txt` |
+| `scripts/verify-stability.mjs` | `scripts/verify-stability.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_verify-stability.mjs__TO__scripts_verify-stability.mjs.diff`; `fuzzy_byte_diffs/scripts_verify-stability.mjs__TO__scripts_verify-stability.mjs.cmp.txt` |
+| `scripts/verify-zero-updates.mjs` | `scripts/verify-zero-updates.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_verify-zero-updates.mjs__TO__scripts_verify-zero-updates.mjs.diff`; `fuzzy_byte_diffs/scripts_verify-zero-updates.mjs__TO__scripts_verify-zero-updates.mjs.cmp.txt` |
+| `scripts/verify.mjs` | `scripts/verify.mjs` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_verify.mjs__TO__scripts_verify.mjs.diff`; `fuzzy_byte_diffs/scripts_verify.mjs__TO__scripts_verify.mjs.cmp.txt` |
+| `scripts/with-chrome-path.sh` | `scripts/with-chrome-path.sh` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_with-chrome-path.sh__TO__scripts_with-chrome-path.sh.diff`; `fuzzy_byte_diffs/scripts_with-chrome-path.sh__TO__scripts_with-chrome-path.sh.cmp.txt` |
+| `wrangler.jsonc` | `wrangler.jsonc` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/wrangler.jsonc__TO__wrangler.jsonc.diff`; `fuzzy_byte_diffs/wrangler.jsonc__TO__wrangler.jsonc.cmp.txt` |
+| `wrangler.toml` | `wrangler.toml` | 1.3500 | PORT_WITH_ADAPTATION | `fuzzy_diffs/wrangler.toml__TO__wrangler.toml.diff`; `fuzzy_byte_diffs/wrangler.toml__TO__wrangler.toml.cmp.txt` |
 | `testimonials.html` | `pages/testimonials.html` | 1.2811 | PORT_WITH_ADAPTATION | `fuzzy_diffs/testimonials.html__TO__pages_testimonials.html.diff`; `fuzzy_byte_diffs/testimonials.html__TO__pages_testimonials.html.cmp.txt` |
-| `residential.html` | `pages/residential.html` | 0.6272 | PORT_WITH_ADAPTATION | `fuzzy_diffs/residential.html__TO__pages_residential.html.diff`; `fuzzy_byte_diffs/residential.html__TO__pages_residential.html.cmp.txt` |
-| `commercial.html` | `pages/commercial.html` | 0.5799 | PORT_WITH_ADAPTATION | `fuzzy_diffs/commercial.html__TO__pages_commercial.html.diff`; `fuzzy_byte_diffs/commercial.html__TO__pages_commercial.html.cmp.txt` |
-| `thank-you.html` | `pages/thank-you.html` | 0.5343 | PORT_WITH_ADAPTATION | `fuzzy_diffs/thank-you.html__TO__pages_thank-you.html.diff`; `fuzzy_byte_diffs/thank-you.html__TO__pages_thank-you.html.cmp.txt` |
-| `about.html` | `pages/about.html` | 0.5122 | PORT_WITH_ADAPTATION | `fuzzy_diffs/about.html__TO__pages_about.html.diff`; `fuzzy_byte_diffs/about.html__TO__pages_about.html.cmp.txt` |
-| `financing.html` | `pages/financing.html` | 0.5057 | PORT_WITH_ADAPTATION | `fuzzy_diffs/financing.html__TO__pages_financing.html.diff`; `fuzzy_byte_diffs/financing.html__TO__pages_financing.html.cmp.txt` |
-| `faq.html` | `pages/faq.html` | 0.4456 | PORT_WITH_ADAPTATION | `fuzzy_diffs/faq.html__TO__pages_faq.html.diff`; `fuzzy_byte_diffs/faq.html__TO__pages_faq.html.cmp.txt` |
-| `contact.html` | `pages/contact.html` | 0.4394 | PORT_WITH_ADAPTATION | `fuzzy_diffs/contact.html__TO__pages_contact.html.diff`; `fuzzy_byte_diffs/contact.html__TO__pages_contact.html.cmp.txt` |
-| `generators.html` | `pages/generators.html` | 0.4379 | PORT_WITH_ADAPTATION | `fuzzy_diffs/generators.html__TO__pages_generators.html.diff`; `fuzzy_byte_diffs/generators.html__TO__pages_generators.html.cmp.txt` |
-| `electrician-holland.html` | `pages/electrician-holland.html` | 0.4373 | PORT_WITH_ADAPTATION | `fuzzy_diffs/electrician-holland.html__TO__pages_electrician-holland.html.diff`; `fuzzy_byte_diffs/electrician-holland.html__TO__pages_electrician-holland.html.cmp.txt` |
-| `ev-chargers.html` | `pages/ev-chargers.html` | 0.4350 | PORT_WITH_ADAPTATION | `fuzzy_diffs/ev-chargers.html__TO__pages_ev-chargers.html.diff`; `fuzzy_byte_diffs/ev-chargers.html__TO__pages_ev-chargers.html.cmp.txt` |
-| `booking.html` | `pages/booking.html` | 0.4342 | PORT_WITH_ADAPTATION | `fuzzy_diffs/booking.html__TO__pages_booking.html.diff`; `fuzzy_byte_diffs/booking.html__TO__pages_booking.html.cmp.txt` |
-| `emergency.html` | `pages/emergency.html` | 0.4286 | PORT_WITH_ADAPTATION | `fuzzy_diffs/emergency.html__TO__pages_emergency.html.diff`; `fuzzy_byte_diffs/emergency.html__TO__pages_emergency.html.cmp.txt` |
-| `electrical-repairs.html` | `pages/electrical-repairs.html` | 0.4243 | PORT_WITH_ADAPTATION | `fuzzy_diffs/electrical-repairs.html__TO__pages_electrical-repairs.html.diff`; `fuzzy_byte_diffs/electrical-repairs.html__TO__pages_electrical-repairs.html.cmp.txt` |
-| `electrician-grand-rapids.html` | `pages/electrician-grand-rapids.html` | 0.4228 | PORT_WITH_ADAPTATION | `fuzzy_diffs/electrician-grand-rapids.html__TO__pages_electrician-grand-rapids.html.diff`; `fuzzy_byte_diffs/electrician-grand-rapids.html__TO__pages_electrician-grand-rapids.html.cmp.txt` |
-| `electrician-allegan.html` | `pages/electrician-allegan.html` | 0.4214 | PORT_WITH_ADAPTATION | `fuzzy_diffs/electrician-allegan.html__TO__pages_electrician-allegan.html.diff`; `fuzzy_byte_diffs/electrician-allegan.html__TO__pages_electrician-allegan.html.cmp.txt` |
-| `gallery.html` | `pages/gallery.html` | 0.4209 | PORT_WITH_ADAPTATION | `fuzzy_diffs/gallery.html__TO__pages_gallery.html.diff`; `fuzzy_byte_diffs/gallery.html__TO__pages_gallery.html.cmp.txt` |
-| `service-areas.html` | `pages/service-areas.html` | 0.4109 | PORT_WITH_ADAPTATION | `fuzzy_diffs/service-areas.html__TO__pages_service-areas.html.diff`; `fuzzy_byte_diffs/service-areas.html__TO__pages_service-areas.html.cmp.txt` |
-| `lighting.html` | `pages/lighting.html` | 0.4107 | PORT_WITH_ADAPTATION | `fuzzy_diffs/lighting.html__TO__pages_lighting.html.diff`; `fuzzy_byte_diffs/lighting.html__TO__pages_lighting.html.cmp.txt` |
-| `index.html` | `pages/index.html` | 0.4103 | PORT_WITH_ADAPTATION | `fuzzy_diffs/index.html__TO__pages_index.html.diff`; `fuzzy_byte_diffs/index.html__TO__pages_index.html.cmp.txt` |
-| `panel-upgrades.html` | `pages/panel-upgrades.html` | 0.4089 | PORT_WITH_ADAPTATION | `fuzzy_diffs/panel-upgrades.html__TO__pages_panel-upgrades.html.diff`; `fuzzy_byte_diffs/panel-upgrades.html__TO__pages_panel-upgrades.html.cmp.txt` |
-| `services.html` | `pages/services.html` | 0.3842 | PORT_WITH_ADAPTATION | `fuzzy_diffs/services.html__TO__pages_services.html.diff`; `fuzzy_byte_diffs/services.html__TO__pages_services.html.cmp.txt` |
-| `Past_work_webp/Lighting.webp` | `pages/lighting.html` | 0.3739 | PORT_WITH_ADAPTATION | `fuzzy_diffs/Past_work_webp_Lighting.webp__TO__pages_lighting.html.diff`; `fuzzy_byte_diffs/Past_work_webp_Lighting.webp__TO__pages_lighting.html.cmp.txt` |
+| `scripts/check-placeholders.mjs` | `scripts/check-placeholders.js` | 0.9637 | PORT_WITH_ADAPTATION | `fuzzy_diffs/scripts_check-placeholders.mjs__TO__scripts_check-placeholders.js.diff`; `fuzzy_byte_diffs/scripts_check-placeholders.mjs__TO__scripts_check-placeholders.js.cmp.txt` |
+| `wrangler.jsonc` | `wrangler.toml` | 0.9601 | PORT_WITH_ADAPTATION | `fuzzy_diffs/wrangler.jsonc__TO__wrangler.toml.diff`; `fuzzy_byte_diffs/wrangler.jsonc__TO__wrangler.toml.cmp.txt` |
 
 #### Top correspondences transplant detail
-- `testimonials.html` → `pages/testimonials.html` (score 1.2811)
+- `.env.example` → `.env.example` (score 1.3500)
   - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
   - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
   - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
-  - Evidence: `fuzzy_diffs/testimonials.html__TO__pages_testimonials.html.diff`, `fuzzy_byte_diffs/testimonials.html__TO__pages_testimonials.html.cmp.txt`.
-- `residential.html` → `pages/residential.html` (score 0.6272)
+  - Evidence: `fuzzy_diffs/.env.example__TO__.env.example.diff`, `fuzzy_byte_diffs/.env.example__TO__.env.example.cmp.txt`.
+- `.well-known/security.txt` → `.well-known/security.txt` (score 1.3500)
   - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
   - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
   - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
-  - Evidence: `fuzzy_diffs/residential.html__TO__pages_residential.html.diff`, `fuzzy_byte_diffs/residential.html__TO__pages_residential.html.cmp.txt`.
-- `commercial.html` → `pages/commercial.html` (score 0.5799)
+  - Evidence: `fuzzy_diffs/.well-known_security.txt__TO__.well-known_security.txt.diff`, `fuzzy_byte_diffs/.well-known_security.txt__TO__.well-known_security.txt.cmp.txt`.
+- `_headers` → `_headers` (score 1.3500)
   - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
   - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
   - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
-  - Evidence: `fuzzy_diffs/commercial.html__TO__pages_commercial.html.diff`, `fuzzy_byte_diffs/commercial.html__TO__pages_commercial.html.cmp.txt`.
-- `thank-you.html` → `pages/thank-you.html` (score 0.5343)
+  - Evidence: `fuzzy_diffs/_headers__TO___headers.diff`, `fuzzy_byte_diffs/_headers__TO___headers.cmp.txt`.
+- `_redirects` → `_redirects` (score 1.3500)
   - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
   - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
   - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
-  - Evidence: `fuzzy_diffs/thank-you.html__TO__pages_thank-you.html.diff`, `fuzzy_byte_diffs/thank-you.html__TO__pages_thank-you.html.cmp.txt`.
-- `about.html` → `pages/about.html` (score 0.5122)
+  - Evidence: `fuzzy_diffs/_redirects__TO___redirects.diff`, `fuzzy_byte_diffs/_redirects__TO___redirects.cmp.txt`.
+- `app/api/leads/route.ts` → `app/api/leads/route.ts` (score 1.3500)
   - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
   - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
   - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
-  - Evidence: `fuzzy_diffs/about.html__TO__pages_about.html.diff`, `fuzzy_byte_diffs/about.html__TO__pages_about.html.cmp.txt`.
-- `financing.html` → `pages/financing.html` (score 0.5057)
+  - Evidence: `fuzzy_diffs/app_api_leads_route.ts__TO__app_api_leads_route.ts.diff`, `fuzzy_byte_diffs/app_api_leads_route.ts__TO__app_api_leads_route.ts.cmp.txt`.
+- `scripts/audit-image-text-references.js` → `scripts/audit-image-text-references.js` (score 1.3500)
   - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
   - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
   - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
-  - Evidence: `fuzzy_diffs/financing.html__TO__pages_financing.html.diff`, `fuzzy_byte_diffs/financing.html__TO__pages_financing.html.cmp.txt`.
-- `faq.html` → `pages/faq.html` (score 0.4456)
+  - Evidence: `fuzzy_diffs/scripts_audit-image-text-references.js__TO__scripts_audit-image-text-references.js.diff`, `fuzzy_byte_diffs/scripts_audit-image-text-references.js__TO__scripts_audit-image-text-references.js.cmp.txt`.
+- `scripts/audit-images.mjs` → `scripts/audit-images.mjs` (score 1.3500)
   - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
   - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
   - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
-  - Evidence: `fuzzy_diffs/faq.html__TO__pages_faq.html.diff`, `fuzzy_byte_diffs/faq.html__TO__pages_faq.html.cmp.txt`.
-- `contact.html` → `pages/contact.html` (score 0.4394)
+  - Evidence: `fuzzy_diffs/scripts_audit-images.mjs__TO__scripts_audit-images.mjs.diff`, `fuzzy_byte_diffs/scripts_audit-images.mjs__TO__scripts_audit-images.mjs.cmp.txt`.
+- `scripts/audit-links-cloudflare.mjs` → `scripts/audit-links-cloudflare.mjs` (score 1.3500)
   - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
   - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
   - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
-  - Evidence: `fuzzy_diffs/contact.html__TO__pages_contact.html.diff`, `fuzzy_byte_diffs/contact.html__TO__pages_contact.html.cmp.txt`.
-- `generators.html` → `pages/generators.html` (score 0.4379)
+  - Evidence: `fuzzy_diffs/scripts_audit-links-cloudflare.mjs__TO__scripts_audit-links-cloudflare.mjs.diff`, `fuzzy_byte_diffs/scripts_audit-links-cloudflare.mjs__TO__scripts_audit-links-cloudflare.mjs.cmp.txt`.
+- `scripts/build.mjs` → `scripts/build.mjs` (score 1.3500)
   - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
   - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
   - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
-  - Evidence: `fuzzy_diffs/generators.html__TO__pages_generators.html.diff`, `fuzzy_byte_diffs/generators.html__TO__pages_generators.html.cmp.txt`.
-- `electrician-holland.html` → `pages/electrician-holland.html` (score 0.4373)
+  - Evidence: `fuzzy_diffs/scripts_build.mjs__TO__scripts_build.mjs.diff`, `fuzzy_byte_diffs/scripts_build.mjs__TO__scripts_build.mjs.cmp.txt`.
+- `scripts/check-content-mapping.js` → `scripts/check-content-mapping.js` (score 1.3500)
   - Transplant exactly: page metadata blocks, testimonial content sections, CTA/link destinations, and any structured data blocks present in root page.
   - Behavior change: align SRC rendered page content/SEO with ROOT artifact.
   - Risks: template mismatch or duplicated markup; run HTML/link validation and visual spot-check.
-  - Evidence: `fuzzy_diffs/electrician-holland.html__TO__pages_electrician-holland.html.diff`, `fuzzy_byte_diffs/electrician-holland.html__TO__pages_electrician-holland.html.cmp.txt`.
+  - Evidence: `fuzzy_diffs/scripts_check-content-mapping.js__TO__scripts_check-content-mapping.js.diff`, `fuzzy_byte_diffs/scripts_check-content-mapping.js__TO__scripts_check-content-mapping.js.cmp.txt`.
 
 ## C. Repo-level transplant plan
 
