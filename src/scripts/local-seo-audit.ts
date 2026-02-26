@@ -2,18 +2,18 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import { createRepoSnapshot } from "../local-seo/repo";
-import { loadGbpProfile } from "../local-seo/gbp";
-import { loadCitations } from "../local-seo/citations";
-import { fetchHtml } from "../local-seo/fetch";
-import { parseHtmlSnapshot } from "../local-seo/parse";
-import { runLocalSeoAudit } from "../local-seo/audit";
-import { toCodexPrompts, toMarkdown } from "../local-seo/format";
+import { createRepoSnapshot } from '../src/local-seo/repo'
+import { loadGbpProfile } from '../src/local-seo/gbp'
+import { loadCitations } from '../src/local-seo/citations'
+import { fetchHtml } from '../src/local-seo/fetch'
+import { parseHtmlSnapshot } from '../src/local-seo/parse'
+import { runLocalSeoAudit } from '../src/local-seo/audit'
+import { toCodexPrompts, toMarkdown } from '../src/local-seo/format'
 
 // These are expected from Pack 0. If you haven’t added them, create minimal equivalents.
-import { SITE } from "../config/site";
-import { SERVICES } from "../config/services";
-import { CORE_PAGES } from "../config/pages";
+import { SITE } from '../src/config/site'
+import { SERVICES } from '../src/config/services'
+import { CORE_PAGES } from '../src/config/pages'
 
 function arg(name: string, fallback?: string): string | undefined {
   const pfx = `--${name}=`
