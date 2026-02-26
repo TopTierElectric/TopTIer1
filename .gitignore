@@ -29,3 +29,6 @@ build/
 
 # Archives
 *.zip
+
+# root-vs-src audit outputs
+_audit_root_vs_src/
