@@ -1,0 +1,32 @@
+# Cloudflare Pages _redirects supports path redirects only.
+# Host/protocol canonicalization (www -> apex, http -> https) must be enforced
+# in Cloudflare zone Redirect Rules/Bulk Redirects, not here.
+
+# Legacy entry aliases (keep minimal)
+/index / 301
+/index.html / 301
+/home / 301
+
+# Optional: true legacy semantic redirects (only if these URLs were used historically)
+/pricing /services 301
+
+# Legacy logo file locations migrated to assets/images/logos
+/TopTierElectrical_Primary_Black_2048.png /assets/images/logos/TopTierElectrical_Primary_Black_2048.png 301
+/TopTierElectrical_Primary_FlatGold_2048.png /assets/images/logos/TopTierElectrical_Primary_FlatGold_2048.png 301
+/TopTierElectrical_Primary_FlatGold_4096.png /assets/images/logos/TopTierElectrical_Primary_FlatGold_4096.png 301
+/TopTierElectrical_Primary_FlatGold_512.png /assets/images/logos/TopTierElectrical_Primary_FlatGold_512.png 301
+/TopTierElectrical_Primary_White_2048.png /assets/images/logos/TopTierElectrical_Primary_White_2048.png 301
+/TopTierElectrical_Primary_White_512.png /assets/images/logos/TopTierElectrical_Primary_White_512.png 301
+
+# Canonical route aliases for slash-style blog/service slugs
+/blog/electrical-safety-tips /blog-electrical-safety 301
+/blog/ev-charger-installation-guide /blog-ev-charging 301
+/blog/how-to-choose-right-electrician /blog-right-electrician 301
+/blog/signs-you-need-panel-upgrade /blog-panel-upgrade-signs 301
+/blog/whole-home-surge-protection /blog-surge-protection 301
+/blog/winter-generator-readiness /blog-generator-readiness 301
+/code-corrections /electrical-repairs 301
+/dedicated-circuits /services 301
+/electrician-grand-haven /service-areas 301
+/electrician-muskegon /service-areas 301
+/reviews /testimonials 301
