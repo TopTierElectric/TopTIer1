@@ -58,3 +58,49 @@ Split into focused PRs:
 - [ ] Re-open as smaller, purpose-scoped PRs (or clearly label and justify each scope).
 - [ ] Re-run CI checks after trimming generated artifacts.
 
+## Completion Plan (PR 228 to be error-free)
+
+Use this sequence on the PR 228 branch so the PR is complete, reviewable, and low-risk.
+
+1) **Remove generated outputs from version control**
+
+```bash
+git rm -r --cached _audit_root_vs_src
+git commit -m "chore(audit): stop tracking generated root-vs-src artifacts"
+```
+
+2) **Keep ignore guardrail in place**
+
+- Confirm `.gitignore` contains `_audit_root_vs_src/` (already present).
+- Ensure no files under `_audit_root_vs_src/` remain tracked.
+
+```bash
+git ls-files | grep '^_audit_root_vs_src/'
+```
+
+3) **Split mixed concerns into focused PRs (recommended)**
+
+- PR A: `src/scripts/**` sync/parity changes.
+- PR B: `tools/**` audit tool improvements.
+- PR C: runtime/deploy config (`src/_headers`, `src/_redirects`, `src/wrangler*`, `src/.well-known/security.txt`, `src/.env.example`).
+
+If splitting is not possible, preserve these as clearly separated commits with explicit rationale in the PR body.
+
+4) **Run repository quality gates before merge**
+
+```bash
+npm run lint
+npm run check:workflows
+npm run qa
+```
+
+5) **Validate final PR shape**
+
+```bash
+git diff --name-only upstream-main...HEAD
+```
+
+Acceptance checks:
+- No tracked `_audit_root_vs_src/**` files in the diff.
+- Diff is limited to intentional source/config/tooling changes.
+- CI green after the cleanup commit(s).
