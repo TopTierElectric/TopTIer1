@@ -32,3 +32,9 @@ build/
 
 # root-vs-src audit outputs
 _audit_root_vs_src/
+
+# integration loop and local audit outputs
+_codex_logs/
+/tmp/root_src_audit/
+/tmp/root_src_audit_legacy/
+artifacts/root_src/
