@@ -8,7 +8,6 @@ GH_REPO="${4:-}"  # optional: OWNER/REPO for gh api calls
 
 # Exclusions for the "root version" snapshot
 EXCLUDES=(
-  --exclude "$OUT_DIR_REL_TO_REPO/"
   --exclude ".git/"
   --exclude ".github/"   # keep out unless you explicitly want workflow comparisons in the root snapshot
   --exclude "$SRC_DIR/"
@@ -51,11 +50,6 @@ if command -v gh >/dev/null 2>&1; then GH_OK=1; fi
 
 ABS_REPO_ROOT="$(cd "$REPO_ROOT" && pwd)"
 ABS_SRC_DIR="$ABS_REPO_ROOT/$SRC_DIR"
-OUT_DIR_REL_TO_REPO="$(python3 - <<PY2
-import os
-print(os.path.relpath(os.path.abspath("$OUT_DIR"), os.path.abspath("$ABS_REPO_ROOT")))
-PY2
-)"
 
 if [[ ! -d "$ABS_REPO_ROOT" ]]; then
   echo "Repo root not found: $ABS_REPO_ROOT" >&2
