@@ -9,6 +9,19 @@ root_manifest_fp = OUT / 'root_manifest.tsv'
 src_manifest_fp = OUT / 'src_manifest.tsv'
 fuzzy_fp = OUT / 'fuzzy_pairing.tsv'
 
+INFRA_PREFIXES = ('.github/', 'e2e/', 'tools/integration/')
+INFRA_EXACT = {
+    '.github/dependabot.yml',
+    'AGENTS.md',
+    '.lighthouserc.json',
+    'playwright.config.mjs',
+    'scripts/check-site-json.mjs',
+}
+
+def is_infra_only(path):
+    return path.startswith(INFRA_PREFIXES) or path in INFRA_EXACT
+
+
 def load_manifest(fp):
     m = {}
     if not fp.exists():
@@ -59,6 +72,8 @@ with pairing_fp.open(newline='') as f:
         rows.append(rec)
         counts[rec['status']] = counts.get(rec['status'], 0) + 1
 rows.sort(key=lambda x: x['relpath'])
+infra_only_root_files = sum(1 for r in rows if r['status']=='MISSING_IN_SRC' and is_infra_only(r['relpath']))
+runtime_missing_in_src = counts.get('MISSING_IN_SRC', 0) - infra_only_root_files
 
 fuzzy = []
 if fuzzy_fp.exists():
@@ -87,6 +102,7 @@ if len(top10) < 10:
 report = []
 report += ['# ROOT_VS_SRC_AUDIT_REPORT', '', '## A. Executive summary', '']
 report += [f"- Exact layer counts from `pairing.tsv`: IDENTICAL={counts.get('IDENTICAL',0)}, CHANGED={counts.get('CHANGED',0)}, MISSING_IN_SRC={counts.get('MISSING_IN_SRC',0)}, EXTRA_IN_SRC={counts.get('EXTRA_IN_SRC',0)}."]
+report += [f"- Reclassified counts: runtime_missing_in_src={runtime_missing_in_src}, infra_only_root_files={infra_only_root_files}."]
 report += [f"- Heuristic layer counts from `fuzzy_pairing.tsv`: total_candidates={len(fuzzy)}."]
 report += ['', 'Top 10 highest-score fuzzy candidates (or fewer if unavailable):']
 for i, cand in enumerate(fuzzy[:10], 1):

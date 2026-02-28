@@ -29,12 +29,35 @@ check_staging_safety() {
   fi
 }
 
+print_final_counts() {
+  python3 - <<'PY'
+import csv
+infra_prefixes = ('.github/', 'e2e/', 'tools/integration/')
+infra_exact = {'.github/dependabot.yml', 'AGENTS.md', '.lighthouserc.json', 'playwright.config.mjs', 'scripts/check-site-json.mjs'}
+rows = []
+with open('/tmp/root_src_audit/pairing.tsv', newline='') as f:
+    for row in csv.reader(f, delimiter='\t'):
+        if row:
+            rows.append(row)
+counts = {}
+for row in rows:
+    counts[row[0]] = counts.get(row[0], 0) + 1
+infra = sum(1 for row in rows if row[0] == 'MISSING_IN_SRC' and (row[1].startswith(infra_prefixes) or row[1] in infra_exact))
+runtime = counts.get('MISSING_IN_SRC', 0) - infra
+print(f"IDENTICAL={counts.get('IDENTICAL', 0)}")
+print(f"CHANGED={counts.get('CHANGED', 0)}")
+print(f"runtime_missing_in_src={runtime}")
+print(f"infra_only_root_files={infra}")
+print(f"EXTRA_IN_SRC={counts.get('EXTRA_IN_SRC', 0)}")
+PY
+}
+
 while true; do
   LOG_FILE="$LOG_DIR/run_until_green_attempt_${ATTEMPT}.log"
   echo "[run_until_green] attempt=${ATTEMPT} log=${LOG_FILE}"
   if { run_gate_stack && check_staging_safety; } >"$LOG_FILE" 2>&1; then
     echo "[run_until_green] GREEN on attempt ${ATTEMPT}"
-    awk -F'\t' '{c[$1]++} END {printf("IDENTICAL=%d\nCHANGED=%d\nMISSING_IN_SRC=%d\nEXTRA_IN_SRC=%d\n",c["IDENTICAL"],c["CHANGED"],c["MISSING_IN_SRC"],c["EXTRA_IN_SRC"])}' /tmp/root_src_audit/pairing.tsv
+    print_final_counts
     exit 0
   fi
 
