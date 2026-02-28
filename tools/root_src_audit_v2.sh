@@ -35,11 +35,6 @@ if command -v gh >/dev/null 2>&1; then GH_OK=1; fi
 
 ABS_REPO_ROOT="$(cd "$REPO_ROOT" && pwd)"
 ABS_SRC_DIR="$ABS_REPO_ROOT/$SRC_DIR"
-OUT_DIR_REL_TO_REPO="$(python3 - <<PY2
-import os
-print(os.path.relpath(os.path.abspath("$OUT_DIR"), os.path.abspath("$ABS_REPO_ROOT")))
-PY2
-)"
 if [[ ! -d "$ABS_SRC_DIR" ]]; then
   echo "SRC dir not found: $ABS_SRC_DIR" >&2
   exit 2
@@ -56,7 +51,7 @@ SRC_SNAP="$WORKDIR/src_version"
 mkdir -p "$ROOT_SNAP" "$SRC_SNAP"
 
 EXCLUDES=(
-  --exclude "$OUT_DIR_REL_TO_REPO/"
+  --exclude "_audit_root_vs_src/"
   --exclude "tools/root_src_audit*.sh"
   --exclude "tools/fuzzy_pair.py"
   --exclude "tools/generate_root_src_reports.py"

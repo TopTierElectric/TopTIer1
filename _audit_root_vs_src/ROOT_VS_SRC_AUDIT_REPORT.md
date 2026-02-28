@@ -2,7 +2,7 @@
 
 ## A. Executive summary
 
-- Exact layer counts from `pairing.tsv`: IDENTICAL=47, CHANGED=0, MISSING_IN_SRC=342, EXTRA_IN_SRC=70.
+- Exact layer counts from `pairing.tsv`: IDENTICAL=47, CHANGED=0, MISSING_IN_SRC=341, EXTRA_IN_SRC=70.
 - Heuristic layer counts from `fuzzy_pairing.tsv`: total_candidates=74.
 
 Top 10 highest-score fuzzy candidates (or fewer if unavailable):
@@ -479,7 +479,6 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | MISSING_IN_SRC | `switch-gear-69955ab06fdb5.webp` | `d3b4df18e6495a4a145df063fbeb5605cd077991064733102d628bff4a116e95` | `—` | 6796 | — |
 | MISSING_IN_SRC | `testimonials.html` | `9ff723e2e3950fc6389c54c9f1bc99c84b4bc223ebae11db1056e594aaa0c723` | `—` | 13278 | — |
 | MISSING_IN_SRC | `thank-you.html` | `a9b04243c991aa37ad176d8d6accbca8d0b6a5833b15d8a84f0d5960fb704530` | `—` | 8351 | — |
-| MISSING_IN_SRC | `tools/EXTENSIVE_VERIFICATION_REPORT.md` | `ebff6fd11254d82416069b8ccf421cbefb6213c736f26c06cd15846ed9af4df6` | `—` | 1407 | — |
 | MISSING_IN_SRC | `tools/center_and_pad_logo.py` | `50be9ac3f7ec77097fde7c9f253a50b21837384743bfb4322a74ebe008f28479` | `—` | 5426 | — |
 | MISSING_IN_SRC | `tools/port_advanced_root_into_src.py` | `39667b9ff0c264949b3511789c0ce3248bfd915e7262db10a1d66e61f9e7c779` | `—` | 2970 | — |
 | MISSING_IN_SRC | `toptier-service-pages/services/commercial-electrical/index.md` | `01f0be97d4dc7395151bf4d8592c432d21c4b29f541cbce39e90958381fd312c` | `—` | 1126 | — |
@@ -830,7 +829,6 @@ Column interpretation: `status | relpath | root_sha | src_sha | root_size | src_
 | `switch-gear-69955ab06fdb5.webp` | PORT_WITH_ADAPTATION | `assets/images/switch-gear-69955ab06fdb5.webp` | Check image references, responsive loading, and Lighthouse performance. |
 | `testimonials.html` | REPLACE_WITH_EQUIVALENT | `testimonials.html` | Manual review to map capability into SRC architecture. |
 | `thank-you.html` | REPLACE_WITH_EQUIVALENT | `thank-you.html` | Manual review to map capability into SRC architecture. |
-| `tools/EXTENSIVE_VERIFICATION_REPORT.md` | REPLACE_WITH_EQUIVALENT | `tools/EXTENSIVE_VERIFICATION_REPORT.md` | Confirm equivalent documentation section exists and links resolve. |
 | `tools/center_and_pad_logo.py` | REPLACE_WITH_EQUIVALENT | `tools/center_and_pad_logo.py` | Manual review to map capability into SRC architecture. |
 | `tools/port_advanced_root_into_src.py` | REPLACE_WITH_EQUIVALENT | `tools/port_advanced_root_into_src.py` | Manual review to map capability into SRC architecture. |
 | `toptier-service-pages/services/commercial-electrical/index.md` | REPLACE_WITH_EQUIVALENT | `toptier-service-pages/services/commercial-electrical/index.md` | Confirm equivalent documentation section exists and links resolve. |

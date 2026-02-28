@@ -16,6 +16,7 @@ const LeadSchema = z.object({
 async function sendLeadEmail(payload: z.infer<typeof LeadSchema>) {
   const mode = process.env.LEADS_MODE ?? 'console'
   const to = process.env.LEADS_TO_EMAIL ?? ''
+  const from = process.env.LEADS_FROM_EMAIL ?? process.env.RESEND_FROM_EMAIL ?? ''
 
   if (!to && mode !== 'console') throw new Error('LEADS_TO_EMAIL missing')
 
@@ -25,11 +26,14 @@ async function sendLeadEmail(payload: z.infer<typeof LeadSchema>) {
   }
 
   if (mode === 'resend') {
+    if (!from) throw new Error('LEADS_FROM_EMAIL (or RESEND_FROM_EMAIL) missing')
+    if (!process.env.RESEND_API_KEY) throw new Error('RESEND_API_KEY missing')
+
     const { Resend } = await import('resend')
     const resend = new Resend(process.env.RESEND_API_KEY)
 
     await resend.emails.send({
-      from: 'TopTier Leads <leads@yourdomain.com>', // TODO: set verified sender in Resend
+      from,
       to,
       subject: `New Lead (${payload.form}) — ${payload.service}`,
       text: [
