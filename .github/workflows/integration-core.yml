@@ -38,6 +38,7 @@ jobs:
       - name: root/src report
         run: python3 tools/integration/root_src_report.py
       - name: Upload integration artifacts
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: integration-core-artifacts
