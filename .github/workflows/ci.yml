@@ -58,7 +58,7 @@ jobs:
         run: terraform plan -input=false -lock=false -no-color
 
       - name: Trivy IaC scan
-        uses: aquasecurity/trivy-action@0.24.0
+        uses: aquasecurity/trivy-action@0.34.1
         with:
           scan-type: config
           scan-ref: .
