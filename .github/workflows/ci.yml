@@ -40,7 +40,7 @@ jobs:
 
       - name: Configure AWS credentials (OIDC)
         if: ${{ vars.AWS_ROLE_TO_ASSUME != '' && vars.AWS_REGION != '' }}
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ vars.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ vars.AWS_REGION }}
