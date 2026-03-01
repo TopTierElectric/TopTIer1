@@ -8,6 +8,7 @@ GH_REPO="${4:-}"          # optional OWNER/REPO (enables github/ collection if g
 INCLUDE_GITHUB="${5:-1}"  # include .github in ROOT snapshot
 ENABLE_FUZZY="${6:-1}"    # generate heuristic pairing diffs/cmp
 INCLUDE_OUTPUTS="${7:-0}" # include dist/build/out/.next etc in ROOT snapshot if 1
+OUT_DIR_REL_TO_REPO="${OUT_DIR_REL_TO_REPO:-}"
 
 need() { command -v "$1" >/dev/null 2>&1 || { echo "Missing dependency: $1" >&2; exit 2; }; }
 
@@ -35,8 +36,15 @@ if command -v gh >/dev/null 2>&1; then GH_OK=1; fi
 
 ABS_REPO_ROOT="$(cd "$REPO_ROOT" && pwd)"
 ABS_SRC_DIR="$ABS_REPO_ROOT/$SRC_DIR"
+OUT_DIR_BASENAME="$(basename "${OUT_DIR_REL_TO_REPO:-$OUT_DIR}")"
+FUZZY_PAIR_SCRIPT="$ABS_REPO_ROOT/tools/fuzzy_pair.py"
 if [[ ! -d "$ABS_SRC_DIR" ]]; then
   echo "SRC dir not found: $ABS_SRC_DIR" >&2
+  exit 2
+fi
+
+if [[ "$ENABLE_FUZZY" == "1" && ! -f "$FUZZY_PAIR_SCRIPT" ]]; then
+  echo "fuzzy_pair.py not found: $FUZZY_PAIR_SCRIPT" >&2
   exit 2
 fi
 
@@ -52,6 +60,7 @@ mkdir -p "$ROOT_SNAP" "$SRC_SNAP"
 
 EXCLUDES=(
   --exclude "_audit_root_vs_src/"
+  --exclude "$OUT_DIR_BASENAME/"
   --exclude "tools/root_src_audit*.sh"
   --exclude "tools/fuzzy_pair.py"
   --exclude "tools/generate_root_src_reports.py"
@@ -131,6 +140,8 @@ while IFS=$'\t' read -r rel ssha ssize; do
   fi
 done < <(awk -F'\t' '{print $3"\t"$1"\t"$2}' "$OUT_DIR/src_manifest.tsv")
 
+LC_ALL=C sort -t$'\t' -k2,2 -k1,1 "$PAIR_OUT" -o "$PAIR_OUT"
+
 echo "[5/8] Produce diffs + cmp evidence for exact CHANGED files"
 mkdir -p "$OUT_DIR/diffs" "$OUT_DIR/byte_diffs"
 awk -F'\t' '$1=="CHANGED"{print $2}' "$PAIR_OUT" | while IFS= read -r rel; do
@@ -142,7 +153,7 @@ done
 echo "[6/8] Heuristic pairing (fuzzy) + diffs + cmp (if enabled)"
 if [[ "$ENABLE_FUZZY" == "1" ]]; then
   need python3
-  tools/fuzzy_pair.py \
+  "$FUZZY_PAIR_SCRIPT" \
     --root-snap "$ROOT_SNAP" \
     --src-snap "$SRC_SNAP" \
     --root-manifest "$OUT_DIR/root_manifest.tsv" \

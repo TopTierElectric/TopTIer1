@@ -1,0 +1,49 @@
+name: integration-core
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install
+        run: npm ci --no-audit --no-fund
+      - name: Build
+        run: npm run build
+      - name: Verify
+        run: npm run verify
+      - name: QA
+        run: npm run qa
+      - name: Local SEO CI
+        run: npm run localseo:ci
+      - name: Workflow checks
+        run: npm run check:workflows
+      - name: Navigation simulation
+        run: npm run check:navigation-sim
+      - name: site.json validation
+        run: node scripts/check-site-json.mjs
+      - name: Python compile
+        run: python3 -m py_compile tools/generate_root_src_reports.py tools/fuzzy_pair.py tools/port_advanced_root_into_src.py
+      - name: root/src audit v2
+        run: bash tools/root_src_audit_v2.sh . src /tmp/root_src_audit "" 1 1 0
+      - name: root/src report
+        run: python3 tools/integration/root_src_report.py
+      - name: Upload integration artifacts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: integration-core-artifacts
+          path: |
+            /tmp/root_src_audit
+            reports/root_src_audit_summary.md
+            artifacts/root_src
+          if-no-files-found: warn

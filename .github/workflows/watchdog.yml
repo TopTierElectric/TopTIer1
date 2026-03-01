@@ -1,0 +1,28 @@
+name: watchdog
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Run watchdog
+        run: python3 tools/integration/watchdog.py
+      - name: Upload watchdog artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: watchdog-artifacts
+          path: |
+            artifacts/root_src
+            _codex_logs
+          if-no-files-found: warn

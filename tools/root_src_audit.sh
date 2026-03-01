@@ -5,6 +5,7 @@ REPO_ROOT="${1:-.}"
 SRC_DIR="${2:-src}"
 OUT_DIR="${3:-_audit_root_vs_src}"
 GH_REPO="${4:-}"  # optional: OWNER/REPO for gh api calls
+OUT_DIR_REL_TO_REPO="${OUT_DIR_REL_TO_REPO:-}"
 
 # Exclusions for the "root version" snapshot
 EXCLUDES=(
@@ -50,6 +51,12 @@ if command -v gh >/dev/null 2>&1; then GH_OK=1; fi
 
 ABS_REPO_ROOT="$(cd "$REPO_ROOT" && pwd)"
 ABS_SRC_DIR="$ABS_REPO_ROOT/$SRC_DIR"
+OUT_DIR_BASENAME="$(basename "${OUT_DIR_REL_TO_REPO:-$OUT_DIR}")"
+
+EXCLUDES+=(
+  --exclude "_audit_root_vs_src/"
+  --exclude "$OUT_DIR_BASENAME/"
+)
 
 if [[ ! -d "$ABS_REPO_ROOT" ]]; then
   echo "Repo root not found: $ABS_REPO_ROOT" >&2
@@ -147,6 +154,8 @@ while IFS=$'\t' read -r rel ssha ssize; do
     printf "EXTRA_IN_SRC\t%s\t\t%s\t\t%s\n" "$rel" "$ssha" "$ssize" >> "$PAIR_OUT"
   fi
 done < <(awk -F'\t' '{print $3"\t"$1"\t"$2}' "$OUT_DIR/src_manifest.tsv")
+
+LC_ALL=C sort -t$'\t' -k2,2 -k1,1 "$PAIR_OUT" -o "$PAIR_OUT"
 
 echo "[5/7] Produce diffs + byte-offset evidence for CHANGED files"
 mkdir -p "$OUT_DIR/diffs" "$OUT_DIR/byte_diffs"
