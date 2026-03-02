@@ -38,7 +38,7 @@
     "chokidar": "^3.6.0",
     "dotenv": "^16.4.5",
     "html-minifier-terser": "^7.2.0",
-    "node-html-parser": "^6.1.13",
+    "node-html-parser": "^7.0.2",
     "resend": "^6.9.2",
     "sharp": "^0.33.5",
     "yaml": "^2.5.1",
