@@ -1,0 +1,41 @@
+:root {
+  --brand-gold: #d4af37;
+  --brand-gold-dark: #bf9f3f;
+  --brand-gold-light: #e6cc72;
+  --brand-black: #111111;
+  --brand-charcoal: #181818;
+  --brand-ivory: #fafafa;
+  --brand-slate: #6b7280;
+  --brand-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --primary: #04172a;
+  --secondary: #0b2a4a;
+  --secondary-accessible: #123a61;
+  --light-bg: #f9fafb;
+  --text-dark: #1f2937;
+  --text-light: #f9fafb;
+  --muted: #6b7280;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --warning: #f59e0b;
+
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-h4: 1.25rem;
+  --font-size-body: 1rem;
+  --line-height-body: 1.7;
+  --line-height-heading: 1.2;
+}
+
+:root {
+  --component-trust-bg: #101010;
+  --component-trust-text: #f3f4f6;
+  --component-card-border: rgba(255, 255, 255, 0.08);
+  --component-section-gap: 1rem;
+}
