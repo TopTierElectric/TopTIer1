@@ -102,7 +102,7 @@ jobs:
         run: npm run qa
 
       - name: Upload reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: qa-reports
           path: reports

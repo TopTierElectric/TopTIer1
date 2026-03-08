@@ -39,7 +39,7 @@ jobs:
         run: python3 tools/integration/root_src_report.py
       - name: Upload integration artifacts
         if: ${{ always() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: integration-core-artifacts
           path: |
