@@ -8,6 +8,10 @@
   "scripts": {
     "clean": "node scripts/clean.mjs",
     "build": "node scripts/build.mjs",
+    "export:astrowind": "node tools/export_astrowind_bundle.mjs",
+    "export:astrowind:watch": "node tools/export_astrowind_bundle.mjs --watch",
+    "transfer:astrowind:relentless": "node tools/astrowind_transfer_relentless.mjs --iterations 3",
+    "verify:astrowind-export": "node tools/verify_astrowind_bundle.mjs",
     "verify": "node scripts/verify.mjs",
     "dev": "node scripts/dev.mjs",
     "verify:zero-updates": "node scripts/verify-zero-updates.mjs",

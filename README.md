@@ -18,6 +18,19 @@
    - new blog URLs
    - exact verification steps (local build + link checks)
 
+## Astrowind transfer bundle
+
+To export the canonical `src/` site content into a byte-verified Astrowind-friendly bundle:
+
+```bash
+npm run export:astrowind
+npm run export:astrowind:watch
+npm run verify:astrowind-export
+npm run transfer:astrowind:relentless
+```
+
+This writes a portable transfer bundle to `dist/astrowind-transfer/` with exact route metadata/content references, exact `site.json`, copied partials/assets, a full `src/**` hard-transfer snapshot, and a full repository hard-transfer snapshot (excluding `.git`, `node_modules`, and `dist`) so the Astrowind repo does not need to pull from this repository. Use `npm run export:astrowind:watch` to keep the transfer synced continuously while source files change, or `npm run transfer:astrowind:relentless` to run repeated export+verify cycles. See `docs/ASTROWIND_MIGRATION.md` for the migration workflow.
+
 ## Clean repository export
 
 If you want to spin up a new lean repository with only actively used site files and assets:
