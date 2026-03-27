@@ -28,7 +28,7 @@ npm run export:astrowind:watch
 npm run verify:astrowind-export
 ```
 
-This writes a portable transfer bundle to `dist/astrowind-transfer/` with exact route metadata/content references, exact `site.json`, copied partials/assets, and a full `src/**` hard-transfer snapshot so the Astrowind repo does not need to pull files from this repository. Use `npm run export:astrowind:watch` to keep the transfer synced continuously while source files change. See `docs/ASTROWIND_MIGRATION.md` for the migration workflow.
+This writes a portable transfer bundle to `dist/astrowind-transfer/` with exact route metadata/content references, exact `site.json`, copied partials/assets, a full `src/**` hard-transfer snapshot, and a full repository hard-transfer snapshot (excluding `.git`, `node_modules`, and `dist`) so the Astrowind repo does not need to pull from this repository. Use `npm run export:astrowind:watch` to keep the transfer synced continuously while source files change. See `docs/ASTROWIND_MIGRATION.md` for the migration workflow.
 
 ## Clean repository export
 

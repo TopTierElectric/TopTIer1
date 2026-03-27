@@ -36,6 +36,7 @@ Use `npm run export:astrowind:watch` when you want the transfer to run continuou
 - redirects extracted from `site.json` → `dist/astrowind-transfer/src/data/redirects.json`
 - `src/partials/**/*.html` copied byte-for-byte → `dist/astrowind-transfer/reference/partials/**`
 - full canonical `src/**` snapshot copied byte-for-byte → `dist/astrowind-transfer/hard-transfer/src/**`
+- full repository snapshot copied byte-for-byte (excluding `.git`, `node_modules`, `dist`, `_audit_root_vs_src`, `.wrangler`) → `dist/astrowind-transfer/hard-transfer/repo/**`
 - `src/assets/**` copied byte-for-byte → `dist/astrowind-transfer/public/assets/**`
 - route and manifest indexes → `dist/astrowind-transfer/manifest.json` and `dist/astrowind-transfer/route-index.json`
 
@@ -50,6 +51,7 @@ The verification step confirms:
 - `src/data/site.json` bytes match the source
 - copied partials and assets match the source byte-for-byte
 - full `hard-transfer/src/**` snapshot matches source bytes for every file
+- full `hard-transfer/repo/**` snapshot matches source bytes for every copied file
 - site, navigation, and redirects data are populated
 
 ## Continuous transfer mode
@@ -65,13 +67,14 @@ This is useful when you are actively rebuilding the site in an Astrowind reposit
 
 ## How to use in an Astrowind repo
 
-1. Copy `dist/astrowind-transfer/hard-transfer/src/**` into your destination repo first to perform a hard transfer of canonical source files.
-2. Copy `dist/astrowind-transfer/src/content/**` into your Astrowind content area.
-3. Copy `dist/astrowind-transfer/src/data/**` into your Astrowind data/config layer.
-4. Copy `dist/astrowind-transfer/public/assets/**` into your Astrowind `public/assets/**`.
-5. Use `reference/routes/**` when you need the exact original metadata JSON and exact original HTML body bytes during Astro component rebuilds.
-6. Recreate redirects, schema, and forms using the exported `manifest.json`, `route-index.json`, and source business configuration.
-7. Preserve existing production slugs or add redirects before cutover.
+1. Copy `dist/astrowind-transfer/hard-transfer/repo/**` into your destination Astrowind repo to perform a full hard transfer payload.
+2. Copy `dist/astrowind-transfer/hard-transfer/src/**` into your destination repo first when you only need canonical source files.
+3. Copy `dist/astrowind-transfer/src/content/**` into your Astrowind content area.
+4. Copy `dist/astrowind-transfer/src/data/**` into your Astrowind data/config layer.
+5. Copy `dist/astrowind-transfer/public/assets/**` into your Astrowind `public/assets/**`.
+6. Use `reference/routes/**` when you need the exact original metadata JSON and exact original HTML body bytes during Astro component rebuilds.
+7. Recreate redirects, schema, and forms using the exported `manifest.json`, `route-index.json`, and source business configuration.
+8. Preserve existing production slugs or add redirects before cutover.
 
 ## Important note
 

@@ -14,6 +14,13 @@ const SRC_PARTIALS_DIR = path.join(SRC_DIR, "partials");
 const SRC_DATA_DIR = path.join(SRC_DIR, "data");
 const SRC_ASSETS_DIR = path.join(SRC_DIR, "assets");
 const DEFAULT_OUT_DIR = path.join(ROOT, "dist/astrowind-transfer");
+const REPO_COPY_EXCLUDE_DIRS = new Set([
+  ".git",
+  "node_modules",
+  "dist",
+  "_audit_root_vs_src",
+  ".wrangler",
+]);
 
 const args = process.argv.slice(2);
 const outIndex = args.indexOf("--out");
@@ -32,13 +39,18 @@ async function emptyDir(dir) {
   await ensureDir(dir);
 }
 
-async function walkFiles(dir, predicate = () => true) {
+async function walkFiles(
+  dir,
+  predicate = () => true,
+  excludeDirNames = new Set(),
+) {
   const entries = await fs.readdir(dir, { withFileTypes: true });
   const files = [];
   for (const entry of entries) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      files.push(...(await walkFiles(full, predicate)));
+      if (excludeDirNames.has(entry.name)) continue;
+      files.push(...(await walkFiles(full, predicate, excludeDirNames)));
     } else if (entry.isFile() && predicate(full)) {
       files.push(full);
     }
@@ -168,6 +180,7 @@ async function runExport() {
     file.endsWith(".html"),
   );
   const srcFiles = await walkFiles(SRC_DIR);
+  const repoFiles = await walkFiles(ROOT, () => true, REPO_COPY_EXCLUDE_DIRS);
   const assetFiles = await walkFiles(SRC_ASSETS_DIR);
   const siteJsonPath = path.join(SRC_DATA_DIR, "site.json");
   const siteRaw = await fs.readFile(siteJsonPath);
@@ -183,6 +196,7 @@ async function runExport() {
       standardPages: 0,
       partials: partialFiles.length,
       srcFiles: srcFiles.length,
+      repoFiles: repoFiles.length,
       assets: assetFiles.length,
     },
     site: {
@@ -194,6 +208,7 @@ async function runExport() {
     routes: [],
     partials: [],
     sourceSnapshot: [],
+    repoSnapshot: [],
     assets: [],
   };
 
@@ -313,6 +328,18 @@ async function runExport() {
     });
   }
 
+  for (const fullPath of repoFiles) {
+    const rel = path.relative(ROOT, fullPath).replace(/\\/g, "/");
+    const dest = path.join(OUT_DIR, "hard-transfer/repo", rel);
+    const copied = await copyExactFile(fullPath, dest);
+    manifest.repoSnapshot.push({
+      sourceFile: rel,
+      exportedFile: copied.path,
+      sha256: copied.sha256,
+      size: copied.size,
+    });
+  }
+
   for (const fullPath of assetFiles) {
     const rel = path.relative(SRC_ASSETS_DIR, fullPath).replace(/\\/g, "/");
     const dest = path.join(OUT_DIR, "public/assets", rel);
@@ -339,6 +366,7 @@ async function runExport() {
     `- Total routes: ${manifest.totals.pages}`,
     `- Partials copied exactly: ${manifest.totals.partials}`,
     `- Full src snapshot files copied exactly: ${manifest.totals.srcFiles}`,
+    `- Full repository snapshot files copied exactly: ${manifest.totals.repoFiles}`,
     `- Asset files copied exactly: ${manifest.totals.assets}`,
     "- Site data copied byte-for-byte to `src/data/site.json`",
     "- Byte-verification references under `reference/routes/**` and `reference/partials/**`",
@@ -349,8 +377,9 @@ async function runExport() {
     "2. Copy `src/data/**` into your Astrowind data layer.",
     "3. Copy `public/assets/**` into your Astrowind `public/assets/**`.",
     "4. Copy `hard-transfer/src/**` when you need an exact full-source snapshot without pulling from this repo.",
-    "5. Use `reference/routes/**` when you need the exact original metadata JSON and exact HTML body bytes.",
-    "6. Preserve existing production slugs or add redirects before cutover.",
+    "5. Copy `hard-transfer/repo/**` when you need an exact full repository payload (excluding .git/node_modules/dist).",
+    "6. Use `reference/routes/**` when you need the exact original metadata JSON and exact HTML body bytes.",
+    "7. Preserve existing production slugs or add redirects before cutover.",
     "",
   ].join("\n");
   await fs.writeFile(path.join(OUT_DIR, "README.md"), readme, "utf8");

@@ -185,6 +185,22 @@ async function main() {
     );
   }
 
+  let repoSnapshotBytes = 0;
+  for (const sourceFile of manifest.repoSnapshot || []) {
+    const compare = await assertBufferEquality(
+      `repo snapshot ${sourceFile.sourceFile}`,
+      path.join(ROOT, sourceFile.sourceFile),
+      path.join(ROOT, sourceFile.exportedFile),
+    );
+    repoSnapshotBytes += compare.bytes;
+  }
+
+  if ((manifest.repoSnapshot || []).length !== manifest.totals.repoFiles) {
+    throw new Error(
+      `Repo snapshot count mismatch: manifest list ${(manifest.repoSnapshot || []).length} vs totals.repoFiles ${manifest.totals.repoFiles}`,
+    );
+  }
+
   let assetBytes = 0;
   for (const asset of manifest.assets) {
     const compare = await assertBufferEquality(
@@ -213,6 +229,7 @@ async function main() {
           siteBytes: siteCompare.bytes,
           partialBytes,
           sourceSnapshotBytes,
+          repoSnapshotBytes,
           assetBytes,
         },
         redirects: redirects.length,
