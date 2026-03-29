@@ -38,3 +38,4 @@ _codex_logs/
 /tmp/root_src_audit/
 /tmp/root_src_audit_legacy/
 artifacts/root_src/
+__pycache__/
