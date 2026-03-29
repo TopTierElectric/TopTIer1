@@ -16,7 +16,7 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: npm run build
       - run: npx --yes @lhci/cli@0.13.x autorun --config=.lighthouserc.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: lighthouse-artifacts
