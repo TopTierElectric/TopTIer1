@@ -10,6 +10,7 @@
     "build": "node scripts/build.mjs",
     "export:astrowind": "node tools/export_astrowind_bundle.mjs",
     "export:astrowind:watch": "node tools/export_astrowind_bundle.mjs --watch",
+    "transfer:astrowind:relentless": "node tools/astrowind_transfer_relentless.mjs --iterations 3",
     "verify:astrowind-export": "node tools/verify_astrowind_bundle.mjs",
     "verify": "node scripts/verify.mjs",
     "dev": "node scripts/dev.mjs",
@@ -39,12 +40,12 @@
   },
   "dependencies": {
     "chokidar": "^5.0.0",
-    "dotenv": "^16.4.5",
+    "dotenv": "^17.3.1",
     "html-minifier-terser": "^7.2.0",
-    "node-html-parser": "^7.0.2",
-    "resend": "^6.9.3",
+    "node-html-parser": "^7.1.0",
+    "resend": "^6.9.4",
     "sharp": "^0.34.5",
-    "yaml": "^2.8.2",
+    "yaml": "^2.8.3",
     "zod": "^4.3.6"
   },
   "devDependencies": {

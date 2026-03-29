@@ -15,6 +15,7 @@ From the repository root:
 npm run export:astrowind
 npm run export:astrowind:watch
 npm run verify:astrowind-export
+npm run transfer:astrowind:relentless
 ```
 
 The export writes an Astrowind-oriented transfer bundle to:
@@ -24,6 +25,8 @@ dist/astrowind-transfer/
 ```
 
 Use `npm run export:astrowind:watch` when you want the transfer to run continuously while editing the canonical source files under `src/`.
+
+Use `npm run transfer:astrowind:relentless` to run multiple export+verify passes back-to-back (default: 3 iterations) as a stress check before cutover.
 
 ## What gets exported
 
